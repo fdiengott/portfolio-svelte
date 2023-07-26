@@ -1,17 +1,28 @@
 <script>
+	import "../styles/css/v5-font-face.min.css";
+	import "../styles/css/fontawesome.min.css";
+	import "../styles/css/solid.min.css";
+	import "../styles/css/brands.min.css";
+
 	import Header from './Header.svelte';
-	import './styles.css';
+	import '../styles/main.css';
 </script>
+
+<svelte:head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+</svelte:head>
 
 <div class="app">
 	<Header />
 
 	<main>
-		<slot />
+		<div class="card">
+			<slot />
+		</div>
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p></p>
 	</footer>
 </div>
 
@@ -28,9 +39,15 @@
 		flex-direction: column;
 		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
+		max-width: 70rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+	}
+
+	.card {
+		background-color: white;
+		padding: 4rem;
+		border-radius: 1rem;
 	}
 
 	footer {
@@ -39,10 +56,6 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
 	}
 
 	@media (min-width: 480px) {

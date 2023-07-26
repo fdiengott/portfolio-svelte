@@ -1,38 +1,36 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+
+	$: pathname = $page.url.pathname;
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			Freddy Diengott
 		</a>
 	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li aria-current={pathname === '/' && 'page'}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+			<li aria-current={pathname === '/skills' && 'page'}>
+				<a href="/skills">Skills</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={pathname === '/projects' && 'page'}>
+				<a href="/projects">Projects</a>
+			</li>
+			<li aria-current={pathname === '/contact' && 'page'}>
+				<a href="/contact">Contact</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
+		<a href="https://github.com/fdiengott/" target="_blank">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
@@ -45,14 +43,14 @@
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		padding-inline: 0.5rem;
 	}
 
 	.corner a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		padding-inline: 0.5rem;
 		width: 100%;
 		height: 100%;
 	}
@@ -63,20 +61,11 @@
 		object-fit: contain;
 	}
 
+	/* TODO fix these styles */
 	nav {
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
 	}
 
 	ul {
@@ -98,7 +87,7 @@
 	}
 
 	li[aria-current='page']::before {
-		--size: 6px;
+		--size: 8px;
 		content: '';
 		width: 0;
 		height: 0;
@@ -106,7 +95,7 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		border-top: var(--size) solid var(--color-primary);
 	}
 
 	nav a {
@@ -120,10 +109,19 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
+	}
+
+	nav a,
+	.corner a {
 		transition: color 0.2s linear;
 	}
 
+	.corner a {
+		color: var(--color-text);
+		text-decoration: none;
+	}
+
 	a:hover {
-		color: var(--color-theme-1);
+		color: var(--color-primary);
 	}
 </style>
