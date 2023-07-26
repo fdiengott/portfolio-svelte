@@ -58,6 +58,7 @@
 </section>
 
 <style>
+	/* TODO make this look good on mobile */
 	article {
 		display: flex;
 		flex-direction: column;

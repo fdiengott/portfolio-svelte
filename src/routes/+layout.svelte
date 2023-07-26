@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.12.0/devicon.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </svelte:head>
 
 <div class="app">
@@ -46,7 +46,7 @@
 
 	.card {
 		background-color: white;
-		padding: 4rem;
+		padding: 2rem 4rem;
 		border-radius: 1rem;
 	}
 
