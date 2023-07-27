@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { quadOut } from 'svelte/easing';
 	import resume from '../../assets/Freddy_Diengott_Resume.pdf';
 
 	let isPageLoaded = false;
@@ -12,7 +13,8 @@
 		delay: 200 + i * 50,
 		duration: 400,
 		y: -50,
-		opacity: 0
+		opacity: 0,
+		easing: quadOut
 	}));
 </script>
 
