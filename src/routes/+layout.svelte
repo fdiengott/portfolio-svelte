@@ -1,15 +1,18 @@
 <script>
-	import "../styles/css/v5-font-face.min.css";
-	import "../styles/css/fontawesome.min.css";
-	import "../styles/css/solid.min.css";
-	import "../styles/css/brands.min.css";
+	import '../styles/css/v5-font-face.min.css';
+	import '../styles/css/fontawesome.min.css';
+	import '../styles/css/solid.min.css';
+	import '../styles/css/brands.min.css';
 
 	import Header from './Header.svelte';
 	import '../styles/main.css';
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+	/>
 </svelte:head>
 
 <div class="app">
@@ -22,7 +25,7 @@
 	</main>
 
 	<footer>
-		<p></p>
+		<p />
 	</footer>
 </div>
 
