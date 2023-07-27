@@ -1,38 +1,9 @@
-# create-svelte
+# Freddy Diengott -- Software Engineer
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Welcome to the code for my portfolio site! This is a relatively simple site for me to share some basic info about myself, my personal projects, and some skills I have acquired as a software engineer. By day, I work as a frontend developer for Etrade from Morgan Stanley, where I work on a team maintaining a React component library and additionally am the subject matter expert for a small charts library that is built with D3.js.
 
-## Creating a project
+Part way through covid, I transitioned from being an event planner, where I planned over 200 weddings, to taking a 4-month intensive coding boot-camp. My work as a frontend dev at a large company has taught me an enormous amount about efficient and clear systems, and it has refined my ability to write maintainable, scalable code.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Outside of work I think of myself as a fun, serious, quirky, sweet, interesting person. I have a bunch of hobbies and am an individual who very much lives by their beliefs (vegan, environmentalist, etc.). I love to sing (I have two degrees in classical singing), play the piano, cook, bike, rock climb, sew, watch movies, play video games, read, listen to podcasts, create and maintain friendships, go to museums, and learn to play my new clarinet, just to name a few things (sorry, I got carried away listing them).
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+I live in Brooklyn with my partner, a close friend, and our cat.
