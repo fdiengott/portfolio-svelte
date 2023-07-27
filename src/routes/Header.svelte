@@ -7,7 +7,7 @@
 
 <header>
 	<div class="header__corner" data-visible={pathname !== '/'}>
-		<a href="/"> Freddy Diengott </a>
+		<a href="/" tabindex={pathname === '/' ? -1 : 0}> Freddy Diengott</a>
 	</div>
 
 	<nav>
@@ -35,7 +35,6 @@
 </header>
 
 <style>
-	/* TODO make a hamburger button */
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -66,6 +65,24 @@
 	}
 	.header__corner[data-visible='true'] a {
 		opacity: 1;
+	}
+
+	.header__corner {
+		display: none;
+	}
+
+	nav {
+		margin-inline: auto;
+	}
+
+	@media (width > 768px) {
+		.header__corner {
+			display: block;
+		}
+
+		nav {
+			margin-inline: 0;
+		}
 	}
 
 	/* TODO fix these styles */

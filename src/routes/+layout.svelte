@@ -9,10 +9,7 @@
 </script>
 
 <svelte:head>
-	<link
-		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-	/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 </svelte:head>
 
 <div class="app">
@@ -49,8 +46,9 @@
 
 	.card {
 		background-color: white;
-		padding: 2rem 4rem;
 		border-radius: 1rem;
+		padding-block: 2rem;
+		padding-inline: clamp(2rem, 1rem + 5vw, 4rem);
 	}
 
 	footer {

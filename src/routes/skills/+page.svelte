@@ -3,7 +3,9 @@
 </svelte:head>
 
 <article id="skills" class="panel">
-	<h1>Skills</h1>
+	<div class="skills__header">
+		<h1>Skills</h1>
+	</div>
 	<section>
 		<div class="skill__grid">
 			<!-- react -->
@@ -81,11 +83,7 @@
 			<!-- Next.js -->
 			<div class="skill__icon">
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-				<i
-					class="devicon-nextjs-original-wordmark colored"
-					data-text="Next.js"
-					tabindex="0"
-				/>
+				<i class="devicon-nextjs-original-wordmark colored" data-text="Next.js" tabindex="0" />
 			</div>
 
 			<!-- html -->
@@ -127,11 +125,7 @@
 			<!-- amazon web services -->
 			<div class="skill__icon">
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-				<i
-					class="devicon-amazonwebservices-plain colored"
-					data-text="Amazon Web Services"
-					tabindex="0"
-				/>
+				<i class="devicon-amazonwebservices-plain colored" data-text="Amazon Web Services" tabindex="0" />
 			</div>
 
 			<!-- Heroku -->
@@ -149,11 +143,7 @@
 			<!-- tailwind css -->
 			<div class="skill__icon">
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-				<i
-					class="devicon-tailwindcss-plain colored"
-					data-text="Tailwind CSS"
-					tabindex="0"
-				/>
+				<i class="devicon-tailwindcss-plain colored" data-text="Tailwind CSS" tabindex="0" />
 			</div>
 
 			<!-- Three js -->
@@ -176,6 +166,10 @@
 		.skill__grid {
 			grid-template-columns: repeat(4, 1fr);
 		}
+	}
+
+	.skills__header {
+		margin-block-end: 2rem;
 	}
 
 	.skill__icon {

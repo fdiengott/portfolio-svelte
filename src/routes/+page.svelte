@@ -10,43 +10,36 @@
 
 <section>
 	<article id="home" class="panel intro">
-		<div class="home__header">
+		<div>
 			<img
 				class="home__headshot"
 				src={headshot}
 				alt="A professional headshot of a young man wearing a black button down"
 			/>
-			<div>
+			<div class="home__header">
 				<h1>Freddy Diengott</h1>
 				<p>Software Engineer</p>
 			</div>
 			<div class="home__blurb">
-				<!-- TODO make the underlines links -->
 				<p>
 					I'm a <span class="cursive-text">curious</span>,
 					<span class="design-text">design-focused</span>
-					full-stack software engineer based in NYC who loves making beautiful webpages! I'm
-					currently a frontend developer at Etrade from Morgan Stanley where I'm maintaining
-					a <span class="underline">React Component Library</span> and work as the team
-					lead for our <span class="underline">D3.js Charts Library</span>. I'm passionate
-					about design, accessibility, and writing DRY, semantic code.
+					full-stack software engineer based in NYC who loves making beautiful webpages! I'm currently a frontend
+					developer at Etrade from Morgan Stanley where I'm maintaining a
+					<span class="underline">React Component Library</span>
+					and work as the team lead for our <span class="underline">D3.js Charts Library</span>. I'm
+					passionate about design, accessibility, and writing DRY, semantic code.
 				</p>
 
 				<p>
-					My journey to software engineering took many unexpected turns. Some of the pit
-					stops included pursing a career as an opera singer and organizing the
-					entertainment for over 200 high-end events! I have lots and lots of hobbies and
-					love to learn new things!
+					My journey to software engineering took many unexpected turns. Some of the pit stops included
+					pursing a career as an opera singer and organizing the entertainment for over 200 high-end events! I
+					have lots of hobbies and love to learn new things!
 				</p>
 			</div>
 		</div>
 		<div class="home__footer-links">
-			<a
-				href={resume}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="icon solid fa-file nav-icon"
-			>
+			<a href={resume} target="_blank" rel="noopener noreferrer" class="icon solid fa-file nav-icon">
 				<span>Resume</span>
 			</a>
 			<a
@@ -79,22 +72,38 @@
 
 <style>
 	/* TODO make this look good on mobile */
+	h1 {
+		margin-block: 0;
+	}
 	article {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
+	.home__header {
+		margin-block-end: 1.5rem;
+	}
 	.home__headshot {
-		width: 20rem;
-		border-radius: 50%;
-		margin-inline-end: 2rem;
-		float: left;
-		shape-outside: polygon(0 0, 100% 0, 100% 60%, 70% 100%);
+		border-radius: 0.5rem;
+	}
+
+	@media (width > 768px) {
+		.home__header {
+			margin-block-end: 0;
+		}
+
+		.home__headshot {
+			width: 20rem;
+			border-radius: 50%;
+			margin-inline-end: 2rem;
+			float: left;
+			shape-outside: polygon(0 0, 100% 0, 100% 60%, 70% 100%);
+		}
 	}
 
 	.home__blurb {
-		margin-block: 1rem;
+		margin-block: 0 1rem;
 		text-align: justify;
 	}
 	.home__blurb p {
@@ -133,7 +142,7 @@
 		display: inline-block;
 		width: 1em;
 		height: 1em;
-		margin-inline-end: 0.5em;
+		margin-inline: 0.25em;
 		line-height: 0.9em;
 		font-size: 2.5em;
 		outline: 0;
@@ -204,7 +213,7 @@
 
 	.home__footer-links {
 		display: flex;
-		width: 25rem;
 		justify-content: space-between;
+		max-width: 25rem;
 	}
 </style>
