@@ -37,24 +37,22 @@
 			<div class="page-break" />
 		</div>
 	{/if}
-	<table>
-		<tbody>
-			{#each rows as row, index}
-				{#if isPageLoaded}
-					<tr>
-						<th transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 50 }}>{row.label}</th>
-						<th transition:fly={{ ...defaultTransitionParams, delay: 250 + (index + 1) * 50 }}>
-							{#if typeof row.value === 'string'}
-								{row.value}
-							{:else}
-								<a href={row.value.link} target="_blank" rel="noopener noreferrer">{row.value.text}</a>
-							{/if}
-						</th>
-					</tr>
-				{/if}
-			{/each}
-		</tbody>
-	</table>
+	<dl>
+		{#each rows as row, index}
+			{#if isPageLoaded}
+				<div class="row">
+					<dt transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 50 }}>{row.label}</dt>
+					<dd transition:fly={{ ...defaultTransitionParams, delay: 250 + (index + 1) * 50 }}>
+						{#if typeof row.value === 'string'}
+							{row.value}
+						{:else}
+							<a href={row.value.link} target="_blank" rel="noopener noreferrer">{row.value.text}</a>
+						{/if}
+					</dd>
+				</div>
+			{/if}
+		{/each}
+	</dl>
 </article>
 
 <style>
@@ -66,31 +64,39 @@
 		transition: all var(--transition-timing);
 		transform: translateY(0);
 	}
-	table {
-		text-align: left;
-		margin-inline: auto;
+	dl {
+		display: grid;
+		justify-content: center;
 		margin-block-end: 2rem;
+		text-align: left;
 	}
 
-	tr {
-		height: 2.5rem;
+	.row {
+		display: grid;
+		grid-template-columns: 1fr max-content;
+		padding-block: 0.5rem;
 	}
 
-	th {
+	dt,
+	dd {
 		font-weight: 400;
 	}
 
-	th:first-child {
-		width: 17rem;
-	}
-
-	th:not(:first-child) {
+	dd {
 		text-align: right;
+		margin-inline-start: 3rem;
 	}
 
 	@media (width > 768px) {
-		th:not(:first-child) {
+		.row {
+			display: flex;
+		}
+		dt {
+			width: clamp(7rem, 3rem + 18vw, 20rem);
+		}
+		dd {
 			text-align: left;
+			margin-inline-start: 0;
 		}
 	}
 </style>
