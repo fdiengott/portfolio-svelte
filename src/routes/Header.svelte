@@ -6,10 +6,8 @@
 </script>
 
 <header>
-	<div class="corner">
-		<a href="/">
-			Freddy Diengott
-		</a>
+	<div class="header__corner" data-visible={pathname !== '/'}>
+		<a href="/"> Freddy Diengott </a>
 	</div>
 
 	<nav>
@@ -29,7 +27,7 @@
 		</ul>
 	</nav>
 
-	<div class="corner">
+	<div class="header__corner header__corner--github">
 		<a href="https://github.com/fdiengott/" target="_blank">
 			<img src={github} alt="GitHub" />
 		</a>
@@ -37,16 +35,17 @@
 </header>
 
 <style>
+	/* TODO make a hamburger button */
 	header {
 		display: flex;
 		justify-content: space-between;
 	}
 
-	.corner {
+	.header__corner {
 		padding-inline: 0.5rem;
 	}
 
-	.corner a {
+	.header__corner a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -55,10 +54,18 @@
 		height: 100%;
 	}
 
-	.corner img {
+	.header__corner img {
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
+	}
+
+	.header__corner[data-visible='false'] a {
+		opacity: 0;
+		pointer-events: none;
+	}
+	.header__corner[data-visible='true'] a {
+		opacity: 1;
 	}
 
 	/* TODO fix these styles */
@@ -112,16 +119,26 @@
 	}
 
 	nav a,
-	.corner a {
+	.header__corner a {
 		transition: color 0.2s linear;
 	}
 
-	.corner a {
+	.header__corner a {
 		color: var(--color-text);
 		text-decoration: none;
 	}
 
 	a:hover {
 		color: var(--color-primary);
+	}
+
+	.header__corner--github {
+		display: none;
+	}
+
+	@media (width > 768px) {
+		.header__corner--github {
+			display: block;
+		}
 	}
 </style>
