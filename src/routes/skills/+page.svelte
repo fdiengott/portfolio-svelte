@@ -3,17 +3,42 @@
 	import { fly } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
+	const skillData = [
+		{ iconCls: 'devicon-react-original colored', text: 'React' },
+		{ iconCls: 'devicon-javascript-plain colored', text: 'JavaScript' },
+		{ iconCls: 'devicon-d3js-plain colored', text: 'D3.js' },
+		{ iconCls: 'devicon-sass-original colored', text: 'Sass' },
+		{ iconCls: 'devicon-graphql-plain colored', text: 'GraphQL' },
+		{ iconCls: 'devicon-ruby-plain colored', text: 'Ruby' },
+		{ iconCls: 'devicon-rails-plain colored', text: 'Rails' },
+		{ iconCls: 'devicon-git-plain colored', text: 'Git' },
+		{ iconCls: 'devicon-nodejs-plain colored', text: 'Node.js' },
+		{ iconCls: 'devicon-express-original colored', text: 'Express' },
+		{ iconCls: 'devicon-postgresql-plain colored', text: 'PostgreSQL' },
+		{ iconCls: 'devicon-mongodb-plain colored', text: 'MongoDB' },
+		{ iconCls: 'devicon-nextjs-original-wordmark colored', text: 'Next.js' },
+		{ iconCls: 'devicon-html5-plain colored', text: 'HTML' },
+		{ iconCls: 'devicon-css3-plain colored', text: 'CSS' },
+		{ iconCls: 'devicon-webpack-plain colored', text: 'Webpack' },
+		{ iconCls: 'devicon-babel-plain colored', text: 'Babel' },
+		{ iconCls: 'devicon-vuejs-plain colored', text: 'Vue.js' },
+		{ iconCls: 'devicon-svelte-plain colored', text: 'Svelte' },
+		{ iconCls: 'devicon-amazonwebservices-plain colored', text: 'Amazon Web Services' },
+		{ iconCls: 'devicon-heroku-original colored', text: 'Heroku' },
+		{ iconCls: 'devicon-jest-plain colored', text: 'Jest' },
+		{ iconCls: 'devicon-tailwindcss-plain colored', text: 'Tailwind CSS' },
+		{ iconCls: 'devicon-threejs-original colored', text: 'Three.js' }
+	];
 
-	const NUM_SKILLS = 4 * 6;
-	const transitionParams = Array.from({ length: NUM_SKILLS + 1 }, (_, i) => ({
-		delay: 200 + i * 35,
+	const defaultTransitionParams = {
 		duration: 400,
 		y: -80,
 		opacity: 0,
 		easing: quadOut
-	}));
+	};
+
+	let isPageLoaded = false;
+	onMount(() => (isPageLoaded = true));
 </script>
 
 <svelte:head>
@@ -25,153 +50,16 @@
 		<h1>Skills</h1>
 	</div>
 	<section>
-		{#if isPageLoaded}
-			<div class="skill__grid">
-				<!-- react -->
-				<div class="skill__icon" transition:fly={transitionParams[0]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-react-original colored" data-text="React" tabindex="0" />
-				</div>
-
-				<!-- javascript -->
-				<div class="skill__icon" transition:fly={transitionParams[1]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-javascript-plain colored" data-text="JavaScript" tabindex="0" />
-				</div>
-
-				<!-- d3 -->
-				<div class="skill__icon" transition:fly={transitionParams[2]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-d3js-plain colored" data-text="D3.js" tabindex="0" />
-				</div>
-
-				<!-- sass -->
-				<div class="skill__icon" transition:fly={transitionParams[3]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-sass-original colored" data-text="Sass" tabindex="0" />
-				</div>
-
-				<!-- GraphQL -->
-				<div class="skill__icon" transition:fly={transitionParams[4]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-graphql-plain colored" data-text="GraphQL" tabindex="0" />
-				</div>
-
-				<!-- ruby -->
-				<div class="skill__icon" transition:fly={transitionParams[5]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-ruby-plain colored" data-text="Ruby" tabindex="0" />
-				</div>
-
-				<!-- rails -->
-				<div class="skill__icon" transition:fly={transitionParams[6]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-rails-plain colored" data-text="Rails" tabindex="0" />
-				</div>
-
-				<!-- git -->
-				<div class="skill__icon" transition:fly={transitionParams[7]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-git-plain colored" data-text="Git" tabindex="0" />
-				</div>
-
-				<!-- node -->
-				<div class="skill__icon" transition:fly={transitionParams[8]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-nodejs-plain colored" data-text="Node.js" tabindex="0" />
-				</div>
-
-				<!-- Express -->
-				<div class="skill__icon" transition:fly={transitionParams[9]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-express-original colored" data-text="Express" tabindex="0" />
-				</div>
-
-				<!-- postgres -->
-				<div class="skill__icon" transition:fly={transitionParams[10]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-postgresql-plain colored" data-text="PostgreSQL" tabindex="0" />
-				</div>
-
-				<!-- MongoDB -->
-				<div class="skill__icon" transition:fly={transitionParams[11]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-mongodb-plain colored" data-text="MongoDB" tabindex="0" />
-				</div>
-
-				<!-- Next.js -->
-				<div class="skill__icon" transition:fly={transitionParams[12]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-nextjs-original-wordmark colored" data-text="Next.js" tabindex="0" />
-				</div>
-
-				<!-- html -->
-				<div class="skill__icon" transition:fly={transitionParams[13]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-html5-plain colored" data-text="HTML" tabindex="0" />
-				</div>
-
-				<!-- css -->
-				<div class="skill__icon" transition:fly={transitionParams[14]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-css3-plain colored" data-text="CSS" tabindex="0" />
-				</div>
-
-				<!-- Webpack -->
-				<div class="skill__icon" transition:fly={transitionParams[15]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-webpack-plain colored" data-text="Webpack" tabindex="0" />
-				</div>
-
-				<!-- Babel -->
-				<div class="skill__icon" transition:fly={transitionParams[16]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-babel-plain colored" data-text="Babel" tabindex="0" />
-				</div>
-
-				<!-- Vue -->
-				<div class="skill__icon" transition:fly={transitionParams[17]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-vuejs-plain colored" data-text="Vue.js" tabindex="0" />
-				</div>
-
-				<!-- Svelte -->
-				<div class="skill__icon" transition:fly={transitionParams[18]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-svelte-plain colored" data-text="Svelte" tabindex="0" />
-				</div>
-
-				<!-- amazon web services -->
-				<div class="skill__icon" transition:fly={transitionParams[19]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-amazonwebservices-plain colored" data-text="Amazon Web Services" tabindex="0" />
-				</div>
-
-				<!-- Heroku -->
-				<div class="skill__icon" transition:fly={transitionParams[20]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-heroku-original colored" data-text="Heroku" tabindex="0" />
-				</div>
-
-				<!-- jest -->
-				<div class="skill__icon" transition:fly={transitionParams[21]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-jest-plain colored" data-text="Jest" tabindex="0" />
-				</div>
-
-				<!-- tailwind css -->
-				<div class="skill__icon" transition:fly={transitionParams[22]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-tailwindcss-plain colored" data-text="Tailwind CSS" tabindex="0" />
-				</div>
-
-				<!-- Three js -->
-				<div class="skill__icon" transition:fly={transitionParams[23]}>
-					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-					<i class="devicon-threejs-original colored" data-text="Three.js" tabindex="0" />
-				</div>
-			</div>
-		{/if}
+		<div class="skill__grid">
+			{#each skillData as skill, index (skill.text)}
+				{#if isPageLoaded}
+					<div class="skill__icon" transition:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
+						<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+						<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
+					</div>
+				{/if}
+			{/each}
+		</div>
 	</section>
 </article>
 
