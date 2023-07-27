@@ -48,7 +48,7 @@
 				class="projects__image-link fit"
 			>
 				<img src={theBodyKnows} alt="" />
-				<article class="hover-text">
+				<article class="hover-text web">
 					<p>
 						A simple, clean, easy to navigate website I built for my partner's small business as a trauma
 						therapist.
@@ -56,6 +56,13 @@
 					<p>Built using Vue and Sass, with Netlify handling form submissions.</p>
 				</article>
 			</a>
+			<article class="hover-text mobile">
+				<p>
+					A simple, clean, easy to navigate website I built for my partner's small business as a trauma
+					therapist.
+				</p>
+				<p>Built using Vue and Sass, with Netlify handling form submissions.</p>
+			</article>
 		</div>
 		<div class="projects__card">
 			<span class="projects__card-header">
@@ -72,7 +79,7 @@
 				class="projects__image-link fit"
 			>
 				<img src={pebbble} alt="" />
-				<article class="hover-text">
+				<article class="hover-text web">
 					<p>
 						A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts
 						to share their work or find inspiration.
@@ -80,6 +87,13 @@
 					<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
 				</article>
 			</a>
+			<article class="hover-text mobile">
+				<p>
+					A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts to
+					share their work or find inspiration.
+				</p>
+				<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
+			</article>
 		</div>
 		<div class="projects__card">
 			<span class="projects__card-header">
@@ -96,7 +110,7 @@
 				rel="noopener noreferrer"
 				class="projects__image-link fit"
 				><img src={postcard} alt="" />
-				<article class="hover-text">
+				<article class="hover-text web">
 					<p>
 						A website I worked on with a four person team as the frontend developer building a travel
 						scrapbook with integrated maps and photos.
@@ -106,6 +120,13 @@
 					</p>
 				</article>
 			</a>
+			<article class="hover-text mobile">
+				<p>
+					A website I worked on with a four person team as the frontend developer building a travel scrapbook
+					with integrated maps and photos.
+				</p>
+				<p>Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.</p>
+			</article>
 		</div>
 		<div class="projects__card">
 			<span class="projects__card-header">
@@ -121,11 +142,15 @@
 				rel="noopener noreferrer"
 				class="projects__image-link fit"
 				><img src={lexiloop} alt="" />
-				<article class="hover-text">
+				<article class="hover-text web">
 					<p>An interactive music sequencer I made that uses syllabified words as audio samples!</p>
 					<p>Built with JavaScript, HTML, Sass, Webpack, WebAudio API, and the WordsAPI.</p>
 				</article>
 			</a>
+			<article class="hover-text mobile">
+				<p>An interactive music sequencer I made that uses syllabified words as audio samples!</p>
+				<p>Built with JavaScript, HTML, Sass, Webpack, WebAudio API, and the WordsAPI.</p>
+			</article>
 		</div>
 	</section>
 </article>
@@ -168,39 +193,55 @@
 		top: 1px;
 	}
 
-	/* TODO make all work on focus */
-	.projects__image-link:hover img,
-	.projects__image-link:focus-visible img {
-		transform: scale(1.02);
-		filter: blur(8px);
-	}
-
 	.hover-text {
-		position: absolute;
-		opacity: 0;
-		inset: 0;
-		display: flex;
+		background-color: rgba(0, 0, 0, 0.45);
+		color: white;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		flex-direction: column;
-		transition: opacity calc(var(--transition-timing) * 2) ease-in-out;
-		color: white;
-		background-color: rgba(0, 0, 0, 0.45);
-		font-weight: 600;
-		font-size: var(--fs-500);
-
+		padding-block: 1rem;
+		line-height: 1.6;
+	}
+	.hover-text.web {
+		display: none;
+		position: absolute;
+		inset: 0;
+		opacity: 0;
 		gap: 4rem;
-		line-height: 1.8;
+		font-size: var(--fs-500);
+		font-weight: 600;
+		transition: opacity calc(var(--transition-timing) * 2) ease-in-out;
+	}
+	.hover-text.mobile {
+		display: flex;
+		gap: 1rem;
+		font-size: var(--fs-300);
+		pointer-events: none;
+	}
+
+	@media (width > 768px) {
+		.projects__image-link:hover img,
+		.projects__image-link:focus-visible img {
+			transform: scale(1.02);
+			filter: blur(8px);
+		}
+
+		.hover-text.mobile {
+			display: none;
+		}
+		.hover-text.web {
+			display: flex;
+		}
+
+		.projects__image-link:hover .hover-text,
+		.projects__image-link:focus-visible .hover-text {
+			opacity: 0.9;
+		}
 	}
 
 	.hover-text p {
 		width: 80%;
 		font-weight: 400;
-	}
-
-	.projects__image-link:hover .hover-text,
-	.projects__image-link:focus-visible .hover-text {
-		opacity: 0.9;
 	}
 
 	.projects__card-header {
@@ -214,15 +255,31 @@
 		font-size: var(--fs-700);
 	}
 
+	.external-links {
+		text-align: right;
+		line-height: 2.4;
+	}
+
 	.external-links a,
 	.external-links a:visited {
 		color: var(--color-primary);
 		text-decoration: none;
-		margin-inline: 0.5rem;
+		margin-inline: 0.5rem 0;
 		font-weight: 400;
 	}
 
-	.external-links a:hover {
-		text-decoration: underline;
+	@media (width > 768px) {
+		.external-links a:hover {
+			text-decoration: underline;
+		}
+
+		.external-links {
+			text-align: left;
+		}
+
+		.external-links a,
+		.external-links a:visited {
+			margin-inline: 0.5rem;
+		}
 	}
 </style>

@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Freddy Diengott - Software Engineer</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
@@ -71,7 +71,6 @@
 </section>
 
 <style>
-	/* TODO make this look good on mobile */
 	h1 {
 		margin-block: 0;
 	}
