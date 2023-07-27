@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import resume from '../../assets/Freddy_Diengott_Resume.pdf';
 
 	let isPageLoaded = false;
 	onMount(() => (isPageLoaded = true));
@@ -55,7 +56,7 @@
 			</tr>
 			<tr>
 				<th>Resume</th>
-				<th><a href="images/Freddy_Diengott_Resume.pdf" target="_blank" rel="noopener noreferrer">Link</a></th>
+				<th><a href={resume} target="_blank" rel="noopener noreferrer">Link</a></th>
 			</tr>
 		</tbody>
 	</table>
