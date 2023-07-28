@@ -22,16 +22,9 @@
 		--primary-hue: 205;
 		--lavender: hsl(var(--primary-hue), 39%, 59%);
 
-		/* --color-bg: var(--white-soft); */
 		--color-bg: #aaa;
 		--color-primary: var(--lavender);
 		--color-accent: var(--white-soft);
 		--color-text: var(--black);
 	}
-
-	/* body {
-    line-height: 2;
-    background-color: var(--color-bg);
-    overflow-x: hidden;
-  } */
 }

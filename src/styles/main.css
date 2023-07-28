@@ -76,22 +76,13 @@
 
 	/* Icons */
 	.icon {
-		text-decoration: none;
 		position: relative;
-		text-decoration: none;
 	}
 
 	.icon:before {
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
 		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
 		line-height: 1;
-		text-transform: none !important;
 		font-family: 'Font Awesome 5 Free';
-		font-weight: 400;
 	}
 
 	.icon.solid:before {
@@ -109,39 +100,4 @@
 	.icon > .label {
 		display: none;
 	}
-
-	/* Utilities */
-	.visually-hidden {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: auto;
-		margin: 0;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-		white-space: nowrap;
-	}
-
-	/* Scrollbar */
-	/* ::-webkit-scrollbar {
-    width: 1rem;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--white);
-    border-radius: 2rem;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    width: 90%;
-    background: var(--color-primary);
-    border-radius: 1rem;
-    border: 2px solid var(--white);
-    background-clip: padding-box;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    --color-primary: hsl(var(--green-soft-hue), var(--green-soft-saturation), calc(var(--green-soft-lightness) + 10%));
-  } */
 }
