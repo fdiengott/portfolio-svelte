@@ -232,21 +232,20 @@
 		border-radius: 3px;
 	}
 
+	/* Nav Icons */
+	.home__footer-links {
+		display: flex;
+		justify-content: space-between;
+		max-width: 25rem;
+		width: 100%;
+	}
 	.nav-icon {
-		position: relative;
-		display: inline-block;
 		width: 1em;
-		height: 1em;
-		margin-inline: 0.25em;
 		line-height: 0.9em;
 		font-size: 2.5em;
 		outline: 0;
-
 		color: var(--color-primary);
 		text-align: center;
-
-		-webkit-transition: opacity 0.25s ease-in-out;
-		transition: opacity 0.25s ease-in-out;
 	}
 	.nav-icon.icon:before {
 		padding-right: 0;
@@ -255,31 +254,14 @@
 		transition: opacity var(--transition-timing);
 	}
 
-	.nav-icon:after {
-		content: '';
-		display: block;
-		position: absolute;
-		left: 50%;
-		bottom: -0.75em;
-		margin-left: -0.5em;
-		border-bottom: solid 0em #ffffff;
-		border-left: solid 0.5em transparent;
-		border-right: solid 0.5em transparent;
-		-webkit-transition: border-bottom-width 0.25s ease-in-out;
-		transition: border-bottom-width 0.25s ease-in-out;
-	}
-
 	.nav-icon span {
 		display: block;
 		position: absolute;
-		background: #222222;
-		color: #ffffff;
-		top: -2.75em;
+		top: -1.75em;
 		font-size: 0.3em;
 		height: 2.25em;
 		line-height: 2.25em;
 		left: 50%;
-		opacity: 0;
 		-webkit-transition: opacity 0.25s ease-in-out;
 		transition: opacity 0.25s ease-in-out;
 		width: 5.5em;
@@ -288,7 +270,7 @@
 
 	.nav-icon span:after {
 		content: '';
-		display: block;
+		display: none;
 		position: absolute;
 		bottom: -0.4em;
 		left: 50%;
@@ -306,9 +288,20 @@
 		opacity: 1;
 	}
 
-	.home__footer-links {
-		display: flex;
-		justify-content: space-between;
-		max-width: 25rem;
+	@media (width > 768px) {
+		.nav-icon {
+			margin-inline: 0.25em;
+		}
+
+		.nav-icon span {
+			top: -2.75em;
+			opacity: 0;
+			background: #222222;
+			color: #ffffff;
+		}
+
+		.nav-icon span:after {
+			display: block;
+		}
 	}
 </style>

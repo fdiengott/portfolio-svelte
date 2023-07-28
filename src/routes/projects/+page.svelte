@@ -168,7 +168,6 @@
 </PageTransitions>
 
 <style>
-	/* TODO on mobile the text describing the pictures should be visible below the gifs */
 	.projects__wrapper {
 		display: flex;
 		flex-direction: column;
