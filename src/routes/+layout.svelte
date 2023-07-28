@@ -4,8 +4,8 @@
 	import '../styles/css/solid.min.css';
 	import '../styles/css/brands.min.css';
 
-	import Header from './Header.svelte';
 	import '../styles/main.css';
+	import Header from './Header.svelte';
 </script>
 
 <svelte:head>
@@ -14,7 +14,6 @@
 
 <div class="app">
 	<Header />
-
 	<main>
 		<div class="card">
 			<slot />

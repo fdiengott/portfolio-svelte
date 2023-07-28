@@ -1,6 +1,9 @@
 <script>
 	import headshot from '../assets/images/headshot.jpeg';
 	import resume from '../assets/Freddy_Diengott_Resume.pdf';
+	import PageTransitions from './components/PageTransitions.svelte';
+
+	const designText = 'design-focused'.split('');
 </script>
 
 <svelte:head>
@@ -8,72 +11,111 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<article id="home" class="panel intro">
-		<div>
-			<img
-				class="home__headshot"
-				src={headshot}
-				alt="A professional headshot of a young man wearing a black button down"
-			/>
-			<div class="home__header">
-				<h1>Freddy Diengott</h1>
-				<p>Software Engineer</p>
-			</div>
-			<div class="home__blurb">
-				<p>
-					I'm a <span class="cursive-text">curious</span>,
-					<span class="design-text">design-focused</span>
-					full-stack software engineer based in NYC who loves making beautiful webpages! I'm currently a frontend
-					developer at Etrade from Morgan Stanley where I'm maintaining a
-					<span class="underline">React Component Library</span>
-					and work as the team lead for our <span class="underline">D3.js Charts Library</span>. I'm
-					passionate about design, accessibility, and writing DRY, semantic code.
-				</p>
+<PageTransitions>
+	<section>
+		<article id="home" class="panel intro">
+			<div>
+				<img
+					class="home__headshot"
+					src={headshot}
+					alt="A professional headshot of a young man wearing a black button down"
+				/>
+				<div class="home__header">
+					<h1 class="home__header--name">Freddy Diengott</h1>
+					<p class="home__header--subtitle">Software Engineer</p>
+				</div>
+				<div class="home__blurb">
+					<p>
+						I'm a <span class="cursive-text">
+							curious
+							<div class="sparkle" />
+							<div class="sparkle" />
+							<div class="sparkle" />
+						</span>,
+						<span class="design-text">
+							{#each designText as letter, index}
+								<span style="--delay: {index * 300}ms">{letter}</span>
+							{/each}
+						</span>
+						full-stack software engineer based in NYC who loves making beautiful webpages! I'm currently a frontend
+						developer at Etrade from Morgan Stanley where I'm maintaining a
+						<span class="underline">React Component Library</span>
+						and work as the team lead for our <span class="underline">D3.js Charts Library</span>. I'm
+						passionate about design, accessibility, and writing DRY, semantic code.
+					</p>
 
-				<p>
-					My journey to software engineering took many unexpected turns. Some of the pit stops included
-					pursing a career as an opera singer and organizing the entertainment for over 200 high-end events! I
-					have lots of hobbies and love to learn new things!
-				</p>
+					<p>
+						My journey to software engineering took many unexpected turns. Some of the pit stops included
+						pursing a career as an opera singer and organizing the entertainment for over 200 high-end
+						events! I have lots of hobbies and love to learn new things!
+					</p>
+				</div>
 			</div>
-		</div>
-		<div class="home__footer-links">
-			<a href={resume} target="_blank" rel="noopener noreferrer" class="icon solid fa-file nav-icon">
-				<span>Resume</span>
-			</a>
-			<a
-				href="https://github.com/fdiengott"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="icon brands fa-github nav-icon"
-			>
-				<span>Github</span>
-			</a>
-			<a
-				href="https://www.linkedin.com/in/freddiengott/"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="icon brands fa-linkedin nav-icon"
-			>
-				<span>LinkedIn</span>
-			</a>
-			<a
-				href="https://wellfound.com/u/freddy-diengott"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="icon brands fa-angellist nav-icon"
-			>
-				<span>Wellfound</span>
-			</a>
-		</div>
-	</article>
-</section>
+			<div class="home__footer-links">
+				<a href={resume} target="_blank" rel="noopener noreferrer" class="icon solid fa-file nav-icon">
+					<span>Resume</span>
+				</a>
+				<a
+					href="https://github.com/fdiengott"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon brands fa-github nav-icon"
+				>
+					<span>Github</span>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/freddiengott/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon brands fa-linkedin nav-icon"
+				>
+					<span>LinkedIn</span>
+				</a>
+				<a
+					href="https://wellfound.com/u/freddy-diengott"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="icon brands fa-angellist nav-icon"
+				>
+					<span>Wellfound</span>
+				</a>
+			</div>
+		</article>
+	</section>
+</PageTransitions>
 
 <style>
-	h1 {
+	.home__header--name {
 		margin-block: 0;
+		transition: all var(--transition-timing);
 	}
+
+	.sparkle {
+		position: absolute;
+		background-color: var(--color-primary);
+		scale: 0;
+		clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+		aspect-ratio: 1/1;
+	}
+
+	@keyframes pulse {
+		from,
+		to {
+			scale: 0;
+		}
+		50% {
+			scale: 1;
+		}
+	}
+	@keyframes rotate {
+		from {
+			rotate: 0deg;
+		}
+		to {
+			rotate: 180deg;
+		}
+	}
+
 	article {
 		display: flex;
 		flex-direction: column;
@@ -110,6 +152,7 @@
 		line-height: 1.6;
 	}
 
+	/* Cursive text */
 	.cursive-text,
 	.design-text {
 		--fancy-text-inline-spacing: 10px;
@@ -118,12 +161,65 @@
 	}
 
 	.cursive-text {
+		--transition-timing: 600ms;
+
 		font-family: 'Dancing Script', cursive;
 		margin-inline-start: var(--fancy-text-inline-spacing);
+		position: relative;
+		display: inline-block;
+		transition: all var(--transition-timing);
 	}
 	.design-text {
 		font-family: 'Poiret One', sans-serif;
 		margin-inline: var(--fancy-text-inline-spacing);
+	}
+
+	.cursive-text:hover .sparkle {
+		animation: pulse 1000ms ease forwards infinite, rotate 1000ms linear infinite;
+	}
+	.cursive-text .sparkle {
+		position: absolute;
+		width: 1rem;
+		opacity: 0.6;
+	}
+	.cursive-text .sparkle:nth-child(1) {
+		top: 0%;
+		left: 0;
+		animation-delay: calc(333ms * 1);
+	}
+	.cursive-text .sparkle:nth-child(2) {
+		top: 70%;
+		left: 25%;
+		animation-delay: calc(333ms * 2);
+	}
+	.cursive-text .sparkle:nth-child(3) {
+		top: 20%;
+		left: 80%;
+		animation-delay: calc(333ms * 3);
+	}
+
+	.cursive-text:hover {
+		transform: scale(1.3);
+	}
+
+	/* Design text */
+	.design-text,
+	.design-text span {
+		display: inline-block;
+		transition: all 600ms;
+	}
+	.design-text:hover {
+		scale: 1.1;
+	}
+	.design-text:hover span {
+		animation: float 2s ease-in-out infinite;
+		animation-delay: var(--delay);
+	}
+
+	@keyframes float {
+		50% {
+			transform: translateY(0.45rem);
+		}
 	}
 
 	.underline {
