@@ -19,28 +19,13 @@
 			<slot />
 		</div>
 	</main>
-
-	<footer>
-		<p />
-	</footer>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
 	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
 		padding: 1rem;
-		width: 100%;
 		max-width: 70rem;
 		margin: 0 auto;
-		box-sizing: border-box;
 	}
 
 	.card {
@@ -48,19 +33,5 @@
 		border-radius: 1rem;
 		padding-block: 2rem;
 		padding-inline: clamp(2rem, 1rem + 5vw, 4rem);
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>
