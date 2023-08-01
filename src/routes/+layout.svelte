@@ -32,6 +32,6 @@
 		background-color: white;
 		border-radius: 1rem;
 		padding-block: 2rem;
-		padding-inline: clamp(2rem, 1rem + 5vw, 4rem);
+		padding-inline: clamp(1rem, 5vw, 4rem);
 	}
 </style>
