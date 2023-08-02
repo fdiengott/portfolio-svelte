@@ -149,7 +149,7 @@
 	}
 	.home__blurb p {
 		padding-block: 1rem;
-		line-height: 1.6;
+		line-height: 1.5;
 	}
 
 	/* Cursive text */
@@ -249,7 +249,7 @@
 	}
 	.nav-icon.icon:before {
 		padding-right: 0;
-		opacity: 0.45;
+		opacity: 0.6;
 		font-size: 0.8em;
 		transition: opacity var(--transition-timing);
 	}

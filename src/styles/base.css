@@ -20,7 +20,7 @@
 		--black: hsl(0, 0%, 16%);
 		--black-transparent: hsl(0, 0%, 16%, 38%);
 		--primary-hue: 205;
-		--lavender: hsl(var(--primary-hue), 39%, 59%);
+		--lavender: hsl(var(--primary-hue), 60%, 55%);
 
 		--color-bg: #aaa;
 		--color-primary: var(--lavender);
