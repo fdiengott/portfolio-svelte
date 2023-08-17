@@ -28,11 +28,11 @@
 					<p>
 						I'm a <span class="cursive-text">
 							curious
-							<div class="sparkle" />
-							<div class="sparkle" />
-							<div class="sparkle" />
+							<span class="sparkle" />
+							<span class="sparkle" />
+							<span class="sparkle" />
 						</span>,
-						<span class="design-text">
+						<span class="design-text" data-text="design-focused">
 							{#each designText as letter, index}
 								<span style="--delay: {index * 300}ms">{letter}</span>
 							{/each}
@@ -46,8 +46,8 @@
 
 					<p>
 						My journey to software engineering took many unexpected turns. Some of the pit stops included
-						pursing a career as an opera singer and organizing the entertainment for over 200 high-end
-						events! I have lots of hobbies and love to learn new things!
+						pursuing a career as an opera singer and organizing the music and entertainment for over 200
+						high-end events! I have lots of hobbies and love to learn new things!
 					</p>
 				</div>
 			</div>
