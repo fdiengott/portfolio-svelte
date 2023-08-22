@@ -9,7 +9,6 @@
 
 	const rows = [
 		{ label: 'Name', value: 'Freddy Diengott' },
-		{ label: 'Email', value: 'fdiengott@gmail.com' },
 		{ label: 'Location', value: 'Brooklyn, NY' },
 		{ label: 'Github', value: { link: 'https://github.com/fdiengott', text: 'fdiengott' } },
 		{ label: 'LinkedIn', value: { link: 'https://www.linkedin.com/in/freddiengott/', text: 'freddiengott' } },
