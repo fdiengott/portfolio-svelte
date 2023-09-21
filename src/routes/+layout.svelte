@@ -24,7 +24,7 @@
 <style>
 	main {
 		padding: 1rem;
-		max-width: 70rem;
+		max-width: 75rem;
 		margin: 0 auto;
 	}
 
