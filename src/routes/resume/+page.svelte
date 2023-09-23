@@ -908,7 +908,6 @@
 
 	.c35 {
 		background-color: #ffffff;
-		padding: 36pt 36pt 36pt 36pt;
 	}
 
 	.c21 {
