@@ -36,11 +36,12 @@
 								<span style="--delay: {index * 300}ms">{letter}</span>
 							{/each}
 						</span>
-						full-stack software engineer based in NYC who loves making beautiful webpages! I'm currently a frontend
-						developer at Etrade from Morgan Stanley where I'm maintaining a
-						<span class="underline">React Component Library</span>
-						and work as the team lead for our <span class="underline">D3.js Charts Library</span>. I'm
-						passionate about design, accessibility, and writing DRY, semantic code.
+						full-stack software engineer based in NYC who loves making websites! I'm currently a frontend developer
+						at Etrade from Morgan Stanley where I'm maintaining a
+						<span class="bold">React Component Library</span>
+						and work as the team lead for our <span class="bold">D3.js Charts Library</span> and a
+						<span class="bold">Web Scraping Bun/Astro/React Metrics Dashboard</span>. I'm passionate about
+						design, accessibility, and writing scalable, maintainable, and performant code.
 					</p>
 
 					<p>
@@ -221,7 +222,7 @@
 		}
 	}
 
-	.underline {
+	.bold {
 		font-weight: 700;
 	}
 
