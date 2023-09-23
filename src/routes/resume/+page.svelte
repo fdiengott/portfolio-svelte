@@ -1,6 +1,5 @@
 <svelte:head>
 	<title>Freddy Diengott - Software Engineer</title>
-	<meta name="description" content="Svelte demo app" />
 	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 </svelte:head>
 
@@ -46,7 +45,7 @@
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
 			HTML &middot; CSS &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest &middot; Enzyme
 			&middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails &middot; AWS S3
-			&middot; UI/UX &middot; Tailwind CSS &middot; Next.js &middot; Vite</span
+			&middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
@@ -84,11 +83,13 @@
 			</span>
 		</li>
 		<li class="c6 li-bullet-0">
-			<span class="c1">Improve and add </span><span class="c0">Data Visualizations </span><span class="c1"
-				>to an internal metrics dashboard, which utilized
+			<span class="c1">Rebuild and add </span><span class="c0">Data Visualizations </span><span class="c1"
+				>to an internal metrics dashboard, utilizing
 			</span><span class="c0">Web Scraping </span><span class="c1 c2"
-				>to collect data on how our design language was used across the organization</span
-			>
+				>to collect data on how our design language was used across the organization. Built with <span
+					class="c0">Bun</span
+				>, <span class="c0">Astro</span>, and <span class="c0">React</span>.
+			</span>
 		</li>
 		<li class="c6 li-bullet-0">
 			<span class="c1">Create a </span><span class="c0">Calendar Component </span><span class="c1"
