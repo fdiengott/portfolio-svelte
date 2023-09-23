@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
-	import resume from '../../assets/Freddy_Diengott_Resume.pdf';
 
 	let isPageLoaded = false;
 	onMount(() => (isPageLoaded = true));
@@ -10,10 +9,22 @@
 	const rows = [
 		{ label: 'Name', value: 'Freddy Diengott' },
 		{ label: 'Location', value: 'Brooklyn, NY' },
-		{ label: 'Github', value: { link: 'https://github.com/fdiengott', text: 'fdiengott' } },
-		{ label: 'LinkedIn', value: { link: 'https://www.linkedin.com/in/freddiengott/', text: 'freddiengott' } },
-		{ label: 'Wellfound', value: { link: 'https://wellfound.com/u/freddy-diengott', text: 'freddy-diengott' } },
-		{ label: 'Resume', value: { link: resume, text: 'Link' } }
+		{
+			label: 'Github',
+			value: { link: 'https://github.com/fdiengott', text: 'fdiengott' },
+			external: true
+		},
+		{
+			label: 'LinkedIn',
+			value: { link: 'https://www.linkedin.com/in/freddiengott/', text: 'freddiengott' },
+			external: true
+		},
+		{
+			label: 'Wellfound',
+			value: { link: 'https://wellfound.com/u/freddy-diengott', text: 'freddy-diengott' },
+			external: true
+		},
+		{ label: 'Resume', value: { link: '/resume', text: 'Link' } }
 	];
 
 	const defaultTransitionParams = {
@@ -45,7 +56,13 @@
 						{#if typeof row.value === 'string'}
 							{row.value}
 						{:else}
-							<a href={row.value.link} target="_blank" rel="noopener noreferrer">{row.value.text}</a>
+							<a
+								href={row.value.link}
+								target={row.external && '_blank'}
+								rel={row.external && 'noopener noreferrer'}
+							>
+								{row.value.text}
+							</a>
 						{/if}
 					</dd>
 				</div>
