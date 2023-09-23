@@ -1,6 +1,5 @@
 <script>
 	import headshot from '../assets/images/headshot.jpeg';
-	import resume from '../assets/Freddy_Diengott_Resume.pdf';
 	import PageTransitions from './components/PageTransitions.svelte';
 
 	const designText = 'design-focused'.split('');
@@ -52,7 +51,7 @@
 				</div>
 			</div>
 			<div class="home__footer-links">
-				<a href={resume} target="_blank" rel="noopener noreferrer" class="icon solid fa-file nav-icon">
+				<a href="/resume" class="icon solid fa-file nav-icon">
 					<span>Resume</span>
 				</a>
 				<a
