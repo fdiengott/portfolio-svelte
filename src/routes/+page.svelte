@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>Freddy Diengott - Software Engineer</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="I'm an EA-aligned software engineer, former opera singer, and full time nerd." />
 </svelte:head>
 
 <PageTransitions>
