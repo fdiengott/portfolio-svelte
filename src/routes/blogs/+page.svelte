@@ -80,4 +80,7 @@
 	}
 	.article__tag.music {
 	}
+	.article__tag.suggestions {
+		--tag-color: rgb(56, 35, 241);
+	}
 </style>

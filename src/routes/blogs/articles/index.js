@@ -1,8 +1,15 @@
 // import ea from './ea';
 import tomatoSoup from './tomatoSoup';
 import beginning from './beginning';
+import bookList from './bookList';
 
 const pages = {
+	bookList: {
+		title: 'Book List',
+		content: bookList,
+		date: '10/6/2023',
+		tags: ['suggestions']
+	},
 	beginning: {
 		title: 'It began with a whimper',
 		content: beginning,
