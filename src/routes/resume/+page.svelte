@@ -209,6 +209,48 @@
 		</li>
 	</ul>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
+	<p class="c10">
+		<span class="c11 c14">Production Coordinator</span><span class="c11 c13">&nbsp; </span><span class="c14 c11 c18"
+			>|</span
+		><span class="c13 c2 c11">&nbsp; &nbsp;Sep 2018 - Mar 2020</span>
+	</p>
+	<p class="c10">
+		<span class="c5 c12"><a class="c7" href="https://elanartists.com/" target="_blank">Elan Artists</a></span>
+	</p>
+	<ul class="c20 lst-kix_i5opmugboj5i-0">
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Organized and managed entertainment logistics for over 300 high-end high-visible events
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Created and negotiated event budgets, timelines, talent contracts, and rentals agreements, utilizing
+				Salesforce
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Networked and maintained relationships with hundreds of clients, as well as other industry professionals
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2"> Recruited, booked, paid, and rehearsed hundreds of global performers </span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Liaised with an in-house team of sales reps and coordinators for travel, sound production, musical
+				arrangements, and wardrobe
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Managed entertainment on-site and produced over 40 events, saving the company tens of thousands of
+				dollars through strong time management and clear communication
+			</span>
+		</li>
+	</ul>
+	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.2c2mjzm70ke3"><span class="c15 c2">Education</span></h2>
 	<p class="c10">
 		<span class="c5 c12">
