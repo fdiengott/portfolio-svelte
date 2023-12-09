@@ -16,26 +16,12 @@
 		><span class="c14 c11"
 			>@gmail.com &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brooklyn, NY</span
 		><span class="c14 c11">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-			class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://freddydiengott.com/&amp;sa=D&amp;source=editors&amp;ust=1695455410981400&amp;usg=AOvVaw2NlKt5rUihxO0-PRlDZ6IT"
-				>Portfolio</a
-			></span
+			class="c5 c12"><a class="c7" href="https://freddydiengott.com" target="_blank">Portfolio</a></span
 		><span class="c5">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
 			class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.linkedin.com/in/freddiengott/&amp;sa=D&amp;source=editors&amp;ust=1695455410981819&amp;usg=AOvVaw32OAv6kwvmERcafifTyJFn"
-				>Linkedin</a
-			></span
+			><a class="c7" href="https://www.linkedin.com/in/freddiengott/" target="_blank">Linkedin</a></span
 		><span class="c5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-			class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://github.com/fdiengott&amp;sa=D&amp;source=editors&amp;ust=1695455410982081&amp;usg=AOvVaw2HkcMIr45CX8yUCuOBkUSN"
-				>GitHub</a
-			></span
+			class="c5 c12"><a class="c7" href="https://github.com/fdiengott" target="_blank">GitHub</a></span
 		>
 	</p>
 	<p class="c16"><span class="c2 c4" /></p>
@@ -43,9 +29,9 @@
 	<p class="c10">
 		<span class="c14 c11">React </span><span class="c14 c11 c17">&middot;</span><span class="c14 c11"
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
-			HTML &middot; CSS &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest &middot; Enzyme
-			&middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails &middot; AWS S3
-			&middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
+			HTML &middot; CSS &middot; Python &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest
+			&middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails
+			&middot; AWS S3 &middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
@@ -57,11 +43,7 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://us.etrade.com/home&amp;sa=D&amp;source=editors&amp;ust=1695455410983269&amp;usg=AOvVaw28Fqw9_bcFEqnmHISzyxKs"
-				>Etrade from Morgan Stanley</a
-			></span
+			><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
 		>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0 start">
@@ -146,11 +128,7 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.pepplish.com/&amp;sa=D&amp;source=editors&amp;ust=1695455410986546&amp;usg=AOvVaw0qjylXoJBKBezxFkVFah5z"
-				>Pepplish Provisions</a
-			></span
+			><a class="c7" href="https://www.pepplish.com/" target="_blank">Pepplish Provisions</a></span
 		>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0">
@@ -169,17 +147,9 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.wsfssh.org/&amp;sa=D&amp;source=editors&amp;ust=1695455410987364&amp;usg=AOvVaw1l2Z73C2r1DYjCiZxEhaSU"
-				>West Side Federation for Senior &amp; Supportive
+			><a class="c7" href="https://www.wsfssh.org/" target="_blank"
+				>West Side Federation for Senior &amp; Supportive Housing
 			</a></span
-		><span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.wsfssh.org/&amp;sa=D&amp;source=editors&amp;ust=1695455410987570&amp;usg=AOvVaw1YL1JsD3YjbxSLDMxtHz11"
-				>Housing</a
-			></span
 		>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0">
@@ -209,34 +179,73 @@
 		</li>
 	</ul>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
+	<p class="c10">
+		<span class="c11 c14">Production Coordinator</span><span class="c11 c13">&nbsp; </span><span class="c14 c11 c18"
+			>|</span
+		><span class="c13 c2 c11">&nbsp; &nbsp;Sep 2018 - Mar 2020</span>
+	</p>
+	<p class="c10">
+		<span class="c5 c12"><a class="c7" href="https://elanartists.com/" target="_blank">Elan Artists</a></span>
+	</p>
+	<ul class="c20 lst-kix_i5opmugboj5i-0">
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Organized and managed entertainment logistics for over 300 high-end high-visible events
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Created and negotiated event budgets, timelines, talent contracts, and rentals agreements, utilizing
+				Salesforce
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Networked and maintained relationships with hundreds of clients, as well as other industry professionals
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2"> Recruited, booked, paid, and rehearsed hundreds of global performers </span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Liaised with an in-house team of sales reps and coordinators for travel, sound production, musical
+				arrangements, and wardrobe
+			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1 c2">
+				Managed entertainment on-site and produced over 40 events, saving the company tens of thousands of
+				dollars through strong time management and clear communication
+			</span>
+		</li>
+	</ul>
+	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.2c2mjzm70ke3"><span class="c15 c2">Education</span></h2>
 	<p class="c10">
-		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=http://www.appacademy.io&amp;sa=D&amp;source=editors&amp;ust=1695455410988488&amp;usg=AOvVaw0PIK2wO-yHmbTDOWZXUNxb"
-				>App Academy</a
-			></span
-		><span class="c5">&nbsp;</span><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span
-			class="c14 c18 c11">|</span
-		><span class="c13 c11"
+		<span class="c5 c12">
+			<a class="c7" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank"
+				>Machine Learning Specialization</a
+			>
+		</span>
+		<span class="c13 c11">&nbsp;</span>
+		<span class="c14 c18 c11">|</span>
+		<span class="c13 c11">&nbsp; 2023 &nbsp;</span>
+		<span class="c14 c18 c11">| &nbsp;</span>
+		<span class="c13 c11">Beginner ML Course taught by Andrew Ng </span>
+	</p>
+	<p class="c10">
+		<span class="c5 c12"><a class="c7" href="www.appacademy.io" target="_blank">App Academy</a></span><span
+			class="c5">&nbsp;</span
+		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span class="c14 c18 c11">|</span><span
+			class="c13 c11"
 			>&nbsp; &nbsp;2021 &nbsp;| &nbsp; Rigorous 1000-hour software development course with focus on full stack
 			web development</span
 		>
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.esm.rochester.edu/&amp;sa=D&amp;source=editors&amp;ust=1695455410988996&amp;usg=AOvVaw22KMZgkGO_qku2V7mYrpeY"
-				>Eastman School of
-			</a></span
-		><span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.esm.rochester.edu/&amp;sa=D&amp;source=editors&amp;ust=1695455410989212&amp;usg=AOvVaw2FwrWOz4Mk5ugh4jrm0uPI"
-				>Music</a
-			></span
+			><a class="c7" href="www.esm.rochester.edu/" target="_blank">Eastman School of Music</a></span
 		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp; </span><span class="c14 c18 c11">|</span><span
 			class="c13 c11"
 			>&nbsp; &nbsp;Master of Music &nbsp; | &nbsp;2017 &nbsp;| &nbsp; Worked 8 PT jobs simultaneously while
@@ -245,17 +254,13 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=https://www.ithaca.edu/academics/school-music&amp;sa=D&amp;source=editors&amp;ust=1695455410989656&amp;usg=AOvVaw1MY-JIwxCBsYhdR-SuGR2G"
-				>Ithaca College</a
-			></span
+			><a class="c7" href="www.ithaca.edu/academics/school-music" target="_blank">Ithaca College</a></span
 		><span class="c5">&nbsp; &nbsp;</span><span class="c14 c18 c11">|</span><span class="c13 c11"
 			>&nbsp; &nbsp;Bachelor of Music &nbsp;
 		</span><span class="c14 c18 c11">|</span><span class="c13 c11">&nbsp; 2015 &nbsp;</span><span
 			class="c14 c18 c11">|</span
 		><span class="c13 c11"
-			>&nbsp; Prepared 3 full-length recitals on top of a full course load with a 3.76 GPA.
+			>&nbsp; Prepared 3 full-length recitals on top of a full course load with a 3.76 GPA
 		</span>
 	</p>
 </div>
