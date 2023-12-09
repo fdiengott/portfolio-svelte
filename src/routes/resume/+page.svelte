@@ -43,9 +43,9 @@
 	<p class="c10">
 		<span class="c14 c11">React </span><span class="c14 c11 c17">&middot;</span><span class="c14 c11"
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
-			HTML &middot; CSS &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest &middot; Enzyme
-			&middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails &middot; AWS S3
-			&middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
+			HTML &middot; CSS &middot; Python &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest
+			&middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails
+			&middot; AWS S3 &middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
@@ -211,15 +211,22 @@
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.2c2mjzm70ke3"><span class="c15 c2">Education</span></h2>
 	<p class="c10">
-		<span class="c5 c12"
-			><a
-				class="c7"
-				href="https://www.google.com/url?q=http://www.appacademy.io&amp;sa=D&amp;source=editors&amp;ust=1695455410988488&amp;usg=AOvVaw0PIK2wO-yHmbTDOWZXUNxb"
-				>App Academy</a
-			></span
-		><span class="c5">&nbsp;</span><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span
-			class="c14 c18 c11">|</span
-		><span class="c13 c11"
+		<span class="c5 c12">
+			<a class="c7" href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank"
+				>Machine Learning Specialization</a
+			>
+		</span>
+		<span class="c13 c11">&nbsp;</span>
+		<span class="c14 c18 c11">|</span>
+		<span class="c13 c11">&nbsp; 2023 &nbsp;</span>
+		<span class="c14 c18 c11">| &nbsp;</span>
+		<span class="c13 c11">Beginner ML Course taught by Andrew Ng </span>
+	</p>
+	<p class="c10">
+		<span class="c5 c12"><a class="c7" href="www.appacademy.io" target="_blank">App Academy</a></span><span
+			class="c5">&nbsp;</span
+		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span class="c14 c18 c11">|</span><span
+			class="c13 c11"
 			>&nbsp; &nbsp;2021 &nbsp;| &nbsp; Rigorous 1000-hour software development course with focus on full stack
 			web development</span
 		>
