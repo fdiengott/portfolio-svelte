@@ -10,7 +10,12 @@
 const beginning = `
 # It began with a whimper
 
-It has been rather infrequent in my life for me to work out my thoughts through writing.
+It has been rather infrequent in my life for me to work out my thoughts through writing. So my intention for this adventure is then, perhaps, to attempt to document some of my thoughts during this moment of my life, whether it be about technology, philosophy, or even food. Or maybe it is a chance to think in public (somewhat since I doubt anyone will _actually_ read this) and try out some ideas which I will dispose of some time later.
+
+So let us begin here: I have a ton of interests and a fair amount of skills. Yet even with this deluge of options, I am lately still striving, craving, hungry for something to obsess over. I go through distinct phases where I become incredibly involved in one thing. This thing has been a video game (e.g. Factorio or Hades), or a project (e.g. building my partner, Jo's website), or a TV show (e.g. Better Call Saul). And when I finish one or find myself without such a thing to latch myself to, I clutch my stomach in hunger.
+
+This striving is interesting something I like about myself. I try to ride it, set it up in ways to get the most out of it before I move on, like the time I made sure to finish sewing on dozens of patches onto a pair of pants before losing interest in my sewing machine (which still gets mending and altering use from time to time).
+
 
 
 `;

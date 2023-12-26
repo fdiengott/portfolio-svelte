@@ -1,6 +1,5 @@
 <script>
 	import headshot from '../assets/images/headshot.jpeg';
-	import resume from '../assets/Freddy_Diengott_Resume.pdf';
 	import PageTransitions from './components/PageTransitions.svelte';
 
 	const designText = 'design-focused'.split('');
@@ -8,7 +7,7 @@
 
 <svelte:head>
 	<title>Freddy Diengott - Software Engineer</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="I'm an EA-aligned software engineer, former opera singer, and full time nerd." />
 </svelte:head>
 
 <PageTransitions>
@@ -28,31 +27,32 @@
 					<p>
 						I'm a <span class="cursive-text">
 							curious
-							<div class="sparkle" />
-							<div class="sparkle" />
-							<div class="sparkle" />
+							<span class="sparkle" />
+							<span class="sparkle" />
+							<span class="sparkle" />
 						</span>,
-						<span class="design-text">
+						<span class="design-text" data-text="design-focused">
 							{#each designText as letter, index}
 								<span style="--delay: {index * 300}ms">{letter}</span>
 							{/each}
 						</span>
-						full-stack software engineer based in NYC who loves making beautiful webpages! I'm currently a frontend
-						developer at Etrade from Morgan Stanley where I'm maintaining a
-						<span class="underline">React Component Library</span>
-						and work as the team lead for our <span class="underline">D3.js Charts Library</span>. I'm
-						passionate about design, accessibility, and writing DRY, semantic code.
+						full-stack software engineer based in NYC who loves making websites! I'm currently a frontend developer
+						at Etrade from Morgan Stanley where I'm maintaining a
+						<span class="bold">React Component Library</span>
+						and work as the team lead for our <span class="bold">D3.js Charts Library</span> and a
+						<span class="bold">Web Scraping Bun/Astro/React Metrics Dashboard</span>. I'm passionate about
+						design, accessibility, and writing scalable, maintainable, and performant code.
 					</p>
 
 					<p>
 						My journey to software engineering took many unexpected turns. Some of the pit stops included
-						pursing a career as an opera singer and organizing the entertainment for over 200 high-end
-						events! I have lots of hobbies and love to learn new things!
+						pursuing a career as an opera singer and organizing the music and entertainment for over 200
+						high-end events! I have lots of hobbies and love to learn new things!
 					</p>
 				</div>
 			</div>
 			<div class="home__footer-links">
-				<a href={resume} target="_blank" rel="noopener noreferrer" class="icon solid fa-file nav-icon">
+				<a href="/resume" class="icon solid fa-file nav-icon">
 					<span>Resume</span>
 				</a>
 				<a
@@ -222,7 +222,7 @@
 		}
 	}
 
-	.underline {
+	.bold {
 		font-weight: 700;
 	}
 
