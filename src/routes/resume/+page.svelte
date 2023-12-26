@@ -235,7 +235,7 @@
 		<span class="c13 c11">Beginner ML Course taught by Andrew Ng </span>
 	</p>
 	<p class="c10">
-		<span class="c5 c12"><a class="c7" href="www.appacademy.io" target="_blank">App Academy</a></span><span
+		<span class="c5 c12"><a class="c7" href="http://www.appacademy.io" target="_blank">App Academy</a></span><span
 			class="c5">&nbsp;</span
 		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span class="c14 c18 c11">|</span><span
 			class="c13 c11"
@@ -245,7 +245,7 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a class="c7" href="www.esm.rochester.edu/" target="_blank">Eastman School of Music</a></span
+			><a class="c7" href="http://www.esm.rochester.edu/" target="_blank">Eastman School of Music</a></span
 		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp; </span><span class="c14 c18 c11">|</span><span
 			class="c13 c11"
 			>&nbsp; &nbsp;Master of Music &nbsp; | &nbsp;2017 &nbsp;| &nbsp; Worked 8 PT jobs simultaneously while
@@ -254,7 +254,7 @@
 	</p>
 	<p class="c10">
 		<span class="c5 c12"
-			><a class="c7" href="www.ithaca.edu/academics/school-music" target="_blank">Ithaca College</a></span
+			><a class="c7" href="http://www.ithaca.edu/academics/school-music" target="_blank">Ithaca College</a></span
 		><span class="c5">&nbsp; &nbsp;</span><span class="c14 c18 c11">|</span><span class="c13 c11"
 			>&nbsp; &nbsp;Bachelor of Music &nbsp;
 		</span><span class="c14 c18 c11">|</span><span class="c13 c11">&nbsp; 2015 &nbsp;</span><span
