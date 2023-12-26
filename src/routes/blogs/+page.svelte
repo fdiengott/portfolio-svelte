@@ -1,12 +1,24 @@
 <script>
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+	import { quadOut } from 'svelte/easing';
+
 	import { pages } from './articles/index.js';
-	import PageTransitions from '../components/PageTransitions.svelte';
+
+	let isPageLoaded = false;
+	onMount(() => (isPageLoaded = true));
+
+	const defaultTransitionParams = {
+		duration: 600,
+		y: -50,
+		easing: quadOut
+	};
 </script>
 
-<PageTransitions>
-	<ul class="article__list">
-		{#each Object.entries(pages) as [slug, article]}
-			<li>
+<ul class="article__list">
+	{#each Object.entries(pages) as [slug, article], index}
+		{#if isPageLoaded}
+			<li transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 125 }}>
 				<div class="article__date">{article.date}</div>
 				<a href="/blogs/{slug}">
 					<div>{article.title}</div>
@@ -19,9 +31,9 @@
 					</ul>
 				{/if}
 			</li>
-		{/each}
-	</ul>
-</PageTransitions>
+		{/if}
+	{/each}
+</ul>
 
 <style lang="scss">
 	.article__list {
@@ -44,7 +56,6 @@
 
 	.article__tags {
 		display: flex;
-		gap: 0.5rem;
 		margin-block-start: 1rem;
 	}
 
