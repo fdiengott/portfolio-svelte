@@ -72,11 +72,11 @@
 		transform: translateY(-50%);
 	}
 
-	// TODO fix these colors
-	.article__tag.recipe {
-		--tag-color: rgb(104, 255, 104);
+	.article__tag.recipes {
+		--tag-color: rgb(31, 190, 31);
 	}
 	.article__tag.coding {
+		--tag-color: rgb(0, 203, 218);
 	}
 	.article__tag.musings {
 		--tag-color: rgb(183, 35, 241);

@@ -3,6 +3,7 @@ import tomatoSoup from './tomatoSoup';
 // import beginning from './beginning';
 import bookList from './bookList';
 import blogGuide from './blogGuide';
+import zshThemeCustomization from './zsh-theme-customization';
 
 const pages = {
 	blogGuide: {
@@ -10,6 +11,12 @@ const pages = {
 		content: blogGuide,
 		date: '12/26/2023',
 		tags: ['featured']
+	},
+	zshThemeCustomization: {
+		title: 'Zsh Theme Customization',
+		content: zshThemeCustomization,
+		date: '12/26/2023',
+		tags: ['coding']
 	},
 	bookList: {
 		title: 'Book List',
