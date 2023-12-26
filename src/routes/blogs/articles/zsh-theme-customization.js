@@ -4,6 +4,7 @@ import zshHighlighted from '../../../assets/images/zsh-highlighted.png';
 import zshForeground from '../../../assets/images/zsh-foreground.png';
 import zshBackground from '../../../assets/images/zsh-background.png';
 import zshSimpleExample from '../../../assets/images/zsh-simple-example.png';
+import zshTerminalExample from '../../../assets/images/zsh-terminal-example.png';
 
 const zshThemeCustomization = `
 # Zsh Theme Customization
@@ -67,13 +68,19 @@ PROMPT='
 ### Styling
 Zsh supports bold, underline, and foreground and background colors. Below is a table of how to implement each.
 
-| Syntax               | Style            | Example                       | Images                                        |
+| Syntax               | Style            | Example                       | Image                                         |
 | -------------------- | ---------------- | ----------------------------- | --------------------------------------------- |
 | \`%B ... %b\`        | Bold             | \`%B%n%b\`                    | ![Zsh bold example](${zshBold})               |
 | \`%U ... %u\`        | Underline        | \`%U%1~%u\`                   | ![Zsh underlined example](${zshUnderlined})   |
 | \`%S ... %s\`        | Highlighted      | \`%S%T%s\`                    | ![Zsh highlighted example](${zshHighlighted}) |
 | \`%F{color} ... %f\` | Foreground color | \`%F{red}$(git_repo_name)%f\` | ![Zsh foreground example](${zshForeground})   |
 | \`%K{color} ... %k\` | Background color | \`%F{red}%K{yellow}%t%f%k\`   | ![Zsh background example](${zshBackground})   |
+
+Note: In one of my workspaces there is support for hex codes (this might be a feature of iTerm), but on my personal computer, I am reliant upon color keywords. So here is a list of supported color keywords:
+> black, blink, blue, bold, brown, cyan, darkgray, gray, green,
+> halfbright, lightblue, lightcyan, lightgray, lightgreen,
+> lightmagenta, lightred, magenta, red, reset, reverse, and yellow.
+
 
 ### More complex content
 
@@ -133,6 +140,34 @@ branch_description() {
     fi
 }
 \`\`\`
+
+## Full example
+\`\`\`bash
+PROMPT='
+%F{magenta}> %f'
+
+RPROMPT='[%F{magenta}%c%f]%S%F{yellow}%f%s%F{cyan}\${$(branch_description)}%f$(parse_git_dirty)'
+
+branch_description() {
+    if test -d ".git"; then
+        reg='[0-9]{4}\\/(.+)'
+        branch="$(echo -e "$(git_current_branch)")"
+
+        if [[ $branch =~ $reg ]]
+        then
+            echo $branch | grep -Eo '[a-zA-Z-]+\\/[a-zA-Z-]+$'
+        else
+            echo $branch
+        fi
+    fi
+}
+
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{yellow} ☂%f"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{cyan} ✭%f"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{yellow} ☀%f"
+\`\`\`
+
+![Terminal example](${zshTerminalExample})
 
 ### List of symbols
 Below are a list of symbols that were included in the wedisagree theme that I found useful.

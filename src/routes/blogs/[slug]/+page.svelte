@@ -91,8 +91,15 @@
 			}
 		}
 
+		blockquote {
+			background: #08395d21; // blueish gray
+			padding: 2rem 3rem;
+			margin-block-start: -1rem;
+		}
+
 		table {
 			margin-inline: auto;
+			margin-block-end: 2rem;
 			font-size: var(--fs-300);
 		}
 
