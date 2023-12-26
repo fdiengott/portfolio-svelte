@@ -1,24 +1,27 @@
 <script>
 	import { pages } from './articles/index.js';
+	import PageTransitions from '../components/PageTransitions.svelte';
 </script>
 
-<ul class="article__list">
-	{#each Object.entries(pages) as [slug, article]}
-		<li>
-			<div class="article__date">{article.date}</div>
-			<a href="/blogs/{slug}">
-				<div>{article.title}</div>
-			</a>
-			{#if article.tags}
-				<ul class="article__tags">
-					{#each article.tags as tag}
-						<li class="article__tag {tag}">{tag}</li>
-					{/each}
-				</ul>
-			{/if}
-		</li>
-	{/each}
-</ul>
+<PageTransitions>
+	<ul class="article__list">
+		{#each Object.entries(pages) as [slug, article]}
+			<li>
+				<div class="article__date">{article.date}</div>
+				<a href="/blogs/{slug}">
+					<div>{article.title}</div>
+				</a>
+				{#if article.tags}
+					<ul class="article__tags">
+						{#each article.tags as tag}
+							<li class="article__tag {tag}">{tag}</li>
+						{/each}
+					</ul>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</PageTransitions>
 
 <style lang="scss">
 	.article__list {
@@ -69,11 +72,11 @@
 		transform: translateY(-50%);
 	}
 
-	// TODO fix these colors
-	.article__tag.recipe {
-		--tag-color: rgb(104, 255, 104);
+	.article__tag.recipes {
+		--tag-color: rgb(31, 190, 31);
 	}
 	.article__tag.coding {
+		--tag-color: rgb(0, 203, 218);
 	}
 	.article__tag.musings {
 		--tag-color: rgb(183, 35, 241);
