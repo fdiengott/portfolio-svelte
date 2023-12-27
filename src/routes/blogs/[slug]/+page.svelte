@@ -112,5 +112,9 @@
 		td {
 			padding: 1.5rem 1rem;
 		}
+
+		p:has(img) {
+			text-align: center;
+		}
 	}
 </style>
