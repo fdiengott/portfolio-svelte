@@ -1,3 +1,4 @@
+import zshCurrent from '../../../assets/images/zsh-terminal-image.png';
 import zshBold from '../../../assets/images/zsh-bold.png';
 import zshUnderlined from '../../../assets/images/zsh-underlined.png';
 import zshHighlighted from '../../../assets/images/zsh-highlighted.png';
@@ -10,6 +11,8 @@ const zshThemeCustomization = `
 # Zsh Theme Customization
 
 In my effort to make my customize my zsh terminal exactly how I wanted, I found that there weren't many good articles on the topic. So today I'm going to guide you through a few pieces of simple syntax to improve your terminal experience!
+
+![My current terminal configuration](${zshCurrent})
 
 ## Setting up your custom theme
 
