@@ -1,5 +1,6 @@
 <script>
 	import SvelteMarkdown from 'svelte-markdown';
+	import tableOfContentsHeaderRenderer from './TableOfContentsHeader.svelte';
 
 	export let data;
 </script>
@@ -7,7 +8,7 @@
 <article id="blog__container">
 	<a class="blog__back-btn" href="/blogs">Back</a>
 	<div class="date"><em>First published on {data.page.date}.</em></div>
-	<SvelteMarkdown source={data.page.content} />
+	<SvelteMarkdown source={data.page.content} renderers={{ heading: tableOfContentsHeaderRenderer }} />
 </article>
 
 <style global lang="scss">
@@ -115,6 +116,11 @@
 
 		p:has(img) {
 			text-align: center;
+		}
+
+		.table-of-contents + ul,
+		.table-of-contents + ul li {
+			margin-block-start: 0.5em;
 		}
 	}
 </style>
