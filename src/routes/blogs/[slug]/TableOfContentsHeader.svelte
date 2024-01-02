@@ -8,4 +8,4 @@
 		.join('-');
 </script>
 
-<svelte:element this={`h${depth}`} class={className}>{text}</svelte:element>
+<svelte:element this={`h${depth}`} class={className} id={className}>{text}</svelte:element>

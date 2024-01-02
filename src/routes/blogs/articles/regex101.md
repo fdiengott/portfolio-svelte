@@ -11,10 +11,11 @@ So let's get started!
 	- [Table of Contents](#table-of-contents)
 	- [Character classes](#character-classes)
 		- [A few examples](#a-few-examples)
-		- [A quick side note on the backslash `\` character](#a-quick-side-note-on-the-backslash--character)
+		- [A quick side note on the backslash "" character](#a-quick-side-note-on-the-backslash--character)
 	- [Quantifiers](#quantifiers)
 		- [Examples](#examples)
 	- [Assertions](#assertions)
+		- [Examples](#examples-1)
 	- [Groups](#groups)
 	- [Flags](#flags)
 	- [Common Javascript Functions](#common-javascript-functions)
@@ -50,17 +51,17 @@ A couple quick notes on the above before I get into some clarifications of the `
 
 ### A few examples
 
-| String to search    | Character class | Matches                                               |
-| ------------------- | --------------- | ----------------------------------------------------- |
-| "\% #a-_=1"         | `/\w/`          | 'a', '_', '1' (note that '1' here is a string)        |
-| "as0df"             | `/\d/`          | '0'                                                   |
-| "as df"             | `/\s/`          | ' '                                                   |
-| "a1 ,_"             | `/./`           | Matches each character                                |
-| "asdfASDF1234"      | `/[a-z]/`       | 'a', 's', 'd', 'f'                                    |
-| "asdfASDF1234!@"    | `/[^a-z]/`      | 'A', 'S', 'D', 'F', '1', '2', '3', '4', '!', '@'      |
-| "as df\nASDF\t1234" | `[^\s\n\t]`     | Every character that isn't a space ('\s', '\n', '\t') |
+| Character class | String to search    | Matches                                               |
+| --------------- | ------------------- | ----------------------------------------------------- |
+| `/\w/`          | "\% #a-_=1"         | 'a', '_', '1' (note that '1' here is a string)        |
+| `/\d/`          | "as0df"             | '0'                                                   |
+| `/\s/`          | "as df"             | ' '                                                   |
+| `/./`           | "a1 ,_"             | Matches each character                                |
+| `/[a-z]/`       | "asdfASDF1234"      | 'a', 's', 'd', 'f'                                    |
+| `/[^a-z]/`      | "asdfASDF1234!@"    | 'A', 'S', 'D', 'F', '1', '2', '3', '4', '!', '@'      |
+| `[^\s\n\t]`     | "as df\nASDF\t1234" | Every character that isn't a space ('\s', '\n', '\t') |
 
-### A quick side note on the backslash `\` character
+### A quick side note on the backslash "\" character
 
 The backslash, "escape" character `\` is very important in regular expressions and means quite different things in different contexts. In the context of character classes above, it can separate the letter `w` from `\w` which matches any alphanumeric character, plus '-'.
 
@@ -89,44 +90,58 @@ The above table I think makes itself pretty clear and becomes quite powerful onc
 
 Let's start simple and work our way up.
 
-| String(s) I want to match | Regex         | Explanation                                                       |
-| ------------------------- | ------------- | ----------------------------------------------------------------- |
-| "min" or "mine"           | `/mine?/`     | The `?` will match if "e" occurs zero or one times                |
-| "a", "a1", or "a12"       | `/a\d*/`      | Matches "a" alone or followed by any amount of numbers            |
-| "item 1" or "item 100"    | `/item\s\d+/` | Matches "item " only when there are numbers following             |
-| "noon"                    | `/no{2}n/`    | Will only match if there are exactly two "o"s in the word         |
-| "moo" and "moooo"         | `/mo{2,}/`    | Matches the word if there are at least 2 "o"'s                    |
-| "moo" but not "moooo"     | `/mo{2,4}/`   | Matches the word if there are as little as 2 and at most 4 "o"'s. |
+| Regex         | String(s) I want to match | Explanation                                                       |
+| ------------- | ------------------------- | ----------------------------------------------------------------- |
+| `/mine?/`     | "min" or "mine"           | The `?` will match if "e" occurs zero or one times                |
+| `/a\d*/`      | "a", "a1", or "a12"       | Matches "a" alone or followed by any amount of numbers            |
+| `/item\s\d+/` | "item 1" or "item 100"    | Matches "item " only when there are numbers following             |
+| `/no{2}n/`    | "noon"                    | Will only match if there are exactly two "o"s in the word         |
+| `/mo{2,}/`    | "moo" and "moooo"         | Matches the word if there are at least 2 "o"'s                    |
+| `/mo{2,4}/`   | "moo" but not "moooo"     | Matches the word if there are as little as 2 and at most 4 "o"'s. |
 
-| String(s) I want to match | Regex             | Explanation                                                                                      |
-| ------------------------- | ----------------- | ------------------------------------------------------------------------------------------------ |
-| "Hello"                   | `/\w+/`           | Matches both upper and lowercase letters                                                         |
-| "Hello World"             | `/\w+\s\w+/`      | Matches 1 or more letters, one space, and one or more letters                                    |
-| "const { a }"             | `/const\s{.+}/`   | Matches const, space, open curly bracket, any character 1 or more times before a closing bracket |
-| "const { a, b }"          | `/const\s{.+}/`   | This string also works for the same above regex                                                  |
-| "const a, b"              | `/const\s{?.+}?/` | Add question marks after the brackets to match if they optionally don't appear                   |
+| Regex             | String(s) I want to match | Explanation                                                                                      |
+| ----------------- | ------------------------- | ------------------------------------------------------------------------------------------------ |
+| `/\w+/`           | "Hello"                   | Matches both upper and lowercase letters                                                         |
+| `/\w+\s\w+/`      | "Hello World"             | Matches 1 or more letters, one space, and one or more letters                                    |
+| `/const\s{.+}/`   | "const { a }"             | Matches const, space, open curly bracket, any character 1 or more times before a closing bracket |
+| `/const\s{.+}/`   | "const { a, b }"          | This string also works for the same above regex                                                  |
+| `/const\s{?.+}?/` | "const a, b"              | Add question marks after the brackets to match if they optionally don't appear                   |
 
 For a less contrived example, phone numbers!
-| String I want to match                          | Regex                       | Explanation                                                                                  |
-| ----------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------- |
-| ###-####                                        | `/\d{3}-\d{4}/`             | Matches 3 digits followed by a hyphen and then 4 more digits                                 |
-| #######                                         | `/\d{3}-?\d{4}/`            | Same as above, but now the hyphen can appear 0 or 1 times                                    |
-| ###-###-####                                    | `/\d{3}-\d{3}-\d{4}/`       | Matches 3 digits followed by a hyphen, followed by the first example                         |
-| # ###-###-#### with or without the country code | `/\d*\s?\d{3}-\d{3}-\d{4}/` | Matches a digit, 0 or more times, followed by 0 or 1 space, followed by the previous example |
+| Regex                       | String I want to match                          | Explanation                                                                                  |
+| --------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `/\d{3}-\d{4}/`             | ###-####                                        | Matches 3 digits followed by a hyphen and then 4 more digits                                 |
+| `/\d{3}-?\d{4}/`            | #######                                         | Same as above, but now the hyphen can appear 0 or 1 times                                    |
+| `/\d{3}-\d{3}-\d{4}/`       | ###-###-####                                    | Matches 3 digits followed by a hyphen, followed by the first example                         |
+| `/\d*\s?\d{3}-\d{3}-\d{4}/` | # ###-###-#### with or without the country code | Matches a digit, 0 or more times, followed by 0 or 1 space, followed by the previous example |
 
 Phone numbers get complicated fast. If we wanted to be thorough we could include hyphens, periods, OR spaces between groups of digits, introducing the "or" `|` character. We could check for parentheses (which would need to be escaped since they are reserved characters in regex), optional plus signs, and optional groups of digits like the area code, introducing groups `()`. And this is only including phone numbers taking the shape of 3 digits, 3 digits, 4 digits! I ignored groupings of numbers that are less common for me to see in the US. I'll include a more complete version for phone numbers below for reference.
 
 `/(+?\d+\s)?(\d{3}(-|.|\s)?)?\d{3}(-|.|\s)?\d{4}/`
 
 Now I'll just include a few more examples to fill some holes I think I have left. I'll also softly introduce parentheses.
-| String I want to match | Regex                                   | Explanation                                                                                               |
-| ---------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| abc @abc.com           | `/[a-z]+@[a-z]+\.[a-z]{2,}/`            | Matches 1 or more lowercase letters, "@", 1 or more lowercase letters, a period, and at least two letters |
-| abc.def @abc.com       | `/([a-z]+)?\.[a-z]+@[a-z]+\.[a-z]{2,}/` | Same as above, but now I'm also matching a prefixed group of lowercase letters and a period               |
+| Regex                                   | String I want to match | Explanation                                                                                               |
+| --------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
+| `/[a-z]+@[a-z]+\.[a-z]{2,}/`            | abc @abc.com           | Matches 1 or more lowercase letters, "@", 1 or more lowercase letters, a period, and at least two letters |
+| `/([a-z]+)?\.[a-z]+@[a-z]+\.[a-z]{2,}/` | abc.def @abc.com       | Same as above, but now I'm also matching a prefixed group of lowercase letters and a period               |
 
 ## Assertions
-- `^`
-- `$`
+| Character | Meaning                           |
+| --------- | --------------------------------- |
+| `/^/`     | Matches the beginning of an input |
+| `/$/`     | Matches the end of an input       |
+
+Now I'll briefly talk about assertions! You can ignore the term, as I think it adds unnecessary complexity. Allow me to note that I'm skipping over several rather important concepts here, especially lookaheads and lookbehinds. These are incredibly useful but are somewhat more advanced so I've decided to leave them out for now, but rest assured that I will go through them thoroughly in the follow up to this article, I just think you should be aware of them.
+
+As for the two symbols above, let's take each in kind. By adding the symbol `^` to the start of a regular expression, it is metaphorically saying "Only match the following expression IF it matches the beginning of the string we are testing on." If the multiline flag is set to true (which I'll go into more detail in the [flags section](#flags)) then this will also match after a line break `\n`. An example, the regular expression `/^hello/`, will match the string "hello world", but not "oh hello".
+
+On the flip side, `$` at the end of a regular expression will only match a string if it appears at the end of an input. Same as the previous paragraph, if the multiline flag is set to true, then this will also match a string immediately before a line break. An example, the regular expression `/you$/`, will match the "you" in "see you", but not in "see you later".
+
+### Examples
+| Regex     | String(s) I want to match      |
+| --------- | ------------------------------ |
+| `/^call/` | "call" in "call me later"      |
+| `/call$/` | "call" in "who you gonna call" |
 
 ## Groups
 - unnamed
