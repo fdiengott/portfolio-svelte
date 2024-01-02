@@ -17,6 +17,7 @@ So let's get started!
 	- [Assertions](#assertions)
 		- [Examples](#examples-1)
 	- [Groups](#groups)
+		- [Examples](#examples-2)
 	- [Flags](#flags)
 	- [Common Javascript Functions](#common-javascript-functions)
 	- [Shortcomings with RegExp Constructor and caution](#shortcomings-with-regexp-constructor-and-caution)
@@ -133,7 +134,7 @@ Now I'll just include a few more examples to fill some holes I think I have left
 
 Now I'll briefly talk about assertions! You can ignore the term, as I think it adds unnecessary complexity. Allow me to note that I'm skipping over several rather important concepts here, especially lookaheads and lookbehinds. These are incredibly useful but are somewhat more advanced so I've decided to leave them out for now, but rest assured that I will go through them thoroughly in the follow up to this article, I just think you should be aware of them.
 
-As for the two symbols above, let's take each in kind. By adding the symbol `^` to the start of a regular expression, it is metaphorically saying "Only match the following expression IF it matches the beginning of the string we are testing on." If the multiline flag is set to true (which I'll go into more detail in the [flags section](#flags)) then this will also match after a line break `\n`. An example, the regular expression `/^hello/`, will match the string "hello world", but not "oh hello".
+As for the two symbols above, let's take each in kind. By adding the symbol `^` to the start of a regular expression, it is metaphorically saying "Only match the following expression IF it matches the beginning of the string we are testing on." If the multiline flag is set to true (which I'll go into more detail in the flags section of the following article) then this will also match after a line break `\n`. An example, the regular expression `/^hello/`, will match the string "hello world", but not "oh hello".
 
 On the flip side, `$` at the end of a regular expression will only match a string if it appears at the end of an input. Same as the previous paragraph, if the multiline flag is set to true, then this will also match a string immediately before a line break. An example, the regular expression `/you$/`, will match the "you" in "see you", but not in "see you later".
 
@@ -144,7 +145,17 @@ On the flip side, `$` at the end of a regular expression will only match a strin
 | `/call$/` | "call" in "who you gonna call" |
 
 ## Groups
-- unnamed
+| Character | Meaning                                                                       |
+| --------- | ----------------------------------------------------------------------------- |
+| `/(x)/`   | Capturing group. This is important for when we get to working with javascript |
+
+Sometimes one might want only part of a match. That is where groups come in! Say I wanted to find email addresses for everyone at one institution. I would want to create the expression to include the `@company.com`, but I really only care about what occurs before the '@'. So what do I do? I create my expression with a group `()` around what I'm looking for, `/([a-zA-Z.-]+)@company\.com/`. This way, when I get the match back, in javascript I can key in and get only the text inside the parentheses. The match will look something like this: `[ "name@company.com", "name" ]`. At the first index we have the entire match, and after that we have what was specified in our group. If there were two groups in this regular expression, say `/([a-zA-Z.-]+)@(company.com)/`, then each group will be returned, `[ "name@company.com", "name", "company.com" ]`.
+
+### Examples
+| Regex                        | Input String         | Match Object                         |
+| ---------------------------- | -------------------- | ------------------------------------ |
+| `/Table([a-zA-Z]+)/`         | "TableBody"          | `[ "TableBody", "Body"]`             |
+| `/([a-z]+) in the ([a-z]+)/` | "The cat in the hat" | `[ "cat in the hat", "cat", "hat" ]` |
 
 ## Flags
 - RegExp constructor / literal
