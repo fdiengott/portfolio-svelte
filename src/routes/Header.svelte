@@ -21,7 +21,7 @@
 			<li aria-current={pathname === '/projects' && 'page'}>
 				<a href="/projects">Projects</a>
 			</li>
-			<li aria-current={pathname === '/blogs' && 'page'}>
+			<li aria-current={pathname.includes('/blogs') && 'page'}>
 				<a href="/blogs">Blog</a>
 			</li>
 			<li aria-current={pathname === '/contact' && 'page'}>
