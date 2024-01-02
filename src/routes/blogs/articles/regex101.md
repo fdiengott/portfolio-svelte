@@ -1,14 +1,10 @@
 # Regex 101
 
-This post is my attempt at distilling what you need to know to get started reading most regular expressions in javascript. Regular expressions, also known as regex, are used for pattern matching, finding specific patterns in large bodies of text and extracting the information you are looking for. For example, if I was searching through some javascript files and wanted to extract all of the imports, I could create a pattern (a regex string) checking for the word `import` and some other syntax. I could manipulate these matches with javascript and extract the package names and which functions were imported! In general, regex can be used to check if some pattern exists in a text (returning true or false), or they could return a string match or list of matches.
-
-I will try to include as many examples as possible to better illustrate and make clear all of these ideas instead of relying on explanation. In the future, I plan to follow up this post with a few more advanced concepts and have therefore simplified some of the information below for clarity. However, in general most of the bulk should be here, including some techniques of combining regex with javascript.
-
-So let's get started!
-
 ## Table of Contents
 - [Regex 101](#regex-101)
 	- [Table of Contents](#table-of-contents)
+	- [Introduction](#introduction)
+	- [Creating a regular expression](#creating-a-regular-expression)
 	- [Character classes](#character-classes)
 		- [A few examples](#a-few-examples)
 		- [A quick side note on the backslash "" character](#a-quick-side-note-on-the-backslash--character)
@@ -19,9 +15,31 @@ So let's get started!
 	- [Groups](#groups)
 		- [Examples](#examples-2)
 	- [Flags](#flags)
-	- [Common Javascript Functions](#common-javascript-functions)
-	- [Shortcomings with RegExp Constructor and caution](#shortcomings-with-regexp-constructor-and-caution)
+	- [Javascript Functions and Constructors](#javascript-functions-and-constructors)
+	- [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution)
 	- [Tools](#tools)
+
+## Introduction
+
+This post is my attempt at distilling what you need to know to get started reading most regular expressions in javascript. Regular expressions, also known as regex, are used for pattern matching, finding specific patterns in large bodies of text and extracting the information you are looking for. For example, if I was searching through some javascript files and wanted to extract all of the imports, I could create a pattern (a regex string) checking for the word `import` and some other syntax. I could manipulate these matches with javascript and extract the package names and which functions were imported! In general, regex can be used to check if some pattern exists in a text (returning true or false), or they could return a string match or list of matches.
+
+I will try to include as many examples as possible to better illustrate and make clear all of these ideas instead of relying on explanation. In the future, I plan to follow up this post with a few more advanced concepts and have therefore simplified some of the information below for clarity. However, in general most of the bulk should be here, including some techniques of combining regex with javascript.
+
+So let's get started!
+
+## Creating a regular expression
+
+There are two ways of creating a regular expression:
+1. Using a regular expression literal
+   ```js
+   const regex = /pattern-to-match/g;
+   ```
+2. Using the `RegExp` class constructor
+   ```js
+   const regex = new RegExp('pattern-to-match', 'g');
+   ```
+
+These each have their pros and cons, which I will discuss further in the [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution) section. Throughout this tutorial I will almost exclusively use the literal syntax, but know that this was a choice and not a requirement.
 
 ## Character classes
 
@@ -60,7 +78,7 @@ A couple quick notes on the above before I get into some clarifications of the `
 | `/./`           | "a1 ,_"             | Matches each character                                |
 | `/[a-z]/`       | "asdfASDF1234"      | 'a', 's', 'd', 'f'                                    |
 | `/[^a-z]/`      | "asdfASDF1234!@"    | 'A', 'S', 'D', 'F', '1', '2', '3', '4', '!', '@'      |
-| `[^\s\n\t]`     | "as df\nASDF\t1234" | Every character that isn't a space ('\s', '\n', '\t') |
+| `/[^\s\n\t]/`   | "as df\nASDF\t1234" | Every character that isn't a space ('\s', '\n', '\t') |
 
 ### A quick side note on the backslash "\" character
 
@@ -139,6 +157,7 @@ As for the two symbols above, let's take each in kind. By adding the symbol `^` 
 On the flip side, `$` at the end of a regular expression will only match a string if it appears at the end of an input. Same as the previous paragraph, if the multiline flag is set to true, then this will also match a string immediately before a line break. An example, the regular expression `/you$/`, will match the "you" in "see you", but not in "see you later".
 
 ### Examples
+
 | Regex     | String(s) I want to match      |
 | --------- | ------------------------------ |
 | `/^call/` | "call" in "call me later"      |
@@ -152,17 +171,29 @@ On the flip side, `$` at the end of a regular expression will only match a strin
 Sometimes one might want only part of a match. That is where groups come in! Say I wanted to find email addresses for everyone at one institution. I would want to create the expression to include the `@company.com`, but I really only care about what occurs before the '@'. So what do I do? I create my expression with a group `()` around what I'm looking for, `/([a-zA-Z.-]+)@company\.com/`. This way, when I get the match back, in javascript I can key in and get only the text inside the parentheses. The match will look something like this: `[ "name@company.com", "name" ]`. At the first index we have the entire match, and after that we have what was specified in our group. If there were two groups in this regular expression, say `/([a-zA-Z.-]+)@(company.com)/`, then each group will be returned, `[ "name@company.com", "name", "company.com" ]`.
 
 ### Examples
+
 | Regex                        | Input String         | Match Object                         |
 | ---------------------------- | -------------------- | ------------------------------------ |
 | `/Table([a-zA-Z]+)/`         | "TableBody"          | `[ "TableBody", "Body"]`             |
 | `/([a-z]+) in the ([a-z]+)/` | "The cat in the hat" | `[ "cat in the hat", "cat", "hat" ]` |
 
 ## Flags
-- RegExp constructor / literal
-- `g` global
-- `i` ignore-case
 
-## Common Javascript Functions
+| Character | Meaning     |
+| --------- | ----------- |
+| `/g`      | global      |
+| `/i`      | ignore-case |
+
+So we've now essentially gone through the basics of regular expressions! Good job for making it this far. This section is about augmenting the patterns that have been written so the work slightly differently. I'm only covering 2 of the 8 that exist, but these are by far the most important and common. I'll go through a few more in my 201 article.
+
+Let's start with the global flag `/g`. In the previous section I made up an example of searching for email addresses on a company website. I somewhat lied in the pursuit of simplicity. Using the pattern I had constructed would actually only match the first occurrence of the email address pattern. If, we wanted to actually match every occurrence, we would add a global flag, which would look like this: `/([a-zA-Z.-]+)@company\.com/g`, adding the `g` flag at the end after the second forward slash `/`. If we were creating this pattern using the RegExp constructor, the flag would be the second argument (i.e. `new RegExp("([a-zA-Z.-]+)@company\.com,", "g")`). When matching with the global `g` flag enabled returns an array of all of the matches, for example `["a@company.com", "b@company.com", ...]` (this is assuming you are using `String.prototype.match`, which will ignore groups; I'll explain a way to retain the groups in the next section).
+
+Let's more onto the `/i` flag, which is simply a command to ignore case. This means that even if only `[a-z]` is specified in an expression, it will also match `[A-Z]`.
+
+If more than one flag needs to be specified, add them all next to each other in any order (e.g. `/[a-z]/gi`, which will return the match `["a", b", "C", "D"]` for the input "abCD").
+
+## Javascript Functions and Constructors
+
 - `.replace()`
 - `.split()`
 - `.match()` -> array of matched strings
@@ -179,11 +210,13 @@ Sometimes one might want only part of a match. That is where groups come in! Say
 	```
 - `.test()` -> bool
 
-## Shortcomings with RegExp Constructor and caution
+## Thoughts on RegExp Constructor and caution
+
 - extra escaping
 - no syntax highlighting
 
 ## Tools
+
 - regex 101
 - vscode syntax highlighting (link to my article on that)
 - regex previewer extension
