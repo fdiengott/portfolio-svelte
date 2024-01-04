@@ -50,7 +50,7 @@
 	.btn-scroll-top::after {
 		content: '';
 		position: absolute;
-		inset: -50% -30%;
+		inset: -50% -10%;
 		z-index: -1;
 		background: white;
 		filter: blur(2px);
