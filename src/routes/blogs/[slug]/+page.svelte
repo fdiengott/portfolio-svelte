@@ -104,7 +104,7 @@
 
 		ol li {
 			list-style: auto;
-			list-style-position: outside;
+			list-style-position: inside;
 		}
 
 		ul li {
@@ -113,6 +113,10 @@
 
 		ol > li > ul {
 			margin-inline-start: 2rem;
+		}
+
+		li:has(code) {
+			overflow-x: scroll;
 		}
 
 		--code-background: hsl(0, 0%, 95%);
@@ -131,6 +135,7 @@
 			border: 1px solid #aaa;
 			border-radius: 0.5rem;
 			font-size: var(--fs-300);
+			overflow-x: scroll;
 
 			code {
 				padding: 0;
@@ -152,12 +157,15 @@
 		table {
 			margin-inline: auto;
 			font-size: var(--fs-300);
+			display: block;
+			overflow-x: scroll;
 		}
 
 		th,
 		td {
 			--border-color: #444;
 			border-bottom: 1px solid var(--border-color);
+			min-width: 10rem;
 		}
 
 		td {
@@ -166,6 +174,25 @@
 
 		p:has(img) {
 			text-align: center;
+		}
+
+		@media (width > 768px) {
+			ol li {
+				list-style-position: outside;
+			}
+
+			li:has(code) {
+				overflow: visible;
+			}
+
+			pre {
+				overflow: visible;
+			}
+
+			table {
+				overflow: visible;
+				display: revert;
+			}
 		}
 	}
 </style>
