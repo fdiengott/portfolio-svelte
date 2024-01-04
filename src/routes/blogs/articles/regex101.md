@@ -5,13 +5,13 @@
 - [Creating a regular expression](#creating-a-regular-expression)
 - [Character classes](#character-classes)
 	- [A few examples](#a-few-examples)
-	- [A quick side note on the backslash `\` character](#a-quick-side-note-on-the-backslash--character)
+	- [A quick side note on the backslash "" character](#a-quick-side-note-on-the-backslash--character)
 - [Quantifiers](#quantifiers)
-	- [Examples](#examples)
+	- [Quantifier Examples](#quantifier-examples)
 - [Assertions](#assertions)
-	- [Examples](#examples-1)
+	- [Assertion Examples](#assertion-examples)
 - [Groups](#groups)
-	- [Examples](#examples-2)
+	- [Group Examples](#group-examples)
 - [Flags](#flags)
 - [Javascript Functions and Constructors](#javascript-functions-and-constructors)
 	- [RegExp.prototype.test()](#regexp-prototype-test)
@@ -51,15 +51,15 @@ Let's start with the basic building blocks! I've included a table below of some 
 
 Please note: This table is not exhaustive. I have left out several entries for the sake of brevity, but will explain further in my 201 article. You can also read the MDN docs [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes).
 
-| Character class | Matches                                                                                    |
-| --------------- | ------------------------------------------------------------------------------------------ |
-| `/\w/`          | a letter, number, or underscore                                                            |
-| `/\d/`          | a number, 0 - 9                                                                            |
-| `/\s/`          | any whitespace character (e.g. space, tab, newline, etc )                                  |
+| Character class | Matches                                                                               |
+| --------------- | ------------------------------------------------------------------------------------- |
+| `/\w/`          | a letter, number, or underscore                                                       |
+| `/\d/`          | a number, 0 - 9                                                                       |
+| `/\s/`          | any whitespace character (e.g. space, tab, newline, etc )                             |
 | `/./`           | any character that is not a newline (in 201 we can also make this match newlines too) |
-| `/[...]/`       | any specific character that we explicitly request                                          |
-| `/[^...]/`      | any specific character NOT explicitly requested                                            |
-| `/a\|b/`        | a OR b                                                                                     |
+| `/[...]/`       | any specific character that we explicitly request                                     |
+| `/[^...]/`      | any specific character NOT explicitly requested                                       |
+| `/a\|b/`        | a OR b                                                                                |
 
 The first character class I want to introduce is `\w`. This will match a single character that is either a letter (upper or lower case), a number, or an underscore. We'll get to matching specific numbers of characters in the next section, but we'll just start with matching one. If, however, someone wanted only to match a number, they would use the `\d` character class instead. This matches the characters 0 through 9.
 
@@ -113,7 +113,7 @@ Previously, we discussed matching one character at a time, which isn't super use
 
 The above table I think makes itself pretty clear and becomes quite powerful once combined with the character classes we covered above. So let's immediately dive into some examples to clear up any confusion!
 
-### Examples
+### Quantifier Examples
 
 Let's start simple and work our way up.
 
@@ -164,7 +164,7 @@ As for the two symbols above, let's take each in kind. By adding the symbol `^` 
 
 On the flip side, `$` at the end of a regular expression will only match a string if it appears at the end of an input. Same as the previous paragraph, if the multiline flag is set to true, then this will also match a string immediately before a line break. An example, the regular expression `/you$/`, will match the "you" in "see you", but not in "see you later".
 
-### Examples
+### Assertion Examples
 
 | Regex     | String(s) I want to match      |
 | --------- | ------------------------------ |
@@ -178,7 +178,7 @@ On the flip side, `$` at the end of a regular expression will only match a strin
 
 Sometimes one might want only part of a match. That is where groups come in! Say I wanted to find email addresses for everyone at one institution. I would want to create the expression to include the `@company.com`, but I really only care about what occurs before the '@'. So what do I do? I create my expression with a group `()` around what I'm looking for, `/([a-zA-Z.-]+)@company\.com/`. This way, when I get the match back, in javascript I can key in and get only the text inside the parentheses. The match will look something like this: `[ "name@company.com", "name" ]`. At the first index, we have the entire match, and after that, we have what was specified in our group. If there were two groups in this regular expression, say `/([a-zA-Z.-]+)@(company.com)/`, then each group will be returned, `[ "name@company.com", "name", "company.com" ]`.
 
-### Examples
+### Group Examples
 
 | Regex                        | Input String         | Match Object                         |
 | ---------------------------- | -------------------- | ------------------------------------ |
