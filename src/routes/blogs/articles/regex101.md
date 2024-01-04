@@ -1,5 +1,6 @@
 # Regex 101
 
+<!-- FIXME the prototype links -->
 ## Table of Contents
 - [Regex 101](#regex-101)
 	- [Table of Contents](#table-of-contents)
@@ -16,8 +17,14 @@
 		- [Examples](#examples-2)
 	- [Flags](#flags)
 	- [Javascript Functions and Constructors](#javascript-functions-and-constructors)
+		- [RegExp.prototype.test()](#regexpprototypetest)
+		- [String.prototype.replace()](#stringprototypereplace)
+		- [String.prototype.split()](#stringprototypesplit)
+		- [String.prototype.match()](#stringprototypematch)
+		- [String.prototype.matchAll()](#stringprototypematchall)
 	- [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution)
 	- [Tools](#tools)
+	- [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -31,11 +38,11 @@ So let's get started!
 
 There are two ways of creating a regular expression:
 1. Using a regular expression literal
-   ```js
+   ```javascript
    const regex = /pattern-to-match/g;
    ```
 2. Using the `RegExp` class constructor
-   ```js
+   ```javascript
    const regex = new RegExp('pattern-to-match', 'g');
    ```
 
@@ -55,6 +62,7 @@ Please note: This table is not exhaustive. I have left out several entries for t
 | `/./`           | any character that is not a newline (in advanced we can also make this match newlines too) |
 | `/[...]/`       | any specific character that we explicitly request                                          |
 | `/[^...]/`      | any specific character NOT explicitly requested                                            |
+| `/a\|b/`        | a OR b                                                                                     |
 
 The first character class I want to introduce is `\w`. This will match a single character that is either a letter (upper or lower case), a number, or an underscore. We'll get to matching specific numbers of characters in the next section, but we'll just start with matching one. If, however, someone wanted only to match a number, they would use the `\d` character class instead. This matches the characters 0 through 9.
 
@@ -65,6 +73,8 @@ If there is a situation where it isn't clear what characters will exist, just th
 Next, we have the square brackets `[...]`. The brackets allow a person to explicitly declare the characters they are looking for. This can take the form of a list of characters or a range. For example, if one wanted to match any letter or number, but didn't want to include the underscore (making `\w` a bad candidate because it includes the underscore), they would use `[a-zA-Z0-9]`. Notice I specified ranges for both lower and upper case letters here (regex is very specific about capitalization unless [told otherwise](#flags)). A couple examples of what it would look like to not only use ranges: if someone wanted to match css classes that are kebab cased, they would use `[a-z-]` so they match lowercase letters and hyphens. If someone was checking if a password was complex enough and included symbols, they could use something like `[!#$%&*@-.[\]^_]`. Note that if the hyphen `-` is included first or last in the brackets, it is regarded as a literal hyphen character.
 
 The sibling of `[...]` is the negated version `[^...]`, which matches anything that is NOT in this list. For example, if I had `[^a-m]`, then this would match "n" through "z", but not "a" through "m". Additionally, because this is matching ANYTHING that is not in the brackets, it will also match numbers, symbols, and spaces! This negated version works exactly the same as its sibling in terms of accepting ranges or a list of characters, as long as the carrot `^` precedes it.
+
+Next, you'll notice `|` is different from the other classes. The or `|` operator doesn't fit neatly into any section on this page so I'm shoehorning it in here since it is so fundamental! It is used any time you are looking for this pattern OR that one. For example, if I wanted to match the strings "musical theater" or "puppet theater" (because I'm cheeky), I could use the pattern `/(musical|puppet) theater/`. You'll notice I used parentheses here. If I hadn't, it would only match the strings "musical" or "puppet theater".
 
 A couple quick notes on the above before I get into some clarifications of the `\` character and some examples! Firstly, note that the dot, within the context of square brackets, acts as a period  and nothing more. This is true for many of the characters above, which have roles in regex outside of being characters we are trying to match (e.g. parentheses `()`, curly braces `{}`, the asterisk `*`, dollar sign `$`, etc.).
 
@@ -79,6 +89,7 @@ A couple quick notes on the above before I get into some clarifications of the `
 | `/[a-z]/`       | "asdfASDF1234"      | 'a', 's', 'd', 'f'                                    |
 | `/[^a-z]/`      | "asdfASDF1234!@"    | 'A', 'S', 'D', 'F', '1', '2', '3', '4', '!', '@'      |
 | `/[^\s\n\t]/`   | "as df\nASDF\t1234" | Every character that isn't a space ('\s', '\n', '\t') |
+| `/[a-z](0\|1)/` | "a0 b1 c2 d0"       | 'a0', 'b1', 'd0'                                      |
 
 ### A quick side note on the backslash "\" character
 
@@ -184,7 +195,7 @@ Sometimes one might want only part of a match. That is where groups come in! Say
 | `/g`      | global      |
 | `/i`      | ignore-case |
 
-So we've now essentially gone through the basics of regular expressions! Good job for making it this far. This section is about augmenting the patterns that have been written so the work slightly differently. I'm only covering 2 of the 8 that exist, but these are by far the most important and common. I'll go through a few more in my 201 article.
+This section is about augmenting the patterns that have been written so that they work slightly differently. I'm only covering 2 of the 8 that exist, but these are by far the most important and common. I'll go through a few more in my 201 article.
 
 Let's start with the global flag `/g`. In the previous section I made up an example of searching for email addresses on a company website. I somewhat lied in the pursuit of simplicity. Using the pattern I had constructed would actually only match the first occurrence of the email address pattern. If, we wanted to actually match every occurrence, we would add a global flag, which would look like this: `/([a-zA-Z.-]+)@company\.com/g`, adding the `g` flag at the end after the second forward slash `/`. If we were creating this pattern using the RegExp constructor, the flag would be the second argument (i.e. `new RegExp("([a-zA-Z.-]+)@company\.com,", "g")`). When matching with the global `g` flag enabled returns an array of all of the matches, for example `["a@company.com", "b@company.com", ...]` (this is assuming you are using `String.prototype.match`, which will ignore groups; I'll explain a way to retain the groups in the next section).
 
@@ -194,29 +205,237 @@ If more than one flag needs to be specified, add them all next to each other in 
 
 ## Javascript Functions and Constructors
 
-- `.replace()`
-- `.split()`
-- `.match()` -> array of matched strings
-- `.matchAll()` -> iterator of match arrays
-	- requires `Array.from(string.matchAll(regex))`
-	- Array/object shape:
-	```pseudocode
-	[
-		matched str,
-		index: match index,
-		input: input string,
-		groups: named groups ex. `{ groupName: match str }`,
-	]
-	```
-- `.test()` -> bool
+So we've now gone through the basics of regular expressions! Good job for making it this far. I'm now going to go through the javascript functions that I use most in conjunction with regular expressions! This list is not exhaustive as to what it out there, but it will include of the functions I use. I'll try to go from most simple to most most complex, but with some flexibility.
+
+| Function                    | Returns  |
+| --------------------------- | -------- |
+| RegExp.prototype.test()     | Boolean  |
+| String.prototype.replace()  | String   |
+| String.prototype.match()    | String[] |
+| String.prototype.matchAll() | Iterator |
+
+### RegExp.prototype.test()
+
+`test()` is best used to check if some pattern exists in a string. For example, if we were searching through some raw html element and wanted to know if it had the disabled attribute, we could do this:
+
+```javascript
+const str = `<button class="class" disabled>Click me</button>`;
+const regex = /disabled/;
+
+const isButtonDisabled = regex.test(str);
+```
+
+Take note that this is a regex function. The rest of our functions will be for strings.
+
+### String.prototype.replace()
+
+Rarely have I seen anyone else use `replace()`, with anything other than a string, but I found its usage with regex to be incredibly powerful and easy! My most common use case is to remove some characters from within a string. For example, let's say I'd like to format any header in this document into a properly formatted id. The name of this section has two periods and parentheses, which are not accepted in ids. I'd like to turn the periods into dashes and remove the parentheses. I'll show how in two steps below, and then combine them into one statement.
+
+```javascript
+const text = "String.prototype.replace()";
+
+/*
+ * matches all periods and replaces with a string "-".
+ * notice that I escaped the period so that it wouldn't be a dot and match anything
+ * remember to add the global flag to replace ALL occurrences
+ */
+const textWithoutPeriods = text.replace(/\./g, '-');
+
+/*
+ * take the previous string and match anything that is not a letter or dash
+ * replace it with an empty string, or in other words, remove it
+ * note that I'm using the global and ignore-case flags
+ */
+const textWithoutParentheses = textWithoutPeriods.replace(/[^a-z-]/gi, '');
+
+
+// now all in one line
+const id = text.replace(/\./g, '-').replace(/[^a-z-]/gi, '');
+```
+
+Here are some more examples.
+```javascript
+const text1 = 'id-1';
+const textNumber = text1.replace(/id-/g, '');
+
+const arrayOfIds = ['id-1', 'id-2', 'id-3', 'id-4', 'id-5'];
+const idNumbers = arrayOfIds.map(id => id.replace(/id-/g, '')); // -> [1, 2, 3, 4, 5]
+```
+
+### String.prototype.split()
+
+Before we get to matching, I want to make a quick detour into `split()`, which I often find incredibly useful in combination with other js/regex tools. I recently had a project where I needed to split a large string on every instance of a curly brace. `str.split()` with string inputs only works for EITHER opening or closing braces, but not both.
+
+### String.prototype.match()
+
+`match()` and its sibling `matchAll()`, which I'll cover next, are the main tools used for handling strings with regex. Using it is pretty straightforward, so let's dive into some examples, shall we?
+
+```javascript
+const str = "My friend, Mara, the pig";
+const nameRegex = /,\s\w+,/;
+const nameMatch = str.match(nameRegex);
+
+console.log(nameMatch); // [", Mara,"]
+
+const nameGroupRegex = /,\s(\w+),/;
+const nameGroupMatch = str.match(nameGroupRegex);
+
+console.log(nameGroupMatch); // [", Mara,","Mara"]
+```
+
+Feel free to run this in your browser's dev tools or in a terminal REPL. You'll notice that the logs have more than just what I've pasted here. These arrays also have several other properties, `index`, `input`, `groups`. So your output from the first console log actually looks something like this: `[", Mara,", index: 9, input: 'My friend, Mara, the pig', groups: undefined ]`. The index is, of course, the index of the string where the match begins and the input is self explanatory. The groups, on the other hand, you would expect to return something from the `nameGroupMatch` example above. It doesn't, however. Groups will only return something if named groups are used, a concept I'll cover in my 201 article.
+
+Let's move on to using the global `/g` flag and a case when there is no match!
+```javascript
+const str = `
+<header>
+	<h1>Title</h1>
+	<div>
+    	<button>Btn 1</button>
+    	<button>Btn 2</button>
+	</div>
+</header>
+`;
+
+// We're looking for an anchor tag,
+// any characters that aren't a right angle bracket 0 or more times followed by a right angle bracket
+// then any characters that aren't a left angle bracket (signifying the closing tag) 1 or more times
+// then the closing anchor tag '</a>', but we need to escape the forward slash so it doesn't end the regex early
+const noMatchRegex = /<a[^>]*>[^<]+<\/a>/;
+const noMatch = str.match(noMatchRegex);
+
+console.log(noMatch); // null
+
+const globalRegex = /<button[^>]*>[^<]+<\/button>/g;
+const globalMatch = str.match(globalRegex);
+
+// the g flag returns an array of matches or null if no match was found
+console.log(globalMatch); // [ '<button>Btn 1</button>', '<button>Btn 2</button>' ]
+```
+
+### String.prototype.matchAll()
+
+The main reason to use `matchAll()` over `match()` is to include capturing groups! This includes both unnamed capturing groups `()` like we covered [above](#groups), but also named groups which I'll cover in my 201 article. However, instead of returning a simple array, `matchAll()` returns an iterator, which I prefer to convert into an array of match objects. Let's start with the example from the last section, but with a group this time.
+
+```javascript
+const str = `
+<header>
+	<h1>Title</h1>
+	<div>
+    	<button>Btn 1</button>
+    	<button>Btn 2</button>
+	</div>
+</header>
+`;
+
+// notice I've wrapped the inner `[^<]+` in parentheses to make a group
+const regex = /<button[^>]*>([^<]+)<\/button>/g;
+const matchIterator = str.matchAll(regex);
+const matchArray = Array.from(matchIterator); // converts the iterator into an array
+
+console.log(matchArray);
+/**
+ * [
+ *   [
+ *      "<button>Btn 1</button>",
+ *      "Btn 1"
+ *   ],
+ *   [
+ *      "<button>Btn 2</button>",
+ *      "Btn 2"
+ *   ]
+ * ]
+ */
+```
+
+`matchArray` is a list of arrays, where each item contains both the entire match and the group matches. Let's try an example with more than one group.
+
+```javascript
+const str = `
+<header>
+	<h1>Title</h1>
+	<div>
+    	<button class="btn-primary">Btn 1</button>
+    	<button class="btn-secondary">Btn 2</button>
+	</div>
+</header>
+`;
+
+// same as above, except now I've introduced `class="([a-z-]+)"` which captures the class name
+const regex = /<button[^>]*class="([a-z-]+)"[^>]*>([^<]+)<\/button>/g;
+const matches = Array.from(str.matchAll(regex)); // combined iterator and conversion to array into one line
+
+console.log(matchArray);
+/**
+ * [
+ *   [
+ *      "<button class=\"btn-primary\">Btn 1</button>",
+ *      "btn-primary",
+ *      "Btn 1"
+ *   ],
+ *   [
+ *      "<button class=\"btn-secondary\">Btn 2</button>",
+ *      "btn-secondary",
+ *      "Btn 2"
+ *   ]
+ * ]
+ */
+```
+
+Each item in the matches array is an array containing the entire match, and each group it found. This is excellent for pulling out exactly what it is you're looking for! I'll give one last example, replete with how I'd map it into something more usable.
+
+```javascript
+const jsFile = `
+import Button from 'library/lib/Button';
+import Slider from 'library/lib/Slider';
+import ExpandCollapse from 'library/lib/ExpandCollapse';
+...
+`;
+
+const regex = /import\s(\w+)\sfrom\s'([a-zA-Z-]+)[^;]+;/g;
+const matches = Array.from(jsFile.matchAll(regex));
+
+console.log(matches); // [ ['import Button...', 'Button', 'library'], ... ]
+
+const importedComponents = matches.map(match => match[1]); // ['Button', 'Slider', 'ExpandCollapse']
+const libraries = matches.map(match => match[2]); // ['library', 'library', 'library' ]
+const uniqueLibraries = new Set(libraries); // Set { "library" }
+```
 
 ## Thoughts on RegExp Constructor and caution
 
-- extra escaping
-- no syntax highlighting
+Before I wrapped up I wanted to note some pros and cons of using the RegExp constructor. When you see regex in a code editor, if it uses the literal syntax (what I've done for this tutorial) then it will have lovely syntax highlighting (if it doesn't and you're using vscode, add options like [these](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216) into your settings.json file). However, if using the RegExp constructor, none of that highlighting will be available, which will make each pattern much harder to parse. So then why use the constructor? The main reason for me is when it is necessary to pass in variables via template literals. For example, if I'm looking for a component in a raw javascript file, but I don't know which component I'll be looking for when I write the code, I'll need to write an expression like this:
+```javascript
+new RegExp(`<${component}[^>]*>`, "g")
+```
+
+The main thing to note about using the constructor, and therefore a word of caution I present to you, is that often you'll need to escape multiple times and it will not be obvious. This is an easy bug to overlook, so I suggest getting into the habit of console logging the output from the RegExp constructor. An example:
+
+```javascript
+const str = "abc def";
+
+// the wrong way to do it
+const wrongRegex = new RegExp("\w+", "g");
+
+console.log(wrongRegex); // /w+/
+console.log(str.match(wrongRegex)); // null
+
+// the right way to do it
+const correctRegex = new RegExp("\\w+", "g");
+
+console.log(correctRegex); // /\w+/
+console.log(str.match(correctRegex)); // ['abc', 'def']
+```
 
 ## Tools
 
-- regex 101
-- vscode syntax highlighting (link to my article on that)
-- regex previewer extension
+Congrats! You made it to the end! I'll lastly leave you with some links for tools I find incredibly helpful.
+
+- [Regex101](https://regex101.com/). This is an easy way to test out regex patterns with instant feedback, great syntax highlighting, and built in docs.
+- [MDN Regular Expression Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions). If you want full detail on anything I've covered here, this is where to look.
+- [VSCode regex syntax highlighting](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216). If you don't have great syntax highlighting, add this to your settings.json and tweak the colors to your theme. I might in the future publish an article about how to easily find the settings you're looking for to customize your theme.
+- The "Regex Previewer" vscode extension by Christof Marti seems pretty good if you prefer an in editor version of regex 101.
+
+## Conclusion
+
+Well that's it! Thanks for reading and happy matching!

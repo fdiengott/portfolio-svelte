@@ -4,6 +4,7 @@ import tomatoSoup from './tomatoSoup';
 import bookList from './bookList';
 import blogGuide from './blogGuide';
 import zshThemeCustomization from './zsh-theme-customization';
+import regex101 from './regex101.md?raw';
 
 const pages = {
 	blogGuide: {
@@ -11,6 +12,12 @@ const pages = {
 		content: blogGuide,
 		date: '12/26/2023',
 		tags: ['featured']
+	},
+	regex101: {
+		title: 'Regex 101',
+		content: regex101,
+		date: '12/29/2023',
+		tags: ['coding']
 	},
 	zshThemeCustomization: {
 		title: 'Zsh Theme Customization',
