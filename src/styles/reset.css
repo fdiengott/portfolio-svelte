@@ -44,4 +44,11 @@
 	fieldset {
 		border: none;
 	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		:has(:target) {
+			scroll-behavior: smooth;
+			scroll-padding-top: 2rem;
+		}
+	}
 }
