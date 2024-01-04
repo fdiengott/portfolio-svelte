@@ -25,9 +25,9 @@
 
 ## Introduction
 
-This post is my attempt at distilling what you need to know to get started reading most regular expressions in javascript. Regular expressions, also known as regex, are used for pattern matching, finding specific patterns in large bodies of text and extracting the information you are looking for. For example, if I was searching through some javascript files and wanted to extract all of the imports, I could create a pattern (a regex string) checking for the word `import` and some other syntax. I could manipulate these matches with javascript and extract the package names and which functions were imported! In general, regex can be used to check if some pattern exists in a text (returning true or false), or they could return a string match or list of matches.
+This post is my attempt at distilling what you need to know to get started reading most regular expressions in javascript. Regular expressions, also known as regex, are used for pattern matching, finding specific patterns in large bodies of text, and extracting the information you are looking for. For example, if I was searching through some javascript files and wanted to extract all of the imports, I could create a pattern (a regex string) checking for the word `import` and some other syntax. I could manipulate these matches with javascript and extract the package names and which functions were imported! In general, regex can be used to check if some pattern exists in a text (returning true or false), or they could return a string match or list of matches.
 
-I will try to include as many examples as possible to better illustrate and make clear all of these ideas instead of relying on explanation. In the future, I plan to follow up this post with a few more advanced concepts and have therefore simplified some of the information below for clarity. However, in general most of the bulk should be here, including some techniques of combining regex with javascript.
+I will try to include as many examples as possible to better illustrate and make clear all of these ideas instead of relying on explanation. In the future, I plan to follow up this post with a few more advanced concepts and have therefore simplified some of the information below for clarity. However, in general, most of the bulk should be here, including some techniques of combining regex with javascript.
 
 So let's get started!
 
@@ -43,7 +43,7 @@ There are two ways of creating a regular expression:
    const regex = new RegExp('pattern-to-match', 'g');
    ```
 
-These each have their pros and cons, which I will discuss further in the [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution) section. Throughout this tutorial I will almost exclusively use the literal syntax, but know that this was a choice and not a requirement.
+These each have their pros and cons, which I will discuss further in the [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution) section. Throughout this tutorial, I will almost exclusively use the literal syntax, but be aware that this was a choice and not a requirement.
 
 ## Character classes
 
@@ -56,24 +56,24 @@ Please note: This table is not exhaustive. I have left out several entries for t
 | `/\w/`          | a letter, number, or underscore                                                            |
 | `/\d/`          | a number, 0 - 9                                                                            |
 | `/\s/`          | any whitespace character (e.g. space, tab, newline, etc )                                  |
-| `/./`           | any character that is not a newline (in advanced we can also make this match newlines too) |
+| `/./`           | any character that is not a newline (in 201 we can also make this match newlines too) |
 | `/[...]/`       | any specific character that we explicitly request                                          |
 | `/[^...]/`      | any specific character NOT explicitly requested                                            |
 | `/a\|b/`        | a OR b                                                                                     |
 
 The first character class I want to introduce is `\w`. This will match a single character that is either a letter (upper or lower case), a number, or an underscore. We'll get to matching specific numbers of characters in the next section, but we'll just start with matching one. If, however, someone wanted only to match a number, they would use the `\d` character class instead. This matches the characters 0 through 9.
 
-Next we have the `\s` character class. This will match any whitespace character, be it a space, tab (`\t`), or newline (`\n`), also known as a carriage return. There are other whitespace characters as well, but these are by far the most common.
+Next, we have the `\s` character class. This will match any whitespace character, be it a space, tab (`\t`), or newline (`\n`), also known as a carriage return. There are other whitespace characters as well, but these are by far the most common.
 
-If there is a situation where it isn't clear what characters will exist, just that there will be some, then you'll need to employ the `.` class! The `.` (which I will refer to as the dot class) will match any character except newlines. The dot class is very powerful, but can be unruly since it can match anything.
+If there is a situation where it isn't clear what characters will exist, just that there will be some, then you'll need to employ the `.` class! The `.` (which I will refer to as the dot class) will match any character except newlines. The dot class is very powerful but can be unruly since it can match anything.
 
-Next, we have the square brackets `[...]`. The brackets allow a person to explicitly declare the characters they are looking for. This can take the form of a list of characters or a range. For example, if one wanted to match any letter or number, but didn't want to include the underscore (making `\w` a bad candidate because it includes the underscore), they would use `[a-zA-Z0-9]`. Notice I specified ranges for both lower and upper case letters here (regex is very specific about capitalization unless [told otherwise](#flags)). A couple examples of what it would look like to not only use ranges: if someone wanted to match css classes that are kebab cased, they would use `[a-z-]` so they match lowercase letters and hyphens. If someone was checking if a password was complex enough and included symbols, they could use something like `[!#$%&*@-.[\]^_]`. Note that if the hyphen `-` is included first or last in the brackets, it is regarded as a literal hyphen character.
+Next, we have the square brackets `[...]`. The brackets allow a person to explicitly declare the characters they are looking for. This can take the form of a list of characters or a range. For example, if one wanted to match any letter or number, but didn't want to include the underscore (making `\w` a bad candidate because it includes the underscore), they would use `[a-zA-Z0-9]`. Notice I specified ranges for both lower and upper case letters here (regex is very specific about capitalization unless [told otherwise](#flags)). A couple of examples of what it would look like to not only use ranges: if someone wanted to match css classes that are kebab cased, they would use `[a-z-]` so they match lowercase letters and hyphens. If someone was checking if a password was complex enough and included symbols, they could use something like `[!#$%&*@-.[\]^_]`. Note that if the hyphen `-` is included first or last in the brackets, it is regarded as a literal hyphen character.
 
 The sibling of `[...]` is the negated version `[^...]`, which matches anything that is NOT in this list. For example, if I had `[^a-m]`, then this would match "n" through "z", but not "a" through "m". Additionally, because this is matching ANYTHING that is not in the brackets, it will also match numbers, symbols, and spaces! This negated version works exactly the same as its sibling in terms of accepting ranges or a list of characters, as long as the carrot `^` precedes it.
 
-Next, you'll notice `|` is different from the other classes. The or `|` operator doesn't fit neatly into any section on this page so I'm shoehorning it in here since it is so fundamental! It is used any time you are looking for this pattern OR that one. For example, if I wanted to match the strings "musical theater" or "puppet theater" (because I'm cheeky), I could use the pattern `/(musical|puppet) theater/`. You'll notice I used parentheses here. If I hadn't, it would only match the strings "musical" or "puppet theater".
+Next, you'll notice `|` is different from the other classes. The "or" `|` operator doesn't fit neatly into any section on this page so I'm shoehorning it in here since it is so fundamental! It is used any time you are looking for this pattern OR that one. For example, if I wanted to match the strings "musical theater" or "puppet theater" (because I'm cheeky), I could use the pattern `/(musical|puppet) theater/`. You'll notice I used parentheses here. If I hadn't, it would only match the strings "musical" or "puppet theater".
 
-A couple quick notes on the above before I get into some clarifications of the `\` character and some examples! Firstly, note that the dot, within the context of square brackets, acts as a period  and nothing more. This is true for many of the characters above, which have roles in regex outside of being characters we are trying to match (e.g. parentheses `()`, curly braces `{}`, the asterisk `*`, dollar sign `$`, etc.).
+A couple of quick notes on the above before I get into some clarifications of the `\` character and some examples! Firstly, note that the dot, within the context of square brackets, acts as a period  and nothing more. This is true for many of the characters above, which have roles in regex outside of being characters we are trying to match (e.g. parentheses `()`, curly braces `{}`, the asterisk `*`, dollar sign `$`, etc.).
 
 ### A few examples
 
@@ -94,7 +94,7 @@ The backslash, "escape" character `\` is very important in regular expressions a
 
 Special characters, like the dot `.` and the dollar sign `$`, can be taken literally when preceded by a backslash. For example, `/abc\.com/`, will only match "abc.com" whereas the regex `/abc.com/` will also match "abc.com", but also "abc*com", since the "unescaped" dot means match any character (Reminder: unescaped i.e. not preceded by a backslash).
 
-Within square brackets, it means to take literally a character instead of applying its regex role. To explain this more clearly, in my final example a few paragraphs above (`[!#$%&*@-.[\]^_]`) on using square brackets `[...]` with lots of symbols, you'll note that there is a square bracket in the middle of the string preceded by a backslash `\`. This means, in this context, that we literally want to match the closing square brackets character `]` and we therefore don't want it exercising its regex role as the end of a character list.
+Within square brackets, it means to take a character literally instead of applying its regex role. To explain this more clearly, in my final example a few paragraphs above (`[!#$%&*@-.[\]^_]`) on using square brackets `[...]` with lots of symbols, you'll note that there is a square bracket in the middle of the string preceded by a backslash `\`. This means, in this context, that we literally want to match the closing square brackets character `]` and we therefore don't want it exercising its regex role as the end of a character list.
 
 Another example of an escape (`\`) character in brackets is if I wanted to match a file location in windows, which generally takes the form of `C:\Users\Administrator\folder\file`. I would need to use something like `[a-zA-Z:\\]`. I have two backslashes here to mean "literally look for a backslash". If I hadn't included two backslashes (i.e. `[a-zA-Z:\]`), then this would cause a syntax error! Regex would interpret the final square bracket as the character `]` and not the end of a group of characters.
 
@@ -158,7 +158,7 @@ Now I'll just include a few more examples to fill some holes I think I have left
 | `/^/`     | Matches the beginning of an input |
 | `/$/`     | Matches the end of an input       |
 
-Now I'll briefly talk about assertions! You can ignore the term, as I think it adds unnecessary complexity. Allow me to note that I'm skipping over several rather important concepts here, especially lookaheads and lookbehinds. These are incredibly useful but are somewhat more advanced so I've decided to leave them out for now, but rest assured that I will go through them thoroughly in the follow up to this article, I just think you should be aware of them.
+Now I'll briefly talk about assertions! You can ignore the term, as I think it adds unnecessary complexity. Allow me to note that I'm skipping over several rather important concepts here, especially lookaheads and lookbehinds. These are incredibly useful but are somewhat more advanced so I've decided to leave them out for now, but rest assured that I will go through them thoroughly in the follow-up to this article, I just think you should be aware of them.
 
 As for the two symbols above, let's take each in kind. By adding the symbol `^` to the start of a regular expression, it is metaphorically saying "Only match the following expression IF it matches the beginning of the string we are testing on." If the multiline flag is set to true (which I'll go into more detail in the flags section of the following article) then this will also match after a line break `\n`. An example, the regular expression `/^hello/`, will match the string "hello world", but not "oh hello".
 
@@ -176,7 +176,7 @@ On the flip side, `$` at the end of a regular expression will only match a strin
 | --------- | ----------------------------------------------------------------------------- |
 | `/(x)/`   | Capturing group. This is important for when we get to working with javascript |
 
-Sometimes one might want only part of a match. That is where groups come in! Say I wanted to find email addresses for everyone at one institution. I would want to create the expression to include the `@company.com`, but I really only care about what occurs before the '@'. So what do I do? I create my expression with a group `()` around what I'm looking for, `/([a-zA-Z.-]+)@company\.com/`. This way, when I get the match back, in javascript I can key in and get only the text inside the parentheses. The match will look something like this: `[ "name@company.com", "name" ]`. At the first index we have the entire match, and after that we have what was specified in our group. If there were two groups in this regular expression, say `/([a-zA-Z.-]+)@(company.com)/`, then each group will be returned, `[ "name@company.com", "name", "company.com" ]`.
+Sometimes one might want only part of a match. That is where groups come in! Say I wanted to find email addresses for everyone at one institution. I would want to create the expression to include the `@company.com`, but I really only care about what occurs before the '@'. So what do I do? I create my expression with a group `()` around what I'm looking for, `/([a-zA-Z.-]+)@company\.com/`. This way, when I get the match back, in javascript I can key in and get only the text inside the parentheses. The match will look something like this: `[ "name@company.com", "name" ]`. At the first index, we have the entire match, and after that, we have what was specified in our group. If there were two groups in this regular expression, say `/([a-zA-Z.-]+)@(company.com)/`, then each group will be returned, `[ "name@company.com", "name", "company.com" ]`.
 
 ### Examples
 
@@ -194,15 +194,15 @@ Sometimes one might want only part of a match. That is where groups come in! Say
 
 This section is about augmenting the patterns that have been written so that they work slightly differently. I'm only covering 2 of the 8 that exist, but these are by far the most important and common. I'll go through a few more in my 201 article.
 
-Let's start with the global flag `/g`. In the previous section I made up an example of searching for email addresses on a company website. I somewhat lied in the pursuit of simplicity. Using the pattern I had constructed would actually only match the first occurrence of the email address pattern. If, we wanted to actually match every occurrence, we would add a global flag, which would look like this: `/([a-zA-Z.-]+)@company\.com/g`, adding the `g` flag at the end after the second forward slash `/`. If we were creating this pattern using the RegExp constructor, the flag would be the second argument (i.e. `new RegExp("([a-zA-Z.-]+)@company\.com,", "g")`). When matching with the global `g` flag enabled returns an array of all of the matches, for example `["a@company.com", "b@company.com", ...]` (this is assuming you are using `String.prototype.match`, which will ignore groups; I'll explain a way to retain the groups in the next section).
+Let's start with the global flag `/g`. In the previous section, I made up an example of searching for email addresses on a company website. I somewhat lied in the pursuit of simplicity. Using the pattern I had constructed would actually only match the first occurrence of the email address pattern. If we wanted to actually match every occurrence, we would add a global flag, which would look like this: `/([a-zA-Z.-]+)@company\.com/g`, adding the `g` flag at the end after the second forward slash `/`. If we were creating this pattern using the RegExp constructor, the flag would be the second argument (i.e. `new RegExp("([a-zA-Z.-]+)@company\.com,", "g")`). When matching with the global `g` flag enabled returns an array of all of the matches, for example `["a@company.com", "b@company.com", ...]` (this is assuming you are using `String.prototype.match`, which will ignore groups; I'll explain a way to retain the groups in the next section).
 
-Let's more onto the `/i` flag, which is simply a command to ignore case. This means that even if only `[a-z]` is specified in an expression, it will also match `[A-Z]`.
+Let's move on to the `/i` flag, which is simply a command to ignore case. This means that even if only `[a-z]` is specified in an expression, it will also match `[A-Z]`.
 
 If more than one flag needs to be specified, add them all next to each other in any order (e.g. `/[a-z]/gi`, which will return the match `["a", b", "C", "D"]` for the input "abCD").
 
 ## Javascript Functions and Constructors
 
-So we've now gone through the basics of regular expressions! Good job for making it this far. I'm now going to go through the javascript functions that I use most in conjunction with regular expressions! This list is not exhaustive as to what it out there, but it will include of the functions I use. I'll try to go from most simple to most most complex, but with some flexibility.
+So we've now gone through the basics of regular expressions! Good job for making it this far. I'm now going to go through the javascript functions that I use most in conjunction with regular expressions! This list is not exhaustive as to what is out there, but it will include all of the functions I use. I'll try to go from the most simple to most most complex, but with some flexibility.
 
 | Function                    | Returns  |
 | --------------------------- | -------- |
@@ -280,7 +280,7 @@ const nameGroupMatch = str.match(nameGroupRegex);
 console.log(nameGroupMatch); // [", Mara,","Mara"]
 ```
 
-Feel free to run this in your browser's dev tools or in a terminal REPL. You'll notice that the logs have more than just what I've pasted here. These arrays also have several other properties, `index`, `input`, `groups`. So your output from the first console log actually looks something like this: `[", Mara,", index: 9, input: 'My friend, Mara, the pig', groups: undefined ]`. The index is, of course, the index of the string where the match begins and the input is self explanatory. The groups, on the other hand, you would expect to return something from the `nameGroupMatch` example above. It doesn't, however. Groups will only return something if named groups are used, a concept I'll cover in my 201 article.
+Feel free to run this in your browser's dev tools or in a terminal REPL. You'll notice that the logs have more than just what I've pasted here. These arrays also have several other properties, `index`, `input`, and `groups`. So your output from the first console log actually looks something like this: `[", Mara,", index: 9, input: 'My friend, Mara, the pig', groups: undefined ]`. The index is, of course, the index of the string where the match begins and the input is self-explanatory. The groups, on the other hand, you would expect to return something from the `nameGroupMatch` example above. It doesn't, however. Groups will only return something if named groups are used, a concept I'll cover in my 201 article.
 
 Let's move on to using the global `/g` flag and a case when there is no match!
 ```javascript
@@ -312,7 +312,7 @@ console.log(globalMatch); // [ '<button>Btn 1</button>', '<button>Btn 2</button>
 
 ### String.prototype.matchAll()
 
-The main reason to use `matchAll()` over `match()` is to include capturing groups! This includes both unnamed capturing groups `()` like we covered [above](#groups), but also named groups which I'll cover in my 201 article. However, instead of returning a simple array, `matchAll()` returns an iterator, which I prefer to convert into an array of match objects. Let's start with the example from the last section, but with a group this time.
+The main reason to use `matchAll()` over `match()` is to include capturing groups! This includes both unnamed capturing groups `()` like we covered [above](#groups), but also named groups which I'll cover in my 201 article. However, instead of returning a simple array, `matchAll()` returns an iterator, which I prefer to convert into an array of match objects. Let's start with the example from the last section but with a group this time.
 
 ```javascript
 const str = `
@@ -379,7 +379,7 @@ console.log(matchArray);
  */
 ```
 
-Each item in the matches array is an array containing the entire match, and each group it found. This is excellent for pulling out exactly what it is you're looking for! I'll give one last example, replete with how I'd map it into something more usable.
+Each item in the matches array is an array containing the entire match and each group it found. This is excellent for pulling out exactly what it is you're looking for! I'll give one last example, replete with how I'd map it into something more usable.
 
 ```javascript
 const jsFile = `
@@ -428,11 +428,11 @@ console.log(str.match(correctRegex)); // ['abc', 'def']
 
 Congrats! You made it to the end! I'll lastly leave you with some links for tools I find incredibly helpful.
 
-- [Regex101](https://regex101.com/). This is an easy way to test out regex patterns with instant feedback, great syntax highlighting, and built in docs.
-- [MDN Regular Expression Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions). If you want full detail on anything I've covered here, this is where to look.
+- [Regex101](https://regex101.com/). This is an easy way to test out regex patterns with instant feedback, great syntax highlighting, and built-in docs.
+- [MDN Regular Expression Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions). If you want full details on anything I've covered here, this is where to look.
 - [VSCode regex syntax highlighting](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216). If you don't have great syntax highlighting, add this to your settings.json and tweak the colors to your theme. I might in the future publish an article about how to easily find the settings you're looking for to customize your theme.
-- The "Regex Previewer" vscode extension by Christof Marti seems pretty good if you prefer an in editor version of regex 101.
+- The "Regex Previewer" vscode extension by Christof Marti seems pretty good if you prefer an in-editor version of regex 101.
 
 ## Conclusion
 
-Well that's it! Thanks for reading and happy matching!
+Well, that's it! Thanks for reading and happy matching!
