@@ -11,10 +11,9 @@
 	</p>
 	<p class="c28">
 		<span class="c11 c32">603 682 2224</span><span class="c11 c36">&nbsp;</span><span class="c14 c11"
-			>&nbsp; &nbsp; &nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fdiengott</span
+			>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;freddy.diengott</span
 		><span class="c14 c11"
-			>@gmail.com &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brooklyn, NY</span
+			>@proton.me &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brooklyn, NY</span
 		><span class="c14 c11">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
 			class="c5 c12"><a class="c7" href="https://freddydiengott.com" target="_blank">Portfolio</a></span
 		><span class="c5">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
@@ -29,15 +28,15 @@
 	<p class="c10">
 		<span class="c14 c11">React </span><span class="c14 c11 c17">&middot;</span><span class="c14 c11"
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
-			HTML &middot; CSS &middot; Python &middot; Node.js &middot; Redux &middot; Sass &middot; Git &middot; Jest
-			&middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby &middot; Rails
-			&middot; AWS S3 &middot; Tailwind CSS &middot; Nano Stores &middot; Next.js &middot; Vite &middot; Bun</span
+			HTML &middot; CSS &middot; Node.js &middot; Python &middot; NumPy &middot; TensorFlow &middot; Sass &middot;
+			Git &middot; Jest &middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby
+			&middot; Rails &middot; AWS S3 &middot; Next.js &middot; Vite &middot; Bun</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.lmuoo2f9o2gj"><span class="c15 c2">Experience</span></h2>
 	<p class="c10">
-		<span class="c14 c11">Frontend Web Developer &nbsp;</span><span class="c14 c18 c11">|</span><span
+		<span class="c14 c11">Frontend Software Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
 			class="c13 c2 c11">&nbsp; &nbsp;Aug 2021 - current</span
 		>
 	</p>
@@ -57,10 +56,9 @@
 			>
 		</li>
 		<li class="c6 li-bullet-0">
-			<span class="c1">Act as subject matter expert for a </span><span class="c0">Charts Library</span><span
-				class="c1"
-				>, utilizing
-			</span><span class="c0">D3.js</span><span class="c1 c2"
+			<span class="c1">Act as subject matter expert for an interactive </span><span class="c0"
+				>Charting Library</span
+			><span class="c1">, utilizing </span><span class="c0">D3.js</span><span class="c1 c2"
 				>, creating new charts and advising on variations and improvements
 			</span>
 		</li>
@@ -68,8 +66,8 @@
 			<span class="c1">Rebuild and add </span><span class="c0">Data Visualizations </span><span class="c1"
 				>to an internal metrics dashboard, utilizing
 			</span><span class="c0">Web Scraping </span><span class="c1 c2"
-				>to collect data on how our design language was used across the organization. Built with <span
-					class="c0">Bun</span
+				>to collect data on how our design language is used across the organization. Built with <span class="c0"
+					>Bun</span
 				>, <span class="c0">Astro</span>, and <span class="c0">React</span>.
 			</span>
 		</li>

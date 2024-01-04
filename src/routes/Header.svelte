@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import github from '../assets/images/github.svg';
+	import GithubLogo from './components/githubLogo.svelte';
 
 	$: pathname = $page.url.pathname;
 </script>
@@ -21,7 +21,7 @@
 			<li aria-current={pathname === '/projects' && 'page'}>
 				<a href="/projects">Projects</a>
 			</li>
-			<li aria-current={pathname === '/blogs' && 'page'}>
+			<li aria-current={pathname.includes('/blogs') && 'page'}>
 				<a href="/blogs">Blog</a>
 			</li>
 			<li aria-current={pathname === '/contact' && 'page'}>
@@ -32,7 +32,7 @@
 
 	<div class="header__corner header__corner--github">
 		<a href="https://github.com/fdiengott/" target="_blank">
-			<img src={github} alt="GitHub" />
+			<GithubLogo />
 		</a>
 	</div>
 </header>
@@ -54,12 +54,6 @@
 		padding-inline: 0.5rem;
 		width: 100%;
 		height: 100%;
-	}
-
-	.header__corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
 	}
 
 	.header__corner[data-visible='false'] a {
