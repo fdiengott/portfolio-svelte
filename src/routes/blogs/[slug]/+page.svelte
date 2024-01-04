@@ -3,12 +3,20 @@
 	import tableOfContentsHeaderRenderer from './TableOfContentsHeader.svelte';
 
 	export let data;
+
+	const scrollToTop = () => {
+		window.history.pushState({}, '', window.location.href.split('#')[0]);
+
+		window.scrollTo(0, 0);
+	};
 </script>
 
 <article id="blog__container">
 	<a class="blog__back-btn" href="/blogs">Back</a>
 	<div class="date"><em>First published on {data.page.date}.</em></div>
+	<div class="btn" />
 	<SvelteMarkdown source={data.page.content} renderers={{ heading: tableOfContentsHeaderRenderer }} />
+	<button class="btn-scroll-top" on:click={scrollToTop}><span class="chevron" /></button>
 </article>
 
 <style global lang="scss">
@@ -23,7 +31,45 @@
 		margin-block: 0.5rem;
 	}
 
+	.btn-scroll-top {
+		position: sticky;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+
+		background: none;
+		border: none;
+		cursor: pointer;
+		transition: all 200ms;
+
+		&:hover {
+			scale: 1.08;
+			transform-origin: center;
+		}
+	}
+	.btn-scroll-top::after {
+		content: '';
+		position: absolute;
+		inset: -50% -30%;
+		z-index: -1;
+		background: white;
+		filter: blur(2px);
+	}
+
+	.chevron {
+		display: block;
+		--stroke: 3px;
+		width: 15px;
+		aspect-ratio: 1/1;
+
+		border-top: var(--stroke) solid black;
+		border-right: var(--stroke) solid black;
+		transform: rotate(-45deg);
+	}
+
 	#blog__container {
+		position: relative;
+
 		font-size: var(--fs-350);
 
 		h2,
