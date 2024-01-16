@@ -30,7 +30,7 @@
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
 			HTML &middot; CSS &middot; Node.js &middot; Python &middot; NumPy &middot; TensorFlow &middot; Sass &middot;
 			Git &middot; Jest &middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby
-			&middot; Rails &middot; AWS S3 &middot; Next.js &middot; Vite &middot; Bun</span
+			&middot; Rails &middot; AWS S3 &middot; Next.js &middot; Vite &middot; Bun &middot; Scripting</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
@@ -56,11 +56,17 @@
 			>
 		</li>
 		<li class="c6 li-bullet-0">
-			<span class="c1">Act as subject matter expert for an interactive </span><span class="c0"
+			<span class="c1">Solely maintain and contribute to an interactive </span><span class="c0"
 				>Charting Library</span
 			><span class="c1">, utilizing </span><span class="c0">D3.js</span><span class="c1 c2"
 				>, creating new charts and advising on variations and improvements
 			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1"
+				>Improve the interactive efficiency of a line chart, bringing the blocking time on a stress test from
+				370ms to 0ms</span
+			>
 		</li>
 		<li class="c6 li-bullet-0">
 			<span class="c1">Rebuild and add </span><span class="c0">Data Visualizations </span><span class="c1"
