@@ -69,13 +69,17 @@
 			>
 		</li>
 		<li class="c6 li-bullet-0">
-			<span class="c1">Rebuild and add </span><span class="c0">Data Visualizations </span><span class="c1"
-				>to an internal metrics dashboard, utilizing
-			</span><span class="c0">Web Scraping </span><span class="c1 c2"
-				>to collect data on how our design language is used across the organization. Built with <span class="c0"
-					>Bun</span
-				>, <span class="c0">Astro</span>, and <span class="c0">React</span>.
+			<span class="c1"
+				>Rebuild and add <span class="c0">Data Visualizations</span>
+				to an internal metrics dashboard, decreasing a
+				<span class="c0">Web Scraping</span>
+				step from over 7m, to around 45s, a nearly 10-fold performance improvement, to collect data on how our design
+				language is used across the organization. Built with <span class="c0">Bun</span>,
+				<span class="c0">Astro</span>, and <span class="c0">React</span>.
 			</span>
+		</li>
+		<li class="c6 li-bullet-0">
+			<span class="c1"><span class="c0">Mentor</span> several more junior developers</span>
 		</li>
 		<li class="c6 li-bullet-0">
 			<span class="c1">Create a </span><span class="c0">Calendar Component </span><span class="c1"
