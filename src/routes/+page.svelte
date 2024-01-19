@@ -24,8 +24,9 @@
 			<div class="home__header">
 				<h1 class="home__header--name" style="--delay-interval: {delayInterval}s">
 					{#each 'Freddy Diengott' as char, i}
-						<span style="animation-delay: {i * delayInterval}s" class="name-letter {animate && 'animate'}"
-							>{char}</span
+						<span
+							style="animation-delay: {0.4 + i * delayInterval}s"
+							class="name-letter {animate && 'animate'}">{char}</span
 						>
 					{/each}
 					<svg class="svg-underline" xmlns="http://www.w3.org/2000/svg" viewBox="47.18 165.7 1980.58 143.53">
