@@ -35,119 +35,132 @@
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.lmuoo2f9o2gj"><span class="c15 c2">Experience</span></h2>
-	<p class="c10">
-		<span class="c14 c11">Frontend Software Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
-			class="c13 c2 c11">&nbsp; &nbsp;Aug 2021 - current</span
-		>
-	</p>
-	<p class="c10">
-		<span class="c5 c12"
-			><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
-		>
-	</p>
-	<ul class="c20 lst-kix_i5opmugboj5i-0 start">
-		<li class="c6 li-bullet-0">
-			<span class="c1">Leverage </span><span class="c0">JavaScript </span><span class="c1">and </span><span
-				class="c0">Sass</span
-			><span class="c1">&nbsp;</span><span class="c1">to maintain and improve a </span><span class="c0"
-				>React Component Library</span
-			><span class="c1">&nbsp;and a </span><span class="c0">Design Language </span><span class="c1 c2"
-				>with a team of approximately 10 developers and designers</span
+	<div>
+		<p class="c10">
+			<span class="c14 c11">Senior Frontend Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
+				class="c13 c2 c11">&nbsp; &nbsp;Jan 2024 - current</span
 			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Solely maintain and contribute to an interactive </span><span class="c0"
-				>Charting Library</span
-			><span class="c1">, utilizing </span><span class="c0">D3.js</span><span class="c1 c2"
-				>, creating new charts and advising on variations and improvements
-			</span>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1"
-				>Improve the interactive efficiency of a line chart, bringing the blocking time on a stress test from
-				370ms to 0ms</span
+		</p>
+		<p class="c10">
+			<span class="c5 c12"
+				><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
 			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1"
-				>Rebuild and add <span class="c0">Data Visualizations</span>
-				to an internal metrics dashboard, decreasing a
-				<span class="c0">Web Scraping</span>
-				step from over 7m, to around 45s, a nearly 10-fold performance improvement, to collect data on how our design
-				language is used across the organization. Built with <span class="c0">Bun</span>,
-				<span class="c0">Astro</span>, and <span class="c0">React</span>.
-			</span>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1"><span class="c0">Mentor</span> several more junior developers</span>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Create a </span><span class="c0">Calendar Component </span><span class="c1"
-				>from scratch and maintain a small
-			</span><span class="c0">Datepicker Library </span><span class="c1">based on AirBnB&rsquo;s </span><span
-				class="c0 c2">react-dates</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Build a comprehensive </span><span class="c0">Documentation site </span><span class="c1"
-				>for our Design Language with
-			</span><span class="c0">clear, detailed copy </span><span class="c1"
-				>for designers and developers on other teams</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Partner with </span><span class="c0">designers </span><span class="c1">and </span><span
-				class="c0"
-				>accessibility
-			</span><span class="c1">engineers to make the platform attractive and entirely accessible</span>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Conduct </span><span class="c0">code reviews </span><span class="c1"
-				>for team members and all other frontend experiences</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Manipulate </span><span class="c0">Jest, Enzyme, and Testing Library </span><span
-				class="c1"
-				>to write and update
-			</span><span class="c0">Unit Tests </span><span class="c1"
-				>for each component across five different repositories</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Maintain an independent </span><span class="c0">style library </span><span class="c1"
-				>written in
-			</span><span class="c0">Sass,</span><span class="c1 c2"
-				>&nbsp;employing loops, functions, conditionality, and maps with an eye toward systems&rsquo; design and
-				scalability</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1">Build out each component in </span><span class="c0">Storybook</span><span class="c1"
-				>&nbsp;for testing and further documentation</span
-			>
-		</li>
-	</ul>
+		</p>
+		<ul class="c20 lst-kix_i5opmugboj5i-0 start">
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Build and maintain an interactive <span class="c0">Charting Library</span>, utilizing
+					<span class="c0">D3.js</span>
+					and <span class="c0">React</span>, creating new charts allowing for better, more intuitive displays
+					of data across the site</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					><span class="c0">Improve</span> the <span class="c0">efficiency</span> of one chart specifically, bringing
+					the blocking time on an interactive stress test from 370ms to 0ms, allowing for more interactions per
+					page
+				</span>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Mentor several junior developers and onboard outside teams to contribute to our codebase,
+					increasing output</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Plan out a path to completely refactor our component library using <span class="c0"
+						>TypeScript</span
+					>
+					and <span class="c0">Sass Modules</span></span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Rebuild and add <span class="c0">Data Visualizations</span> to an internal metrics dashboard,
+					speeding up a <span class="c0">Web Scraping</span>
+					process from over 7 min, to around 45 sec (a nearly 10-fold performance improvement), to collect data
+					on how our design language is used across the organization. Built with <span class="c0">Bun</span>,
+					<span class="c0">Astro</span>, <span class="c0">D3.js</span>, and
+					<span class="c0">React</span></span
+				>
+			</li>
+		</ul>
+	</div>
 	<p class="c9"><span class="c1 c2" /></p>
-	<p class="c10">
-		<span class="c14 c11">Software Engineer</span><span class="c13 c11">&nbsp; </span><span class="c14 c18 c11"
-			>|</span
-		><span class="c13 c2 c11">&nbsp; &nbsp;July 2021 - Sep 2021</span>
-	</p>
-	<p class="c10">
-		<span class="c5 c12"
-			><a class="c7" href="https://www.pepplish.com/" target="_blank">Pepplish Provisions</a></span
-		>
-	</p>
-	<ul class="c20 lst-kix_i5opmugboj5i-0">
-		<li class="c6 li-bullet-0">
-			<span class="c1"
-				>Redesign and implement a new company website on a three person software development team utilizing
-			</span><span class="c0">Next.js, GraphQL, Apollo, TypeScript, Docker, MongoDB, </span><span class="c1"
-				>and</span
-			><span class="c0 c2">&nbsp;Node.js</span>
-		</li>
-	</ul>
+	<div>
+		<p class="c10">
+			<span class="c14 c11">Frontend Software Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
+				class="c13 c2 c11">&nbsp; &nbsp;Aug 2021 - Jan 2024</span
+			>
+		</p>
+		<p class="c10">
+			<span class="c5 c12"
+				><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
+			>
+		</p>
+		<ul class="c20 lst-kix_i5opmugboj5i-0 start">
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Leverage <span class="c0">JavaScript</span> and <span class="c0">Sass</span> to maintain a
+					<span class="c0">React Component Library</span> with a team of approximately 10 developers and designers</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Create a <span class="c0">Calendar Component</span> from scratch and maintain a small
+					<span class="c0">Datepicker Library</span>
+				</span>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Partner with <span class="c0">designers</span> and <span class="c0">accessibility</span> engineers to
+					make the platform attractive and entirely accessible</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Conduct <span class="c0">code reviews</span> for team members and all other frontend experiences</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Write <span class="c0">Unit Tests</span> with <span class="c0">Jest</span>,
+					<span class="c0">Enzyme</span>, and <span class="c0">Testing Library</span> for dozens of components
+					across five different repos</span
+				>
+			</li>
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Build a comprehensive <span class="c0">Documentation site</span> with
+					<span class="c0">clear, detailed copy</span> for designers and developers</span
+				>
+			</li>
+		</ul>
+	</div>
+	<p class="c9"><span class="c1 c2" /></p>
+	<div>
+		<p class="c10">
+			<span class="c14 c11">Software Engineer</span><span class="c13 c11">&nbsp; </span><span class="c14 c18 c11"
+				>|</span
+			><span class="c13 c2 c11">&nbsp; &nbsp;July 2021 - Sep 2021</span>
+		</p>
+		<p class="c10">
+			<span class="c5 c12"
+				><a class="c7" href="https://www.pepplish.com/" target="_blank">Pepplish Provisions</a></span
+			>
+		</p>
+		<ul class="c20 lst-kix_i5opmugboj5i-0">
+			<li class="c6 li-bullet-0">
+				<span class="c1"
+					>Redesign and implement a new company website on a three person software development team utilizing
+				</span><span class="c0">Next.js, GraphQL, Apollo, TypeScript, Docker, MongoDB, </span><span class="c1"
+					>and</span
+				><span class="c0 c2">&nbsp;Node.js</span>
+			</li>
+		</ul>
+	</div>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<p class="c10">
 		<span class="c11 c14">Data Analyst</span><span class="c11 c13">&nbsp; </span><span class="c14 c11 c18">|</span
@@ -161,29 +174,11 @@
 		>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0">
+		<li class="c6 li-bullet-0"><span class="c1">Record, analyze, and graph data to report to the DOH</span></li>
 		<li class="c6 li-bullet-0">
-			<span class="c1 c2"
-				>Record, analyze, and graph data to report to DOH by utilizing complex equations, indexing, pivot
-				tables, vlookups, and data validation in order to meet health regulations</span
+			<span class="c1"
+				><span class="c0">Automate</span> the process so thoroughly that I decided to leave and train my replacement</span
 			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1 c2"
-				>Design a continually updating payroll doc for weekly worker stipends in order to save money by
-				automating tasks</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1 c2"
-				>Input and parse two years of payroll data to estimate and allocate funds for employees in order to
-				weigh the financial costs of a potential internal policy change</span
-			>
-		</li>
-		<li class="c6 li-bullet-0">
-			<span class="c1 c2"
-				>Hire and onboard new employees, explaining benefits and internal policies, as well as setting up direct
-				deposit
-			</span>
 		</li>
 	</ul>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
