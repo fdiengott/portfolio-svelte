@@ -21,7 +21,7 @@
 			<li transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 125 }}>
 				<div class="article__date">{article.date}</div>
 				<a href="/blogs/{slug}">
-					<div>{article.title}</div>
+					<span>{article.title}</span>
 				</a>
 				{#if article.tags}
 					<ul class="article__tags">
@@ -36,6 +36,19 @@
 </ul>
 
 <style lang="scss">
+	a {
+		width: fit-content;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+		transition: all 0.3s;
+	}
+	a:is(:hover, :focus) {
+		text-underline-offset: 7px;
+	}
+	a:focus {
+		outline: 1px solid #0008;
+	}
+
 	.article__list {
 		display: grid;
 		row-gap: 2rem;
