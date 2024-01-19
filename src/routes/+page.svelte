@@ -2,10 +2,6 @@
 	import { onMount } from 'svelte';
 	import headshot from '../assets/images/headshot.jpeg';
 
-	const designText = 'design-focused'.split('');
-
-	const nameArray = 'Freddy Diengott'.split('');
-
 	let animate = false;
 	const delayInterval = 0.05;
 
@@ -27,7 +23,7 @@
 			/>
 			<div class="home__header">
 				<h1 class="home__header--name" style="--delay-interval: {delayInterval}s">
-					{#each nameArray as char, i}
+					{#each 'Freddy Diengott' as char, i}
 						<span style="animation-delay: {i * delayInterval}s" class="name-letter {animate && 'animate'}"
 							>{char}</span
 						>
@@ -53,17 +49,21 @@
 						<span class="sparkle" />
 						<span class="sparkle" />
 					</span>,
-					<span class="design-text" data-text="design-focused">
-						{#each designText as letter, index}
+					<span class="design-text">
+						{#each 'design-focused' as letter, index}
 							<span style="--delay: {index * 300}ms">{letter}</span>
 						{/each}
-					</span>
-					full-stack software engineer based in NYC who loves making websites! I'm currently a frontend developer
-					at Etrade from Morgan Stanley where I'm maintaining a
+					</span>, auto-didactic, full-stack software engineer based in NYC who loves to code! I'm currently a
+					senior frontend engineer at Etrade from Morgan Stanley where I'm maintaining a
 					<span class="bold">React Component Library</span>
 					and work as the team lead for our <span class="bold">D3.js Charts Library</span> and a
 					<span class="bold">Web Scraping Bun/Astro/React Metrics Dashboard</span>. I'm passionate about
-					design, accessibility, and writing scalable, maintainable, and performant code.
+					writing maintainable, performant code, with an emphasis on intuitive design and accessibility.
+				</p>
+
+				<p>
+					I'm currently spending a large swath of my free time studying Machine Learning and AI safety, as I
+					believe it is the defining technology of our time.
 				</p>
 
 				<p>
@@ -106,36 +106,6 @@
 </section>
 
 <style>
-	.svg-underline {
-		position: absolute;
-		right: 6rem;
-		bottom: -1.5rem;
-		transform: rotateY(180deg);
-		width: 600px;
-		height: auto;
-	}
-
-	.svg-underline path {
-		--underline-offset: 200%;
-
-		transform: translate(100px, 200px);
-		stroke-dasharray: 200%;
-		stroke-dashoffset: var(--underline-offset);
-		stroke: black;
-		fill: none;
-		stroke-width: 10px;
-
-		animation: draw 1s forwards;
-		animation-timing-function: cubic-bezier(0.67, 0.01, 0.97, 0.85);
-		animation-delay: calc(15 * var(--delay-interval) + var(--fade-in-dur));
-	}
-
-	@keyframes draw {
-		to {
-			stroke-dashoffset: 0;
-		}
-	}
-
 	.name-letter {
 		position: relative;
 		opacity: 0;
@@ -243,7 +213,6 @@
 	}
 	.design-text {
 		font-family: 'Poiret One', sans-serif;
-		margin-inline: var(--fancy-text-inline-spacing);
 	}
 
 	.cursive-text:hover .sparkle {
@@ -282,6 +251,7 @@
 	}
 	.design-text:hover {
 		scale: 1.1;
+		margin-inline: var(--fancy-text-inline-spacing);
 	}
 	.design-text:hover span {
 		animation: float 2s ease-in-out infinite;
@@ -352,12 +322,13 @@
 		border-right: solid 0.6em transparent;
 	}
 
-	.nav-icon:hover:before {
+	.nav-icon:is(:hover, :focus-within)::before,
+	.nav-icon:is(:hover, :focus-within) span {
 		opacity: 1;
 	}
 
-	.nav-icon:hover span {
-		opacity: 1;
+	.svg-underline {
+		display: none;
 	}
 
 	@media (width > 768px) {
@@ -374,6 +345,37 @@
 
 		.nav-icon span:after {
 			display: block;
+		}
+
+		.svg-underline {
+			display: block;
+			position: absolute;
+			right: 6rem;
+			bottom: -1.5rem;
+			transform: rotateY(180deg);
+			width: 600px;
+			height: auto;
+		}
+
+		.svg-underline path {
+			--underline-offset: 200%;
+
+			transform: translate(100px, 200px);
+			stroke-dasharray: 200%;
+			stroke-dashoffset: var(--underline-offset);
+			stroke: black;
+			fill: none;
+			stroke-width: 10px;
+
+			animation: draw 0.7s forwards;
+			animation-timing-function: cubic-bezier(0.67, 0.01, 0.97, 0.85);
+			animation-delay: calc(15 * var(--delay-interval) + var(--fade-in-dur));
+		}
+
+		@keyframes draw {
+			to {
+				stroke-dashoffset: 0;
+			}
 		}
 	}
 </style>
