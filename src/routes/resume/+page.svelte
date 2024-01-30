@@ -28,9 +28,9 @@
 	<p class="c10">
 		<span class="c14 c11">React </span><span class="c14 c11 c17">&middot;</span><span class="c14 c11"
 			>&nbsp;JavaScript &middot; D3.js &middot; Svelte &middot; Astro &middot; Vue &middot; TypeScript &middot;
-			HTML &middot; CSS &middot; Node.js &middot; Python &middot; NumPy &middot; TensorFlow &middot; Sass &middot;
-			Git &middot; Jest &middot; Enzyme &middot; Express &nbsp;REST &middot; GraphQL &middot; SQL &middot; Ruby
-			&middot; Rails &middot; AWS S3 &middot; Next.js &middot; Vite &middot; Bun &middot; Scripting</span
+			HTML &middot; CSS &middot; Node.js &middot; Sass &middot; Git &middot; REST &middot; GraphQL &middot; Python
+			&middot; NumPy &middot; TensorFlow &middot; Jest &middot; Express &nbsp; SQL &middot; Ruby &middot; Rails
+			&middot; AWS S3 &middot; Next.js &middot; Vite &middot; Bun &middot; Scripting</span
 		>
 	</p>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
