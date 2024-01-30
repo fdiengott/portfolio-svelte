@@ -4,13 +4,18 @@
 
 	let animate = false;
 	const delayInterval = 0.05;
+	const initialDelay = 0.4;
+	const firstNameTime = 'Freddy '.length * delayInterval + initialDelay;
 
 	onMount(() => (animate = true));
 </script>
 
 <svelte:head>
 	<title>Freddy Diengott - Software Engineer</title>
-	<meta name="description" content="I'm an EA-aligned software engineer, former opera singer, and full time nerd." />
+	<meta
+		name="description"
+		content="A software engineer with a specialty in writing explicitly maintainable, efficient code...and also a big nerd."
+	/>
 </svelte:head>
 
 <section>
@@ -23,17 +28,26 @@
 			/>
 			<div class="home__header">
 				<h1 class="home__header--name" style="--delay-interval: {delayInterval}s">
-					{#each 'Freddy Diengott' as char, i}
-						<span
-							style="animation-delay: {0.4 + i * delayInterval}s"
-							class="name-letter {animate && 'animate'}">{char}</span
-						>
-					{/each}
+					<span>
+						{#each 'Freddy ' as char, i}
+							<span
+								style="animation-delay: {initialDelay + i * delayInterval}s"
+								class="name-letter {animate && 'animate'}">{char}</span
+							>
+						{/each}
+					</span>
+					<span>
+						{#each 'Diengott' as char, i}
+							<span
+								style="animation-delay: {firstNameTime + i * delayInterval}s"
+								class="name-letter {animate && 'animate'}">{char}</span
+							>
+						{/each}
+					</span>
 					<svg class="svg-underline" xmlns="http://www.w3.org/2000/svg" viewBox="47.18 165.7 1980.58 143.53">
 						<path
 							d="M1900.58,10.60 Q1881.87,11.33 1865.70,11.71 T1826.54,11.67 1774.96,10.63 1713.76,9.20 1646.34,7.80 1575.03,6.72 1498.88,5.89 1419.89,5.24 1341.12,5.05 1262.82,5.80 1185.76,6.98 1109.65,7.89 1033.68,8.60 956.06,9.74 877.14,11.53 798.40,13.51 719.22,15.95 639.41,19.33 558.82,24.04 481.80,29.78 413.52,35.42 355.28,40.08 306.92,43.69 266.82,46.48 233.70,48.64 205.14,50.90 178.24,53.26 152.33,55.68 126.90,58.15 102.36,60.07 80.68,61.25 35.35,62.56 0.00,63.53 -0.00,63.53"
 							fill="transparent"
-							stroke="#000000"
 							stroke-width="18"
 							stroke-linejoin="round"
 							stroke-linecap="round"
@@ -133,6 +147,10 @@
 		transition: all var(--transition-timing);
 	}
 
+	.home__header--name span {
+		white-space: nowrap;
+	}
+
 	.sparkle {
 		position: absolute;
 		background-color: var(--color-primary);
@@ -177,8 +195,13 @@
 			margin-block-end: 0;
 		}
 
+		.home__headshot,
+		.home__header {
+			--home-headshot-width: 20rem;
+		}
+
 		.home__headshot {
-			width: 20rem;
+			width: var(--home-headshot-width);
 			border-radius: 50%;
 			margin-inline-end: 2rem;
 			float: left;
@@ -349,12 +372,14 @@
 		}
 
 		.svg-underline {
+			--right-offset: 2rem;
+
 			display: block;
 			position: absolute;
-			right: 6rem;
+			right: calc(var(--right-offset) - 1rem);
 			bottom: -1.5rem;
 			transform: rotateY(180deg);
-			width: 600px;
+			width: calc(100% - var(--home-headshot-width) - var(--right-offset));
 			height: auto;
 		}
 
@@ -364,7 +389,7 @@
 			transform: translate(100px, 200px);
 			stroke-dasharray: 200%;
 			stroke-dashoffset: var(--underline-offset);
-			stroke: black;
+			stroke: var(--color-text);
 			fill: none;
 			stroke-width: 10px;
 
