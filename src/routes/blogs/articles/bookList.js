@@ -11,6 +11,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Why we love dogs eat pigs and wear cows: An introduction to Carnism** by Melanie Joy
 - **Arbitrary Lines: How Zoning Broke the American City and How to Fix It** by M. Nolan Gray
 - **The Scout Mindset: Why Some People See Things Clearly and Others Don't** by Julia Galef
+- **The Ends of the World: Volcanic Apocalypses, Lethal Oceans, and Our Quest to Understand Earth's Past Mass Extinctions** by Peter Brannen
 `;
 
 export default bookList;
