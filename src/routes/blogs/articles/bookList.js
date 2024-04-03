@@ -13,6 +13,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **The Scout Mindset: Why Some People See Things Clearly and Others Don't** by Julia Galef
 - **The Ends of the World: Volcanic Apocalypses, Lethal Oceans, and Our Quest to Understand Earth's Past Mass Extinctions** by Peter Brannen
 - **The Gardener and the Carpenter** by Alison Gopnik
+- **Determined: A Science of Life Without Free Will** by Robert Sapolsky
 `;
 
 export default bookList;
