@@ -36,15 +36,15 @@
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
 	<h2 class="c10 c31" id="h.lmuoo2f9o2gj"><span class="c15 c2">Experience</span></h2>
 	<div>
-		<p class="c10">
-			<span class="c14 c11">Senior Frontend Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
-				class="c13 c2 c11">&nbsp; &nbsp;Jan 2024 - current</span
-			>
+		<p class="c10 space-between">
+			<span class="c5 c12">
+				<a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a>
+			</span>
+			<span class="c14 c2 c11">Aug 2021 - current</span>
 		</p>
 		<p class="c10">
-			<span class="c5 c12"
-				><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
-			>
+			<span class="c14 c11">Senior Frontend Engineer</span>
+			<span class="c13 c2 c11">(Jan 2024 - current)</span>
 		</p>
 		<ul class="c20 lst-kix_i5opmugboj5i-0 start">
 			<li class="c6 li-bullet-0">
@@ -91,14 +91,8 @@
 	<p class="c9"><span class="c1 c2" /></p>
 	<div>
 		<p class="c10">
-			<span class="c14 c11">Frontend Software Engineer &nbsp;</span><span class="c14 c18 c11">|</span><span
-				class="c13 c2 c11">&nbsp; &nbsp;Aug 2021 - Jan 2024</span
-			>
-		</p>
-		<p class="c10">
-			<span class="c5 c12"
-				><a class="c7" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a></span
-			>
+			<span class="c14 c11">Frontend Software Engineer</span>
+			<span class="c13 c2 c11">(Aug 2021 - Jan 2024)</span>
 		</p>
 		<ul class="c20 lst-kix_i5opmugboj5i-0 start">
 			<li class="c6 li-bullet-0">
@@ -141,15 +135,14 @@
 	</div>
 	<p class="c9"><span class="c1 c2" /></p>
 	<div>
-		<p class="c10">
-			<span class="c14 c11">Software Engineer</span><span class="c13 c11">&nbsp; </span><span class="c14 c18 c11"
-				>|</span
-			><span class="c13 c2 c11">&nbsp; &nbsp;July 2021 - Sep 2021</span>
-		</p>
-		<p class="c10">
+		<p class="c10 space-between">
 			<span class="c5 c12"
 				><a class="c7" href="https://www.pepplish.com/" target="_blank">Pepplish Provisions</a></span
 			>
+			<span class="c14 c2 c11">July 2021 - Sep 2021</span>
+		</p>
+		<p class="c10">
+			<span class="c14 c11">Software Engineer</span>
 		</p>
 		<ul class="c20 lst-kix_i5opmugboj5i-0">
 			<li class="c6 li-bullet-0">
@@ -162,16 +155,16 @@
 		</ul>
 	</div>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
-	<p class="c10">
-		<span class="c11 c14">Data Analyst</span><span class="c11 c13">&nbsp; </span><span class="c14 c11 c18">|</span
-		><span class="c13 c2 c11">&nbsp; &nbsp;May 2020 - Sep 2020</span>
-	</p>
-	<p class="c10">
+	<p class="c10 space-between">
 		<span class="c5 c12"
 			><a class="c7" href="https://www.wsfssh.org/" target="_blank"
 				>West Side Federation for Senior &amp; Supportive Housing
-			</a></span
-		>
+			</a>
+		</span>
+		<span class="c14 c2 c11">May 2020 - Sep 2020</span>
+	</p>
+	<p class="c10">
+		<span class="c11 c14">Data Analyst</span><span class="c11 c13">&nbsp; </span>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0">
 		<li class="c6 li-bullet-0"><span class="c1">Record, analyze, and graph data to report to the DOH</span></li>
@@ -182,13 +175,12 @@
 		</li>
 	</ul>
 	<p class="c9"><span class="c2 c14 c11 c26" /></p>
-	<p class="c10">
-		<span class="c11 c14">Production Coordinator</span><span class="c11 c13">&nbsp; </span><span class="c14 c11 c18"
-			>|</span
-		><span class="c13 c2 c11">&nbsp; &nbsp;Sep 2018 - Mar 2020</span>
+	<p class="c10 space-between">
+		<span class="c5 c12"><a class="c7" href="https://elanartists.com/" target="_blank">Elan Artists</a></span>
+		<span class="c14 c2 c11">&nbsp; &nbsp;Sep 2018 - Mar 2020</span>
 	</p>
 	<p class="c10">
-		<span class="c5 c12"><a class="c7" href="https://elanartists.com/" target="_blank">Elan Artists</a></span>
+		<span class="c11 c14">Production Coordinator</span>
 	</p>
 	<ul class="c20 lst-kix_i5opmugboj5i-0">
 		<li class="c6 li-bullet-0">
@@ -1139,5 +1131,10 @@
 		orphans: 2;
 		widows: 2;
 		text-align: left;
+	}
+
+	.space-between {
+		display: flex;
+		justify-content: space-between;
 	}
 </style>
