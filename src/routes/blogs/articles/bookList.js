@@ -15,6 +15,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **The Gardener and the Carpenter** by Alison Gopnik
 - **Determined: A Science of Life Without Free Will** by Robert Sapolsky
 - **Good Reasons for Bad Feelings: Insights from the Frontier of Evolutionary Psychiatry** by Randolph M. Nesse, MD
+- **The Attention Merchants: The Epic Scramble to Get Inside Our Heads** by Tim Wu
 `;
 
 export default bookList;
