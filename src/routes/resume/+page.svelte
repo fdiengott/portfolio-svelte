@@ -45,14 +45,22 @@
 					and <strong>React</strong>, creating intuitive data visualizations
 				</li>
 				<li class="c6 li-bullet-0">
+					Led the initiative to convert a highly-used component library to <strong>TypeScript</strong> and
+					<strong>Sass Modules</strong>
+				</li>
+				<li class="c6 li-bullet-0">
 					Planned and initiated a complete refactor of the component library using <strong>TypeScript</strong>
 					and <strong>Sass Modules</strong>
 				</li>
 				<li class="c6 li-bullet-0">
 					Rebuilt and enhanced an internal metrics <strong>dashboard</strong> with
 					<strong>Data Visualizations</strong>, improving a <strong>Web Scraping</strong> process from over 7
-					min to around 45 sec (nearly 10x performance improvement), utilizing <strong>Bun</strong>,
+					min to around 45 sec (nearly 10x performance gain), utilizing <strong>Bun</strong>,
 					<strong>Astro</strong>, <strong>D3.js</strong>, and <strong>React</strong>
+				</li>
+				<li class="c6 li-bullet-0">
+					Covered the charting library in unit tests with <strong>Jest</strong> and
+					<strong>React Testing Library</strong> for increased durability
 				</li>
 				<li class="c6 li-bullet-0">
 					<strong>Optimized</strong> the performance of a highly used chart, reducing blocking time from 370ms
@@ -72,9 +80,9 @@
 			<ul class="c20 lst-kix_i5opmugboj5i-0 start">
 				<li class="c6 li-bullet-0">
 					Collaborated with a team of developers, designers, and accessibility engineers to maintain a <strong
-						>React Component Library</strong
+						>Design System Component Library</strong
 					>
-					using <strong>JavaScript</strong> and <strong>Sass</strong>
+					built with <strong>React</strong>,using <strong>JavaScript</strong> and <strong>Sass</strong>
 				</li>
 				<li class="c6 li-bullet-0">
 					Developed a <strong>Calendar Component</strong> with animations from scratch and maintained a small
@@ -175,8 +183,9 @@
 				</li>
 
 				<li class="c6 li-bullet-0">
-					Developed a personal portfolio website using <strong>Svelte</strong> and <strong>SvelteKit</strong>,
-					showcasing proficiency in building modern, performant web apps with cutting-edge technologies
+					Developed a static personal portfolio website using <strong>Svelte</strong> and
+					<strong>SvelteKit</strong>, showcasing proficiency in building modern, performant web apps with
+					cutting-edge technologies
 				</li>
 
 				<li class="c6 li-bullet-0">
