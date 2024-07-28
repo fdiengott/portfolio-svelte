@@ -16,6 +16,8 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Determined: A Science of Life Without Free Will** by Robert Sapolsky
 - **Good Reasons for Bad Feelings: Insights from the Frontier of Evolutionary Psychiatry** by Randolph M. Nesse, MD
 - **The Attention Merchants: The Epic Scramble to Get Inside Our Heads** by Tim Wu
+- **Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems** by Martin Kleppmann
+- **Frontend Architecture for Design Systems: A Modern Blueprint for Scalable and Sustainable Websites** by Micah Godbolt
 `;
 
 export default bookList;
