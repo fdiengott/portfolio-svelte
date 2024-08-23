@@ -30,9 +30,21 @@
 		<div class="experience-item">
 			<p class="c10 space-between">
 				<span class="c5 c12">
+					<a class="link" href="https://weareadaptive.com" target="_blank">Adaptive</a>
+				</span>
+				<span class="c2 c11">July 2024 - current</span>
+			</p>
+			<p class="c10">
+				<span class="c11">Frontend Engineer</span>
+			</p>
+			<ul class="c20 lst-kix_i5opmugboj5i-0 start" />
+		</div>
+		<div class="experience-item">
+			<p class="c10 space-between">
+				<span class="c5 c12">
 					<a class="link" href="https://us.etrade.com/home" target="_blank">Etrade from Morgan Stanley</a>
 				</span>
-				<span class="c2 c11">Aug 2021 - current</span>
+				<span class="c2 c11">Aug 2021 - July 2024</span>
 			</p>
 			<p class="c10">
 				<span class="c11">Senior Frontend Engineer</span>
