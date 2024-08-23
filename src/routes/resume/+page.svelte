@@ -269,8 +269,6 @@
 </div>
 
 <style type="text/css">
-	@import url(https://themes.googleusercontent.com/fonts/css?kit=G_FepKA_uH2WOg3oFEYtvRDPdHQi3I4pWfNLLF4NR0PZIF3btElinkPz_s6G6X5xJ1da9RBYOeQvhQuXfIbZwok5vF56XcdiYptcM7nUUvwb1p286u1FhNCWJx6k_BWUR2);
-
 	.lst-kix_i5opmugboj5i-0 > li:before {
 		content: '\0025cf   ';
 	}
