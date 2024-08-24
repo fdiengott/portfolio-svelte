@@ -18,6 +18,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **The Attention Merchants: The Epic Scramble to Get Inside Our Heads** by Tim Wu
 - **Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems** by Martin Kleppmann
 - **Frontend Architecture for Design Systems: A Modern Blueprint for Scalable and Sustainable Websites** by Micah Godbolt
+- **Filterworld: How Algorithms Flattened Culture** by Kyle Chayka
 `;
 
 export default bookList;
