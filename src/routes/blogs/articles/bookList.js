@@ -20,6 +20,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Frontend Architecture for Design Systems: A Modern Blueprint for Scalable and Sustainable Websites** by Micah Godbolt
 - **Filterworld: How Algorithms Flattened Culture** by Kyle Chayka
 - **Amusing Ourselves to Death: Public Discourse in the Age of Show Business** by Neil Postman
+- **Brave New World** by Aldous Huxley
 `;
 
 export default bookList;
