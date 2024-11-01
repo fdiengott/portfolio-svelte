@@ -21,6 +21,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Filterworld: How Algorithms Flattened Culture** by Kyle Chayka
 - **Amusing Ourselves to Death: Public Discourse in the Age of Show Business** by Neil Postman
 - **Brave New World** by Aldous Huxley
+- **America's War for the Greater Middle East: A Military History** by Andrew J. Bacevich
 `;
 
 export default bookList;
