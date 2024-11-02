@@ -66,7 +66,7 @@ If the data objects' keys are consistently just a camel-cased version of the col
 
 ```typescript
 const headerToCamelCase = (header: string) => {
-	const pascalCasedKey = string.replace(/\s/g, ''); //remove spaces. This assumes the column headers are all capitalized
+	const pascalCasedKey = string.replace(/\s/g, ''); //remove spaces. This assumes column headers are all capitalized
 	return pascalCasedKey[0].toLowerCase() + pascalCasedKey.slice(1); // lower case the first char
 };
 const csvData = data
