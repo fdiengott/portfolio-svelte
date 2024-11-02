@@ -1,6 +1,7 @@
 <script>
 	import SvelteMarkdown from 'svelte-markdown';
 	import tableOfContentsHeaderRenderer from './TableOfContentsHeader.svelte';
+	import codeRenderer from './Code.svelte';
 
 	export let data;
 
@@ -15,7 +16,10 @@
 	<a class="blog__back-btn" href="/blogs">Back</a>
 	<div class="date"><em>First published on {data.page.date}.</em></div>
 	<div class="btn" />
-	<SvelteMarkdown source={data.page.content} renderers={{ heading: tableOfContentsHeaderRenderer }} />
+	<SvelteMarkdown
+		source={data.page.content}
+		renderers={{ heading: tableOfContentsHeaderRenderer, code: codeRenderer }}
+	/>
 	<button class="btn-scroll-top" on:click={scrollToTop}><span class="chevron" /></button>
 </article>
 
@@ -122,13 +126,6 @@
 		--code-background: hsl(0, 0%, 95%);
 		--code-border-color: 205, 84%, 20%; // blueish gray
 
-		code {
-			padding: 0.1rem 0.3rem;
-			margin-inline: 0.2rem;
-			background: var(--code-background);
-			border: 1px solid hsla(var(--code-border-color), 0.255);
-		}
-
 		pre {
 			background: var(--code-background);
 			padding: 1rem;
@@ -138,6 +135,7 @@
 			overflow-x: scroll;
 
 			code {
+				background: var(--code-background);
 				padding: 0;
 				margin: 0;
 				border: none;
