@@ -5,8 +5,15 @@ import bookList from './bookList';
 import blogGuide from './blogGuide';
 import zshThemeCustomization from './zsh-theme-customization';
 import regex101 from './regex101.md?raw';
+import csvReact from './csv-react.md?raw';
 
 const pages = {
+	csvReact: {
+		title: 'Downloading CSVs in React',
+		content: csvReact,
+		date: '11/2/2024',
+		tags: ['coding']
+	},
 	blogGuide: {
 		title: 'Welcome to my blog!',
 		content: blogGuide,
