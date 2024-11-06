@@ -22,6 +22,7 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Amusing Ourselves to Death: Public Discourse in the Age of Show Business** by Neil Postman
 - **Brave New World** by Aldous Huxley
 - **America's War for the Greater Middle East: A Military History** by Andrew J. Bacevich
+- **Of Boys and Men: Why the Modern Male Is Struggling, Why It Matters, and What to Do About It** by Richard V. Reeves
 `;
 
 export default bookList;
