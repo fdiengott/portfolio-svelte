@@ -142,6 +142,15 @@
 			}
 		}
 
+		p > code {
+			--border-color: hsl(from var(--code-background) h s 80);
+			background: var(--code-background);
+			padding: 0.2rem;
+			border: 1px solid var(--border-color);
+			border-radius: 0.2rem;
+			font-size: var(--fs-300);
+		}
+
 		blockquote {
 			padding: 2rem 3rem;
 			margin-block-start: -1rem;

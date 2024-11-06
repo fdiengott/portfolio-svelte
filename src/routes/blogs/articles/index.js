@@ -6,8 +6,15 @@ import blogGuide from './blogGuide';
 import zshThemeCustomization from './zsh-theme-customization';
 import regex101 from './regex101.md?raw';
 import csvReact from './csv-react.md?raw';
+import staticFonts from './static-fonts.md?raw';
 
 const pages = {
+	staticFonts: {
+		title: 'Where to Find Static Font Links',
+		content: staticFonts,
+		date: '11/6/2024',
+		tags: ['coding']
+	},
 	csvReact: {
 		title: 'Downloading CSVs in React',
 		content: csvReact,
