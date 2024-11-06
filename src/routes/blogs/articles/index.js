@@ -6,7 +6,7 @@ import blogGuide from './blogGuide';
 import zshThemeCustomization from './zsh-theme-customization';
 import regex101 from './regex101.md?raw';
 import csvReact from './csv-react.md?raw';
-import staticFonts from './static-fonts.md';
+const staticFonts = './static-fonts.md?raw';
 
 const pages = {
 	staticFonts: {
