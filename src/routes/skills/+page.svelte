@@ -4,30 +4,45 @@
 	import { quadOut } from 'svelte/easing';
 
 	const skillData = [
-		{ iconCls: 'devicon-react-original colored', text: 'React' },
+		{ iconCls: 'devicon-typescript-plain colored', text: 'TypeScript' },
 		{ iconCls: 'devicon-javascript-plain colored', text: 'JavaScript' },
-		{ iconCls: 'devicon-d3js-plain colored', text: 'D3.js' },
+		{ iconCls: 'devicon-react-original colored', text: 'React' },
 		{ iconCls: 'devicon-sass-original colored', text: 'Sass' },
-		{ iconCls: 'devicon-graphql-plain colored', text: 'GraphQL' },
+
+		{ iconCls: 'devicon-nextjs-original-wordmark colored', text: 'Next.js' },
+		{ iconCls: 'devicon-svelte-plain colored', text: 'Svelte' },
+		{ iconCls: 'devicon-astro-plain colored', text: 'Astro' },
+		{ iconCls: 'devicon-vuejs-plain colored', text: 'Vue.js' },
+
+		{ iconCls: 'devicon-d3js-plain colored', text: 'RxJS' },
+		{ iconCls: 'devicon-d3js-plain colored', text: 'D3.js' },
+		{ iconCls: 'devicon-trpc-plain colored', text: 'tRPC' },
+		{ iconCls: 'devicon-bash-plain colored', text: 'Bash' },
+
 		{ iconCls: 'devicon-ruby-plain colored', text: 'Ruby' },
 		{ iconCls: 'devicon-rails-plain colored', text: 'Rails' },
-		{ iconCls: 'devicon-git-plain colored', text: 'Git' },
 		{ iconCls: 'devicon-nodejs-plain colored', text: 'Node.js' },
 		{ iconCls: 'devicon-express-original colored', text: 'Express' },
+
 		{ iconCls: 'devicon-postgresql-plain colored', text: 'PostgreSQL' },
 		{ iconCls: 'devicon-mongodb-plain colored', text: 'MongoDB' },
-		{ iconCls: 'devicon-nextjs-original-wordmark colored', text: 'Next.js' },
 		{ iconCls: 'devicon-html5-plain colored', text: 'HTML' },
 		{ iconCls: 'devicon-css3-plain colored', text: 'CSS' },
+
+		{ iconCls: 'devicon-graphql-plain colored', text: 'GraphQL' },
+		{ iconCls: 'devicon-vitejs-plain colored', text: 'Vite' },
 		{ iconCls: 'devicon-webpack-plain colored', text: 'Webpack' },
 		{ iconCls: 'devicon-babel-plain colored', text: 'Babel' },
-		{ iconCls: 'devicon-vuejs-plain colored', text: 'Vue.js' },
-		{ iconCls: 'devicon-svelte-plain colored', text: 'Svelte' },
-		{ iconCls: 'devicon-amazonwebservices-plain colored', text: 'Amazon Web Services' },
+
 		{ iconCls: 'devicon-heroku-original colored', text: 'Heroku' },
+		{ iconCls: 'devicon-amazonwebservices-plain colored', text: 'Amazon Web Services' },
+		{ iconCls: 'devicon-netlify-plain colored', text: 'Netlify' },
+		{ iconCls: 'devicon-git-plain colored', text: 'Git' },
+
 		{ iconCls: 'devicon-jest-plain colored', text: 'Jest' },
-		{ iconCls: 'devicon-tailwindcss-plain colored', text: 'Tailwind CSS' },
-		{ iconCls: 'devicon-threejs-original colored', text: 'Three.js' }
+		{ iconCls: 'devicon-materialui-plain', text: 'Material UI' },
+		{ iconCls: 'devicon-storybook-plain', text: 'Storybook' },
+		{ iconCls: 'devicon-neovim-plain colored', text: 'Neovim' },
 	];
 
 	const defaultTransitionParams = {
