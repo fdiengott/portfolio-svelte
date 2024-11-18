@@ -72,8 +72,8 @@
 	}
 
 	#blog__container {
+		--block-spacing: 1.5rem;
 		position: relative;
-
 		font-size: var(--fs-350);
 
 		h2,
@@ -83,11 +83,11 @@
 		}
 
 		p {
-			margin-block-end: 1.5rem;
+			margin-block-end: var(--block-spacing);
 			line-height: 1.7em;
 		}
 
-		table {
+		table:not(:has(code)) {
 			margin-block: 3rem;
 		}
 
@@ -126,19 +126,32 @@
 		--code-background: hsl(0, 0%, 95%);
 		--code-border-color: 205, 84%, 20%; // blueish gray
 
-		pre {
+		table:has(code),
+		tr,
+		td {
 			background: var(--code-background);
-			padding: 1rem;
+		}
+
+		table:has(code) {
+			display: block;
 			border: 1px solid #aaa;
 			border-radius: 0.5rem;
 			font-size: var(--fs-300);
-			overflow-x: scroll;
+			margin-block-end: var(--block-spacing);
 
 			code {
-				background: var(--code-background);
 				padding: 0;
 				margin: 0;
 				border: none;
+			}
+
+			td {
+				width: 100%;
+			}
+
+			tr:first-child td,
+			tr:last-child td {
+				border-radius: 0.5rem;
 			}
 		}
 
@@ -161,22 +174,22 @@
 			}
 		}
 
-		table {
+		table:not(:has(code)) {
 			margin-inline: auto;
 			font-size: var(--fs-300);
 			display: block;
 			overflow-x: scroll;
-		}
 
-		th,
-		td {
-			--border-color: #444;
-			border-bottom: 1px solid var(--border-color);
-			min-width: 10rem;
-		}
+			th,
+			td {
+				--border-color: #444;
+				border-bottom: 1px solid var(--border-color);
+				min-width: 10rem;
+			}
 
-		td {
-			padding: 1.2rem 0.8rem;
+			td {
+				padding: 1.2rem 0.8rem;
+			}
 		}
 
 		p:has(img) {
