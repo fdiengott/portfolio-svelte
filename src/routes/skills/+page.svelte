@@ -17,7 +17,7 @@
 		{ iconCls: 'devicon-d3js-plain colored', text: 'RxJS' },
 		{ iconCls: 'devicon-d3js-plain colored', text: 'D3.js' },
 		{ iconCls: 'devicon-trpc-plain colored', text: 'tRPC' },
-		{ iconCls: 'devicon-graphql-plain colored', text: 'GraphQL' },
+		{ iconCls: 'devicon-bash-plain colored', text: 'Bash' },
 
 		{ iconCls: 'devicon-ruby-plain colored', text: 'Ruby' },
 		{ iconCls: 'devicon-rails-plain colored', text: 'Rails' },
@@ -29,14 +29,20 @@
 		{ iconCls: 'devicon-html5-plain colored', text: 'HTML' },
 		{ iconCls: 'devicon-css3-plain colored', text: 'CSS' },
 
+		{ iconCls: 'devicon-graphql-plain colored', text: 'GraphQL' },
+		{ iconCls: 'devicon-vitejs-plain colored', text: 'Vite' },
 		{ iconCls: 'devicon-webpack-plain colored', text: 'Webpack' },
 		{ iconCls: 'devicon-babel-plain colored', text: 'Babel' },
-		{ iconCls: 'devicon-amazonwebservices-plain colored', text: 'Amazon Web Services' },
-		{ iconCls: 'devicon-heroku-original colored', text: 'Heroku' },
 
-		{ iconCls: 'devicon-git-plain colored', text: 'Git' },
+		{ iconCls: 'devicon-heroku-original colored', text: 'Heroku' },
+		{ iconCls: 'devicon-amazonwebservices-plain colored', text: 'Amazon Web Services' },
 		{ iconCls: 'devicon-netlify-plain colored', text: 'Netlify' },
-		{ iconCls: 'devicon-jest-plain colored', text: 'Jest' }
+		{ iconCls: 'devicon-git-plain colored', text: 'Git' },
+
+		{ iconCls: 'devicon-jest-plain colored', text: 'Jest' },
+		{ iconCls: 'devicon-materialui-plain', text: 'Material UI' },
+		{ iconCls: 'devicon-storybook-plain', text: 'Storybook' },
+		{ iconCls: 'devicon-neovim-plain colored', text: 'Neovim' },
 	];
 
 	const defaultTransitionParams = {
