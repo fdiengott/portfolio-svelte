@@ -7,8 +7,15 @@ import zshThemeCustomization from './zsh-theme-customization';
 import regex101 from './regex101.md?raw';
 import csvReact from './csv-react.md?raw';
 import staticFonts from './static-fonts.md?raw';
+import pdfReact from './pdf-react.md?raw';
 
 const pages = {
+	'pdf-react': {
+		title: 'PDFs in React',
+		content: pdfReact,
+		date: '11/10/2024',
+		tags: ['coding']
+	},
 	'static-fonts': {
 		title: 'Where to Find Static Font Links',
 		content: staticFonts,
