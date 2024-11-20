@@ -61,6 +61,7 @@
 
 	a {
 		color: var(--color-primary);
+		text-decoration: underline;
 	}
 
 	a:hover {

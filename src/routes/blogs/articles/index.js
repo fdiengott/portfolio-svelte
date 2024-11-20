@@ -7,21 +7,28 @@ import zshThemeCustomization from './zsh-theme-customization';
 import regex101 from './regex101.md?raw';
 import csvReact from './csv-react.md?raw';
 import staticFonts from './static-fonts.md?raw';
+import pdfReact from './pdf-react.md?raw';
 
 const pages = {
-	staticFonts: {
+	'pdf-react': {
+		title: 'PDFs in React',
+		content: pdfReact,
+		date: '11/10/2024',
+		tags: ['coding']
+	},
+	'static-fonts': {
 		title: 'Where to Find Static Font Links',
 		content: staticFonts,
 		date: '11/6/2024',
 		tags: ['coding']
 	},
-	csvReact: {
+	'csv-react': {
 		title: 'Downloading CSVs in React',
 		content: csvReact,
 		date: '11/2/2024',
 		tags: ['coding']
 	},
-	blogGuide: {
+	'blog-guide': {
 		title: 'Welcome to my blog!',
 		content: blogGuide,
 		date: '12/26/2023',
@@ -33,13 +40,13 @@ const pages = {
 		date: '12/29/2023',
 		tags: ['coding']
 	},
-	zshThemeCustomization: {
+	'zsh-theme-customization': {
 		title: 'Zsh Theme Customization',
 		content: zshThemeCustomization,
 		date: '12/26/2023',
 		tags: ['coding']
 	},
-	bookList: {
+	'book-list': {
 		title: 'Book List',
 		content: bookList,
 		date: '10/6/2023',
@@ -51,7 +58,7 @@ const pages = {
 	// 	date: '8/3/2023',
 	// 	tags: ['musings']
 	// },
-	tomatoSoup: {
+	'tomato-soup': {
 		title: 'The best vegan/gf tomato soup and grilled cheese recipe you can find',
 		content: tomatoSoup,
 		date: '8/2/2023',

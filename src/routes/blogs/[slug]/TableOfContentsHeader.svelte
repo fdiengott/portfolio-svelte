@@ -49,7 +49,7 @@
 	.header-link path {
 		stroke: #868686;
 	}
-	.header-wrapper:hover .header-link {
+	:is(.header-wrapper:hover, .header-wrapper:focus-within) .header-link {
 		opacity: 1;
 		cursor: pointer;
 	}
