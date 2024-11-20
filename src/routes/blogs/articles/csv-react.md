@@ -126,6 +126,6 @@ So that's it! Pretty straight-forward once you get all the key info: separate yo
 
 Now you can go off and spreadsheet!
 
-Next up is PDFs! These are a little more involved than CSVs as I stated above, as it requires an external library to be used and the styling is quite different compared to regular CSS. Once it is done I'll link it here!
+Next up is PDFs! These are a little more involved than CSVs as I stated above, as it requires an external library to be used and the styling is quite different compared to regular CSS. ~~Once it is done I'll link it here!~~ [You can find the article here](./pdf-react)!
 
 Until next time!

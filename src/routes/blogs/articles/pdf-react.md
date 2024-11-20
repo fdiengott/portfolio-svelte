@@ -377,7 +377,7 @@ const MyCoolSVG = () => (
 	</View>
 )
 ```
-For a list of all the available SVG components, [here they are on the docs](https://react-pdf.org/components/svg).
+For a list of all the available SVG components, [here they are on the docs](https://react-pdf.org/svg).
 
 ### Fonts
 
