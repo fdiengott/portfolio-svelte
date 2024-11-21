@@ -13,7 +13,7 @@ const pages = {
 	'pdf-react': {
 		title: 'PDFs in React',
 		content: pdfReact,
-		date: '11/10/2024',
+		date: '__TODAYS_DATE__',
 		tags: ['coding']
 	},
 	'static-fonts': {
