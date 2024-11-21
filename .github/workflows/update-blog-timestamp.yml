@@ -2,11 +2,12 @@
 name: Update Blog Timestamp
 
 on:
-  push:
-    paths:
-      - 'src/routes/blogs/articles/index.js' 
+  push: # triggered on push
     branches:
-      - main 
+      - staging
+      - main
+    paths:
+      - 'src/routes/blogs/**'
 
 jobs:
   update-timestamp:
