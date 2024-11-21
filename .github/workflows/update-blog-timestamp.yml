@@ -1,0 +1,35 @@
+# .github/workflows/update-blog-timestamp.yml
+name: Update Blog Timestamp
+
+on:
+  push: # triggered on push
+    branches:
+      - staging
+      - main
+    paths:
+      - 'src/routes/blogs/**'
+
+jobs:
+  update-timestamp:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update Build Time
+        run: |
+          # Get current date
+          TODAY=$(date +"%m/%d/%y")
+          
+          # Replace the __TODAYS_DATE__ constant 
+          # Using sed to replace the value between quotes after __BUILD_TIME__
+          sed -i "s|__TODAYS_DATE__|${TODAY}|g" src/routes/blogs/articles/index.js
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add src/routes/blogs/articles/index.js
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update blog timestamp [skip ci]"
+          git push
