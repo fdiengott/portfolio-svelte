@@ -10,6 +10,7 @@ import staticFonts from './static-fonts.md?raw';
 import pdfReact from './pdf-react.md?raw';
 
 const pages = {
+	test: { date: '__TODAYS_DATE__' },
 	'pdf-react': {
 		title: 'PDFs in React',
 		content: pdfReact,
