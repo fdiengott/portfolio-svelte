@@ -23,6 +23,8 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Brave New World** by Aldous Huxley
 - **America's War for the Greater Middle East: A Military History** by Andrew J. Bacevich
 - **Of Boys and Men: Why the Modern Male Is Struggling, Why It Matters, and What to Do About It** by Richard V. Reeves
+- **How to Win Friends and Influence People** by Dale Carnegie
+- **The New Map: Energy, Climate, and the Clash of Nations** by Daniel Yergin (I read it a second time after getting more middle east context from Bacevich)
 `;
 
 export default bookList;
