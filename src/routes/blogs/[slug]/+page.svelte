@@ -115,6 +115,11 @@
 			list-style: outside;
 		}
 
+		> ul:not(:has(ul)) {
+			display: grid;
+			gap: 1.5rem;
+		}
+
 		ol > li > ul {
 			margin-inline-start: 2rem;
 		}
