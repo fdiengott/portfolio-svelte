@@ -22,6 +22,12 @@ jobs:
           # Get current date
           TODAY=$(date +"%m/%d/%y")
           
+          # Add error checking
+          if ! grep -q "__TODAYS_DATE__" src/routes/blogs/articles/index.js; then
+            echo "Warning: __TODAYS_DATE__ not found in file"
+            exit 0
+          fi
+          
           # Replace the __TODAYS_DATE__ constant 
           # Using sed to replace the value between quotes after __BUILD_TIME__
           sed -i "s|__TODAYS_DATE__|${TODAY}|g" src/routes/blogs/articles/index.js
