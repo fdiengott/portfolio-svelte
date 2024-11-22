@@ -3,6 +3,9 @@
 	import { fly } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
+	let isPageLoaded = false;
+	onMount(() => (isPageLoaded = true));
+
 	const skillData = [
 		{ iconCls: 'devicon-typescript-plain colored', text: 'TypeScript' },
 		{ iconCls: 'devicon-javascript-plain colored', text: 'JavaScript' },
@@ -52,8 +55,6 @@
 		easing: quadOut
 	};
 
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
 </script>
 
 <svelte:head>
@@ -68,7 +69,7 @@
 		<div class="skill__grid">
 			{#each skillData as skill, index (skill.text)}
 				{#if isPageLoaded}
-					<div class="skill__icon" transition:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
+					<div class="skill__icon" in:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
 						<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 						<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
 					</div>
