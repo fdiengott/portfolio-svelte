@@ -69,7 +69,7 @@
 		<div class="skill__grid">
 			{#each skillData as skill, index (skill.text)}
 				{#if isPageLoaded}
-					<div class="skill__icon" transition:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
+					<div class="skill__icon" in:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
 						<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 						<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
 					</div>
