@@ -3,6 +3,9 @@
 	import { fly } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
+	let isPageLoaded = false;
+	onMount(() => (isPageLoaded = true));
+
 	const skillData = [
 		{ iconCls: 'devicon-typescript-plain colored', text: 'TypeScript' },
 		{ iconCls: 'devicon-javascript-plain colored', text: 'JavaScript' },
@@ -52,8 +55,6 @@
 		easing: quadOut
 	};
 
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
 </script>
 
 <svelte:head>
