@@ -10,6 +10,13 @@ import staticFonts from './static-fonts.md?raw';
 import pdfReact from './pdf-react.md?raw';
 
 const pages = {
+	'book-list': {
+		title: 'Recent Reading List',
+		content: bookList,
+		date: '10/6/2023',
+		tags: ['suggestions'],
+		pinned: true,
+	},
 	'pdf-react': {
 		title: 'PDFs in React',
 		content: pdfReact,
@@ -45,12 +52,6 @@ const pages = {
 		content: zshThemeCustomization,
 		date: '12/26/2023',
 		tags: ['coding']
-	},
-	'book-list': {
-		title: 'Book List',
-		content: bookList,
-		date: '10/6/2023',
-		tags: ['suggestions']
 	},
 	// beginning: {
 	// 	title: 'It began with a whimper',
