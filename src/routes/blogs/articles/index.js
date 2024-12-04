@@ -14,7 +14,7 @@ const pages = {
 	'book-list': {
 		title: 'Recent Reading List',
 		content: bookList,
-		date: '10/6/2023',
+		date: "__TODAYS_DATE__",
 		tags: ['suggestions'],
 		pinned: true,
 	},
