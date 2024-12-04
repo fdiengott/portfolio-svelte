@@ -21,7 +21,7 @@ const pages = {
 	'recommended-books': {
 		title: 'Recommended Book List',
 		content: recommendedBookList,
-		date: "__TODAYS_DATE__",
+		date: "12/04/24",
 		tags: ['suggestions'],
 	},
 	'pdf-react': {
