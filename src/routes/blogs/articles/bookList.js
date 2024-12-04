@@ -1,7 +1,7 @@
 const bookList = `
 # Recent book list
 
-I've been reading a lot of non-fiction lately, massively inspiring me and exploding my thinking. I'd like to share some of the most recent books here that have made a big impact on me in no particular order.
+I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, oldest to most recent.
 
 - **The New Map: Energy, Climate, and the Clash of Nations** by Daniel Yergin
 - **Chip War: The fight for the world's most critical technology** by Chris Miller
@@ -25,6 +25,8 @@ I've been reading a lot of non-fiction lately, massively inspiring me and explod
 - **Of Boys and Men: Why the Modern Male Is Struggling, Why It Matters, and What to Do About It** by Richard V. Reeves
 - **How to Win Friends and Influence People** by Dale Carnegie
 - **The New Map: Energy, Climate, and the Clash of Nations** by Daniel Yergin (I read it a second time after getting more middle east context from Bacevich)
+- **The Kingdom, The Power, and the Glory: Ameridcan Evangelicals in an Age of Extremism** by Tim Alberta
+- **Thinking, Fast and Slow** by Daniel Kahneman
 `;
 
 export default bookList;
