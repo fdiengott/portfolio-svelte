@@ -1,4 +1,5 @@
 <script>
+	import Pin from '../components/Pin.svelte'
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
@@ -18,7 +19,12 @@
 <ul class="article__list">
 	{#each Object.entries(pages) as [slug, article], index}
 		{#if isPageLoaded}
-			<li transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 125 }}>
+			<li class="article__item" transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 125 }}>
+				{#if article.pinned}
+					<div class="article__pin-wrapper">
+						<Pin />
+					</div>
+				{/if}
 				<div class="article__date">{article.date}</div>
 				<a href="/blogs/{slug}">
 					<span>{article.title}</span>
@@ -54,8 +60,9 @@
 		row-gap: 2rem;
 		justify-content: center;
 
-		> li {
+		.article__item {
 			display: grid;
+			position: relative;
 			border: 1px solid var(--black-transparent);
 			padding: 1rem 2rem;
 			border-radius: 0.5rem;
@@ -105,12 +112,17 @@
 	.article__tag.musings {
 		--tag-color: rgb(183, 35, 241);
 	}
-	.article__tag.music {
-	}
+	// .article__tag.music { }
 	.article__tag.suggestions {
 		--tag-color: rgb(56, 35, 241);
 	}
 	.article__tag.featured {
 		--tag-color: rgb(199, 0, 0);
+	}
+
+	.article__pin-wrapper {
+		position: absolute;
+		top: calc(1rem - 7.5px);
+		left: calc(1rem - 7.5px);
 	}
 </style>
