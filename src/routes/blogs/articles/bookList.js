@@ -27,6 +27,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **The New Map: Energy, Climate, and the Clash of Nations** by Daniel Yergin (I read it a second time after getting more middle east context from Bacevich)
 - **The Kingdom, The Power, and the Glory: Ameridcan Evangelicals in an Age of Extremism** by Tim Alberta
 - **Thinking, Fast and Slow** by Daniel Kahneman
+- **Moneyland: The Inside Story of the Crooks and Kleptocrats Who Rule the World** by Oliver Bullough
 `;
 
 export default bookList;
