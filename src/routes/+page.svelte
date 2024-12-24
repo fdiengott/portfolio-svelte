@@ -1,13 +1,9 @@
 <script>
-	import { onMount } from 'svelte';
 	import headshot from '../assets/images/headshot.jpeg';
 
-	let animate = false;
 	const delayInterval = 0.05;
-	const initialDelay = 0.4;
+	const initialDelay = 0.8;
 	const firstNameTime = 'Freddy '.length * delayInterval + initialDelay;
-
-	onMount(() => (animate = true));
 </script>
 
 <svelte:head>
@@ -32,7 +28,7 @@
 						{#each 'Freddy ' as char, i}
 							<span
 								style="animation-delay: {initialDelay + i * delayInterval}s"
-								class="name-letter {animate && 'animate'}">{char}</span
+								class="name-letter animate-in">{char}</span
 							>
 						{/each}
 					</span>
@@ -40,7 +36,7 @@
 						{#each 'Diengott' as char, i}
 							<span
 								style="animation-delay: {firstNameTime + i * delayInterval}s"
-								class="name-letter {animate && 'animate'}">{char}</span
+								class="name-letter animate-in">{char}</span
 							>
 						{/each}
 					</span>
@@ -127,17 +123,6 @@
 		display: inline-block;
 		min-width: 10px;
 		transform: translate(0, 10px);
-	}
-
-	.name-letter.animate {
-		animation: fadeIn var(--fade-in-dur) forwards;
-	}
-
-	@keyframes fadeIn {
-		to {
-			opacity: 1;
-			transform: translate(0, 0);
-		}
 	}
 
 	.home__header--name {
