@@ -1,37 +1,24 @@
 <script>
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
-
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
-
 	const rows = [
 		{ label: 'Name', value: 'Freddy Diengott' },
 		{ label: 'Location', value: 'Brooklyn, NY' },
 		{
 			label: 'Github',
 			value: { link: 'https://github.com/fdiengott', text: 'fdiengott' },
-			external: true
+			external: true,
 		},
 		{
 			label: 'LinkedIn',
 			value: { link: 'https://www.linkedin.com/in/freddiengott/', text: 'freddiengott' },
-			external: true
+			external: true,
 		},
 		{
 			label: 'Wellfound',
 			value: { link: 'https://wellfound.com/u/freddy-diengott', text: 'freddy-diengott' },
-			external: true
+			external: true,
 		},
-		{ label: 'Resume', value: { link: '/resume', text: 'Link' } }
+		{ label: 'Resume', value: { link: '/resume', text: 'Link' } },
 	];
-
-	const defaultTransitionParams = {
-		duration: 600,
-		y: -50,
-		easing: quadOut
-	};
 </script>
 
 <svelte:head>
@@ -42,31 +29,27 @@
 	<div class="contact__header">
 		<h1>Contact Me</h1>
 	</div>
-	{#if isPageLoaded}
-		<div transition:fly={{ ...defaultTransitionParams, delay: 200 }}>
-			<div class="page-break" />
-		</div>
-	{/if}
+	<div class="animate-in" style="animation-delay: {200}ms">
+		<div class="page-break" />
+	</div>
 	<dl>
 		{#each rows as row, index}
-			{#if isPageLoaded}
-				<div class="row">
-					<dt transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 50 }}>{row.label}</dt>
-					<dd transition:fly={{ ...defaultTransitionParams, delay: 250 + (index + 1) * 50 }}>
-						{#if typeof row.value === 'string'}
-							{row.value}
-						{:else}
-							<a
-								href={row.value.link}
-								target={row.external && '_blank'}
-								rel={row.external && 'noopener noreferrer'}
-							>
-								{row.value.text}
-							</a>
-						{/if}
-					</dd>
-				</div>
-			{/if}
+			<div class="row">
+				<dt class="animate-in" style="animation-delay: {250 + index * 50}ms">{row.label}</dt>
+				<dd class="animate-in" style="animation-delay: {250 + (index + 1) * 50}ms">
+					{#if typeof row.value === 'string'}
+						{row.value}
+					{:else}
+						<a
+							href={row.value.link}
+							target={row.external && '_blank'}
+							rel={row.external && 'noopener noreferrer'}
+						>
+							{row.value.text}
+						</a>
+					{/if}
+				</dd>
+			</div>
 		{/each}
 	</dl>
 </article>

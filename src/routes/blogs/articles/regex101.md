@@ -1,27 +1,28 @@
 # Regex 101
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Creating a regular expression](#creating-a-regular-expression)
-- [Character classes](#character-classes)
-	- [A few examples](#a-few-examples)
-	- [A quick side note on the backslash "" character](#a-quick-side-note-on-the-backslash--character)
-- [Quantifiers](#quantifiers)
-	- [Quantifier Examples](#quantifier-examples)
-- [Assertions](#assertions)
-	- [Assertion Examples](#assertion-examples)
-- [Groups](#groups)
-	- [Group Examples](#group-examples)
-- [Flags](#flags)
-- [Javascript Functions and Constructors](#javascript-functions-and-constructors)
-	- [RegExp.prototype.test()](#regexp-prototype-test)
-	- [String.prototype.replace()](#string-prototype-replace)
-	- [String.prototype.split()](#string-prototype-split)
-	- [String.prototype.match()](#string-prototype-match)
-	- [String.prototype.matchAll()](#string-prototype-matchall)
-- [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution)
-- [Tools](#tools)
-- [Conclusion](#conclusion)
+
+-   [Introduction](#introduction)
+-   [Creating a regular expression](#creating-a-regular-expression)
+-   [Character classes](#character-classes)
+    -   [A few examples](#a-few-examples)
+    -   [A quick side note on the backslash "" character](#a-quick-side-note-on-the-backslash--character)
+-   [Quantifiers](#quantifiers)
+    -   [Quantifier Examples](#quantifier-examples)
+-   [Assertions](#assertions)
+    -   [Assertion Examples](#assertion-examples)
+-   [Groups](#groups)
+    -   [Group Examples](#group-examples)
+-   [Flags](#flags)
+-   [Javascript Functions and Constructors](#javascript-functions-and-constructors)
+    -   [RegExp.prototype.test()](#regexp-prototype-test)
+    -   [String.prototype.replace()](#string-prototype-replace)
+    -   [String.prototype.split()](#string-prototype-split)
+    -   [String.prototype.match()](#string-prototype-match)
+    -   [String.prototype.matchAll()](#string-prototype-matchall)
+-   [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution)
+-   [Tools](#tools)
+-   [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -34,14 +35,15 @@ So let's get started!
 ## Creating a regular expression
 
 There are two ways of creating a regular expression:
+
 1. Using a regular expression literal
-   ```javascript
-   const regex = /pattern-to-match/g;
-   ```
+    ```javascript
+    const regex = /pattern-to-match/g;
+    ```
 2. Using the `RegExp` class constructor
-   ```javascript
-   const regex = new RegExp('pattern-to-match', 'g');
-   ```
+    ```javascript
+    const regex = new RegExp('pattern-to-match', 'g');
+    ```
 
 These each have their pros and cons, which I will discuss further in the [Thoughts on RegExp Constructor and caution](#thoughts-on-regexp-constructor-and-caution) section. Throughout this tutorial, I will almost exclusively use the literal syntax, but be aware that this was a choice and not a requirement.
 
@@ -73,16 +75,16 @@ The sibling of `[...]` is the negated version `[^...]`, which matches anything t
 
 Next, you'll notice `|` is different from the other classes. The "or" `|` operator doesn't fit neatly into any section on this page so I'm shoehorning it in here since it is so fundamental! It is used any time you are looking for this pattern OR that one. For example, if I wanted to match the strings "musical theater" or "puppet theater" (because I'm cheeky), I could use the pattern `/(musical|puppet) theater/`. You'll notice I used parentheses here. If I hadn't, it would only match the strings "musical" or "puppet theater".
 
-A couple of quick notes on the above before I get into some clarifications of the `\` character and some examples! Firstly, note that the dot, within the context of square brackets, acts as a period  and nothing more. This is true for many of the characters above, which have roles in regex outside of being characters we are trying to match (e.g. parentheses `()`, curly braces `{}`, the asterisk `*`, dollar sign `$`, etc.).
+A couple of quick notes on the above before I get into some clarifications of the `\` character and some examples! Firstly, note that the dot, within the context of square brackets, acts as a period and nothing more. This is true for many of the characters above, which have roles in regex outside of being characters we are trying to match (e.g. parentheses `()`, curly braces `{}`, the asterisk `*`, dollar sign `$`, etc.).
 
 ### A few examples
 
 | Character class | String to search    | Matches                                               |
 | --------------- | ------------------- | ----------------------------------------------------- |
-| `/\w/`          | "\% #a-_=1"         | 'a', '_', '1' (note that '1' here is a string)        |
+| `/\w/`          | "\% #a-\_=1"        | 'a', '\_', '1' (note that '1' here is a string)       |
 | `/\d/`          | "as0df"             | '0'                                                   |
 | `/\s/`          | "as df"             | ' '                                                   |
-| `/./`           | "a1 ,_"             | Matches each character                                |
+| `/./`           | "a1 ,\_"            | Matches each character                                |
 | `/[a-z]/`       | "asdfASDF1234"      | 'a', 's', 'd', 'f'                                    |
 | `/[^a-z]/`      | "asdfASDF1234!@"    | 'A', 'S', 'D', 'F', '1', '2', '3', '4', '!', '@'      |
 | `/[^\s\n\t]/`   | "as df\nASDF\t1234" | Every character that isn't a space ('\s', '\n', '\t') |
@@ -92,7 +94,7 @@ A couple of quick notes on the above before I get into some clarifications of th
 
 The backslash, "escape" character `\` is very important in regular expressions and means quite different things in different contexts. In the context of character classes above, it can separate the letter `w` from `\w` which matches any alphanumeric character, plus '-'.
 
-Special characters, like the dot `.` and the dollar sign `$`, can be taken literally when preceded by a backslash. For example, `/abc\.com/`, will only match "abc.com" whereas the regex `/abc.com/` will also match "abc.com", but also "abc*com", since the "unescaped" dot means match any character (Reminder: unescaped i.e. not preceded by a backslash).
+Special characters, like the dot `.` and the dollar sign `$`, can be taken literally when preceded by a backslash. For example, `/abc\.com/`, will only match "abc.com" whereas the regex `/abc.com/` will also match "abc.com", but also "abc\*com", since the "unescaped" dot means match any character (Reminder: unescaped i.e. not preceded by a backslash).
 
 Within square brackets, it means to take a character literally instead of applying its regex role. To explain this more clearly, in my final example a few paragraphs above (`[!#$%&*@-.[\]^_]`) on using square brackets `[...]` with lots of symbols, you'll note that there is a square bracket in the middle of the string preceded by a backslash `\`. This means, in this context, that we literally want to match the closing square brackets character `]` and we therefore don't want it exercising its regex role as the end of a character list.
 
@@ -135,11 +137,11 @@ Let's start simple and work our way up.
 | `/const\s{?.+}?/` | "const a, b"              | Add question marks after the brackets to match if they optionally don't appear                   |
 
 For a less contrived example, phone numbers!
-| Regex                       | String I want to match                          | Explanation                                                                                  |
+| Regex | String I want to match | Explanation |
 | --------------------------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `/\d{3}-\d{4}/`             | ###-####                                        | Matches 3 digits followed by a hyphen and then 4 more digits                                 |
-| `/\d{3}-?\d{4}/`            | #######                                         | Same as above, but now the hyphen can appear 0 or 1 times                                    |
-| `/\d{3}-\d{3}-\d{4}/`       | ###-###-####                                    | Matches 3 digits followed by a hyphen, followed by the first example                         |
+| `/\d{3}-\d{4}/` | ###-#### | Matches 3 digits followed by a hyphen and then 4 more digits |
+| `/\d{3}-?\d{4}/` | ####### | Same as above, but now the hyphen can appear 0 or 1 times |
+| `/\d{3}-\d{3}-\d{4}/` | ###-###-#### | Matches 3 digits followed by a hyphen, followed by the first example |
 | `/\d*\s?\d{3}-\d{3}-\d{4}/` | # ###-###-#### with or without the country code | Matches a digit, 0 or more times, followed by 0 or 1 space, followed by the previous example |
 
 Phone numbers get complicated fast. If we wanted to be thorough we could include hyphens, periods, OR spaces between groups of digits, introducing the "or" `|` character. We could check for parentheses (which would need to be escaped since they are reserved characters in regex), optional plus signs, and optional groups of digits like the area code, introducing groups `()`. And this is only including phone numbers taking the shape of 3 digits, 3 digits, 4 digits! I ignored groupings of numbers that are less common for me to see in the US. I'll include a more complete version for phone numbers below for reference.
@@ -147,12 +149,13 @@ Phone numbers get complicated fast. If we wanted to be thorough we could include
 `/(+?\d+\s)?(\d{3}(-|.|\s)?)?\d{3}(-|.|\s)?\d{4}/`
 
 Now I'll just include a few more examples to fill some holes I think I have left. I'll also softly introduce parentheses.
-| Regex                                   | String I want to match | Explanation                                                                                               |
+| Regex | String I want to match | Explanation |
 | --------------------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
-| `/[a-z]+@[a-z]+\.[a-z]{2,}/`            | abc @abc.com           | Matches 1 or more lowercase letters, "@", 1 or more lowercase letters, a period, and at least two letters |
-| `/([a-z]+)?\.[a-z]+@[a-z]+\.[a-z]{2,}/` | abc.def @abc.com       | Same as above, but now I'm also matching a prefixed group of lowercase letters and a period               |
+| `/[a-z]+@[a-z]+\.[a-z]{2,}/` | abc @abc.com | Matches 1 or more lowercase letters, "@", 1 or more lowercase letters, a period, and at least two letters |
+| `/([a-z]+)?\.[a-z]+@[a-z]+\.[a-z]{2,}/` | abc.def @abc.com | Same as above, but now I'm also matching a prefixed group of lowercase letters and a period |
 
 ## Assertions
+
 | Character | Meaning                           |
 | --------- | --------------------------------- |
 | `/^/`     | Matches the beginning of an input |
@@ -172,6 +175,7 @@ On the flip side, `$` at the end of a regular expression will only match a strin
 | `/call$/` | "call" in "who you gonna call" |
 
 ## Groups
+
 | Character | Meaning                                                                       |
 | --------- | ----------------------------------------------------------------------------- |
 | `/(x)/`   | Capturing group. This is important for when we get to working with javascript |
@@ -229,7 +233,7 @@ Take note that this is a regex function. The rest of our functions will be for s
 Rarely have I seen anyone else use `replace()`, with anything other than a string, but I found its usage with regex to be incredibly powerful and easy! My most common use case is to remove some characters from within a string. For example, let's say I'd like to format any header in this document into a properly formatted id. The name of this section has two periods and parentheses, which are not accepted in ids. I'd like to turn the periods into dashes and remove the parentheses. I'll show how in two steps below, and then combine them into one statement.
 
 ```javascript
-const text = "String.prototype.replace()";
+const text = 'String.prototype.replace()';
 
 /*
  * matches all periods and replaces with a string "-".
@@ -245,18 +249,18 @@ const textWithoutPeriods = text.replace(/\./g, '-');
  */
 const textWithoutParentheses = textWithoutPeriods.replace(/[^a-z-]/gi, '');
 
-
 // now all in one line
 const id = text.replace(/\./g, '-').replace(/[^a-z-]/gi, '');
 ```
 
 Here are some more examples.
+
 ```javascript
 const text1 = 'id-1';
 const textNumber = text1.replace(/id-/g, '');
 
 const arrayOfIds = ['id-1', 'id-2', 'id-3', 'id-4', 'id-5'];
-const idNumbers = arrayOfIds.map(id => id.replace(/id-/g, '')); // -> [1, 2, 3, 4, 5]
+const idNumbers = arrayOfIds.map((id) => id.replace(/id-/g, '')); // -> [1, 2, 3, 4, 5]
 ```
 
 ### String.prototype.split()
@@ -268,7 +272,7 @@ Before we get to matching, I want to make a quick detour into `split()`, which I
 `match()` and its sibling `matchAll()`, which I'll cover next, are the main tools used for handling strings with regex. Using it is pretty straightforward, so let's dive into some examples, shall we?
 
 ```javascript
-const str = "My friend, Mara, the pig";
+const str = 'My friend, Mara, the pig';
 const nameRegex = /,\s\w+,/;
 const nameMatch = str.match(nameRegex);
 
@@ -283,6 +287,7 @@ console.log(nameGroupMatch); // [", Mara,","Mara"]
 Feel free to run this in your browser's dev tools or in a terminal REPL. You'll notice that the logs have more than just what I've pasted here. These arrays also have several other properties, `index`, `input`, and `groups`. So your output from the first console log actually looks something like this: `[", Mara,", index: 9, input: 'My friend, Mara, the pig', groups: undefined ]`. The index is, of course, the index of the string where the match begins and the input is self-explanatory. The groups, on the other hand, you would expect to return something from the `nameGroupMatch` example above. It doesn't, however. Groups will only return something if named groups are used, a concept I'll cover in my 201 article.
 
 Let's move on to using the global `/g` flag and a case when there is no match!
+
 ```javascript
 const str = `
 <header>
@@ -394,31 +399,32 @@ const matches = Array.from(jsFile.matchAll(regex));
 
 console.log(matches); // [ ['import Button...', 'Button', 'library'], ... ]
 
-const importedComponents = matches.map(match => match[1]); // ['Button', 'Slider', 'ExpandCollapse']
-const libraries = matches.map(match => match[2]); // ['library', 'library', 'library' ]
+const importedComponents = matches.map((match) => match[1]); // ['Button', 'Slider', 'ExpandCollapse']
+const libraries = matches.map((match) => match[2]); // ['library', 'library', 'library' ]
 const uniqueLibraries = new Set(libraries); // Set { "library" }
 ```
 
 ## Thoughts on RegExp Constructor and caution
 
 Before I wrapped up I wanted to note some pros and cons of using the RegExp constructor. When you see regex in a code editor, if it uses the literal syntax (what I've done for this tutorial) then it will have lovely syntax highlighting (if it doesn't and you're using vscode, add options like [these](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216) into your settings.json file). However, if using the RegExp constructor, none of that highlighting will be available, which will make each pattern much harder to parse. So then why use the constructor? The main reason for me is when it is necessary to pass in variables via template literals. For example, if I'm looking for a component in a raw javascript file, but I don't know which component I'll be looking for when I write the code, I'll need to write an expression like this:
+
 ```javascript
-new RegExp(`<${component}[^>]*>`, "g")
+new RegExp(`<${component}[^>]*>`, 'g');
 ```
 
 The main thing to note about using the constructor, and therefore a word of caution I present to you, is that often you'll need to escape multiple times and it will not be obvious. This is an easy bug to overlook, so I suggest getting into the habit of console logging the output from the RegExp constructor. An example:
 
 ```javascript
-const str = "abc def";
+const str = 'abc def';
 
 // the wrong way to do it
-const wrongRegex = new RegExp("\w+", "g");
+const wrongRegex = new RegExp('w+', 'g');
 
 console.log(wrongRegex); // /w+/
 console.log(str.match(wrongRegex)); // null
 
 // the right way to do it
-const correctRegex = new RegExp("\\w+", "g");
+const correctRegex = new RegExp('\\w+', 'g');
 
 console.log(correctRegex); // /\w+/
 console.log(str.match(correctRegex)); // ['abc', 'def']
@@ -428,10 +434,10 @@ console.log(str.match(correctRegex)); // ['abc', 'def']
 
 Congrats! You made it to the end! I'll lastly leave you with some links for tools I find incredibly helpful.
 
-- [Regex101](https://regex101.com/). This is an easy way to test out regex patterns with instant feedback, great syntax highlighting, and built-in docs.
-- [MDN Regular Expression Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions). If you want full details on anything I've covered here, this is where to look.
-- [VSCode regex syntax highlighting](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216). If you don't have great syntax highlighting, add this to your settings.json and tweak the colors to your theme. I might in the future publish an article about how to easily find the settings you're looking for to customize your theme.
-- The "Regex Previewer" vscode extension by Christof Marti seems pretty good if you prefer an in-editor version of regex 101.
+-   [Regex101](https://regex101.com/). This is an easy way to test out regex patterns with instant feedback, great syntax highlighting, and built-in docs.
+-   [MDN Regular Expression Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions). If you want full details on anything I've covered here, this is where to look.
+-   [VSCode regex syntax highlighting](https://github.com/fdiengott/vscode-settings/blob/main/vscode-settings.md?plain=1#L216). If you don't have great syntax highlighting, add this to your settings.json and tweak the colors to your theme. I might in the future publish an article about how to easily find the settings you're looking for to customize your theme.
+-   The "Regex Previewer" vscode extension by Christof Marti seems pretty good if you prefer an in-editor version of regex 101.
 
 ## Conclusion
 

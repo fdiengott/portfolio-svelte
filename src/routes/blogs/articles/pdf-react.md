@@ -33,13 +33,13 @@ import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
 	page: {
 		flexDirection: 'row',
-		backgroundColor: '#E4E4E4'
+		backgroundColor: '#E4E4E4',
 	},
 	section: {
 		margin: 10,
 		padding: 10,
-		flexGrow: 1
-	}
+		flexGrow: 1,
+	},
 });
 
 // Create Document Component
@@ -260,13 +260,13 @@ import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 const styles = StyleSheet.create({
 	page: {
 		flexDirection: 'row',
-		backgroundColor: '#E4E4E4'
+		backgroundColor: '#E4E4E4',
 	},
 	section: {
 		margin: 10,
 		padding: 10,
-		flexGrow: 1
-	}
+		flexGrow: 1,
+	},
 });
 
 // Create Document Component
@@ -284,7 +284,7 @@ const MyDocument = () => (
 );
 ```
 
--   First, let's note that we need to create a `styles` object with `StyleSheet.create({})`. No styles will be inherited, as we are inside an iframe. It's also very important to recognize that we do not have access to all css language features. React-pdf ships with only a subset of css, which I will highlight where I can. 
+-   First, let's note that we need to create a `styles` object with `StyleSheet.create({})`. No styles will be inherited, as we are inside an iframe. It's also very important to recognize that we do not have access to all css language features. React-pdf ships with only a subset of css, which I will highlight where I can.
 -   We need to wrap our PDF content in a `Document` component with any number of children, which must be of type `Page` with a specified size ([here are the possible options](https://github.com/diegomura/react-pdf/blob/master/packages/layout/src/page/getSize.js)). If you want to render multiple pages in this document, include multiple `Page` elements as children.
 -   Inside of each `Page` component, there exist mainly two primitive components: `View` and `Text`, which I think is similar to React Native. I'll go into more detail on these in a bit, but it's important to know that with these elements, like in normal React code, we can use them to abstract away pieces in order to construct larger layouts.
 
@@ -292,7 +292,7 @@ const MyDocument = () => (
 
 Let's start with layouts as they are probably the most important part of a PDF. The first thing to note is that `View`'s don't act like divs, where each one will automatically be `display: block` and therefore render on a new line. We don't get that luxury. So, often instead, we will use `display: flex` with `flex-direction: column` and padding and/or margins.
 
-Like so: 
+Like so:
 
 ```typescript
 <View style={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}>
@@ -307,7 +307,7 @@ I should also mention that `display: flex` is the default for `View`, so it isn'
 
 #### Tables and Grids
 
-Let's move onto tables and grids, which are treated exactly the same in react-pdf except for the borders for grids. 
+Let's move onto tables and grids, which are treated exactly the same in react-pdf except for the borders for grids.
 
 It's important to note that `flex` doesn't work quite the same in react-pdf as normal css flexbox. Items won't wrap, so it's important to split data into individual rows. I find it most helpful to decide up front how many columns should exist in each row, and from there split the data into separate rows.
 
@@ -315,15 +315,24 @@ Here is an example of a table with the number of columns based on the number of 
 
 ```typescript
 // data will be something like this: [{ name: 'Alpha', size: 30 }, { name: 'Bravo', size: 25 }]
-const Table = (data: Record<string, unknown>[], columns: string[]) => ( // `columns` should probably be keyof the data type[number]
-	<View style={{ /* any width styles or a marginHorizontal */ }}>
+const Table = (
+	data: Record<string, unknown>[],
+	columns: string[], // `columns` should probably be keyof the data type[number]
+) => (
+	<View
+		style={
+			{
+				/* any width styles or a marginHorizontal */
+			}
+		}
+	>
 		<TableHeaders columns={columns} />
 		<TableBody data={data} columns={columns} />
 	</View>
-)
+);
 
 const TableHeaders = (columns) => (
-	<View style={{ marginBottom: 10, /* implied styles: display: 'flex', flexDirection: 'row' */ }}> 
+	<View style={{ marginBottom: 10 /* implied styles: display: 'flex', flexDirection: 'row' */ }}>
 		{columns.map((column, i) => (
 			<Text key={`header-${i}`}>{column}</Text>
 		))}
@@ -347,7 +356,7 @@ If you have a grid instead of a table, you can use the same technique, but inste
 
 ### Images/SVGs
 
-Before now, I have only mentioned text components, completely disregarding images. But now let's add them to the mix. Images and SVGs are natively supported by react-pdf, and are relatively easy to implement. 
+Before now, I have only mentioned text components, completely disregarding images. But now let's add them to the mix. Images and SVGs are natively supported by react-pdf, and are relatively easy to implement.
 
 ```typescript
 import { Image } from '@react-pdf/renderer';
@@ -357,7 +366,7 @@ return (
 		<Image src="https://your-image-url.com/image.png" />
 		<Text>Section #1</Text>
 	</View>
-)
+);
 ```
 
 The `Image` acts just like a regular `img` tag, taking a `src` attribute. The only difference is that it might need some additional styling to make it look right.
@@ -375,8 +384,9 @@ const MyCoolSVG = () => (
 			</G>
 		</Svg>
 	</View>
-)
+);
 ```
+
 For a list of all the available SVG components, [here they are on the docs](https://react-pdf.org/svg).
 
 ### Fonts
@@ -385,7 +395,7 @@ Lastly, let's talk a little about fonts! There are a few fonts that are shipped 
 
 ```typescript
 const styles = StyleSheet.create({
-	page: { fontFamily: 'Helvetica' }
+	page: { fontFamily: 'Helvetica' },
 });
 ```
 
@@ -419,14 +429,12 @@ Font.register({
 )};
 ```
 
-Any number of fonts can be registered in this way and used in any style object by referencing the `family` name. If you are looking for a static url like I referenced above (the fonts.gstatic.com one) and it is not included in [this list](https://gist.github.com/sadikay/d5457c52e7fb2347077f5b0fe5ba9300) and are not sure how to track it down, I recently wrote a [quick article explaining how to to it](./static-fonts)! 
+Any number of fonts can be registered in this way and used in any style object by referencing the `family` name. If you are looking for a static url like I referenced above (the fonts.gstatic.com one) and it is not included in [this list](https://gist.github.com/sadikay/d5457c52e7fb2347077f5b0fe5ba9300) and are not sure how to track it down, I recently wrote a [quick article explaining how to to it](./static-fonts)!
 
 ## Conclusion
 
-So a lot of ground was covered in this article. We set up the download PDF button, going through a few iterations until the best method was found; we displayed the PDF to improve the developer experience (don't forget to check that TODO and delete it once it is not longer needed); and we created our PDF, steering clear of any styling pitfalls, and even saw how to add images, SVGs, and custom fonts. 
+So a lot of ground was covered in this article. We set up the download PDF button, going through a few iterations until the best method was found; we displayed the PDF to improve the developer experience (don't forget to check that TODO and delete it once it is not longer needed); and we created our PDF, steering clear of any styling pitfalls, and even saw how to add images, SVGs, and custom fonts.
 
 I hope this was helpful to you! I'll see you in the next one!
 
 Until then!
-
-

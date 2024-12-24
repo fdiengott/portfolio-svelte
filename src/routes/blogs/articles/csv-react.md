@@ -18,7 +18,7 @@ const data = [
 	['Name', 'Age', 'Height'],
 	['Alice', 30, 1.8],
 	['Bob', 25, 1.7],
-	['Charlie', 35, 1.9]
+	['Charlie', 35, 1.9],
 ];
 
 const csvData = data.map((row) => row.join(',')).join('\n');
@@ -40,7 +40,7 @@ As for the data, the proper formatting is to have each row separated by a line-b
 const data = [
 	{ name: 'Alice', age: 30, height: 1.8 },
 	{ name: 'Bob', age: 25, height: 1.7 },
-	{ name: 'Charlie', age: 35, height: 1.9 }
+	{ name: 'Charlie', age: 35, height: 1.9 },
 ];
 
 const DOWNLOAD_HEADERS = ['Name', 'Age', 'Height'];
@@ -49,7 +49,7 @@ const DOWNLOAD_HEADERS = ['Name', 'Age', 'Height'];
 const mapper = {
 	[DOWNLOAD_HEADERS[0]]: 'name',
 	[DOWNLOAD_HEADERS[1]]: 'age',
-	[DOWNLOAD_HEADERS[2]]: 'height'
+	[DOWNLOAD_HEADERS[2]]: 'height',
 };
 
 const csvData = data

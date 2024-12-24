@@ -1,43 +1,29 @@
 <script>
-	import Pin from '../components/Pin.svelte'
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
+	import Pin from '../components/Pin.svelte';
 
 	import { pages } from './articles/index.js';
-
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
-
-	const defaultTransitionParams = {
-		duration: 600,
-		y: -50,
-		easing: quadOut
-	};
 </script>
 
 <ul class="article__list">
 	{#each Object.entries(pages) as [slug, article], index}
-		{#if isPageLoaded}
-			<li class="article__item" transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 125 }}>
-				{#if article.pinned}
-					<div class="article__pin-wrapper">
-						<Pin />
-					</div>
-				{/if}
-				<div class="article__date">{article.date}</div>
-				<a href="/blogs/{slug}">
-					<span>{article.title}</span>
-				</a>
-				{#if article.tags}
-					<ul class="article__tags">
-						{#each article.tags as tag}
-							<li class="article__tag {tag}">{tag}</li>
-						{/each}
-					</ul>
-				{/if}
-			</li>
-		{/if}
+		<li class="article__item animate-in" style="animation-delay: {250 + index * 100}ms">
+			{#if article.pinned}
+				<div class="article__pin-wrapper">
+					<Pin />
+				</div>
+			{/if}
+			<div class="article__date">{article.date}</div>
+			<a href="/blogs/{slug}">
+				<span>{article.title}</span>
+			</a>
+			{#if article.tags}
+				<ul class="article__tags">
+					{#each article.tags as tag}
+						<li class="article__tag {tag}">{tag}</li>
+					{/each}
+				</ul>
+			{/if}
+		</li>
 	{/each}
 </ul>
 

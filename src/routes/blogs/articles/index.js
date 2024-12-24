@@ -14,51 +14,51 @@ const pages = {
 	'book-list': {
 		title: 'Recent Reading List',
 		content: bookList,
-		date: "12/04/24",
+		date: '12/04/24',
 		tags: ['suggestions'],
 		pinned: true,
 	},
 	'recommended-books': {
 		title: 'Recommended Book List',
 		content: recommendedBookList,
-		date: "12/04/24",
+		date: '12/04/24',
 		tags: ['suggestions'],
 	},
 	'pdf-react': {
 		title: 'PDFs in React',
 		content: pdfReact,
 		date: '11/20/2024',
-		tags: ['coding']
+		tags: ['coding'],
 	},
 	'static-fonts': {
 		title: 'Where to Find Static Font Links',
 		content: staticFonts,
 		date: '11/6/2024',
-		tags: ['coding']
+		tags: ['coding'],
 	},
 	'csv-react': {
 		title: 'Downloading CSVs in React',
 		content: csvReact,
 		date: '11/2/2024',
-		tags: ['coding']
+		tags: ['coding'],
 	},
 	'blog-guide': {
 		title: 'Welcome to my blog!',
 		content: blogGuide,
 		date: '12/26/2023',
-		tags: ['featured']
+		tags: ['featured'],
 	},
 	regex101: {
 		title: 'Regex 101',
 		content: regex101,
 		date: '12/29/2023',
-		tags: ['coding']
+		tags: ['coding'],
 	},
 	'zsh-theme-customization': {
 		title: 'Zsh Theme Customization',
 		content: zshThemeCustomization,
 		date: '12/26/2023',
-		tags: ['coding']
+		tags: ['coding'],
 	},
 	// beginning: {
 	// 	title: 'It began with a whimper',
@@ -70,8 +70,8 @@ const pages = {
 		title: 'The best vegan/gf tomato soup and grilled cheese recipe you can find',
 		content: tomatoSoup,
 		date: '8/2/2023',
-		tags: ['recipes']
-	}
+		tags: ['recipes'],
+	},
 	// ea: {
 	// 	title: 'Some recent musings on my personal philosophy and effective altruism',
 	// 	content: ea

@@ -17,4 +17,3 @@ This book feels a little different than the other two. More grounded in the pres
 `;
 
 export default recommendedBookList;
-
