@@ -1,11 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
-
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
-
 	const skillData = [
 		{ iconCls: 'devicon-typescript-plain colored', text: 'TypeScript' },
 		{ iconCls: 'devicon-javascript-plain colored', text: 'JavaScript' },
@@ -47,14 +40,6 @@
 		{ iconCls: 'devicon-storybook-plain', text: 'Storybook' },
 		{ iconCls: 'devicon-neovim-plain colored', text: 'Neovim' },
 	];
-
-	const defaultTransitionParams = {
-		duration: 400,
-		y: -80,
-		opacity: 0,
-		easing: quadOut
-	};
-
 </script>
 
 <svelte:head>
@@ -68,12 +53,10 @@
 	<section>
 		<div class="skill__grid">
 			{#each skillData as skill, index (skill.text)}
-				{#if isPageLoaded}
-					<div class="skill__icon" in:fly={{ ...defaultTransitionParams, delay: 200 + index * 35 }}>
-						<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-						<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
-					</div>
-				{/if}
+				<div class="skill__icon animate-in" style="animation-delay: {200 + index * 35}ms" >
+					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+					<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
+				</div>
 			{/each}
 		</div>
 	</section>
@@ -102,7 +85,6 @@
 		align-items: center;
 		font-size: 80px;
 		position: relative;
-		opacity: 0.9;
 		transition: all var(--transition-timing);
 	}
 

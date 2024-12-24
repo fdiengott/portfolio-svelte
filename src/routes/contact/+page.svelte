@@ -1,11 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { quadOut } from 'svelte/easing';
-
-	let isPageLoaded = false;
-	onMount(() => (isPageLoaded = true));
-
 	const rows = [
 		{ label: 'Name', value: 'Freddy Diengott' },
 		{ label: 'Location', value: 'Brooklyn, NY' },
@@ -26,12 +19,6 @@
 		},
 		{ label: 'Resume', value: { link: '/resume', text: 'Link' } }
 	];
-
-	const defaultTransitionParams = {
-		duration: 600,
-		y: -50,
-		easing: quadOut
-	};
 </script>
 
 <svelte:head>
@@ -42,17 +29,14 @@
 	<div class="contact__header">
 		<h1>Contact Me</h1>
 	</div>
-	{#if isPageLoaded}
-		<div transition:fly={{ ...defaultTransitionParams, delay: 200 }}>
+		<div class="animate-in" style="animation-delay: {200}ms">
 			<div class="page-break" />
 		</div>
-	{/if}
 	<dl>
 		{#each rows as row, index}
-			{#if isPageLoaded}
 				<div class="row">
-					<dt transition:fly={{ ...defaultTransitionParams, delay: 250 + index * 50 }}>{row.label}</dt>
-					<dd transition:fly={{ ...defaultTransitionParams, delay: 250 + (index + 1) * 50 }}>
+					<dt class="animate-in" style="animation-delay: {250 + index * 50}ms">{row.label}</dt>
+					<dd class="animate-in" style="animation-delay: {250 + (index + 1) * 50}ms">
 						{#if typeof row.value === 'string'}
 							{row.value}
 						{:else}
@@ -66,7 +50,6 @@
 						{/if}
 					</dd>
 				</div>
-			{/if}
 		{/each}
 	</dl>
 </article>
