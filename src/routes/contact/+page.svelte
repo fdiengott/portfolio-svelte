@@ -5,19 +5,19 @@
 		{
 			label: 'Github',
 			value: { link: 'https://github.com/fdiengott', text: 'fdiengott' },
-			external: true
+			external: true,
 		},
 		{
 			label: 'LinkedIn',
 			value: { link: 'https://www.linkedin.com/in/freddiengott/', text: 'freddiengott' },
-			external: true
+			external: true,
 		},
 		{
 			label: 'Wellfound',
 			value: { link: 'https://wellfound.com/u/freddy-diengott', text: 'freddy-diengott' },
-			external: true
+			external: true,
 		},
-		{ label: 'Resume', value: { link: '/resume', text: 'Link' } }
+		{ label: 'Resume', value: { link: '/resume', text: 'Link' } },
 	];
 </script>
 
@@ -29,27 +29,27 @@
 	<div class="contact__header">
 		<h1>Contact Me</h1>
 	</div>
-		<div class="animate-in" style="animation-delay: {200}ms">
-			<div class="page-break" />
-		</div>
+	<div class="animate-in" style="animation-delay: {200}ms">
+		<div class="page-break" />
+	</div>
 	<dl>
 		{#each rows as row, index}
-				<div class="row">
-					<dt class="animate-in" style="animation-delay: {250 + index * 50}ms">{row.label}</dt>
-					<dd class="animate-in" style="animation-delay: {250 + (index + 1) * 50}ms">
-						{#if typeof row.value === 'string'}
-							{row.value}
-						{:else}
-							<a
-								href={row.value.link}
-								target={row.external && '_blank'}
-								rel={row.external && 'noopener noreferrer'}
-							>
-								{row.value.text}
-							</a>
-						{/if}
-					</dd>
-				</div>
+			<div class="row">
+				<dt class="animate-in" style="animation-delay: {250 + index * 50}ms">{row.label}</dt>
+				<dd class="animate-in" style="animation-delay: {250 + (index + 1) * 50}ms">
+					{#if typeof row.value === 'string'}
+						{row.value}
+					{:else}
+						<a
+							href={row.value.link}
+							target={row.external && '_blank'}
+							rel={row.external && 'noopener noreferrer'}
+						>
+							{row.value.text}
+						</a>
+					{/if}
+				</dd>
+			</div>
 		{/each}
 	</dl>
 </article>

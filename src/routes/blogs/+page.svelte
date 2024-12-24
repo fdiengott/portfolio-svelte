@@ -1,5 +1,5 @@
 <script>
-	import Pin from '../components/Pin.svelte'
+	import Pin from '../components/Pin.svelte';
 
 	import { pages } from './articles/index.js';
 </script>

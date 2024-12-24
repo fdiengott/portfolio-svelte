@@ -13,8 +13,8 @@
 	<div class="projects__header">
 		<h1 class="animate-in" style="animation-delay: 200ms">Projects</h1>
 		<p class="animate-in" style="animation-delay: 300ms">
-			Take a look through a few of my recent projects! Most are from early on in my career and are no longer
-			live, but you can still check out the code if you'd like!
+			Take a look through a few of my recent projects! Most are from early on in my career and are no longer live,
+			but you can still check out the code if you'd like!
 		</p>
 	</div>
 
@@ -42,8 +42,8 @@
 				<img src={theBodyKnows} alt="" />
 				<article class="hover-text web">
 					<p>
-						A simple, clean, easy to navigate website I built for my partner's small business as a
-						trauma therapist.
+						A simple, clean, easy to navigate website I built for my partner's small business as a trauma
+						therapist.
 					</p>
 					<p>Built using Vue and Sass, with Netlify handling form submissions.</p>
 				</article>
@@ -60,9 +60,7 @@
 			<span class="projects__card-header">
 				<h2>Pebbble</h2>
 				<div class="external-links">
-					<a href="https://github.com/fdiengott/pebbble" target="_blank" rel="noopener noreferrer"
-						>Github</a
-					>
+					<a href="https://github.com/fdiengott/pebbble" target="_blank" rel="noopener noreferrer">Github</a>
 					<!-- <a href="https://pebbble.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
 				</div>
 			</span>
@@ -75,16 +73,16 @@
 				<img src={pebbble} alt="" />
 				<article class="hover-text web">
 					<p>
-						A full-stack website I created mimicking Dribbble, a haven for designers and design
-						enthusiasts to share their work or find inspiration.
+						A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts
+						to share their work or find inspiration.
 					</p>
 					<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
 				</article>
 			</a>
 			<article class="hover-text mobile">
 				<p>
-					A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts
-					to share their work or find inspiration.
+					A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts to
+					share their work or find inspiration.
 				</p>
 				<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
 			</article>
@@ -93,8 +91,7 @@
 			<span class="projects__card-header">
 				<h2>Postcard</h2>
 				<div class="external-links">
-					<a href="https://github.com/chrisj1225/Postcard" target="_blank" rel="noopener noreferrer"
-						>Github</a
+					<a href="https://github.com/chrisj1225/Postcard" target="_blank" rel="noopener noreferrer">Github</a
 					>
 					<!-- <a href="https://postcard-triplog.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
 				</div>
@@ -111,28 +108,23 @@
 						scrapbook with integrated maps and photos.
 					</p>
 					<p>
-						Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web
-						Services.
+						Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.
 					</p>
 				</article>
 			</a>
 			<article class="hover-text mobile">
 				<p>
-					A website I worked on with a four person team as the frontend developer building a travel
-					scrapbook with integrated maps and photos.
+					A website I worked on with a four person team as the frontend developer building a travel scrapbook
+					with integrated maps and photos.
 				</p>
-				<p>
-					Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.
-				</p>
+				<p>Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.</p>
 			</article>
 		</div>
 		<div class="projects__card">
 			<span class="projects__card-header">
 				<h2>Lexiloop</h2>
 				<div class="external-links">
-					<a href="https://github.com/fdiengott/LexiLoop" target="_blank" rel="noopener noreferrer"
-						>Github</a
-					>
+					<a href="https://github.com/fdiengott/LexiLoop" target="_blank" rel="noopener noreferrer">Github</a>
 					<!-- <a href="https://lexiloop.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
 				</div>
 			</span>

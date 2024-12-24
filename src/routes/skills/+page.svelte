@@ -53,7 +53,7 @@
 	<section>
 		<div class="skill__grid">
 			{#each skillData as skill, index (skill.text)}
-				<div class="skill__icon animate-in" style="animation-delay: {200 + index * 35}ms" >
+				<div class="skill__icon animate-in" style="animation-delay: {200 + index * 35}ms">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<i class={skill.iconCls} data-text={skill.text} tabindex="0" />
 				</div>
