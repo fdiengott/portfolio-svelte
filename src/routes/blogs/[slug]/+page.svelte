@@ -138,20 +138,16 @@
 		}
 
 		table:has(code) {
-			display: block;
+			width: 100%;
 			border: 1px solid #aaa;
 			border-radius: 0.5rem;
 			font-size: var(--fs-300);
-			margin-block-end: var(--block-spacing);
+			margin-block: calc(var(--block-spacing) / 2) var(--block-spacing);
 
 			code {
 				padding: 0;
 				margin: 0;
 				border: none;
-			}
-
-			td {
-				width: 100%;
 			}
 
 			tr:first-child td,
