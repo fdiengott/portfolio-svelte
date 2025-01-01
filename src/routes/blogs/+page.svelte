@@ -2,10 +2,13 @@
 	import Pin from '../components/Pin.svelte';
 
 	import { pages } from './articles/index.js';
+	import { sortBlogs } from '@/utils/blogs';
+
+	const sortedPages = sortBlogs(pages);
 </script>
 
 <ul class="article__list">
-	{#each Object.entries(pages) as [slug, article], index}
+	{#each sortedPages as article, index}
 		<li class="article__item animate-in" style="animation-delay: {250 + index * 100}ms">
 			{#if article.pinned}
 				<div class="article__pin-wrapper">
@@ -13,7 +16,7 @@
 				</div>
 			{/if}
 			<div class="article__date">{article.date}</div>
-			<a href="/blogs/{slug}">
+			<a href="/blogs/{article.slug}">
 				<span>{article.title}</span>
 			</a>
 			{#if article.tags}
@@ -102,8 +105,8 @@
 	.article__tag.suggestions {
 		--tag-color: rgb(56, 35, 241);
 	}
-	.article__tag.featured {
-		--tag-color: rgb(199, 0, 0);
+	.article__tag.announcements {
+		--tag-color: hsl(278 75% 70%);
 	}
 
 	.article__pin-wrapper {

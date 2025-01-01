@@ -33,7 +33,7 @@
 	.card {
 		background-color: white;
 		border-radius: 1rem;
-		padding-block: 2rem;
+		padding-block: 2rem 8rem;
 		padding-inline: clamp(1rem, 5vw, 4rem);
 	}
 </style>

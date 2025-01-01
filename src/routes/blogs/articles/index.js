@@ -9,73 +9,94 @@ import csvReact from './csv-react.md?raw';
 import staticFonts from './static-fonts.md?raw';
 import pdfReact from './pdf-react.md?raw';
 import recommendedBookList from './recommendedBookList';
+import goalActivities from './goal-activities-2025.md?raw';
+import { TAGS } from '@/constants/blogs';
 
-const pages = {
-	'book-list': {
+const pages = [
+	{
+		slug: 'goal-activities-2025',
+		title: 'Goal Activities in 2025',
+		content: goalActivities,
+		date: '01/01/25',
+		tags: [TAGS.suggestions],
+	},
+	{
+		slug: 'book-list',
 		title: 'Recent Reading List',
 		content: bookList,
 		date: '12/04/24',
-		tags: ['suggestions'],
+		tags: [TAGS.suggestions],
 		pinned: true,
 	},
-	'recommended-books': {
+	{
+		slug: 'recommended-books',
 		title: 'Recommended Book List',
 		content: recommendedBookList,
 		date: '12/04/24',
-		tags: ['suggestions'],
+		tags: [TAGS.suggestions],
 	},
-	'pdf-react': {
+	{
+		slug: 'pdf-react',
 		title: 'PDFs in React',
 		content: pdfReact,
 		date: '11/20/2024',
-		tags: ['coding'],
+		tags: [TAGS.coding],
 	},
-	'static-fonts': {
+	{
+		slug: 'static-fonts',
 		title: 'Where to Find Static Font Links',
 		content: staticFonts,
 		date: '11/6/2024',
-		tags: ['coding'],
+		tags: [TAGS.coding],
 	},
-	'csv-react': {
+	{
+		slug: 'csv-react',
 		title: 'Downloading CSVs in React',
 		content: csvReact,
 		date: '11/2/2024',
-		tags: ['coding'],
+		tags: [TAGS.coding],
 	},
-	'blog-guide': {
+	{
+		slug: 'blog-guide',
 		title: 'Welcome to my blog!',
 		content: blogGuide,
 		date: '12/26/2023',
-		tags: ['featured'],
+		tags: [TAGS.announcements],
+		pinned: true,
 	},
-	regex101: {
+	{
+		slug: 'regex101',
 		title: 'Regex 101',
 		content: regex101,
 		date: '12/29/2023',
-		tags: ['coding'],
+		tags: [TAGS.coding],
 	},
-	'zsh-theme-customization': {
+	{
+		slug: 'zsh-theme-customization',
 		title: 'Zsh Theme Customization',
 		content: zshThemeCustomization,
 		date: '12/26/2023',
-		tags: ['coding'],
+		tags: [TAGS.coding],
 	},
-	// beginning: {
+	// {
+	// slug: beginning,
 	// 	title: 'It began with a whimper',
 	// 	content: beginning,
 	// 	date: '8/3/2023',
-	// 	tags: ['musings']
+	// 	tags: [TAGS.musings]
 	// },
-	'tomato-soup': {
+	{
+		slug: 'tomato-soup',
 		title: 'The best vegan/gf tomato soup and grilled cheese recipe you can find',
 		content: tomatoSoup,
 		date: '8/2/2023',
-		tags: ['recipes'],
+		tags: [TAGS.recipes],
 	},
-	// ea: {
+	// {
+	// slug: ea,
 	// 	title: 'Some recent musings on my personal philosophy and effective altruism',
 	// 	content: ea
 	// }
-};
+];
 
 export { pages };

@@ -138,20 +138,16 @@
 		}
 
 		table:has(code) {
-			display: block;
+			width: 100%;
 			border: 1px solid #aaa;
 			border-radius: 0.5rem;
 			font-size: var(--fs-300);
-			margin-block-end: var(--block-spacing);
+			margin-block: calc(var(--block-spacing) / 2) var(--block-spacing);
 
 			code {
 				padding: 0;
 				margin: 0;
 				border: none;
-			}
-
-			td {
-				width: 100%;
 			}
 
 			tr:first-child td,
@@ -217,6 +213,27 @@
 			table {
 				overflow: visible;
 				display: revert;
+			}
+		}
+
+		.nyc-activities-start {
+			& ~ .header-wrapper {
+				margin-block-start: 2rem;
+				border-block-start: 1px solid hsla(0 50% 0% / 0.2);
+			}
+
+			// first child
+			& + .header-wrapper {
+				margin-block-start: 0;
+				border-block-start: none;
+			}
+
+			& ~ :not(.header-wrapper) {
+				margin-inline-start: 2rem;
+			}
+
+			& ~ .header-wrapper > h3 {
+				margin-block-end: 0;
 			}
 		}
 	}
