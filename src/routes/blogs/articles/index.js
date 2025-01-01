@@ -65,7 +65,7 @@ const pages = [
 		pinned: true,
 	},
 	{
-		slug: regex101,
+		slug: 'regex101',
 		title: 'Regex 101',
 		content: regex101,
 		date: '12/29/2023',
