@@ -219,5 +219,26 @@
 				display: revert;
 			}
 		}
+
+		.nyc-activities-start {
+			& ~ .header-wrapper {
+				margin-block-start: 2rem;
+				border-block-start: 1px solid hsl(0 50 0 / 0.2);
+			}
+
+			// first child
+			& + .header-wrapper {
+				margin-block-start: 0;
+				border-block-start: none;
+			}
+
+			& ~ :not(.header-wrapper) {
+				margin-inline-start: 2rem;
+			}
+
+			& ~ .header-wrapper > h3 {
+				margin-block-end: 0;
+			}
+		}
 	}
 </style>

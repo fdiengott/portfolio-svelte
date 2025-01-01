@@ -8,39 +8,57 @@ So here's to goals!
 
 ## List of NYC activities in no particular order
 
+<div class="nyc-activities-start"> </div>
+
 ### Theater
 
 ### Comedy
 
 ### Jazz
 
-### Museum (tenement, poster, obviously art)
+### Museum
+
+tenement, poster, obviously art
 
 ### VR game place
 
-### Rollerskating rink (maybe ice skating too)
+### Rollerskating rink
+
+Maybe ice skating too
 
 ### Axe throwing / archery
 
-### Video game day(s) (or bar)
+### Video game day(s)
 
-### Gallery - in Chelsea or elsewhere
+or bar
 
-### Art fair (affordable or otherwise)
+### Gallery
+
+In Chelsea or elsewhere
+
+### Art fair
+
+Affordable or otherwise
 
 ### Piano time with my sweetie
 
 ### Vocal improv
 
-### Spa day (or at least a schvitz or soak)
+### Spa day
 
-### New clothes (ya girl hasn't historically liked shopping, but it could be fun in designer stores)
+Or at least a schvitz or soak
+
+### New clothes
+
+Ya girl hasn't historically liked shopping, but it could be fun in designer stores
 
 ### New furniture
 
 ### Massage
 
-### Lectures / Classes / Talks (this is a large category that requires research)
+### Lectures / Classes / Talks
+
+This is a large category that requires research
 
 ### Cooking class(es)
 
@@ -61,9 +79,13 @@ This specifically includes:
 -   Groupmuses
 -   Caroline Shaw's performances
 
-### Host parties (dinner parties, or more chatting with acquaintances and their friends)
+### Host parties
 
-### Dancing (mostly raves/clubs)
+Dinner parties, or more chatting with acquaintances and their friends
+
+### Dancing
+
+Mostly raves/clubs
 
 ### Watch documentaries
 
