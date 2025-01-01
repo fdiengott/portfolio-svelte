@@ -105,8 +105,8 @@
 	.article__tag.suggestions {
 		--tag-color: rgb(56, 35, 241);
 	}
-	.article__tag.featured {
-		--tag-color: rgb(199, 0, 0);
+	.article__tag.announcements {
+		--tag-color: hsl(278 75% 70%);
 	}
 
 	.article__pin-wrapper {

@@ -61,7 +61,7 @@ const pages = [
 		title: 'Welcome to my blog!',
 		content: blogGuide,
 		date: '12/26/2023',
-		tags: [TAGS.featured],
+		tags: [TAGS.announcements],
 		pinned: true,
 	},
 	{

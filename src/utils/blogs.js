@@ -1,12 +1,10 @@
-import { TAGS } from '@/constants/blogs';
-
-export const sortBlogs = (blogPagesObjects) =>
-	Object.values(blogPagesObjects).sort((a, b) => {
-		if (a.pinned || a.tags.includes(TAGS.featured)) {
+export const sortBlogs = (blogPages) =>
+	blogPages.sort((a, b) => {
+		if (a.pinned) {
 			return -1;
 		}
 
-		if (b.pinned || b.tags.includes(TAGS.featured)) {
+		if (b.pinned) {
 			return 1;
 		}
 
