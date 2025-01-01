@@ -22,7 +22,7 @@ export const TAGS = {
 
 const pages = {
 	'goal-activities-2025': {
-		title: 'Goal Activities 2025',
+		title: 'Goal Activities in 2025',
 		content: goalActivities,
 		date: '01/01/25',
 		tags: [TAGS.suggestions],

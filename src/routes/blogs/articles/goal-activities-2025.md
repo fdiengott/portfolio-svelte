@@ -1,4 +1,4 @@
-# Goal Activities 2025
+# Goal Activities in 2025
 
 Lately, I've been listening to the podcast "[Philsophize This](https://www.philosophizethis.org/)" (shoutout to Stephen West!) fairly often, and the philosophical thought lately being discussed in the 20th century is how the goal of philosophy has gone from how one _should_ live, to how one _might_ live. So due to that, I've been thinking about what are things I can do to that pursuit that don't require a fundamental shift in my life.
 
