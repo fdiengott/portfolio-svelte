@@ -24,7 +24,7 @@ const pages = {
 	'goal-activities-2025': {
 		title: 'Goal Activities 2025',
 		content: goalActivities,
-		date: '__TODAYS_DATE__',
+		date: '01/01/25',
 		tags: [TAGS.suggestions],
 	},
 	'book-list': {
