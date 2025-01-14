@@ -43,7 +43,7 @@ Maybe ice skating too
 
 ### Axe throwing / archery
 
--   [NY Axe Williamsburg](nyaxe.com)
+-   [NY Axe Williamsburg](https://nyaxe.com)
 
 ### Video game day(s)
 
