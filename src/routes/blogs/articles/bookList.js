@@ -29,6 +29,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **Thinking, Fast and Slow** by Daniel Kahneman
 - **Moneyland: The Inside Story of the Crooks and Kleptocrats Who Rule the World** by Oliver Bullough
 - **One Billion Americans: The Case for Thinking Bigger** by Matthew Yglesias
+- **Overthrow: America's century of regime change from Hawaii to Iraq** by Stephen Kinzer
 `;
 
 export default bookList;
