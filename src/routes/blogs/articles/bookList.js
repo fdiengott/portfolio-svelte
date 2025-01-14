@@ -25,9 +25,10 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **Of Boys and Men: Why the Modern Male Is Struggling, Why It Matters, and What to Do About It** by Richard V. Reeves
 - **How to Win Friends and Influence People** by Dale Carnegie
 - **The New Map: Energy, Climate, and the Clash of Nations** by Daniel Yergin (I read it a second time after getting more middle east context from Bacevich)
-- **The Kingdom, The Power, and the Glory: Ameridcan Evangelicals in an Age of Extremism** by Tim Alberta
+- **The Kingdom, The Power, and the Glory: American Evangelicals in an Age of Extremism** by Tim Alberta
 - **Thinking, Fast and Slow** by Daniel Kahneman
 - **Moneyland: The Inside Story of the Crooks and Kleptocrats Who Rule the World** by Oliver Bullough
+- **One Billion Americans: The Case for Thinking Bigger** by Matthew Yglesias
 - **Overthrow: America's century of regime change from Hawaii to Iraq** by Stephen Kinzer
 `;
 
