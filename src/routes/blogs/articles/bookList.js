@@ -28,6 +28,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **The Kingdom, The Power, and the Glory: Ameridcan Evangelicals in an Age of Extremism** by Tim Alberta
 - **Thinking, Fast and Slow** by Daniel Kahneman
 - **Moneyland: The Inside Story of the Crooks and Kleptocrats Who Rule the World** by Oliver Bullough
+- **Overthrow: America's century of regime change from Hawaii to Iraq** by Stephen Kinzer
 `;
 
 export default bookList;
