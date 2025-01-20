@@ -3,8 +3,20 @@
 	import postcard from '../../assets/images/postcard-homepage.gif';
 	import lexiloop from '../../assets/images/lexiloop-homepage.gif';
 	import theBodyKnows from '../../assets/images/the-body-knows.gif';
+	import taylorTaylorComposer from '../../assets/images/tylertaylorcomposer-works-page.png';
 
 	const projects = [
+		{
+			title: 'Tyler Taylor Composer',
+			githubLink: 'https://github.com/fdiengott/tyler-taylor-composer',
+			liveLink: 'https://tylertaylorcomposer.netlify.app/',
+			imgSrc: taylorTaylorComposer,
+			description: [
+				'A static website I built for my friend Taylor Taylor, a musician and composer.',
+				'Built using Astro with an emphasis on simplicity and ease of maintainability and customization.',
+			],
+		},
+
 		{
 			title: 'The Body Knows Somatics',
 			githubLink: 'https://github.com/fdiengott/the_body_knows',
@@ -15,6 +27,7 @@
 				'Built using Vue and Sass, with Netlify handling form submissions.',
 			],
 		},
+
 		{
 			title: 'Pebbble',
 			githubLink: 'https://github.com/fdiengott/pebbble',
