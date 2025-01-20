@@ -3,6 +3,51 @@
 	import postcard from '../../assets/images/postcard-homepage.gif';
 	import lexiloop from '../../assets/images/lexiloop-homepage.gif';
 	import theBodyKnows from '../../assets/images/the-body-knows.gif';
+
+	const projects = [
+		{
+			title: 'The Body Knows Somatics',
+			githubLink: 'https://github.com/fdiengott/the_body_knows',
+			liveLink: 'https://thebodyknowssomatics.com',
+			imgSrc: theBodyKnows,
+			description: [
+				"A simple, clean, easy to navigate website I built for my partner's small business as a trauma therapist.",
+				'Built using Vue and Sass, with Netlify handling form submissions.',
+			],
+		},
+		{
+			title: 'Pebbble',
+			githubLink: 'https://github.com/fdiengott/pebbble',
+			liveLink: '',
+			imgSrc: pebbble,
+			description: [
+				'A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts to share their work or find inspiration.',
+				'Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.',
+			],
+		},
+
+		{
+			title: 'PostCard',
+			githubLink: 'https://github.com/chrisj1225/Postcard',
+			liveLink: '',
+			imgSrc: postcard,
+			description: [
+				'A website I worked on with a four person team as the frontend developer building a travel scrapbook with integrated maps and photos.',
+				'Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.',
+			],
+		},
+
+		{
+			title: 'Lexiloop',
+			githubLink: 'https://github.com/fdiengott/LexiLoop',
+			liveLink: '',
+			imgSrc: lexiloop,
+			description: [
+				'An interactive music sequencer I made that uses syllabified words as audio samples!',
+				'Built with JavaScript, HTML, Sass, Webpack, WebAudio API, and the WordsAPI.',
+			],
+		},
+	];
 </script>
 
 <svelte:head>
@@ -23,127 +68,37 @@
 	</div>
 
 	<section class="projects__wrapper">
-		<div class="projects__card">
-			<span class="projects__card-header">
-				<h2>The Body Knows Somatics</h2>
-				<div class="external-links">
-					<a href="https://github.com/fdiengott/the_body_knows" target="_blank" rel="noopener noreferrer"
-						>Github</a
-					>
-					<a href="https://thebodyknowssomatics.com" target="_blank" rel="noopener noreferrer">Live</a>
-				</div>
-			</span>
-			<a
-				href="https://github.com/fdiengott/the_body_knows"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="projects__image-link fit"
-			>
-				<img src={theBodyKnows} alt="" />
-				<article class="hover-text web">
-					<p>
-						A simple, clean, easy to navigate website I built for my partner's small business as a trauma
-						therapist.
-					</p>
-					<p>Built using Vue and Sass, with Netlify handling form submissions.</p>
+		{#each projects as project}
+			<div class="projects__card">
+				<span class="projects__card-header">
+					<h2>{project.title}</h2>
+					<div class="external-links">
+						<a href={project.githubLink} target="_blank" rel="noopener noreferrer">Github</a>
+						{#if project?.liveLink}
+							<a href={project.liveLink} target="_blank" rel="noopener noreferrer">Live</a>
+						{/if}
+					</div>
+				</span>
+
+				<a href={project.githubLink} target="_blank" rel="noopener noreferrer" class="projects__image-link fit">
+					<img src={project.imgSrc} alt={project.title} />
+					<article class="hover-text web">
+						{#if project.description}
+							{#each project.description as description}
+								<p>{description}</p>
+							{/each}
+						{/if}
+					</article>
+				</a>
+				<article class="hover-text mobile">
+					{#if project.description}
+						{#each project.description as description}
+							<p>{description}</p>
+						{/each}
+					{/if}
 				</article>
-			</a>
-			<article class="hover-text mobile">
-				<p>
-					A simple, clean, easy to navigate website I built for my partner's small business as a trauma
-					therapist.
-				</p>
-				<p>Built using Vue and Sass, with Netlify handling form submissions.</p>
-			</article>
-		</div>
-		<div class="projects__card">
-			<span class="projects__card-header">
-				<h2>Pebbble</h2>
-				<div class="external-links">
-					<a href="https://github.com/fdiengott/pebbble" target="_blank" rel="noopener noreferrer">Github</a>
-					<!-- <a href="https://pebbble.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
-				</div>
-			</span>
-			<a
-				href="https://github.com/fdiengott/pebbble"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="projects__image-link fit"
-			>
-				<img src={pebbble} alt="" />
-				<article class="hover-text web">
-					<p>
-						A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts
-						to share their work or find inspiration.
-					</p>
-					<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
-				</article>
-			</a>
-			<article class="hover-text mobile">
-				<p>
-					A full-stack website I created mimicking Dribbble, a haven for designers and design enthusiasts to
-					share their work or find inspiration.
-				</p>
-				<p>Built using React/Redux, Ruby on Rails, PostgreSQL, and Amazon Web Services.</p>
-			</article>
-		</div>
-		<div class="projects__card">
-			<span class="projects__card-header">
-				<h2>Postcard</h2>
-				<div class="external-links">
-					<a href="https://github.com/chrisj1225/Postcard" target="_blank" rel="noopener noreferrer">Github</a
-					>
-					<!-- <a href="https://postcard-triplog.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
-				</div>
-			</span>
-			<a
-				href="https://github.com/chrisj1225/Postcard"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="projects__image-link fit"
-				><img src={postcard} alt="" />
-				<article class="hover-text web">
-					<p>
-						A website I worked on with a four person team as the frontend developer building a travel
-						scrapbook with integrated maps and photos.
-					</p>
-					<p>
-						Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.
-					</p>
-				</article>
-			</a>
-			<article class="hover-text mobile">
-				<p>
-					A website I worked on with a four person team as the frontend developer building a travel scrapbook
-					with integrated maps and photos.
-				</p>
-				<p>Built using React/Redux, Express.js, MongoDB, Node.js, Google Maps API, and Amazon Web Services.</p>
-			</article>
-		</div>
-		<div class="projects__card">
-			<span class="projects__card-header">
-				<h2>Lexiloop</h2>
-				<div class="external-links">
-					<a href="https://github.com/fdiengott/LexiLoop" target="_blank" rel="noopener noreferrer">Github</a>
-					<!-- <a href="https://lexiloop.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a> -->
-				</div>
-			</span>
-			<a
-				href="https://github.com/fdiengott/LexiLoop"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="projects__image-link fit"
-				><img src={lexiloop} alt="" />
-				<article class="hover-text web">
-					<p>An interactive music sequencer I made that uses syllabified words as audio samples!</p>
-					<p>Built with JavaScript, HTML, Sass, Webpack, WebAudio API, and the WordsAPI.</p>
-				</article>
-			</a>
-			<article class="hover-text mobile">
-				<p>An interactive music sequencer I made that uses syllabified words as audio samples!</p>
-				<p>Built with JavaScript, HTML, Sass, Webpack, WebAudio API, and the WordsAPI.</p>
-			</article>
-		</div>
+			</div>
+		{/each}
 	</section>
 </article>
 
