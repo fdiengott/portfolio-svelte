@@ -64,24 +64,43 @@
 						{#each 'design-focused' as letter, index}
 							<span style="--delay: {index * 300}ms">{letter}</span>
 						{/each}
-					</span>, auto-didactic, full-stack software engineer based in NYC who loves to code! I'm currently a
-					senior frontend engineer at Etrade from Morgan Stanley where I'm maintaining a
-					<span class="bold">React Component Library</span>
-					and work as the team lead for our <span class="bold">D3.js Charts Library</span> and a
-					<span class="bold">Web Scraping Bun/Astro/React Metrics Dashboard</span>. I'm passionate about
-					writing maintainable, performant code, with an emphasis on intuitive design and accessibility.
+					</span>, auto-didactic, full-stack software engineer based in Brooklyn, NY! I'm currently a UI
+					engineer at Adaptive Financial where I'm building a real-time finance platform built on top of a
+					web-socket connected, highly secure, fast, distributed system where the UI is made with
+					<span class="bold">TypeScript</span>, <span class="bold">React</span>,
+					<span class="bold">Material UI</span>, TanStack's
+					<span class="bold">React Table</span>, <span class="bold">React Query</span>,
+					<span class="bold">React Hook Form</span>, and some other goodies. I'm passionate about writing
+					loosely coupled, maintainable, performant code, with an emphasis on intuitive design and
+					accessibility.
 				</p>
 
 				<p>
-					I'm currently spending a large swath of my free time studying Machine Learning and AI safety, as I
-					believe it is the defining technology of our time.
+					This last year I've seen myself grow as a <span class="underline italic">full</span>-stack engineer,
+					as I've spent a serious amount of time reading java code, learning design patterns, the advantages
+					and security concerns of cloud technologies, and the ins and outs of distributed systems that handle
+					lots of data.
 				</p>
 
 				<p>
-					My journey to software engineering took many unexpected turns. Some of the pit stops included
-					pursuing a career as an opera singer and organizing the music and entertainment for over 200
-					high-end events! I have lots of hobbies and love to learn new things!
+					I've recently spent a large swath of free time studying Machine Learning and AI safety, as I believe
+					it is the defining technology of our time.
 				</p>
+
+				<p>
+					This year I made a new years resolution to read a book in all of the major scientific disciplines.
+					It's been a goal for myself in the last couple of years to try and have as deep and accurate model
+					of the world as I can, and this is a piece of that journey. To hold myself accountable (and because
+					I find it useful to refer to) I will include all of the books I read and would recommend in a blog
+					post. I hope this blog will start to fill up with articles I'm writing to understand technology,
+					both software engineering and in general, and the world. I am not under the impression that anyone
+					will read it, but by making them publicly accessible, I hope to motivate myself to write. To
+					understand how I think. I've never been someone who writes very much, but I think it is an
+					incredibly valuable skill to cultivate. Not the writing in and of itself, but the exploration into
+					one's own thinking that is concrete and mulled over.
+				</p>
+
+				<p>So feel free to reach out. And stay tuned!</p>
 			</div>
 		</div>
 		<div class="home__footer-links">
@@ -275,6 +294,14 @@
 
 	.bold {
 		font-weight: 700;
+	}
+
+	.underline {
+		text-decoration: underline;
+	}
+
+	.italic {
+		font-style: italic;
 	}
 
 	.icon:focus {
