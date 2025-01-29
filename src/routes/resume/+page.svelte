@@ -20,8 +20,9 @@
 	<section>
 		<h2 class="c10 c21" id="intro">Intro</h2>
 		<p>
-			A skilled software engineer specializing in developing maintainable and efficient code, with expertise in
-			frontend technologies and a strong background in data visualization and performance optimization.
+			A skilled, incredibly curious, software engineer specializing in developing maintainable and efficient code,
+			with expertise in frontend technologies and a strong background in data visualization and performance
+			optimization.
 		</p>
 	</section>
 
@@ -37,7 +38,16 @@
 			<p class="c10">
 				<span class="c11">Frontend Engineer</span>
 			</p>
-			<ul class="c20 lst-kix_i5opmugboj5i-0 start" />
+			<ul class="c20 lst-kix_i5opmugboj5i-0 start">
+				<li class="c6 li-bullet-0">
+					Building a highly secure, reliable, cloud-based, real-time auction platform with a distributed
+					system architecture with a team of engineers, BAs, POs, designers, QAs, and SREs, using
+					<strong>React</strong>, <strong>Typescript</strong>, <strong>Java</strong>, <strong>RxJS</strong>
+					(to handle web-socket streams, and some state management), <strong>React-Query</strong>,
+					<strong>React-Router</strong>, <strong>React-Table</strong>, <strong>React-Hook-Form</strong>,
+					<strong>MUI</strong>, and many other tools.
+				</li>
+			</ul>
 		</div>
 		<div class="experience-item">
 			<p class="c10 space-between">

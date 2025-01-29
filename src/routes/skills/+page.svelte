@@ -10,7 +10,7 @@
 		{ iconCls: 'devicon-astro-plain colored', text: 'Astro' },
 		{ iconCls: 'devicon-vuejs-plain colored', text: 'Vue.js' },
 
-		{ iconCls: 'devicon-d3js-plain colored', text: 'RxJS' },
+		{ iconCls: 'devicon-rxjs-plain colored', text: 'RxJS' },
 		{ iconCls: 'devicon-d3js-plain colored', text: 'D3.js' },
 		{ iconCls: 'devicon-trpc-plain colored', text: 'tRPC' },
 		{ iconCls: 'devicon-bash-plain colored', text: 'Bash' },
