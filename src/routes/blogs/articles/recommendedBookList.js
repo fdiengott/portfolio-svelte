@@ -3,9 +3,9 @@ const recommendedBookList = `
 
 This is a quick little list of the handful of books that are impacting my thinking the most at the moment. This is a living document and I am sure I will update it fairly often (as I am wont to do)!
 
-## Nucler War by Annie Jacobsen
+## Nuclear War by Annie Jacobsen
 
-I have to include this book. I don't think I have ever been so accosted, shaken, or challenged by a book. It is obviously not reading for the faint of heart of for those prone to anxiety or depression (I struggled at times and I generally think I'm very even keeled). Annie writes something like a war game, where it is the predicted result of several fictional series of events. She does an excellent job of showing what a nuclear attack and the following nuclear war would look like second by second, minute by minute, and then the following tens of thousands of years. I was very often open-mouthed and in awe and couldn't put it down. 
+I have to include this book. I don't think I have ever been so accosted, shaken, or challenged by a book in my life. It is obviously not for the faint of heart or for those prone to anxiety or depression (I struggled at times and I generally think I'm very even-keeled). The book is something like a war game, where it is the predicted result of several fictional series of events. She does an excellent job of showing what a nuclear attack and the following nuclear war would look like second by second, minute by minute, and then the following tens of thousands of years. I often found myself open-mouthed, in awe and couldn't put it down. 
 
 ## Determined by Robert Sapolsky
 
