@@ -3,6 +3,10 @@ const recommendedBookList = `
 
 This is a quick little list of the handful of books that are impacting my thinking the most at the moment. This is a living document and I am sure I will update it fairly often (as I am wont to do)!
 
+## Nucler War by Annie Jacobsen
+
+I have to include this book. I don't think I have ever been so accosted, shaken, or challenged by a book. It is obviously not reading for the faint of heart of for those prone to anxiety or depression (I struggled at times and I generally think I'm very even keeled). Annie writes something like a war game, where it is the predicted result of several fictional series of events. She does an excellent job of showing what a nuclear attack and the following nuclear war would look like second by second, minute by minute, and then the following tens of thousands of years. I was very often open-mouthed and in awe and couldn't put it down. 
+
 ## Determined by Robert Sapolsky
 
 In this book Sapolsky makes the argument for why we, as humans, do not have free will, an argument I find incredibly persuasive and surprisingly liberating. The argument gives me more cause for empathy towards folks who else more disadvantaged than me, and provides ample reason for humuility for the countless ways that I am so lucky for my jeans, conditioning, time and place of birth, etc. I also love the way Sapolsky writes, with humor and lots of research. At first it was daunty to receive such a lengthy tome from the library, but upon diving in, I felt lucky to pick it up every time.

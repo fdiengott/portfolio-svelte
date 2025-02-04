@@ -31,6 +31,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **One Billion Americans: The Case for Thinking Bigger** by Matthew Yglesias
 - **Overthrow: America's century of regime change from Hawaii to Iraq** by Stephen Kinzer
 - **Superforecasting: The Art and Science of Prediction** by Philip E. Tetlock & Dan Gardner
+- **Nuclear War: A Scenario** by Annie Jacobsen
 `;
 
 export default bookList;
