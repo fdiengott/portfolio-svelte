@@ -32,6 +32,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **Overthrow: America's century of regime change from Hawaii to Iraq** by Stephen Kinzer
 - **Superforecasting: The Art and Science of Prediction** by Philip E. Tetlock & Dan Gardner
 - **Nuclear War: A Scenario** by Annie Jacobsen
+- **The Shallows: What the Internet is Doing to Our Brains** by Nicholas Carr
 `;
 
 export default bookList;
