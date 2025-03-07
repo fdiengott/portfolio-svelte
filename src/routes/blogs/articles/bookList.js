@@ -33,6 +33,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **Superforecasting: The Art and Science of Prediction** by Philip E. Tetlock & Dan Gardner
 - **Nuclear War: A Scenario** by Annie Jacobsen
 - **The Shallows: What the Internet is Doing to Our Brains** by Nicholas Carr
+- **The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win** by Gene Kim, Kevin Behr, and George Spafford
 `;
 
 export default bookList;
