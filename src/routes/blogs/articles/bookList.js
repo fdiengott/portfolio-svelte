@@ -34,6 +34,7 @@ I've been reading mostly non-fiction lately, which is massively inspiring and ex
 - **Nuclear War: A Scenario** by Annie Jacobsen
 - **The Shallows: What the Internet is Doing to Our Brains** by Nicholas Carr
 - **The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win** by Gene Kim, Kevin Behr, and George Spafford
+- **The Origin of Wealth: Evolution, Complexity, and the Radical Remaking of Economics** by Eric D. Beinhocker
 `;
 
 export default bookList;
