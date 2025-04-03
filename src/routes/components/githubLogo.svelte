@@ -20,7 +20,7 @@
 	}
 
 	.logo path {
-		fill: rgba(0, 0, 0, 0.7);
+		fill: currentColor;
 		transition: all 100ms;
 	}
 

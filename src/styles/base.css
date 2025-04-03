@@ -28,9 +28,22 @@
 		--color-primary-300: hsl(196, 76%, 70%);
 		--color-primary-200: hsl(180, 100%, 93%);
 
-		--color-bg: #aaa;
+		--color-theme-bg: black;
+		--color-bg: var(--white);
+		--color-card-bg: #fff;
 		--color-primary: var(--lavender);
 		--color-accent: var(--white-soft);
 		--color-text: var(--black);
+		--color-border: var(--black-transparent);
+	}
+
+	html[data-theme='dark'] {
+		--color-theme-bg: var(--white);
+		--color-bg: black;
+		--color-card-bg: #333;
+		--color-primary: #c0c0e3;
+		--color-accent: var(--black);
+		--color-text: var(--white);
+		--color-border: #7a7a7a;
 	}
 }

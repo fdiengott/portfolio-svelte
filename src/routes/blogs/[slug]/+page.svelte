@@ -41,7 +41,8 @@
 		left: 50%;
 		transform: translateX(-50%);
 
-		background: none;
+		color: var(--color-text);
+		background: var(--color-card-bg);
 		border: none;
 		cursor: pointer;
 		transition: all 200ms;
@@ -56,7 +57,7 @@
 		position: absolute;
 		inset: -50% -10%;
 		z-index: -1;
-		background: white;
+		background: var(--color-card-bg);
 		filter: blur(2px);
 	}
 
@@ -66,8 +67,8 @@
 		width: 15px;
 		aspect-ratio: 1/1;
 
-		border-top: var(--stroke) solid black;
-		border-right: var(--stroke) solid black;
+		border-top: var(--stroke) solid currentColor;
+		border-right: var(--stroke) solid currentColor;
 		transform: rotate(-45deg);
 	}
 
