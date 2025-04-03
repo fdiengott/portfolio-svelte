@@ -46,12 +46,30 @@
 		background-attachment: fixed;
 		background-color: var(--color-bg);
 		background-size: 100vw 100vh;
-		background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0) 100%),
+		background-image: radial-gradient(
+				50% 50% at 50% 50%,
+				hsl(from var(--color-primary) h s l / 75%) 0%,
+				hsl(from var(--color-primary) h s l / 0%) 100%
+			),
 			linear-gradient(
 				180deg,
-				hsl(var(--primary-hue), 100%, 100%) 0%,
-				hsl(var(--primary-hue), 100%, 90%) 55%,
-				hsl(var(--primary-hue), 100%, 86%) 60%
+				hsl(from var(--color-primary) h 100% 100%) 0%,
+				hsl(from var(--color-primary) h 100% 90%) 55%,
+				hsl(from var(--color-primary) h 100% 86%) 60%
+			);
+	}
+
+	html[data-theme='dark'] .app {
+		background-image: radial-gradient(
+				50% 50% at 50% 50%,
+				hsl(from var(--color-primary) h s l / 0%) 0%,
+				hsl(from var(--color-primary) h s l / 0%) 100%
+			),
+			linear-gradient(
+				180deg,
+				hsl(from var(--color-primary) h 100% 0%) 0%,
+				hsl(from var(--color-primary) h 100% 5%) 20%,
+				hsl(from var(--color-primary) h 100% 10%) 60%
 			);
 	}
 

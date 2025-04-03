@@ -16,7 +16,7 @@
 				</div>
 			{/if}
 			<div class="article__date">{article.date}</div>
-			<a href="/blogs/{article.slug}">
+			<a class="article__item__title" href="/blogs/{article.slug}">
 				<span>{article.title}</span>
 			</a>
 			{#if article.tags}
@@ -52,7 +52,7 @@
 		.article__item {
 			display: grid;
 			position: relative;
-			border: 1px solid var(--black-transparent);
+			border: 1px solid var(--color-border);
 			padding: 1rem 2rem;
 			border-radius: 0.5rem;
 			max-width: 40rem;
@@ -103,7 +103,7 @@
 	}
 	// .article__tag.music { }
 	.article__tag.suggestions {
-		--tag-color: rgb(56, 35, 241);
+		--tag-color: hsl(35.47deg 100% 44.12%);
 	}
 	.article__tag.announcements {
 		--tag-color: hsl(278 75% 70%);
@@ -113,5 +113,6 @@
 		position: absolute;
 		top: calc(1rem - 7.5px);
 		left: calc(1rem - 7.5px);
+		color: var(--color-border);
 	}
 </style>

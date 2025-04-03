@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import GithubLogo from './components/githubLogo.svelte';
+	import ThemeToggle from './components/ThemeToggle.svelte';
 
 	$: pathname = $page.url.pathname;
 </script>
@@ -34,6 +35,7 @@
 		<a href="https://github.com/fdiengott/" target="_blank">
 			<GithubLogo />
 		</a>
+		<ThemeToggle />
 	</div>
 </header>
 
@@ -44,7 +46,7 @@
 	}
 
 	.header__corner {
-		padding-inline: 0.5rem;
+		padding-inline: 1rem;
 	}
 
 	.header__corner a {
@@ -74,7 +76,7 @@
 
 	@media (width > 768px) {
 		.header__corner {
-			display: block;
+			display: flex;
 		}
 
 		nav {
@@ -86,7 +88,6 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
 	}
 
 	ul {
@@ -98,7 +99,7 @@
 		justify-content: center;
 		align-items: center;
 		list-style: none;
-		background: var(--background);
+		background: var(--color-bg);
 		background-size: contain;
 	}
 
@@ -152,7 +153,8 @@
 
 	@media (width > 768px) {
 		.header__corner--github {
-			display: block;
+			display: flex;
+			align-items: center;
 		}
 	}
 </style>

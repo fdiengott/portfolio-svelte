@@ -31,9 +31,9 @@
 	}
 
 	.card {
-		background-color: white;
+		background-color: var(--color-card-bg);
 		border-radius: 1rem;
-		padding-block: 2rem 8rem;
+		padding-block: 2rem 4rem;
 		padding-inline: clamp(1rem, 5vw, 4rem);
 	}
 </style>
