@@ -129,9 +129,6 @@
 			overflow-x: scroll;
 		}
 
-		--code-background: hsl(0, 0%, 95%);
-		--code-border-color: 205, 84%, 20%; // blueish gray
-
 		table:has(code),
 		tr,
 		td {
@@ -215,6 +212,10 @@
 				overflow: visible;
 				display: revert;
 			}
+		}
+
+		html[data-theme='dark'] & .hljs code {
+			color: color-mix(in oklch, var(--color-text), black 15%);
 		}
 
 		.nyc-activities-start {
