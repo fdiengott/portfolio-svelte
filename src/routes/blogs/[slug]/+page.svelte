@@ -214,6 +214,10 @@
 			}
 		}
 
+		.hljs {
+			background: var(--code-background);
+		}
+
 		html[data-theme='dark'] & .hljs code {
 			color: color-mix(in oklch, var(--color-text), black 15%);
 		}

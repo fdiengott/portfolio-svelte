@@ -101,7 +101,7 @@ const DownloadPDFButton = () => {
 		<Button
 			href={filename}
 			LinkComponent={(({children}) => (
-				<PDFDownloadLink document={<MyDocument />} filename={filename}>
+				<PDFDownloadLink filename={filename} document={<MyDocument />}>
 					{children}
 				</PDFDownloadLink >
 			))}
