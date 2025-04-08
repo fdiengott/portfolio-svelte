@@ -27,6 +27,28 @@
 	</section>
 
 	<section>
+		<h2 class="c10 c21" id="skills">Skills</h2>
+		<div class="skills-wrapper">
+			<div class="skills-column">
+				<h3 class="underline">Frontend</h3>
+				<div>React, TypeScript, D3.js, RxJS, Svelte, Astro, Vue, HTML, CSS, Sass</div>
+			</div>
+			<div class="skills-column">
+				<h3 class="underline">Backend</h3>
+				<div>Java, Node.js, Express, SQL, GraphQL, REST, Ruby, Rails, S3</div>
+			</div>
+			<div class="skills-column">
+				<h3 class="underline">Tools & Methodologies</h3>
+				<div>Git, Playwright, Jest, Vite, Webpack, Bun, Testing Library, Scripting</div>
+			</div>
+			<div class="skills-column">
+				<h3 class="underline">Data Sci & ML</h3>
+				<div>Python, NumPy, TensorFlow, RAG</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
 		<h2 class="c10 c31" id="experience">Experience</h2>
 		<div class="experience-item">
 			<p class="c10 space-between">
@@ -40,12 +62,20 @@
 			</p>
 			<ul class="c20 lst-kix_i5opmugboj5i-0 start">
 				<li class="c6 li-bullet-0">
-					Building a highly secure, reliable, cloud-based, real-time auction platform with a distributed
-					system architecture with a team of engineers, BAs, POs, designers, QAs, and SREs, using
-					<strong>React</strong>, <strong>Typescript</strong>, <strong>Java</strong>, <strong>RxJS</strong>
-					(to handle web-socket streams, and some state management), <strong>React-Query</strong>,
-					<strong>React-Router</strong>, <strong>React-Table</strong>, <strong>React-Hook-Form</strong>,
-					<strong>MUI</strong>, and many other tools.
+					Built a highly secure, reliable, real-time auction platform with a team of engineers, BAs, POs,
+					designers, QAs, and SREs, using <strong>TypeScript</strong>, <strong>Java</strong>,
+					<strong>RxJS</strong>
+					(to handle web-socket streams), <strong>React-Query</strong>, <strong>MUI</strong>, and many other
+					tools
+				</li>
+				<li class="c6 li-bullet-0">
+					Implemented time reliability enhancements, adjusting for clock drift from server time, and
+					refactored the site using the new <strong>Temporal API</strong> to consistently display the datetime
+					in the server timezone regardless of client location
+				</li>
+				<li class="c6 li-bullet-0">
+					Improved initial page load and rerender time by using <strong>RxJS</strong> in conjunction with
+					<strong>React-Query</strong> for state management
 				</li>
 			</ul>
 		</div>
@@ -199,9 +229,20 @@
 		<div class="experience-item">
 			<ul class="c20 lst-kix_i5opmugboj5i-0">
 				<li class="c6 li-bullet-0">
+					Currently developing an event aggregating tool using <strong>Playwright</strong>,
+					<strong>Prisma</strong>, <strong>SQLite</strong>, <strong>nodemailer</strong>, and
+					<strong>node-cron</strong>
+				</li>
+
+				<li class="c6 li-bullet-0">
 					Currently developing a robust e-commerce platform using <strong>tRPC</strong>,
 					<strong>Typescript</strong>, <strong>Prisma</strong>, <strong>PostgreSQL</strong>, and
 					<strong>Next.js</strong>
+				</li>
+
+				<li class="c6 li-bullet-0">
+					Developed a static website using <strong>Astro</strong>, showcasing proficiency in building modern,
+					incredibly fast web apps
 				</li>
 
 				<li class="c6 li-bullet-0">
@@ -217,28 +258,6 @@
 					<strong>Hono.js</strong>, both using a locally installed/run LLM, <strong>Llama3</strong>
 				</li>
 			</ul>
-		</div>
-	</section>
-
-	<section>
-		<h2 class="c10 c21" id="skills">Skills</h2>
-		<div class="skills-wrapper">
-			<div class="skills-column">
-				<h3 class="underline">Frontend</h3>
-				<div>React, JavaScript, TypeScript, D3.js, Svelte, Astro, Vue, HTML, CSS, Sass</div>
-			</div>
-			<div class="skills-column">
-				<h3 class="underline">Backend</h3>
-				<div>Node.js, Express, SQL, GraphQL, REST, Ruby, Rails, AWS S3, Lua</div>
-			</div>
-			<div class="skills-column">
-				<h3 class="underline">Tools & Methodologies</h3>
-				<div>Git, Jest, Vite, Enzyme, Webpack, Bun, Testing Library, Scripting</div>
-			</div>
-			<div class="skills-column">
-				<h3 class="underline">Data Sci & ML</h3>
-				<div>Python, NumPy, TensorFlow, RAG</div>
-			</div>
 		</div>
 	</section>
 
