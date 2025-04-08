@@ -263,8 +263,8 @@
 			class="c5">&nbsp;</span
 		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp;</span><span class="c18 c11">|</span><span
 			class="c13 c11"
-			>&nbsp; &nbsp;2021 &nbsp;| &nbsp; Rigorous 1000-hour software development course with focus on full stack
-			web development</span
+			>&nbsp; &nbsp;2021 &nbsp;<span class="c18">|</span> &nbsp; Rigorous 1000-hour software development course with
+			focus on full stack web development</span
 		>
 	</p>
 	<p class="c10">
@@ -272,8 +272,8 @@
 			><a class="link" href="http://www.esm.rochester.edu/" target="_blank">Eastman School of Music</a></span
 		><span class="c5">&nbsp;</span><span class="c13 c11">&nbsp; </span><span class="c18 c11">|</span><span
 			class="c13 c11"
-			>&nbsp; &nbsp;Master of Music &nbsp; | &nbsp;2017 &nbsp;| &nbsp; Worked 8 PT jobs simultaneously while
-			maintaining a 3.89 GPA</span
+			>&nbsp; &nbsp;Master of Music &nbsp; <span class="c18">|</span> &nbsp;2017 &nbsp;<span class="c18">|</span> &nbsp;
+			Worked 8 PT jobs simultaneously while maintaining a 3.89 GPA</span
 		>
 	</p>
 	<p class="c10">
@@ -350,12 +350,8 @@
 
 	.c13 {
 		font-family: inherit;
-		color: #666666;
+		color: color-mix(in oklch, var(--color-text), var(--color-bg) 20%);
 		font-weight: 400;
-	}
-
-	.c35 {
-		background-color: #ffffff;
 	}
 
 	.c21 {
@@ -507,9 +503,9 @@
 	}
 
 	.doc-content {
-		--resume-primary: hsl(101.8deg 60.54% 29%);
+		--resume-primary: hsl(101.8deg 60.54% 35%);
 		--resume-secondary: hsl(101.8deg 60.54% 40%);
-		--font-color: #434343;
+		--font-color: var(color-text);
 		font-family: 'Roboto', sans-serif;
 		font-size: 14px;
 		font-weight: 400;

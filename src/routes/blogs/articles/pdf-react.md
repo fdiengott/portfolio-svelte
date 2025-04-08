@@ -99,12 +99,12 @@ const DownloadPDFButton = () => {
 
 	return (
 		<Button
+			href={filename}
 			LinkComponent={(({children}) => (
-				<PDFDownloadLink document={<MyDocument />} filename={filename}>
+				<PDFDownloadLink filename={filename} document={<MyDocument />}>
 					{children}
 				</PDFDownloadLink >
 			))}
-			href={filename}
 		>
 			Download PDF
 		</Button>
@@ -137,7 +137,11 @@ const StyledPDFDownloadLink = styled(PDFDownloadLink)(({ theme }) => ({
 
 const DownloadPDFButton = () => {
 	const filename = 'my-pdf.pdf';
-	return <StyledPDFDownloadLink document={<MyDocument />} filename={filename}>Download PDF</StyledPDFDownloadLink>;
+	return (
+		<StyledPDFDownloadLink filename={filename} document={<MyDocument />}>
+			Download PDF
+		</StyledPDFDownloadLink>;
+	)
 };
 ```
 
@@ -162,7 +166,7 @@ const DownloadPDFButton = () => {
 		<>
 			<Button onClick={handleDownload}>Download PDF</Button>
 			<Box hidden ref={ref}>
-				<PDFDownloadLink document={<MyDocument />} filename={filename}></PDFDownloadLink>
+				<PDFDownloadLink filename={filename} document={<MyDocument />} />
 			</Box>
 		</>
 	);

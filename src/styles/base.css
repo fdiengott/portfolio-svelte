@@ -35,6 +35,10 @@
 		--color-accent: var(--white-soft);
 		--color-text: var(--black);
 		--color-border: var(--black-transparent);
+
+		--code-background: hsl(0, 0%, 95%);
+		--code-border-color-raw: 205, 84%, 20%;
+		--code-border-color: hsl(var(--code-border-color-raw));
 	}
 
 	html[data-theme='dark'] {
@@ -45,5 +49,7 @@
 		--color-accent: var(--black);
 		--color-text: var(--white);
 		--color-border: #7a7a7a;
+
+		--code-background: hsl(0color-mix(in oklch, var(--color-text), black 10%));
 	}
 }

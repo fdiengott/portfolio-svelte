@@ -1,13 +1,12 @@
 <script>
 	import { page } from '$app/stores';
-	import GithubLogo from './components/githubLogo.svelte';
 	import ThemeToggle from './components/ThemeToggle.svelte';
 
 	$: pathname = $page.url.pathname;
 </script>
 
 <header>
-	<div class="header__corner" data-visible={pathname !== '/'}>
+	<div class="header__home-link" data-visible={pathname !== '/'}>
 		<a href="/" tabindex={pathname === '/' ? -1 : 0}> Freddy Diengott</a>
 	</div>
 
@@ -31,10 +30,7 @@
 		</ul>
 	</nav>
 
-	<div class="header__corner header__corner--github">
-		<a href="https://github.com/fdiengott/" target="_blank">
-			<GithubLogo />
-		</a>
+	<div class="header__theme-toggle">
 		<ThemeToggle />
 	</div>
 </header>
@@ -45,11 +41,13 @@
 		justify-content: space-between;
 	}
 
-	.header__corner {
+	.header__home-link {
 		padding-inline: 1rem;
+		place-items: center;
+		display: none;
 	}
 
-	.header__corner a {
+	.header__home-link a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -58,36 +56,24 @@
 		height: 100%;
 	}
 
-	.header__corner[data-visible='false'] a {
+	.header__home-link[data-visible='false'] a {
 		opacity: 0;
 		pointer-events: none;
 	}
-	.header__corner[data-visible='true'] a {
+	.header__home-link[data-visible='true'] a {
 		opacity: 1;
 	}
 
-	.header__corner {
-		display: none;
+	.header__theme-toggle {
+		display: flex;
+		place-items: center;
+		padding-inline-end: 1rem;
 	}
 
-	nav {
-		margin-inline: auto;
-	}
-
-	@media (width > 768px) {
-		.header__corner {
-			display: flex;
-		}
-
-		nav {
-			margin-inline: 0;
-		}
-	}
-
-	/* TODO fix these styles */
 	nav {
 		display: flex;
-		justify-content: center;
+		justify-content: start;
+		padding-inline-start: 1rem;
 	}
 
 	ul {
@@ -124,21 +110,21 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 0.5rem;
+		padding: 0 0.25rem;
 		color: var(--color-text);
 		font-weight: 700;
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
 	}
 
 	nav a,
-	.header__corner a {
+	.header__home-link a {
 		transition: color 0.2s linear;
 	}
 
-	.header__corner a {
+	.header__home-link a {
 		color: var(--color-text);
 		text-decoration: none;
 	}
@@ -147,14 +133,18 @@
 		color: var(--color-primary);
 	}
 
-	.header__corner--github {
-		display: none;
-	}
-
 	@media (width > 768px) {
-		.header__corner--github {
+		.header__home-link {
 			display: flex;
-			align-items: center;
+		}
+		nav {
+			margin-inline: 0;
+			justify-content: center;
+			margin-inline: auto;
+		}
+		nav a {
+			font-size: 0.8rem;
+			padding: 0 0.5rem;
 		}
 	}
 </style>
