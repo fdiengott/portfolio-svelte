@@ -55,7 +55,7 @@
 			linear-gradient(
 				180deg,
 				hsl(from var(--color-bg) h s l) 0%,
-				hsl(from var(--color-bg) h s l) 25%,
+				hsl(from var(--color-bg) h s l) 4rem,
 				hsl(from var(--color-primary) h 100% 90%) 55%,
 				hsl(from var(--color-primary) h 100% 86%) 60%
 			);
@@ -70,7 +70,7 @@
 			linear-gradient(
 				180deg,
 				hsl(from var(--color-primary) h 100% 0%) 0%,
-				hsl(from var(--color-primary) h 100% 5%) 20%,
+				hsl(from var(--color-primary) h 100% 5%) 4rem,
 				hsl(from var(--color-primary) h 100% 10%) 60%
 			);
 	}
@@ -87,6 +87,10 @@
 	button {
 		font-size: inherit;
 		font-family: inherit;
+	}
+
+	em {
+		font-family: Poiret One;
 	}
 
 	/* Icons */
