@@ -1,3 +1,5 @@
+<div class="career-planning-in-the-age-of-ai"></div>
+
 # Career Planning in the Age of AI
 
 I've decided to split this post into the following overarching structure:
@@ -9,7 +11,7 @@ I've decided to split this post into the following overarching structure:
 
 I'll also throw in some asides about short term and long term planning and affordances for why I might be wrong. I will be defining AGI (artificial general intelligence) in this post as an AI that can do every cognitive task (as in a task that can be done while sitting at a desk) that a human can at expert human ability. For example, a single AI system that can do math at the level of top mathematicians, is as good as the top level software engineers, can write as well as the best novelists, can be as good of a personal assistant as exists, and other such jobs/skills.
 
-## 1. Why am I writing this?
+## Why am I writing this?
 
 It's been about 5 years since OpenAI's release of GPT-3 (ChatGPT was released in 2022 based upon GPT-3.5) hearkening in the age of generative LLMs that have rocketed machine learning to the fore of societal attention replacing whatever was in the technological zeitgeist previously (crypto probably?).
 
@@ -164,7 +166,7 @@ For those gifted with the maths, that's 10 of our 11 possible futures! Half of t
 
 Let's press on to the last possible future to see where I, or an average person, _might_ be able to change the future.
 
-### Which futures _might_ I have have power/agency?
+### Which futures might I have have power/agency?
 
 The last future for me to consider here is the Economically Dystopic future. I'm not quite sure what to do with this one. The scenario goes like this: countries, corporations, or individuals, who are the first able to gain power and capital, use that power and capital to control AI towards their personal goals, allowing them to exponentially grow their influence and create the largest wealth disparity society has ever had. It might make a huge difference whether this power is controlled by peoples, companies, or countries, but for simplicity's sake let's put that aside. If I want to have a good future, it might make a huge difference how much power/capital I have before the intelligence explosion.
 
