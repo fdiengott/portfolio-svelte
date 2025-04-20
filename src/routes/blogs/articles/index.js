@@ -11,7 +11,7 @@ import pdfReact from './pdf-react.md?raw';
 import recommendedBookList from './recommendedBookList';
 import goalActivities from './goal-activities-2025.md?raw';
 import { TAGS } from '@/constants/blogs';
-import aiCareerPlanning from './career-planning.md?raw';
+import aiCareerPlanning from './career-planning.js';
 
 const pages = [
 	{

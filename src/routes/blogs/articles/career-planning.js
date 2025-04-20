@@ -1,3 +1,7 @@
+import aiTasksDoubling from '/src/assets/images/length-of-ai-tasks-doubling.webp';
+import scalingLaws from '/src/assets/images/scaling-laws.png';
+
+export default `
 <div class="career-planning-in-the-age-of-ai"></div>
 
 # Career Planning in the Age of AI
@@ -32,7 +36,7 @@ But that's just my opinion, right? Let's make this a bit more concrete and objec
 
 ### Show me charts!
 
-![image alt text](/src/assets/images/length-of-ai-tasks-doubling.webp)
+![image alt text](${aiTasksDoubling})
 
 There was a recent paper by the good folks at METR analyzing the tasks that AI has been able to do reliably and found that the length of the tasks has been steadily increasing exponentially. Firstly, let me recognize that in nature, it is very rare for an exponential to continue unabated for a long period of time, Moore's law and scaling laws being the exceptions that prove the rule.
 
@@ -54,7 +58,7 @@ Let's take each of these in turn.
 When folks refer to "scaling pre-training", they refer to two things:
 
 1. Scaling laws. Namely, this chart:
-   ![image alt text](/src/assets/images/scaling-laws.png)
+   ![image alt text](${scalingLaws})
    which shows that models seem to improve continuously as they have more compute, meaning run on more GPUs and have more training time (the lower the loss is on the y-axis the higher quality the output).
 2. Pre-training: when people talk about running the entire corpus of the internet into the model, this is the stage they do it. It's a bad name, but it's basically taking a model which has billions of numbers that are somewhat random, and slowly updating them based upon lots of examples of real language (or whatever other input, be it images, videos, etc.)
 
@@ -202,3 +206,4 @@ What about robotics?
 Add the near future more engineers needed idea.
 Clarify when I expect these ideas to come knocking
 I have left out S-risks
+`;
