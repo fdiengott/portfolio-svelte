@@ -183,27 +183,38 @@ I should have two goals in this scenario:
 
 So where does that leave me.
 
-Try to demonstrate good moral theory through public writing, be altruistic, be flexible, stay working in tech, but prioritize skills that will be valuable if humanity has agency, like higher level coordination and communication skills.
+I should try to demonstrate good moral theory/practice through public writing, be altruistic, be flexible, remain in my current field (tech) utilizing the skills I've already cultivated, but prioritize skills that will be valuable in a future where humanity has agency, such as higher level coordination and communication skills. I'll return back to this last point shortly. 
 
-Become wealthy/powerful in the hopes that if we're in a future if wealth explosion, then I will have influence and can be more altruistic.
+I could also switch gears, become much much ambitions and try to become wealthy/powerful myself in the hopes that if we're in a future of wealth explosion, then I will have influence and can be more impactfully altruistic.
+
+I don't think I'm yet able to rationalize or will myself into taking that last option, so I'm going to put it aside for myself, but there's plenty of advice in the Effective Altruist community in defense of ambition. 
+
+So, if I stay in tech, which skills will be important? There are some that seem fairly obvious to me as a first assumption and some more it would be worth fleshing out. 
+
+Let's start with the obvious. Having knowledge of and skills working with AI will be inherently economically valuable. Anyone that can augment their own abilities with an AI assistant or AI team will move faster and smarter than their competitors. By that same token though, those who also know where AI agents and chatbots fall short can avoid those pitfalls, making their own work better, or guiding other teams on where they have vulnerabilities or might in the future. Prompt engineering and a knack for iterative prompt improvement will probably be good skills in the near future, but I'm less sure if that will be important in the further future. 
+
+What does that mean for me? I think I will try to incorporate AI into my workflow more, utilizing Cursor or Windsurf to create simple apps. I already use Claude regularly as a learning assistant, especially to help me understand concepts intuitively through the heavy use of metaphors. I highly recommend it even if it feels a bit silly at times. I can also look further into the current state of prompt engineering and whether there are still strong gains from differences in style of prompting. I also plan to build some apps that utilize AI, RAG, a chatbot, creating more MCP (model context protocol) servers. 
+
+The (perhaps) initially less obvious skills to focus on are social and managerial. I recently read David Deming's article [AI-human teams and the future of work](https://forklightning.substack.com/p/ai-human-teams-and-the-future-of?ueid=4cb7d86e542717300a39666cb644683c) regarding a study on the differences a good leader can make on the outcome of teams consisting of a mix of AIs and humans. For me, this article also came off the heels of an economics book I read that hammered the point that social technologies (like organizational structures, laws, etc.) have been just as important in societal progress as physical technologies (such as electricity, computers, AI). With that context, I want to put more weight onto how important good leadership and managerial skills are. There has been a lot of similar work done in the field of robotics regarding team dynamics that should inform how we think about human/AI teams that I'd like to invest some time in exploring. 
+
+So what should I do about it? Deming's article discusses how leaders who have good outcomes with human teams are strongly correlated to teams of AIs. So exploring the team dynamic literature on how to improve teams' outcomes is a good first step. Secondly, I should try to demonstrate those skills in a way that can be put on my resume which will give me some practice and allow for bold experimentation (when that time comes, I should focus on experimentation from the literature and worry less about unnecessary social norms). 
 
 ## Some other important thoughts
 
-Throughout this post I have really only considered the further future, at least 10 years off for most of these scenarios. But what might happen in the interim? I should flesh this idea out a bit more in writing, but my expectation is that more software engineers will be needed in the short term, around 3-6 years.
+Throughout this post I have mostly considered the further future, at least 10 years off for most of these scenarios. But it is worth considering what might happen in the interim. I should flesh out these ideas a bit more in writing, but my expectation is that more software engineers will be needed in the short term, around 3-6 years.
 
-Why do I think this? Well, while AI can write code very well, but not be able to do everything from idea to deployment without a technically knowledgeable human, I think sufficiently general, knowledgeable software engineers will be needed to guide the models to implement certain things that any Joe-Schmo with an idea won't consider (e.g. testing, observability, metrics, security, reliability, scalability, etc.). But at the same time, the barrier to creating software, if you are just some Joe-Schmo, will be _exceedingly_ low. Therefore, I expect there to be an explosion of startups, that can be very lean because they'll have so few employees and each one will need at least one technically savvy person.
+Why do I think this? Well, while AI can write code very well, but not be able to do everything from idea to deployment without a technically knowledgeable human, I think sufficiently general, knowledgeable software engineers will be needed to guide the models to implement certain things that any Joe-Schmo with an idea won't consider (e.g. testing, observability, metrics, security, reliability, scalability, preparing for expect changes, future-proofing what shouldn't, etc.). But at the same time, the barrier to creating software, if you are just some Joe-Schmo, will be _exceedingly_ low. Therefore, I expect there to be an explosion of startups, that can be very lean because they'll have so few employees and each one will need at least one technically savvy person. 
 
-One more piece to add here. As I have sadly encountered in my personal network, it has been very hard for junior engineers to break into the field in the last few years. And now that AI can do a lot of what junior engineers can do, I'm seeing the pipeline that previously existed to nurture junior developers into mid and senior, start to evaporate. So there might be a time where we require way _more_ engineers for all of these startups, and yet, there won't be many sufficiently experienced because the community stopped training them.
+One possible argument to this is that my theory might run into an issue of financing, but this I don't expect this to be a massive roadblock due to the small team size, _unless_ the price of running these models explodes, which I could foresee due to the inability for the US (or other western countries) to build more data centers or energy to run them (which we know the liberal west has been pretty bad at for a while now). The energy piece deserves a lot more attention, but I'll leave that for another time. 
 
-.
-.
-.
+One more piece to add. As I have sadly encountered in my personal network, it has been very hard for junior engineers to break into the field in the last few years. And now that AI can do a lot of what junior engineers can do, I'm seeing the pipeline that previously existed to nurture junior developers into mid and senior, start to evaporate. So there might be a time where we require way _more_ engineers for all of these startups, yet there won't be enough sufficiently experienced due to the community's abdication of training them.
 
-What can I do and how long does gaining those skills take?
-Care work? Teaching? HEAL jobs.
-What about robotics?
-
-Add the near future more engineers needed idea.
-Clarify when I expect these ideas to come knocking
-I have left out S-risks
+## Wrapping up
+Some things I left out:
+- Other career options I've put in my back pocket and how long does gaining those skills take?
+	- HEAL jobs (health, education, administration, literacy) though AI will be quite good at some of these
+	- Care work - potentially short time to skill up, but less lucrative and harder if I'm old enough and my body isn't as strong for the physical labor
+	- Teaching - potentially medium time to skill up, unless one can work at a private school
+- What's the role of robotics? Robotics will probably lag behind AI for quite some time. 
+- S-risks
 `;
