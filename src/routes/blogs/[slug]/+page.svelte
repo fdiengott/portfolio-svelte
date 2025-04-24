@@ -33,6 +33,7 @@
 	.date {
 		font-size: var(--fs-200);
 		margin-block: 0.5rem;
+		font-weight: 600;
 	}
 
 	.btn-scroll-top {
