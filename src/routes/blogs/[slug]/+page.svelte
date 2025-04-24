@@ -33,6 +33,7 @@
 	.date {
 		font-size: var(--fs-200);
 		margin-block: 0.5rem;
+		font-weight: 600;
 	}
 
 	.btn-scroll-top {
@@ -80,11 +81,15 @@
 		h2,
 		h3,
 		h4 {
-			margin-block: 1em 0.5em;
+			margin-block: 1em 0.75rem;
+		}
+
+		p,
+		ol {
+			margin-block-end: var(--block-spacing);
 		}
 
 		p {
-			margin-block-end: var(--block-spacing);
 			line-height: 1.7em;
 		}
 
@@ -166,7 +171,8 @@
 		blockquote {
 			padding: 2rem 3rem;
 			margin-block-start: -1rem;
-			background: hsla(var(--code-border-color), 0.129);
+			background: var(--code-background);
+			border-inline-start: 4px solid var(--color-primary);
 
 			p {
 				margin: 0;
@@ -240,6 +246,27 @@
 
 			& ~ .header-wrapper > h3 {
 				margin-block-end: 0;
+			}
+		}
+
+		.arrow {
+			text-align: center;
+		}
+
+		blockquote div:not(.arrow) + div {
+			padding-block-end: 2rem;
+		}
+
+		.career-planning-in-the-age-of-ai {
+			--block-spacing: 2rem;
+
+			& ~ ol,
+			& ~ ul {
+				gap: 0.75rem;
+			}
+
+			& ~ ul + * {
+				margin-block-start: var(--block-spacing);
 			}
 		}
 	}

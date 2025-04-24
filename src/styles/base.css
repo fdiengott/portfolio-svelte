@@ -50,6 +50,6 @@
 		--color-text: var(--white);
 		--color-border: #7a7a7a;
 
-		--code-background: hsl(0color-mix(in oklch, var(--color-text), black 10%));
+		--code-background: color-mix(in oklch, var(--color-text), black 80%);
 	}
 }

@@ -11,8 +11,16 @@ import pdfReact from './pdf-react.md?raw';
 import recommendedBookList from './recommendedBookList';
 import goalActivities from './goal-activities-2025.md?raw';
 import { TAGS } from '@/constants/blogs';
+import aiCareerPlanning from './career-planning.js';
 
 const pages = [
+	{
+		slug: 'career-planning-in-the-age-of-ai',
+		title: 'Career Planning in the Age of AI',
+		content: aiCareerPlanning,
+		date: '__TODAYS_DATE__',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'goal-activities-2025',
 		title: 'Goal Activities in 2025',
