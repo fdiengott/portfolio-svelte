@@ -18,7 +18,7 @@ const pages = [
 		slug: 'career-planning-in-the-age-of-ai',
 		title: 'Career Planning in the Age of AI',
 		content: aiCareerPlanning,
-		date: '__TODAYS_DATE__',
+		date: '04/24/25',
 		tags: [TAGS.musings],
 	},
 	{
