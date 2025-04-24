@@ -260,8 +260,13 @@
 		.career-planning-in-the-age-of-ai {
 			--block-spacing: 2rem;
 
-			& ~ ol {
+			& ~ ol,
+			& ~ ul {
 				gap: 0.75rem;
+			}
+
+			& ~ ul + * {
+				margin-block-start: var(--block-spacing);
 			}
 		}
 	}
