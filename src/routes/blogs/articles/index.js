@@ -12,8 +12,16 @@ import recommendedBookList from './recommendedBookList';
 import goalActivities from './goal-activities-2025.md?raw';
 import { TAGS } from '@/constants/blogs';
 import aiCareerPlanning from './career-planning.js';
+import softwareSkills from './software-skills-for-an-ai-future.md?raw';
 
 const pages = [
+	{
+		slug: 'software-skills-for-an-ai-future',
+		title: 'Software Skills for an AI Future',
+		content: softwareSkills,
+		date: '04/26/25',
+		tags: [TAGS.musings, TAGS.coding],
+	},
 	{
 		slug: 'career-planning-in-the-age-of-ai',
 		title: 'Career Planning in the Age of AI',
