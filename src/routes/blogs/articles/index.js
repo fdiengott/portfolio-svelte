@@ -19,7 +19,7 @@ const pages = [
 		slug: 'software-skills-for-an-ai-future',
 		title: 'Software Skills for an AI Future',
 		content: softwareSkills,
-		date: '__TODAYS_DATE__',
+		date: '04/26/25',
 		tags: [TAGS.musings, TAGS.coding],
 	},
 	{
