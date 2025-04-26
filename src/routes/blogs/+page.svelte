@@ -65,6 +65,7 @@
 
 	.article__tags {
 		display: flex;
+		gap: 0.5rem;
 		margin-block-start: 1rem;
 	}
 
