@@ -13,8 +13,16 @@ import goalActivities from './goal-activities-2025.md?raw';
 import { TAGS } from '@/constants/blogs';
 import aiCareerPlanning from './career-planning.js';
 import softwareSkills from './software-skills-for-an-ai-future.md?raw';
+import advancedTs from './advanced-ts.md?raw';
 
 const pages = [
+	{
+		slug: 'advanced-typescript',
+		title: 'A Few Advanced TypeScript techniques',
+		content: advancedTs,
+		date: '__TODAYS_DATE__',
+		tags: [TAGS.coding],
+	},
 	{
 		slug: 'software-skills-for-an-ai-future',
 		title: 'Software Skills for an AI Future',
