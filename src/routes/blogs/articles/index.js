@@ -20,7 +20,7 @@ const pages = [
 		slug: 'advanced-typescript',
 		title: 'A Few Advanced TypeScript techniques',
 		content: advancedTs,
-		date: '__TODAYS_DATE__',
+		date: '05/03/25',
 		tags: [TAGS.coding],
 	},
 	{
