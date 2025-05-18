@@ -86,11 +86,11 @@
 
 		p,
 		ol {
-			margin-block-end: var(--block-spacing);
+			margin-block-end: 1lh;
 		}
 
 		p {
-			line-height: 1.7em;
+			line-height: 1.7rem;
 		}
 
 		table:not(:has(code)) {
@@ -145,7 +145,7 @@
 			border: 1px solid #aaa;
 			border-radius: 0.5rem;
 			font-size: var(--fs-300);
-			margin-block: calc(var(--block-spacing) / 2) var(--block-spacing);
+			margin-block-end: 1lh;
 
 			code {
 				padding: 0;
@@ -160,7 +160,7 @@
 		}
 
 		p > code {
-			--border-color: hsl(from var(--code-background) h s 80);
+			--border-color: hsl(from var(--code-background) h s 80 / 0.5);
 			background: var(--code-background);
 			padding: 0.2rem;
 			border: 1px solid var(--border-color);
