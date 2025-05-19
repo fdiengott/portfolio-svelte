@@ -249,7 +249,7 @@
 		text-align: justify;
 	}
 	.home__blurb p {
-		padding-block: 1rem;
+		margin-block-end: 1lh;
 		line-height: 1.5;
 	}
 
