@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **Your Inner Fish: A Journey INto 3.5-Billion-Year History of the HUman Body** by Neil Shubin
 - **The Disappearing Spoon: And other true tales of rivalry, adventure, and the history of the world from the periodic table of the elements** by Sam Kean (I accidentally got the young readers edition)
 - **The Pragmatic Programmer** by Andrew Hunt and David Thomas
 - **Abundance** by Ezra Klein and Derek Thompson
