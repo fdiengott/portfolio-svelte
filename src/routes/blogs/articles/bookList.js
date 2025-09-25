@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **A City on Mars: Can We Settle Space, Should We Settle Space, and Have We Really Thought This Through?** by Kelly and Zach Weinersmith
 - **How the World Really Works: The Science Behind How We Got Here and Where We're Going** by Vaclav Smil
 - **Clean Code: A Handbook of Agile Software Craftsmanship** by Robert C. Martin
 - **How Asia Works: Success and Failure In the World's Most Dynamic Region** by Joe Studwell
