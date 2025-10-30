@@ -14,8 +14,16 @@ import { TAGS } from '@/constants/blogs';
 import aiCareerPlanning from './career-planning.js';
 import softwareSkills from './software-skills-for-an-ai-future.md?raw';
 import advancedTs from './advanced-ts.md?raw';
+import willAIReplaceSoftwareDevs from './will-ai-replace-software-developers.md?raw';
 
 const pages = [
+	{
+		slug: 'will-ai-replace-software-developers',
+		title: 'Will AI Replace Software Developers?',
+		content: willAIReplaceSoftwareDevs,
+		date: 'TODAYS_DATE',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'advanced-typescript',
 		title: 'A Few Advanced TypeScript techniques',
