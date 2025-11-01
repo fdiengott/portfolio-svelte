@@ -21,7 +21,7 @@ const pages = [
 		slug: 'will-ai-replace-software-developers',
 		title: 'Will AI Replace Software Developers?',
 		content: willAIReplaceSoftwareDevs,
-		date: 'TODAYS_DATE',
+		date: '11/01/25',
 		tags: [TAGS.musings],
 	},
 	{
