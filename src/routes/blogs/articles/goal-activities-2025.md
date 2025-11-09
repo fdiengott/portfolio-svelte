@@ -75,10 +75,12 @@ Ya girl hasn't historically liked shopping, but it could be fun in designer stor
 
 ### Lectures / Classes / Talks
 
+-   [NY Historical Society](https://www.nyhistory.org/programs/upcoming?genres=talks)
 -   [NYU events](https://as.nyu.edu/events/events-calendar.html)
 -   [Philosophy calendar](https://www.noahgreenstein.com/wordpress/nyc-area-philosophy-calendar/). Because this is maintained by one guy, I think it has fallen out of date, but it's a good start.
 -   [NYU Center for mind, brain and consciousness](https://wp.nyu.edu/consciousness/)
 -   [Eventbrite lectures on tap](https://www.eventbrite.com/cc/lectures-on-tap-3410469)
+-   [McNally Jackson](https://www.mcnallyjackson.com/coming-events)
 
 This is a large category that requires research
 
