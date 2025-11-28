@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **Inflation: A Guide for Users and Losers** by Mark Blyth and Nicolò Fraccaroli
 - **Our Dollar, Your Problem: An Insider's View of Seven Turbulent Decades of Global Finance, and the Road Ahead** by Kenneth Rogoff
 - **The Wisdom of Finance: Discovering Humanity in the World of Risk and Return** by Mihir A. Desai
 - **The Clean Coder: A Code of Conduct for Professional Programmers** by Robert C. Martin
