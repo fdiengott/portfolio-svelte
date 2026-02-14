@@ -1,5 +1,5 @@
 <script>
-	import headshot from '../assets/images/headshot.jpeg';
+	import headshot from '../assets/images/hero-headshot-2026.jpg';
 
 	const delayInterval = 0.05;
 	const initialDelay = 0.8;
@@ -238,10 +238,13 @@
 
 		.home__headshot {
 			width: var(--home-headshot-width);
+			aspect-ratio: 1;
+			object-fit: cover;
+			object-position: 50% 0%;
 			border-radius: 50%;
 			margin-inline-end: 2rem;
 			float: left;
-			shape-outside: polygon(0 0, 100% 0, 100% 60%, 70% 100%);
+			shape-outside: polygon(0 0, 100% 0, 100% 60%, 70% 100%, 0 100%);
 		}
 	}
 
