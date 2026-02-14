@@ -4,8 +4,19 @@
 	import lexiloop from '../../assets/images/lexiloop-homepage.gif';
 	import theBodyKnows from '../../assets/images/the-body-knows.gif';
 	import taylorTaylorComposer from '../../assets/images/tylertaylorcomposer-works-page.png';
+	import barbaraCarlsonPoet from '../../assets/images/barbara-carlson-homepage.png';
 
 	const projects = [
+		{
+			title: 'Barbara Siegel Carlson Poet',
+			githubLink: 'https://github.com/fdiengott/barbara-carlson-poet',
+			liveLink: 'https://barbarasiegelcarlson.com/',
+			imgSrc: barbaraCarlsonPoet,
+			description: [
+				'An elegant, static website I built for my Aunt and profession poet, Barbara Siegel Carlson.',
+				'Built using Astro with an emphasis on elegance, no-frills simplicity and ease of maintainability.',
+			],
+		},
 		{
 			title: 'Tyler Taylor Composer',
 			githubLink: 'https://github.com/fdiengott/tyler-taylor-composer',
