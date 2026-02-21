@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **Breakneck: China's Quest to Engineer the Future** by Dan Wang
 - **21st Century Monetary Policy** by Ben S. Bernanke
 - **The Making of the Atomic Bomb** by Richard Rhodes
 - **Crashed: How a Decade of Financial Crises Changed the World** by Adam Tooze
