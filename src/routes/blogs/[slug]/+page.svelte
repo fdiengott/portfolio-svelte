@@ -5,6 +5,19 @@
 
 	export let data;
 
+	let searchQuery = '';
+
+	function filterContent(content, query) {
+		if (!query) return content;
+		const lower = query.toLowerCase();
+		return content
+			.split('\n')
+			.filter(line => !line.startsWith('- ') || line.toLowerCase().includes(lower))
+			.join('\n');
+	}
+
+	$: filteredContent = filterContent(data.page.content, searchQuery);
+
 	const scrollToTop = () => {
 		window.history.pushState({}, '', window.location.href.split('#')[0]);
 
@@ -16,8 +29,16 @@
 	<a class="blog__back-btn" href="/blogs">Back</a>
 	<div class="date"><em>First published on {data.page.date}.</em></div>
 	<div class="btn" />
+	{#if data.page.searchable}
+		<input
+			class="book-search"
+			type="search"
+			placeholder="Search books..."
+			bind:value={searchQuery}
+		/>
+	{/if}
 	<SvelteMarkdown
-		source={data.page.content}
+		source={filteredContent}
 		renderers={{ heading: tableOfContentsHeaderRenderer, code: codeRenderer }}
 	/>
 	<button class="btn-scroll-top" on:click={scrollToTop}><span class="chevron" /></button>
@@ -34,6 +55,19 @@
 		font-size: var(--fs-200);
 		margin-block: 0.5rem;
 		font-weight: 600;
+	}
+
+	.book-search {
+		display: block;
+		width: 100%;
+		max-width: 24rem;
+		padding: 0.4rem 0.6rem;
+		margin-block-end: 1.5rem;
+		font-size: var(--fs-300);
+		color: var(--color-text);
+		background: var(--color-card-bg);
+		border: 1px solid #aaa;
+		border-radius: 0.3rem;
 	}
 
 	.btn-scroll-top {
