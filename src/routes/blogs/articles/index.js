@@ -59,6 +59,7 @@ const pages = [
 		date: '12/04/24',
 		tags: [TAGS.suggestions],
 		pinned: true,
+		searchable: true,
 	},
 	{
 		slug: 'recommended-books',
