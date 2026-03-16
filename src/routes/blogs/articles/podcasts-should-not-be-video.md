@@ -1,0 +1,19 @@
+# Podcasts Should Not Be Video
+
+This is the hill I will die on. I have been a diehard podcast fan for something like two decades. Before iPhone, before Zunes, before iPods. I listened to hours of Stuff You Should Know when working at my cousin Jimmy's dice distribution company, filling up hundreds of fish bowls full of different varieties of dice. I remember the early Reply All, the beginnings of 99% invisible and Radio Lab. I loved and still love podcasts, but they're changing.
+
+Podcasts are the reincarnation of radio in the 21st century, but superior - infinite variety, no schedule, can be played or paused at will. They can be enjoyed anywhere and can be about anything. They are incredible. I'd like to keep them that way and not see them turn into some bastardization of television.
+
+In the last few years I've noticed more podcasters make the shift to offering their program as both a traditional podcast, audio only, served through RSS feed, spotify, etc. and with video. Dwarkesh does this, Ezra Klein does this, 80,000 Hours does this, Tyler Cowen does this. My argument is that video isn't ornamental. It fundamentally changes the content whether the creators realize it or not, whether it's an interview, a narrative, or a tone poem.
+
+When podcasts are made with a video component, the creators have to care what it will look like. And they will cater to that audience. Humans are visual. It is in the majority of cases our strongest sense. So invariably when a podcast is made with video, the guests and the hosts refer to things in the room without describing them. They show graphs. They show charts. They reference things in the room they are in without considering an audience that can't see them. Why would they, they can see the person in front of them and the camera _looking_ at them. As a listener, I lose something. The quality degrades. I feel like this isn't a thing _made for me_ anymore.
+
+Historically my favorite podcasts are the long ones. Episodes that last between two and four hours. This setup cultivates an environment designed around nuanced conversation, subtly working through topics one argument at a time. When video is added, it forces the creators to shoot in either one sitting or over the course of one day. The people, the host and guest, need to be in the same place, which is expensive, relatively speaking. Which means guests need to be more famous to take on that extra cost. A less known guest wouldn't reliably bring in enough of an audience to justify the expense. A more famous guest, someone with a following, someone who won't speak as freely because they don't want negative publicity, is a lower risk for a podcast. Therefore each podcast is incentivized to have fewer unknown guests and more famous people with established followings and locked lips.
+
+In Neil Postman's seminal work, Amusing Ourselves to Death, he lays out why the specific technology that content is created for defines the message it presents. This is the idea "The medium is the message." A book by its nature will have a linear, single-threaded narrative that has nuance and context. The telegraph creates the concept of news because now the marginal cost of information traveling great distances is cheap. Television teaches us that no matter what is being presented, it better be entertaining. If the medium is the message and podcasts adopt video, then they will invariably shift towards the previous media that this resembles, television and short form video.
+
+At the end of the day, I reject podcasts with video. I don't want to watch a screen anymore. I'd prefer to hear the interesting ideas while out in the world, walking in the park, or on my way to see friends.
+
+Not looking down at a rectangle by myself in the dark.
+
+There's enough video. Let podcasts be separate. Let them be better. Throw out the video.
