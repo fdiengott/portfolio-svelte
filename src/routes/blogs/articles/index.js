@@ -15,8 +15,16 @@ import aiCareerPlanning from './career-planning.js';
 import softwareSkills from './software-skills-for-an-ai-future.md?raw';
 import advancedTs from './advanced-ts.md?raw';
 import willAIReplaceSoftwareDevs from './will-ai-replace-software-developers.md?raw';
+import podcastsShouldNotBeVideo from './podcasts-should-not-be-video.md?raw';
 
 const pages = [
+	{
+		slug: 'podcasts-should-not-be-video',
+		title: 'Podcasts Should Not Be Video',
+		content: podcastsShouldNotBeVideo,
+		date: '__TODAYS_DATE__',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'will-ai-replace-software-developers',
 		title: 'Will AI Replace Software Developers?',
