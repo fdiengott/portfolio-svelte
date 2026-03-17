@@ -22,7 +22,7 @@ const pages = [
 		slug: 'podcasts-should-not-be-video',
 		title: 'Podcasts Should Not Be Video',
 		content: podcastsShouldNotBeVideo,
-		date: '__TODAYS_DATE__',
+		date: '03/16/26',
 		tags: [TAGS.musings],
 	},
 	{
