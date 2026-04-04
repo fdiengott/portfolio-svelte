@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **Technopoly: The Surrender of Culture to Technology** by Neil Postman
 - **Other Minds: The Octopus, The Sea, and The Deep Origins of Consciousness** by Peter Godfrey-Smith
 - **The Land Trap: A New History of the World's Oldest Asset** by Mike Bird
 - **Breakneck: China's Quest to Engineer the Future** by Dan Wang
