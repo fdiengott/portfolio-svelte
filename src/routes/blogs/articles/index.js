@@ -23,7 +23,7 @@ const pages = [
 		slug: 'tokens-are-a-commodity-sort-of',
 		title: 'Tokens Are A Commodity, Sort Of',
 		content: tokensAreACommoditySortOf,
-		date: '__TODAYS_DATE__',
+		date: '04/15/26',
 		tags: [TAGS.musings],
 	},
 	{
