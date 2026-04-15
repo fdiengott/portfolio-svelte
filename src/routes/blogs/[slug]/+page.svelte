@@ -12,7 +12,7 @@
 		const lower = query.toLowerCase();
 		return content
 			.split('\n')
-			.filter(line => !line.startsWith('- ') || line.toLowerCase().includes(lower))
+			.filter((line) => !line.startsWith('- ') || line.toLowerCase().includes(lower))
 			.join('\n');
 	}
 
@@ -30,12 +30,7 @@
 	<div class="date"><em>First published on {data.page.date}.</em></div>
 	<div class="btn" />
 	{#if data.page.searchable}
-		<input
-			class="book-search"
-			type="search"
-			placeholder="Search books..."
-			bind:value={searchQuery}
-		/>
+		<input class="book-search" type="search" placeholder="Search books..." bind:value={searchQuery} />
 	{/if}
 	<SvelteMarkdown
 		source={filteredContent}
@@ -119,7 +114,8 @@
 		}
 
 		p,
-		ol {
+		ol,
+		ul {
 			margin-block-end: 1lh;
 		}
 
