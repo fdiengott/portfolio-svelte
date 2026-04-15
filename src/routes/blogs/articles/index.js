@@ -16,8 +16,16 @@ import softwareSkills from './software-skills-for-an-ai-future.md?raw';
 import advancedTs from './advanced-ts.md?raw';
 import willAIReplaceSoftwareDevs from './will-ai-replace-software-developers.md?raw';
 import podcastsShouldNotBeVideo from './podcasts-should-not-be-video.md?raw';
+import tokensAreACommoditySortOf from './tokens-are-a-commodity-sort-of.md?raw';
 
 const pages = [
+	{
+		slug: 'tokens-are-a-commodity-sort-of',
+		title: 'Tokens Are A Commodity, Sort Of',
+		content: tokensAreACommoditySortOf,
+		date: '04/15/26',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'podcasts-should-not-be-video',
 		title: 'Podcasts Should Not Be Video',
