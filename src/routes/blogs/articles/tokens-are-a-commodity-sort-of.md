@@ -4,9 +4,9 @@ The other day I was listening to Derek Thompson's Plain English with Paul Kedros
 
 Though I think it is, in part, true, I don't buy the whole argument. The reality I've come to is a little more nuanced. Overall I think there are two classifications of tokens, which I will refer to as Class A and Class B. Class B tokens are more easily producible by open source models and one wouldn't really care which model supplies those tokens. Class A tokens on the other hand require top of the line models which can't be substituted by open source models. I'll go into a bit more detail below about each, but Class B tokens are a commodity and follow the rules of other historic commodities, whereas Class A tokens do not.
 
-## Commodity tokens, for real
+## Commodity Tokens, For Real
 
-Some tasks don't require the best model. They just require a model that is good enough. Each of these tasks is specification-complete, meaning the solution is knowable and describable before the output is produced. Example: transcription. I could give any model an audio clip and tell it to extract the text. I don't care if it's the highest quality model or the lowest, as long as I get the right text output. Because I'll take any model that gets the right answer, I'll go for the cheapest model. The model that sells tokens at marginal cost. At this point that is most likely the open source models, which are good enough for this sort of task (whisper in this case). Then the cost is basically just the cost of compute locally on device or in the cloud.
+Some tasks don't require the best model. They just require a model that is good enough. Each of these tasks is specification-complete, meaning the solution is knowable and describable before the output is produced. Example: transcription. I could give any model an audio clip and tell it to extract the text. I don't care if it's the highest quality model or the lowest, as long as I get the right text output. Because I'll take any model that gets the right answer, I'll go for the cheapest model. The model that sells tokens at marginal cost. At this point that is most likely the open source models, which are good enough for this sort of task (whisper in this case). Then the cost is basically just the cost of compute on-device or in the cloud.
 
 I believe this argument, that there is a class of AI uses which don't require differentiated models.
 
@@ -24,11 +24,11 @@ Why do I use Claude 4.6 Opus to write code, but won’t even let Kimi K2 or Llam
 
 Class B tokens won’t work for tasks that are specification-incomplete, where a user can’t describe the output before putting in the prompt, can only know its quality after seeing it. For example, if I were to try to discover a new material with the intent to replace concrete, I couldn't tell a model what the solution will be; I can only show it answers in the past that didn’t work, but were on the right track. These sorts of use cases are at the cutting edge of human intelligence, there are no correct solutions to train a model on, and the data is sparse.
 
-And this is where unbounded value lies. If an open source model can’t do drug discovery, then it’s possible a foundation model, outputting Class A tokens, can create a drug that has such immense value that it changes the global economy. Technological or scientific improvements that propel humanity into the future, producing goods or services that improve all of society are the most valued good and the thing we _should_ be striving for with AI most of all.
+And this is where unbounded value lies. If an open source model can’t do drug discovery, then it’s possible a foundation model, outputting Class A tokens, can create a drug that has such immense value that it changes the global economy. Technological or scientific improvements that propel humanity into the future, producing goods or services that improve all of society are the most valued good and the thing we _should_ be striving for with AI most.
 
 Another way this situation could go is with specialized models. We live in a world so far where the best AI technologies are general purpose AI models (not to be confused with the unhelpful and overused term AGI). However, we could have found ourselves in a different world, and we might end up in a future where specialized models dethrone general models and they have the most value. For example, imagine a model used for reviewing medical scans that can, with incredible accuracy, predict if a mass is benign or not. This sort of paradigm, depending on the level of competition in the specific sector, would be much harder to commodify. If the world went in this sort of direction, I would update far in the differentiated tokens direction and away from the commodification argument.
 
-## Is Differentiation Durable
+## Is Differentiation Durable?
 
 I haven't yet addressed what I see as two elephants in the room. Class A tokens today are Class B tokens tomorrow, which I'll refer to as the commodification ratchet. Should we expect the size of the window between Class A and Class B tokens to shrink, stay the same, or disappear entirely? I'll refer to this as the shrinking window problem.
 
@@ -36,11 +36,11 @@ I'm a little torn on the question of the commodification ratchet. When do Class 
 
 So the question is then raised, what domains have specification-incomplete tasks that will _become_ specification-complete tasks? And by this what I really mean is will our scientific understanding advance such that something we cannot properly evaluate today will be scorable tomorrow? I assume this will be the case. Science and AI research will progress and Class A tokens will convert to Class B. It's just anyone's guess what domains they are in.
 
-Okay, so that is the mechanism for conversion, if it ever happens. Let's look at the dynamics of conversion. We have three questions:
+Okay, so that is the mechanism for conversion, if it ever happens. Let's look at the dynamics of conversion with the shrinking window problem. We have three questions:
 
 -   What's the rate of change?
 -   What are the limits of the change?
--   Do we ever converge?
+-   Do we ever converge, close the window?
 
 Based on the commodification ratchet argument, I am disinclined to believe we ever converge. It is surely possible, but it seems to me that any lab that has far more resources than the open source builders and access to orders of magnitude more compute will always have an advantage (of at least a few months), specifically for Class A tokens.
 
