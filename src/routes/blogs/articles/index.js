@@ -17,8 +17,16 @@ import advancedTs from './advanced-ts.md?raw';
 import willAIReplaceSoftwareDevs from './will-ai-replace-software-developers.md?raw';
 import podcastsShouldNotBeVideo from './podcasts-should-not-be-video.md?raw';
 import tokensAreACommoditySortOf from './tokens-are-a-commodity-sort-of.md?raw';
+import haveWeThoughtAboutPrivacyAllWrong from './have-we-thought-about-privacy-all-wrong.md?raw';
 
 const pages = [
+	{
+		slug: 'have-we-thought-about-privacy-all-wrong',
+		title: 'Have We Thought About Privacy All Wrong?',
+		content: haveWeThoughtAboutPrivacyAllWrong,
+		date: '__TODAYS_DATE__',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'tokens-are-a-commodity-sort-of',
 		title: 'Tokens Are A Commodity, Sort Of',
