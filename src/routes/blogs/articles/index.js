@@ -24,7 +24,7 @@ const pages = [
 		slug: 'have-we-thought-about-privacy-all-wrong',
 		title: 'Have We Thought About Privacy All Wrong?',
 		content: haveWeThoughtAboutPrivacyAllWrong,
-		date: '__TODAYS_DATE__',
+		date: '04/19/26',
 		tags: [TAGS.musings],
 	},
 	{
