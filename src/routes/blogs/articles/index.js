@@ -18,8 +18,16 @@ import willAIReplaceSoftwareDevs from './will-ai-replace-software-developers.md?
 import podcastsShouldNotBeVideo from './podcasts-should-not-be-video.md?raw';
 import tokensAreACommoditySortOf from './tokens-are-a-commodity-sort-of.md?raw';
 import haveWeThoughtAboutPrivacyAllWrong from './have-we-thought-about-privacy-all-wrong.md?raw';
+import whyFiatCurrency from './why-fiat-currency.md?raw';
 
 const pages = [
+	{
+		slug: 'why-fiat-currency',
+		title: 'Why Fiat Currency?',
+		content: whyFiatCurrency,
+		date: '05/13/26',
+		tags: [TAGS.musings],
+	},
 	{
 		slug: 'have-we-thought-about-privacy-all-wrong',
 		title: 'Have We Thought About Privacy All Wrong?',
