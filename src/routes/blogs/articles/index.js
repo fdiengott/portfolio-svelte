@@ -25,7 +25,7 @@ const pages = [
 		slug: 'why-fiat-currency',
 		title: 'Why Fiat Currency?',
 		content: whyFiatCurrency,
-		date: '__TODAYS_DATE__',
+		date: '05/13/26',
 		tags: [TAGS.musings],
 	},
 	{
