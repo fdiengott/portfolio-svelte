@@ -7,12 +7,12 @@
 
 	let searchQuery = '';
 
-	function filterContent(content, query) {
-		if (!query) return content;
-		const lower = query.toLowerCase();
+	function filterContent(content, rawQuery) {
+		if (!rawQuery) return content;
+		const query = rawQuery.toLowerCase();
 		return content
 			.split('\n')
-			.filter((line) => !line.startsWith('- ') || line.toLowerCase().includes(lower))
+			.filter((line) => !line.startsWith('- ') || line.toLowerCase().includes(query))
 			.join('\n');
 	}
 

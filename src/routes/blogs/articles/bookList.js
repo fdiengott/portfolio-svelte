@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **1929: Inside the Greatest Crash in Wall Street History and How it Shattered a Nation** by Andrew Ross Sorkin
 - **Slouching Towards Utopia: An Economic History of the Twentieth Century** by J Bradford DeLong
 - **Radical Markets: Uprooting Capitalism and Democracy for a Just Society** by Eric A. Posner and E. Glen Weyl
 - **Technopoly: The Surrender of Culture to Technology** by Neil Postman
