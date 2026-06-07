@@ -95,28 +95,25 @@
 				</p>
 
 				<p>
-					This last year I've seen myself grow as a <span class="underline italic">full</span>-stack engineer,
-					as I've spent a serious amount of time reading java code, learning design patterns, the advantages
-					and security concerns of cloud technologies, and the ins and outs of distributed systems that handle
-					lots of data.
+					After starting at Adaptive, I've seen myself grow as a <span class="underline italic">full</span
+					>-stack engineer, as I've spent a serious amount of time reading java code, researching design
+					patterns, learning the advantages and security concerns of cloud technologies, and discovering the
+					ins and outs of distributed systems that handle lots of data.
 				</p>
 
 				<p>
-					I've recently spent a large swath of free time studying Machine Learning and AI safety, as I believe
-					it is the defining technology of our time.
-				</p>
-
-				<p>
-					This year I made a new years resolution to read a book in all of the major scientific disciplines.
-					It's been a goal for myself in the last couple of years to try and have as deep and accurate model
-					of the world as I can, and this is a piece of that journey. To hold myself accountable (and because
-					I find it useful to refer to) I will include all of the books I read and would recommend in a blog
-					post. I hope this blog will start to fill up with articles I'm writing to understand technology,
-					both software engineering and in general, and the world. I am not under the impression that anyone
-					will read it, but by making them publicly accessible, I hope to motivate myself to write. To
-					understand how I think. I've never been someone who writes very much, but I think it is an
-					incredibly valuable skill to cultivate. Not the writing in and of itself, but the exploration into
-					one's own thinking that is concrete and mulled over.
+					The past year and a half, I've discovered that I find finance and economics (especially geo-macro)
+					surprisingly utterly fascinating! I had worked in fintech for several years, but I hadn't taken the
+					domain seriously. That has since changed and I've been voraciously reading books, articles, writing
+					blog posts, and attending (and hosting!) events that are specifically financial in nature.
+					Underlying all of this, is a goal I hold close: to build a deep and accurate model of the world. One
+					way I've decided to do this is to chronicle the books I read in a blog post and write other pieces
+					on what I've learned. I hope the blog will start to fill up with articles about how financial
+					markets work and how it affects peoples around the world. I am not under the impression that anyone
+					will read these pieces, but by making them publicly accessible, I hope to motivate myself to write;
+					to understand how I think. I've never been someone who writes very much, but I think it's a great
+					fountain from which insight into one's own thinking can flow, through mulling over ideas and making
+					them concrete.
 				</p>
 
 				<p>So feel free to reach out. And stay tuned!</p>
