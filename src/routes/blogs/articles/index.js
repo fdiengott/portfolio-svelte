@@ -26,7 +26,7 @@ const pages = [
 		slug: 'simple-amazing-page-transitions',
 		title: 'Simple, Amazing Page Transitions',
 		content: simpleAmazingPageTransitions,
-		date: '__TODAYS_DATE__',
+		date: '06/19/26',
 		tags: [TAGS.coding],
 	},
 	{
