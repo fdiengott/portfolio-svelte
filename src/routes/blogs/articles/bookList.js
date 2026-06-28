@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **Credit to the Nation: Eastern European Jewish Immigrant Bankers and the Shaping of American Finance, 1873-1930** by Rebecca Korbin
 - **How Africa Works: Success and Failure on the World's Last Developmental Frontier** by Joe Studwell
 - **Flash Boys: A Wall Street Revolt** by Michael Lewis
 - **1929: Inside the Greatest Crash in Wall Street History and How it Shattered a Nation** by Andrew Ross Sorkin
