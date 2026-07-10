@@ -1,6 +1,5 @@
 <script>
 	import Pin from '../components/Pin.svelte';
-
 	import { pages } from './articles/index.js';
 	import { sortBlogs } from '@/utils/blogs';
 
@@ -94,10 +93,10 @@
 	}
 
 	.article__tag.recipes {
-		--tag-color: rgb(31, 190, 31);
+		--tag-color: rgb(214 0 0);
 	}
 	.article__tag.coding {
-		--tag-color: rgb(0, 203, 218);
+		--tag-color: rgb(0 182 218);
 	}
 	.article__tag.musings {
 		--tag-color: rgb(183, 35, 241);
@@ -108,6 +107,9 @@
 	}
 	.article__tag.announcements {
 		--tag-color: hsl(278 75% 70%);
+	}
+	.article__tag.finance {
+		--tag-color: hsl(109.31deg 100% 63.52%);
 	}
 
 	.article__pin-wrapper {
