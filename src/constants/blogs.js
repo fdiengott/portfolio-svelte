@@ -5,4 +5,5 @@ export const TAGS = {
 	musings: 'musings',
 	music: 'music',
 	announcements: 'announcements',
+	finance: 'finance',
 };

@@ -20,8 +20,16 @@ import tokensAreACommoditySortOf from './tokens-are-a-commodity-sort-of.md?raw';
 import haveWeThoughtAboutPrivacyAllWrong from './have-we-thought-about-privacy-all-wrong.md?raw';
 import whyFiatCurrency from './why-fiat-currency.md?raw';
 import simpleAmazingPageTransitions from './simple-amazing-page-transitions.md?raw';
+import derivativesPresentation from './derivatives-presentation.md?raw';
 
 const pages = [
+	{
+		slug: 'derivatives-presentation',
+		title: 'Derivatives 101: Moving Risk',
+		content: derivativesPresentation,
+		date: '07/10/26',
+		tags: [TAGS.finance],
+	},
 	{
 		slug: 'simple-amazing-page-transitions',
 		title: 'Simple, Amazing Page Transitions',
