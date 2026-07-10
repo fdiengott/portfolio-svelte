@@ -27,7 +27,7 @@ const pages = [
 		slug: 'derivatives-presentation',
 		title: 'Derivatives 101: Moving Risk',
 		content: derivativesPresentation,
-		date: '__TODAYS_DATE__',
+		date: '07/10/26',
 		tags: [TAGS.finance],
 	},
 	{
