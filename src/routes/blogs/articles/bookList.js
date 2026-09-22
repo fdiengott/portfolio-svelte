@@ -3,6 +3,7 @@ const bookList = `
 
 I've been reading mostly non-fiction lately, which is massively inspiring and exploding my thinking, adding new lenses to view the world, like a proper fox (as opposed to a hedgehog). I'd like to share some of the most recent books here that have made a big impact on me in chronological order, most recent first.
 
+- **An Engine, Not a Camera: How Financial Models Shape Markets** by Donald MacKenzie
 - **The Death Of Ivan Ilyich** by Leo Tolstoy
 - **Expecting Better: Why the Conventional Pregnancy Wisdom Is Wrong – and What You Really Need to Know** by Emily Oster
 - **The Prize: The Epic Quest for Oil, Money, and Power** by Daniel Yergin
