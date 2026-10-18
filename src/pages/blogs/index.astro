@@ -1,0 +1,129 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Pin from '../../components/Pin.astro';
+
+const allPosts = await getCollection('blog');
+
+const sortedPosts = allPosts.sort((a, b) => {
+  if (a.data.pinned) return -1;
+  if (b.data.pinned) return 1;
+  if (new Date(a.data.date) <= new Date(b.data.date)) return 1;
+  return -1;
+});
+---
+
+<BaseLayout title="Freddy Diengott - Blog">
+  <ul class="article__list">
+    {sortedPosts.map((article, index) => (
+      <li class="article__item animate-in" style={`animation-delay: ${250 + index * 100}ms`}>
+        {article.data.pinned && (
+          <div class="article__pin-wrapper">
+            <Pin />
+          </div>
+        )}
+        <div class="article__date">{article.data.date}</div>
+        <a class="article__item__title" href={`/blogs/${article.id}`}>
+          <span>{article.data.title}</span>
+        </a>
+        {article.data.tags && article.data.tags.length > 0 && (
+          <ul class="article__tags">
+            {article.data.tags.map((tag) => (
+              <li class={`article__tag ${tag}`}>{tag}</li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  a {
+    width: fit-content;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: all 0.3s;
+  }
+  a:is(:hover, :focus) {
+    text-underline-offset: 7px;
+  }
+  a:focus {
+    outline: 1px solid #0008;
+  }
+
+  .article__list {
+    display: grid;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+
+  .article__item {
+    display: grid;
+    position: relative;
+    border: 1px solid var(--color-border);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    max-width: 40rem;
+  }
+
+  .article__date {
+    font-size: var(--fs-200);
+  }
+
+  .article__tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-block-start: 1rem;
+  }
+
+  .article__tag {
+    --text-padding: 1.5rem;
+
+    display: inline-block;
+    position: relative;
+    font-size: var(--fs-200);
+    border: 1px solid var(--tag-color, var(--black-transparent));
+    border-radius: 999999px;
+    padding: 0.5rem 0.75rem;
+    padding-inline-start: var(--text-padding);
+  }
+
+  .article__tag::before {
+    content: '';
+    width: 0.5rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--tag-color);
+    position: absolute;
+    left: calc(var(--text-padding) / 2 - 3px);
+    top: 1rem;
+    transform: translateY(-50%);
+  }
+
+  .article__tag.recipes {
+    --tag-color: rgb(214 0 0);
+  }
+  .article__tag.coding {
+    --tag-color: rgb(0 182 218);
+  }
+  .article__tag.musings {
+    --tag-color: rgb(183, 35, 241);
+  }
+  .article__tag.suggestions {
+    --tag-color: hsl(35.47deg 100% 44.12%);
+  }
+  .article__tag.announcements {
+    --tag-color: hsl(278 75% 70%);
+  }
+  .article__tag.finance {
+    --tag-color: hsl(109.31deg 100% 63.52%);
+  }
+
+  .article__pin-wrapper {
+    position: absolute;
+    top: calc(1rem - 7.5px);
+    left: calc(1rem - 7.5px);
+    color: var(--color-border);
+  }
+</style>
