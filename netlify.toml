@@ -1,0 +1,4 @@
+# Node version comes from .nvmrc, pnpm version from packageManager in package.json
+[build]
+  command = "pnpm build"
+  publish = "dist"
