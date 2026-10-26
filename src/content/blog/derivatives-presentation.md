@@ -1,6 +1,6 @@
 ---
 title: "Derivatives 101: Moving Risk"
-date: "07/10/26"
+date: "2026-07-10"
 tags: ["finance"]
 ---
 # Derivatives 101: Moving Risk

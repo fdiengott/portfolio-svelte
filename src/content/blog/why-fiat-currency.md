@@ -1,6 +1,6 @@
 ---
 title: "Why Fiat Currency?"
-date: "05/13/26"
+date: "2026-05-13"
 tags: ["musings"]
 ---
 # Why fiat currency?

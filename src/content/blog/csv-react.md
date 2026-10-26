@@ -1,6 +1,6 @@
 ---
 title: "Downloading CSVs in React"
-date: "11/2/2024"
+date: "2024-11-02"
 tags: ["coding"]
 ---
 # Downloading CSV data in React

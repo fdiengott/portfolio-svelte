@@ -1,6 +1,6 @@
 ---
 title: "Software Skills for an AI Future"
-date: "04/26/25"
+date: "2025-04-26"
 tags: ["musings", "coding"]
 ---
 # Software Skills for an AI Future

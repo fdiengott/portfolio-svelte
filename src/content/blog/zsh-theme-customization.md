@@ -1,6 +1,6 @@
 ---
 title: "Zsh Theme Customization"
-date: "12/26/2023"
+date: "2023-12-26"
 tags: ["coding"]
 ---
 # Zsh Theme Customization

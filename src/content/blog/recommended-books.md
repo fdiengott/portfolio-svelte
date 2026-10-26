@@ -1,6 +1,6 @@
 ---
 title: "Recommended Book List"
-date: "12/04/24"
+date: "2024-12-04"
 tags: ["suggestions"]
 ---
 # Shortlisted recommended books of the moment

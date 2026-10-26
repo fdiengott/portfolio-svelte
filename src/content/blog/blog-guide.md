@@ -1,6 +1,6 @@
 ---
 title: "Welcome to my blog!"
-date: "12/26/2023"
+date: "2023-12-26"
 tags: ["announcements"]
 pinned: true
 ---

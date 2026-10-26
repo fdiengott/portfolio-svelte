@@ -1,6 +1,6 @@
 ---
 title: "A Few Advanced TypeScript techniques"
-date: "05/03/25"
+date: "2025-05-03"
 tags: ["coding"]
 ---
 # A Few Advanced TypeScript techniques

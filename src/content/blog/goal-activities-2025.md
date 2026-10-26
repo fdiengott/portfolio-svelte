@@ -1,6 +1,6 @@
 ---
 title: "Goal Activities in 2025"
-date: "01/01/25"
+date: "2025-01-01"
 tags: ["suggestions"]
 ---
 # Goal Activities in 2025

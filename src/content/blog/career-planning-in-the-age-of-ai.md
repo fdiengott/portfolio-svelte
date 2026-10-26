@@ -1,6 +1,6 @@
 ---
 title: "Career Planning in the Age of AI"
-date: "04/24/25"
+date: "2025-04-24"
 tags: ["musings"]
 ---
 <div class="career-planning-in-the-age-of-ai"></div>

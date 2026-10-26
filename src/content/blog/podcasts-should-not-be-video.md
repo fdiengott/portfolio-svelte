@@ -1,6 +1,6 @@
 ---
 title: "Podcasts Should Not Be Video"
-date: "03/16/26"
+date: "2026-03-16"
 tags: ["musings"]
 ---
 # Podcasts Should Not Be Video

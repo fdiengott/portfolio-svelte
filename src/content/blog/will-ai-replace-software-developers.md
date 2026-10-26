@@ -1,6 +1,6 @@
 ---
 title: "Will AI Replace Software Developers?"
-date: "11/01/25"
+date: "2025-11-01"
 tags: ["musings"]
 ---
 # Will AI Replace Software Developers?

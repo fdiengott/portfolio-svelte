@@ -1,6 +1,6 @@
 ---
 title: "The best vegan/gf tomato soup and grilled cheese recipe you can find"
-date: "8/2/2023"
+date: "2023-08-02"
 tags: ["recipes"]
 ---
 # Homemade Vegan Tomato Soup and vegan/gf grilled cheese

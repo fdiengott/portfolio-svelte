@@ -1,6 +1,6 @@
 ---
 title: "Tokens Are A Commodity, Sort Of"
-date: "04/15/26"
+date: "2026-04-15"
 tags: ["musings"]
 ---
 # Tokens Are A Commodity, Sort Of

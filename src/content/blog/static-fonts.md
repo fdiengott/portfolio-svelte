@@ -1,6 +1,6 @@
 ---
 title: "Where to Find Static Font Links"
-date: "11/6/2024"
+date: "2024-11-06"
 tags: ["coding"]
 ---
 # Where to find static font links from Google Fonts

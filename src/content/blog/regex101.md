@@ -1,6 +1,6 @@
 ---
 title: "Regex 101"
-date: "12/29/2023"
+date: "2023-12-29"
 tags: ["coding"]
 ---
 # Regex 101

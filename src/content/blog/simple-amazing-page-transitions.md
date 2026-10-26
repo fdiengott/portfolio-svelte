@@ -1,6 +1,6 @@
 ---
 title: "Simple, Amazing Page Transitions"
-date: "06/19/26"
+date: "2026-06-19"
 tags: ["coding"]
 ---
 # Simple, Amazing Page Transitions

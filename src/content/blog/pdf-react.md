@@ -1,6 +1,6 @@
 ---
 title: "PDFs in React"
-date: "11/20/2024"
+date: "2024-11-20"
 tags: ["coding"]
 ---
 # Downloading (and displaying) PDFs in React

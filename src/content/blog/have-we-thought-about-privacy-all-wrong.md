@@ -1,6 +1,6 @@
 ---
 title: "Have We Thought About Privacy All Wrong?"
-date: "04/19/26"
+date: "2026-04-19"
 tags: ["musings"]
 ---
 # Have we thought about privacy all wrong?

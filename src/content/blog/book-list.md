@@ -1,6 +1,6 @@
 ---
 title: "Recent Reading List"
-date: "12/04/24"
+date: "2024-12-04"
 tags: ["suggestions"]
 pinned: true
 searchable: true
