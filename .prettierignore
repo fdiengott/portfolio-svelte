@@ -10,6 +10,12 @@ node_modules
 /public/derivatives-presentation
 /src/styles/css
 
+# Blog posts and docs: keep authored markdown as written
+*.md
+
+# Google Docs-exported markup that relies on whitespace between inline spans
+/src/pages/resume.astro
+
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json

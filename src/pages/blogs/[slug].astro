@@ -3,11 +3,11 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+	const blogEntries = await getCollection('blog');
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.id },
+		props: { entry },
+	}));
 }
 
 const { entry } = Astro.props;
@@ -16,304 +16,306 @@ const isSearchable = entry.data.searchable;
 ---
 
 <BaseLayout title={`Freddy Diengott - ${entry.data.title}`}>
-  <article id="blog__container">
-    <a class="blog__back-btn" href="/blogs">Back</a>
-    <div class="date"><em>First published on {entry.data.date}.</em></div>
-    {isSearchable && (
-      <input class="book-search" type="search" placeholder="Search books..." id="book-search-input" />
-    )}
-    <Content />
-    <button class="btn-scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
-      <span class="chevron"></span>
-    </button>
-  </article>
+	<article id="blog__container">
+		<a class="blog__back-btn" href="/blogs">
+			Back
+		</a>
+		<div class="date">
+			<em>First published on {entry.data.date}.</em>
+		</div>
+		{isSearchable && (
+			<input class="book-search" type="search" placeholder="Search books..." id="book-search-input" />
+		)}
+		<Content />
+		<button class="btn-scroll-top" id="scroll-top-btn" aria-label="Scroll to top">
+			<span class="chevron"></span>
+		</button>
+	</article>
 </BaseLayout>
 
-{isSearchable && (
-  <script>
-    const searchInput = document.getElementById('book-search-input');
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const query = (e.target as HTMLInputElement).value.toLowerCase();
-        const container = document.getElementById('blog__container');
-        if (!container) return;
-        const listItems = container.querySelectorAll('ul > li');
-        listItems.forEach((li) => {
-          const text = li.textContent?.toLowerCase() ?? '';
-          if (!query || text.includes(query)) {
-            (li as HTMLElement).style.display = '';
-          } else {
-            (li as HTMLElement).style.display = 'none';
-          }
-        });
-      });
-    }
-  </script>
-)}
+{isSearchable && <script>
+	const searchInput = document.getElementById('book-search-input');
+	if (searchInput) {
+		searchInput.addEventListener('input', (e) => {
+			const query = (e.target as HTMLInputElement).value.toLowerCase();
+			const container = document.getElementById('blog__container');
+			if (!container) return;
+			const listItems = container.querySelectorAll('ul > li');
+			listItems.forEach((li) => {
+				const text = li.textContent?.toLowerCase() ?? '';
+				if (!query || text.includes(query)) {
+					(li as HTMLElement).style.display = '';
+				} else {
+					(li as HTMLElement).style.display = 'none';
+				}
+			});
+		});
+	}
+</script>}
 
 <script>
-  const scrollTopBtn = document.getElementById('scroll-top-btn');
-  if (scrollTopBtn) {
-    scrollTopBtn.addEventListener('click', () => {
-      window.history.pushState({}, '', window.location.href.split('#')[0]);
-      window.scrollTo(0, 0);
-    });
-  }
+	const scrollTopBtn = document.getElementById('scroll-top-btn');
+	if (scrollTopBtn) {
+		scrollTopBtn.addEventListener('click', () => {
+			window.history.pushState({}, '', window.location.href.split('#')[0]);
+			window.scrollTo(0, 0);
+		});
+	}
 </script>
 
 <style is:global>
-  .blog__back-btn {
-    font-size: var(--fs-300);
-    margin-block-end: 0.5rem;
-    display: inline-block;
-  }
+	.blog__back-btn {
+		font-size: var(--fs-300);
+		margin-block-end: 0.5rem;
+		display: inline-block;
+	}
 
-  .date {
-    font-size: var(--fs-200);
-    margin-block: 0.5rem;
-    font-weight: 600;
-  }
+	.date {
+		font-size: var(--fs-200);
+		margin-block: 0.5rem;
+		font-weight: 600;
+	}
 
-  .book-search {
-    display: block;
-    width: 100%;
-    max-width: 24rem;
-    padding: 0.4rem 0.6rem;
-    margin-block-end: 1.5rem;
-    font-size: var(--fs-300);
-    color: var(--color-text);
-    background: var(--color-card-bg);
-    border: 1px solid #aaa;
-    border-radius: 0.3rem;
-  }
+	.book-search {
+		display: block;
+		width: 100%;
+		max-width: 24rem;
+		padding: 0.4rem 0.6rem;
+		margin-block-end: 1.5rem;
+		font-size: var(--fs-300);
+		color: var(--color-text);
+		background: var(--color-card-bg);
+		border: 1px solid #aaa;
+		border-radius: 0.3rem;
+	}
 
-  .btn-scroll-top {
-    position: sticky;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+	.btn-scroll-top {
+		position: sticky;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
 
-    color: var(--color-text);
-    background: var(--color-card-bg);
-    border: none;
-    cursor: pointer;
-    transition: all 200ms;
-  }
+		color: var(--color-text);
+		background: var(--color-card-bg);
+		border: none;
+		cursor: pointer;
+		transition: all 200ms;
+	}
 
-  .btn-scroll-top:hover {
-    scale: 1.08;
-    transform-origin: center;
-  }
+	.btn-scroll-top:hover {
+		scale: 1.08;
+		transform-origin: center;
+	}
 
-  .btn-scroll-top::after {
-    content: '';
-    position: absolute;
-    inset: -50% -10%;
-    z-index: -1;
-    background: var(--color-card-bg);
-    filter: blur(2px);
-  }
+	.btn-scroll-top::after {
+		content: '';
+		position: absolute;
+		inset: -50% -10%;
+		z-index: -1;
+		background: var(--color-card-bg);
+		filter: blur(2px);
+	}
 
-  .chevron {
-    display: block;
-    --stroke: 3px;
-    width: 15px;
-    aspect-ratio: 1/1;
+	.chevron {
+		display: block;
+		--stroke: 3px;
+		width: 15px;
+		aspect-ratio: 1/1;
 
-    border-top: var(--stroke) solid currentColor;
-    border-right: var(--stroke) solid currentColor;
-    transform: rotate(-45deg);
-  }
+		border-top: var(--stroke) solid currentColor;
+		border-right: var(--stroke) solid currentColor;
+		transform: rotate(-45deg);
+	}
 
-  #blog__container {
-    --block-spacing: 1.5rem;
-    position: relative;
-    font-size: var(--fs-350);
-  }
+	#blog__container {
+		--block-spacing: 1.5rem;
+		position: relative;
+		font-size: var(--fs-350);
+	}
 
-  #blog__container h2,
-  #blog__container h3,
-  #blog__container h4 {
-    margin-block: 1em 0.75rem;
-  }
+	#blog__container h2,
+	#blog__container h3,
+	#blog__container h4 {
+		margin-block: 1em 0.75rem;
+	}
 
-  #blog__container p,
-  #blog__container ol,
-  #blog__container ul {
-    margin-block-end: 1lh;
-  }
+	#blog__container p,
+	#blog__container ol,
+	#blog__container ul {
+		margin-block-end: 1lh;
+	}
 
-  #blog__container p {
-    line-height: 1.7rem;
-  }
+	#blog__container p {
+		line-height: 1.7rem;
+	}
 
-  #blog__container table:not(:has(code)) {
-    margin-block: 3rem;
-  }
+	#blog__container table:not(:has(code)) {
+		margin-block: 3rem;
+	}
 
-  #blog__container .table-of-contents + ul,
-  #blog__container .table-of-contents + ul li {
-    margin-block-start: 0.3em;
-  }
+	#blog__container .table-of-contents + ul,
+	#blog__container .table-of-contents + ul li {
+		margin-block-start: 0.3em;
+	}
 
-  #blog__container ol {
-    display: grid;
-    gap: 2rem;
-  }
+	#blog__container ol {
+		display: grid;
+		gap: 2rem;
+	}
 
-  #blog__container ul,
-  #blog__container ol {
-    margin-inline-start: 1.2rem;
-  }
+	#blog__container ul,
+	#blog__container ol {
+		margin-inline-start: 1.2rem;
+	}
 
-  #blog__container ol li {
-    list-style: auto;
-    list-style-position: inside;
-  }
+	#blog__container ol li {
+		list-style: auto;
+		list-style-position: inside;
+	}
 
-  #blog__container ul li {
-    list-style: outside;
-  }
+	#blog__container ul li {
+		list-style: outside;
+	}
 
-  #blog__container > ul:not(:has(ul)) {
-    display: grid;
-    gap: 1.5rem;
-  }
+	#blog__container > ul:not(:has(ul)) {
+		display: grid;
+		gap: 1.5rem;
+	}
 
-  #blog__container ol > li > ul {
-    margin-inline-start: 2rem;
-  }
+	#blog__container ol > li > ul {
+		margin-inline-start: 2rem;
+	}
 
-  #blog__container li:has(code) {
-    overflow-x: scroll;
-  }
+	#blog__container li:has(code) {
+		overflow-x: scroll;
+	}
 
-  #blog__container table:has(code),
-  #blog__container tr,
-  #blog__container td {
-    background: var(--code-background);
-  }
+	#blog__container table:has(code),
+	#blog__container tr,
+	#blog__container td {
+		background: var(--code-background);
+	}
 
-  #blog__container table:has(code) {
-    width: 100%;
-    border: 1px solid #aaa;
-    border-radius: 0.5rem;
-    font-size: var(--fs-300);
-    margin-block-end: 1lh;
-  }
+	#blog__container table:has(code) {
+		width: 100%;
+		border: 1px solid #aaa;
+		border-radius: 0.5rem;
+		font-size: var(--fs-300);
+		margin-block-end: 1lh;
+	}
 
-  #blog__container table:has(code) code {
-    padding: 0;
-    margin: 0;
-    border: none;
-  }
+	#blog__container table:has(code) code {
+		padding: 0;
+		margin: 0;
+		border: none;
+	}
 
-  #blog__container table:has(code) tr:first-child td,
-  #blog__container table:has(code) tr:last-child td {
-    border-radius: 0.5rem;
-  }
+	#blog__container table:has(code) tr:first-child td,
+	#blog__container table:has(code) tr:last-child td {
+		border-radius: 0.5rem;
+	}
 
-  #blog__container p > code {
-    --border-color: hsl(from var(--code-background) h s 80 / 0.5);
-    background: var(--code-background);
-    padding: 0.2rem;
-    border: 1px solid var(--border-color);
-    border-radius: 0.2rem;
-    font-size: var(--fs-300);
-  }
+	#blog__container p > code {
+		--border-color: hsl(from var(--code-background) h s 80 / 0.5);
+		background: var(--code-background);
+		padding: 0.2rem;
+		border: 1px solid var(--border-color);
+		border-radius: 0.2rem;
+		font-size: var(--fs-300);
+	}
 
-  #blog__container blockquote {
-    padding: 2rem 3rem;
-    margin-block-start: -1rem;
-    background: var(--code-background);
-    border-inline-start: 4px solid var(--color-primary);
-  }
+	#blog__container blockquote {
+		padding: 2rem 3rem;
+		margin-block-start: -1rem;
+		background: var(--code-background);
+		border-inline-start: 4px solid var(--color-primary);
+	}
 
-  #blog__container blockquote p {
-    margin: 0;
-  }
+	#blog__container blockquote p {
+		margin: 0;
+	}
 
-  #blog__container table:not(:has(code)) {
-    margin-inline: auto;
-    font-size: var(--fs-300);
-    display: block;
-    overflow-x: scroll;
-  }
+	#blog__container table:not(:has(code)) {
+		margin-inline: auto;
+		font-size: var(--fs-300);
+		display: block;
+		overflow-x: scroll;
+	}
 
-  #blog__container table:not(:has(code)) th,
-  #blog__container table:not(:has(code)) td {
-    --border-color: #444;
-    border-bottom: 1px solid var(--border-color);
-    min-width: 10rem;
-  }
+	#blog__container table:not(:has(code)) th,
+	#blog__container table:not(:has(code)) td {
+		--border-color: #444;
+		border-bottom: 1px solid var(--border-color);
+		min-width: 10rem;
+	}
 
-  #blog__container table:not(:has(code)) td {
-    padding: 1.2rem 0.8rem;
-  }
+	#blog__container table:not(:has(code)) td {
+		padding: 1.2rem 0.8rem;
+	}
 
-  #blog__container p:has(img) {
-    text-align: center;
-  }
+	#blog__container p:has(img) {
+		text-align: center;
+	}
 
-  @media (width > 768px) {
-    #blog__container ol li {
-      list-style-position: outside;
-    }
+	@media (width > 768px) {
+		#blog__container ol li {
+			list-style-position: outside;
+		}
 
-    #blog__container li:has(code) {
-      overflow: visible;
-    }
+		#blog__container li:has(code) {
+			overflow: visible;
+		}
 
-    #blog__container pre {
-      overflow: visible;
-    }
+		#blog__container pre {
+			overflow: visible;
+		}
 
-    #blog__container table {
-      overflow: visible;
-      display: revert;
-    }
-  }
+		#blog__container table {
+			overflow: visible;
+			display: revert;
+		}
+	}
 
-  #blog__container .hljs {
-    background: var(--code-background);
-  }
+	#blog__container .hljs {
+		background: var(--code-background);
+	}
 
-  #blog__container .nyc-activities-start ~ .header-wrapper {
-    margin-block-start: 2rem;
-    border-block-start: 1px solid hsla(0 50% 0% / 0.2);
-  }
+	#blog__container .nyc-activities-start ~ .header-wrapper {
+		margin-block-start: 2rem;
+		border-block-start: 1px solid hsla(0 50% 0% / 0.2);
+	}
 
-  #blog__container .nyc-activities-start + .header-wrapper {
-    margin-block-start: 0;
-    border-block-start: none;
-  }
+	#blog__container .nyc-activities-start + .header-wrapper {
+		margin-block-start: 0;
+		border-block-start: none;
+	}
 
-  #blog__container .nyc-activities-start ~ :not(.header-wrapper) {
-    margin-inline-start: 2rem;
-  }
+	#blog__container .nyc-activities-start ~ :not(.header-wrapper) {
+		margin-inline-start: 2rem;
+	}
 
-  #blog__container .nyc-activities-start ~ .header-wrapper > h3 {
-    margin-block-end: 0;
-  }
+	#blog__container .nyc-activities-start ~ .header-wrapper > h3 {
+		margin-block-end: 0;
+	}
 
-  #blog__container .arrow {
-    text-align: center;
-  }
+	#blog__container .arrow {
+		text-align: center;
+	}
 
-  #blog__container blockquote div:not(.arrow) + div {
-    padding-block-end: 2rem;
-  }
+	#blog__container blockquote div:not(.arrow) + div {
+		padding-block-end: 2rem;
+	}
 
-  #blog__container .career-planning-in-the-age-of-ai {
-    --block-spacing: 2rem;
-  }
+	#blog__container .career-planning-in-the-age-of-ai {
+		--block-spacing: 2rem;
+	}
 
-  #blog__container .career-planning-in-the-age-of-ai ~ ol,
-  #blog__container .career-planning-in-the-age-of-ai ~ ul {
-    gap: 0.75rem;
-  }
+	#blog__container .career-planning-in-the-age-of-ai ~ ol,
+	#blog__container .career-planning-in-the-age-of-ai ~ ul {
+		gap: 0.75rem;
+	}
 
-  #blog__container .career-planning-in-the-age-of-ai ~ ul + * {
-    margin-block-start: var(--block-spacing);
-  }
+	#blog__container .career-planning-in-the-age-of-ai ~ ul + * {
+		margin-block-start: var(--block-spacing);
+	}
 </style>

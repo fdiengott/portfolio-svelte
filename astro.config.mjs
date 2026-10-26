@@ -8,9 +8,6 @@ export default defineConfig({
 		shikiConfig: {
 			theme: 'github-dark',
 		},
-		rehypePlugins: [
-			rehypeSlug,
-			[rehypeAutolinkHeadings, { behavior: 'wrap' }],
-		],
+		rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
 	},
 });
