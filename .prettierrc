@@ -3,15 +3,14 @@
 	"singleQuote": true,
 	"trailingComma": "all",
 	"printWidth": 120,
-	"plugins": ["prettier-plugin-svelte"],
-	"pluginSearchDirs": ["."],
+	"tabWidth": 4,
+	"plugins": ["prettier-plugin-astro"],
 	"overrides": [
 		{
-			"files": "*.svelte",
+			"files": "*.astro",
 			"options": {
-				"parser": "svelte"
+				"parser": "astro"
 			}
 		}
-	],
-	"tabWidth": 4
+	]
 }

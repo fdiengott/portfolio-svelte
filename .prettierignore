@@ -1,11 +1,14 @@
 .DS_Store
 node_modules
-/build
-/.svelte-kit
-/package
+/dist
+/.astro
 .env
 .env.*
 !.env.example
+
+# Vendored presentation and minified Font Awesome
+/public/derivatives-presentation
+/src/styles/css
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
