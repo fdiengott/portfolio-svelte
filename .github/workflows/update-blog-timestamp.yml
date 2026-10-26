@@ -7,7 +7,7 @@ on:
             - staging
             - main
         paths:
-            - 'src/routes/blogs/**'
+            - 'src/content/blog/**'
 
 jobs:
     update-timestamp:
@@ -17,25 +17,31 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
-            - name: Update Build Time
+            - name: Add missing dates
               run: |
                   # Get current date
                   TODAY=$(date +"%m/%d/%y")
 
-                  # Add error checking
-                  if ! grep -q "__TODAYS_DATE__" src/routes/blogs/articles/index.js; then
-                    echo "Warning: __TODAYS_DATE__ not found in file"
-                    exit 0
-                  fi
+                  for file in src/content/blog/*.md; do
+                    # Skip posts whose frontmatter already has a date key
+                    if awk '/^---$/{n++; next} n==1 && /^date:/{found=1} END{exit !found}' "$file"; then
+                      continue
+                    fi
 
-                  # Replace the __TODAYS_DATE__ constant 
-                  # Using sed to replace the value between quotes after __BUILD_TIME__
-                  sed -i "s|__TODAYS_DATE__|${TODAY}|g" src/routes/blogs/articles/index.js
+                    # Insert the date just before the closing frontmatter delimiter
+                    awk -v today="$TODAY" '
+                      /^---$/ { n++; if (n == 2) print "date: \"" today "\"" }
+                      { print }
+                    ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+                    echo "Added date to $file"
+                  done
 
             - name: Commit changes
               run: |
                   git config --local user.email "github-actions[bot]@users.noreply.github.com"
                   git config --local user.name "github-actions[bot]"
-                  git add src/routes/blogs/articles/index.js
-                  git diff --quiet && git diff --staged --quiet || git commit -m "Update blog timestamp [skip ci]"
+                  git add src/content/blog
+                  # No [skip ci]: Netlify must rebuild with the date, and pushes made with
+                  # GITHUB_TOKEN don't retrigger this workflow
+                  git diff --quiet && git diff --staged --quiet || git commit -m "Add missing blog dates"
                   git push
