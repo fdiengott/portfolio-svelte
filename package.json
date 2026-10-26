@@ -13,10 +13,5 @@
 		"sharp": "^0.33.0"
 	},
 	"type": "module",
-	"allowScripts": {
-		"sharp@0.34.5": true,
-		"sharp@0.33.5": true,
-		"esbuild@0.27.7": true,
-		"esbuild@0.25.12": true
-	}
+	"packageManager": "pnpm@11.5.2"
 }
