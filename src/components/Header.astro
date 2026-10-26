@@ -29,12 +29,13 @@ const { pathname } = Astro.url;
 
 <style>
 	header {
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		--logo-width: calc(180px + 0.5rem);
+		grid-template-columns: var(--logo-width) 1fr var(--logo-width);
 	}
 
 	.header__home-link {
-		padding-inline: 1rem;
+		margin-inline-start: 1rem;
 		place-items: center;
 		display: none;
 	}
