@@ -17,7 +17,7 @@ Luckily for us UI devs, downloading CSV files in React or vanilla js/html is pre
 
 Below is the most straight-forward way to format and download CSV data.
 
-```typescript
+```tsx
 const fileName = 'my-data.csv';
 const data = [
 	['Name', 'Age', 'Height'],

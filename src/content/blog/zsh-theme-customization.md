@@ -26,7 +26,7 @@ Our basic structure starts with two variables, `PROMPT` and `RPROMPT`. Both are 
 
 I begin my `PROMPT` with a line break so that there's always some space before a new command.
 
-```
+```bash
 # minimalism.zsh-theme
 
 PROMPT='

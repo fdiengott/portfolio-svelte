@@ -35,7 +35,7 @@ tenement, poster, obviously art
 
 ### VR game center
 
-A couple options I found after a quickk search:
+A couple options I found after a quick search:
 
 -   [Escape Virtuality](https://escapevirtuality.com/) - also has escape rooms
 -   [Tidal Force](https://tidalforcevr.com/)

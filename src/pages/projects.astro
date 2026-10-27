@@ -75,17 +75,17 @@ const projects = [
 						</div>
 					</span>
 
-					{project.isGif ? (
-						<img src={project.imgSrc.src} alt={project.title} class="project-image" />
-					) : (
-						<Image src={project.imgSrc} alt={project.title} class="project-image" />
-					)}
-
 					<div class="project-description">
 						{project.description.map((desc) => (
 							<p>{desc}</p>
 						))}
 					</div>
+
+					{project.isGif ? (
+						<img src={project.imgSrc.src} alt={project.title} class="project-image" />
+					) : (
+						<Image src={project.imgSrc} alt={project.title} class="project-image" />
+					)}
 				</div>
 			))}
 		</section>
@@ -125,18 +125,13 @@ const projects = [
 	}
 
 	.project-description {
-		background-color: rgba(0, 0, 0, 0.03);
 		color: inherit;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-		padding-block: 1rem;
+		gap: var(--spacing-200);
+		padding-block-end: var(--spacing-500);
 		line-height: 1.6;
-		font-size: var(--fs-300);
-	}
-
-	.project-description p {
-		width: 80%;
+		font-size: var(--fs-350);
 		font-weight: 400;
 	}
 

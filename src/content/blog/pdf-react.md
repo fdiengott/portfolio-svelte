@@ -21,7 +21,7 @@ I'll also go through how to actually go about downloading the PDF after it's mad
 
 So let's start with installing the package. Make sure to download the `renderer` sub-package, as that's what we'll be using to create our PDFs. The basic `react-pdf` package is for _displaying_ pdfs, so we'll leave that out.
 
-```typescript
+```bash
 npm i @react-pdf/renderer
 ```
 
@@ -31,7 +31,7 @@ npm i @react-pdf/renderer
 
 Here's the example React-pdf has in their docs:
 
-```typescript
+```tsx
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 // Create styles
@@ -72,7 +72,7 @@ A note: I'm using Material UI at work, so that's what I'll use here as I find it
 
 So here is the solution I came to:
 
-```typescript
+```tsx
 import { Button } from '@mui/material';
 import { pdf } from '@react-pdf/renderer';
 
@@ -93,7 +93,7 @@ Before I go into the details though, let me explain how I got here, and the pitf
 
 This is was my initial attempt:
 
-```typescript
+```tsx
 import { Button } from '@mui/material';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 
@@ -129,7 +129,7 @@ The first attempt was to use a styled component to wrap our PDFDownloadLink and 
 
 Something like this:
 
-```typescript
+```tsx
 import { styled } from '@mui/material';
 
 const StyledPDFDownloadLink = styled(PDFDownloadLink)(({ theme }) => ({
@@ -154,7 +154,7 @@ const DownloadPDFButton = () => {
 
 The second solution involved some DOM jiu-jitsu to accept a ref and use the clicking of one button to trigger the clicking of our PDF link. Something like this:
 
-```typescript
+```tsx
 import { useRef } from 'react';
 
 const DownloadPDFButton = () => {
@@ -184,7 +184,7 @@ This, as far as I can tell, solves our second problem, but not our first. As an 
 
 So let's return to the solution I eventually came to in more detail.
 
-```typescript
+```tsx
 import { pdf } from '@react-pdf/renderer';
 
 const DownloadPDFButton = () => {
@@ -224,7 +224,7 @@ Okay, so far so good! We have a PDF that we can download, albeit a simple one, b
 
 So, to make this better we are going to use PDFViewer from `@react-pdf/renderer` to display the PDF. It won't have hot reloading, but it will be a lot easier to work with. I've also done a couple things to make it easier to see and therefore develop. Firstly, I've included some styles that should make the `iframe` (which is what `PDFViewer` renders) take up more of the page, which includes making it `position: "absolute"`. Secondly, in order to avoid any parents bounding in our `position: 'absolute'`, I've put our `PDFViewer` in a react portal, so it'll render at the bottom of the `body` tag.
 
-```typescript
+```tsx
 import { createPortal } from 'react-dom';
 import { pdf, PDFViewer } from '@react-pdf/renderer';
 
@@ -262,7 +262,7 @@ Great! Now we have our button to render our PDF and a way to view it as we devel
 
 Allow me to return to the PDF example that is shown in the react-pdf docs and point some things out.
 
-```typescript
+```tsx
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 // Create styles
@@ -303,7 +303,7 @@ Let's start with layouts as they are probably the most important part of a PDF. 
 
 Like so:
 
-```typescript
+```tsx
 <View style={{ display: 'flex', flexDirection: 'column', marginBottom: 10 }}>
 	<Text>Section #1</Text>
 	<Text>Section #2</Text>
@@ -322,7 +322,7 @@ It's important to note that `flex` doesn't work quite the same in react-pdf as n
 
 Here is an example of a table with the number of columns based on the number of keys in the data object:
 
-```typescript
+```tsx
 // data will be something like this: [{ name: 'Alpha', size: 30 }, { name: 'Bravo', size: 25 }]
 const Table = (
 	data: Record<string, unknown>[],
@@ -367,7 +367,7 @@ If you have a grid instead of a table, you can use the same technique, but inste
 
 Before now, I have only mentioned text components, completely disregarding images. But now let's add them to the mix. Images and SVGs are natively supported by react-pdf, and are relatively easy to implement.
 
-```typescript
+```tsx
 import { Image } from '@react-pdf/renderer';
 
 return (
@@ -382,7 +382,7 @@ The `Image` acts just like a regular `img` tag, taking a `src` attribute. The on
 
 SVGs are similarly straight-forward, except that they need to be created locally, with each of the tags replaced with a react-pdf equivalent.
 
-```typescript
+```tsx
 import { Svg, G, Path } from '@react-pdf/renderer';
 
 const MyCoolSVG = () => (
