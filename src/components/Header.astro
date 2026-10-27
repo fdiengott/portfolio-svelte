@@ -3,7 +3,7 @@ const { pathname } = Astro.url;
 ---
 
 <header>
-	<div class="header__home-link" data-visible={pathname !== '/' ? 'true' : 'false'}>
+	<div class="header__home-link" data-visible={Boolean(pathname !== '/').toString()}>
 		<a href="/" tabindex={pathname === '/' ? -1 : 0}>
 			Freddy Diengott
 		</a>
@@ -14,13 +14,13 @@ const { pathname } = Astro.url;
 			<li aria-current={pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={pathname === '/projects' ? 'page' : undefined}>
+			<li aria-current={pathname.includes('/projects') ? 'page' : undefined}>
 				<a href="/projects">Projects</a>
 			</li>
 			<li aria-current={pathname.includes('/blogs') ? 'page' : undefined}>
 				<a href="/blogs">Blog</a>
 			</li>
-			<li aria-current={pathname === '/contact' ? 'page' : undefined}>
+			<li aria-current={pathname.includes('/contact') ? 'page' : undefined}>
 				<a href="/contact">Contact</a>
 			</li>
 		</ul>
