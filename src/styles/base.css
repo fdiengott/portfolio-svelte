@@ -13,6 +13,16 @@
 		--fs-700: clamp(1.94rem, calc(1.59rem + 1.77vw), 2.96rem);
 		--fs-800: clamp(2.33rem, calc(1.77rem + 2.81vw), 3.95rem);
 		--fs-900: clamp(2.8rem, calc(1.94rem + 4.28vw), 5.26rem);
+
+		--spacing-100: 0.25rem;
+		--spacing-200: 0.5rem;
+		--spacing-300: 0.75rem;
+		--spacing-400: 1rem;
+		--spacing-500: 1.5rem;
+		--spacing-600: 2rem;
+		--spacing-700: 3rem;
+		--spacing-800: 4rem;
+		--spacing-900: 6rem;
 	}
 
 	:root {
