@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Pin from '../../components/Pin.astro';
+import { formatDate } from '../../utils/formatDate';
 
 const allPosts = await getCollection('blog');
 
@@ -30,7 +31,9 @@ const sortedPosts = allPosts.sort((a, b) => {
 						<Pin />
 					</div>
 				)}
-				<div class="article__date">{article.data.date}</div>
+				<div class="article__date">
+					<time datetime={article.data.date}>{formatDate(article.data.date)}</time>
+				</div>
 				<a class="article__item__title" href={`/blogs/${article.id}`}>
 					<span>{article.data.title}</span>
 				</a>
