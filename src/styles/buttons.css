@@ -117,7 +117,9 @@
 	[data-buttons='workshop'] .btn {
 		position: relative;
 		z-index: 1;
-		font: 600 16px/1 'Barlow Condensed', var(--font-ui);
+		font:
+			600 16px/1 'Barlow Condensed',
+			var(--font-ui);
 		letter-spacing: 0.11em;
 		padding: 16px 28px;
 		border: 2.5px solid var(--ink);

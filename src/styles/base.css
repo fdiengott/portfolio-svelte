@@ -1,9 +1,5 @@
 @layer base {
 	:root {
-		--transition-timing: 400ms;
-	}
-
-	:root {
 		--fs-200: clamp(0.7rem, calc(0.81rem + -0.13vw), 0.78rem);
 		--fs-300: clamp(0.94rem, calc(0.94rem + 0vw), 0.94rem);
 		--fs-350: clamp(1rem, calc(1rem + 0.12vw), 1.1rem);
@@ -52,15 +48,5 @@
 		--font-body: var(--body);
 		--font-ui: var(--body);
 		--font-code: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-
-		/* Temporary aliases so pages not yet restyled stay legible. Removed in step 9. */
-		--color-bg: var(--paper);
-		--color-card-bg: var(--paper);
-		--color-primary: var(--pen);
-		--color-accent: var(--card);
-		--color-text: var(--ink);
-		--color-border: var(--rule);
-		--code-background: var(--card);
-		--code-border-color: var(--ink);
 	}
 }
