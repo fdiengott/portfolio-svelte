@@ -1,0 +1,50 @@
+---
+interface Props {
+	/** Renders an <a> when set, otherwise a <button>. */
+	href?: string;
+	variant?: 'default' | 'primary' | 'accent';
+	size?: 'md' | 'sm';
+	disabled?: boolean;
+	/** Surface colour behind the button (Gazette's gap ring). Defaults to --paper. */
+	ring?: string;
+	type?: 'button' | 'submit' | 'reset';
+	class?: string;
+	[attr: string]: unknown;
+}
+
+const {
+	href,
+	variant = 'default',
+	size = 'md',
+	disabled = false,
+	ring,
+	type = 'button',
+	class: extra,
+	...rest
+} = Astro.props;
+
+const classes = ['btn', variant !== 'default' && `btn--${variant}`, size === 'sm' && 'btn--sm', extra]
+	.filter(Boolean)
+	.join(' ');
+const style = ring ? `--ring: ${ring}` : undefined;
+---
+
+<span class:list={['slot', size === 'sm' && 'slot--sm']}>
+	{
+		href ? (
+			<a
+				class={classes}
+				style={style}
+				href={disabled ? undefined : href}
+				aria-disabled={disabled ? 'true' : undefined}
+				{...rest}
+			>
+				<slot />
+			</a>
+		) : (
+			<button class={classes} style={style} type={type} disabled={disabled} {...rest}>
+				<slot />
+			</button>
+		)
+	}
+</span>

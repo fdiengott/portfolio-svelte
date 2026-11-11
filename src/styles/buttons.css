@@ -1,0 +1,147 @@
+/*
+ * Buttons. Two candidate styles, selected by data-buttons on <html>
+ * (set via BUTTON_STYLE in BaseLayout). Markup is identical for both:
+ *   <span class="slot"><a class="btn">…</a></span>
+ */
+@layer base {
+	/* ---------- shared ---------- */
+	.slot {
+		display: inline-block;
+		position: relative;
+	}
+
+	.btn {
+		--ring: var(--paper); /* colour of the surface the button sits on */
+		display: inline-block;
+		cursor: pointer;
+		text-decoration: none;
+		color: var(--ink);
+		background: var(--card);
+		transition: transform 0.06s steps(2, end);
+	}
+
+	.btn--primary {
+		background: var(--pen);
+		color: var(--pen-fg);
+	}
+	.btn--accent {
+		background: var(--marker);
+		color: var(--marker-fg);
+	}
+
+	.btn:focus-visible {
+		outline: 3px dashed var(--pen);
+		outline-offset: 8px;
+	}
+
+	.btn[disabled],
+	.btn[aria-disabled='true'],
+	.slot:has(> .btn[disabled], > .btn[aria-disabled='true']) {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+	/* avoid doubling the opacity when the slot is dimmed too */
+	.slot:has(> .btn[disabled], > .btn[aria-disabled='true']) > .btn {
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.btn {
+			transition: none;
+		}
+	}
+
+	/* ---------- 7A. Gazette: keyline, paper gap, offset block ---------- */
+	[data-buttons='gazette'] .btn {
+		font: 600 17px/1 var(--font-ui);
+		letter-spacing: 0.02em;
+		padding: 16px 26px;
+		border: 3px solid var(--ink);
+		border-radius: 120px 10px 110px 12px / 12px 110px 10px 120px;
+		box-shadow:
+			0 0 0 3px var(--ring),
+			6px 6px 0 3px var(--ink);
+		transition:
+			transform 0.06s steps(2, end),
+			box-shadow 0.06s steps(2, end);
+	}
+	[data-buttons='gazette'] .btn:hover {
+		transform: translate(-1px, -1px);
+		box-shadow:
+			0 0 0 3px var(--ring),
+			8px 8px 0 3px var(--ink);
+	}
+	[data-buttons='gazette'] .btn:active {
+		transform: translate(6px, 6px);
+		box-shadow:
+			0 0 0 3px var(--ring),
+			0 0 0 3px var(--ink);
+	}
+
+	[data-buttons='gazette'] .btn--sm {
+		padding: 10px 17px;
+		font-size: 14px;
+		box-shadow:
+			0 0 0 2px var(--ring),
+			4px 4px 0 2px var(--ink);
+	}
+	[data-buttons='gazette'] .btn--sm:hover {
+		box-shadow:
+			0 0 0 2px var(--ring),
+			6px 6px 0 2px var(--ink);
+	}
+	[data-buttons='gazette'] .btn--sm:active {
+		transform: translate(4px, 4px);
+		box-shadow:
+			0 0 0 2px var(--ring),
+			0 0 0 2px var(--ink);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		[data-buttons='gazette'] .btn {
+			transition: none;
+		}
+	}
+
+	/* ---------- 7B. Workshop: rounded face on a hatched plate ---------- */
+	[data-buttons='workshop'] .slot::before {
+		content: '';
+		position: absolute;
+		inset: 8px -8px -8px 8px;
+		z-index: 0;
+		border: 2.5px solid var(--ink);
+		border-radius: 14px;
+		opacity: 0.8;
+		background: repeating-linear-gradient(45deg, var(--ink) 0 2px, transparent 2px 6px);
+	}
+	[data-buttons='workshop'] .btn {
+		position: relative;
+		z-index: 1;
+		font: 600 16px/1 'Barlow Condensed', var(--font-ui);
+		letter-spacing: 0.11em;
+		padding: 16px 28px;
+		border: 2.5px solid var(--ink);
+		border-radius: 14px;
+	}
+	[data-buttons='workshop'] .btn:hover {
+		transform: translate(2px, 2px);
+	}
+	[data-buttons='workshop'] .btn:active {
+		transform: translate(8px, 8px);
+	}
+
+	[data-buttons='workshop'] .slot--sm::before {
+		inset: 6px -6px -6px 6px;
+		border-width: 2px;
+		border-radius: 11px;
+	}
+	[data-buttons='workshop'] .btn--sm {
+		padding: 10px 18px;
+		font-size: 14px;
+		border-width: 2px;
+		border-radius: 11px;
+	}
+	[data-buttons='workshop'] .btn--sm:active {
+		transform: translate(6px, 6px);
+	}
+}
