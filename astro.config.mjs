@@ -6,7 +6,7 @@ export default defineConfig({
 	output: 'static',
 	markdown: {
 		shikiConfig: {
-			theme: 'github-dark',
+			theme: 'github-light',
 		},
 		rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
 	},
