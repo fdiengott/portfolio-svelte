@@ -1,0 +1,92 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/formatDate';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, date, tags, pinned } = post.data;
+---
+
+<li class="post-row">
+	<div class="post-row__ref">
+		{pinned && <span class="post-row__pin">Pinned</span>}
+		<time datetime={date}>{formatDate(date)}</time>
+	</div>
+	<div class="post-row__body">
+		<a class="post-row__title" href={`/blogs/${post.id}`}>{title}</a>
+		{
+			tags.length > 0 && (
+				<ul class="post-row__tags">
+					{tags.map((tag) => (
+						<li class={`tag tag--${tag}`}>{tag}</li>
+					))}
+				</ul>
+			)
+		}
+	</div>
+</li>
+
+<style>
+	.post-row {
+		display: grid;
+		gap: 6px;
+		padding: 22px;
+		border-bottom: 2px solid var(--rule);
+		list-style: none;
+	}
+	.post-row:last-child {
+		border-bottom: 0;
+	}
+
+	.post-row__ref {
+		color: var(--marker);
+		font-weight: 600;
+		font-size: 0.8rem;
+		letter-spacing: 0.04em;
+	}
+	.post-row__pin {
+		display: block;
+	}
+
+	.post-row__title {
+		font-family: var(--display);
+		font-weight: 500;
+		font-size: 23px;
+		line-height: 1.2;
+		color: var(--ink);
+		text-decoration: none;
+	}
+	.post-row__title:hover {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+	.post-row__title:focus-visible {
+		outline: 3px dashed var(--pen);
+		outline-offset: 4px;
+	}
+
+	.post-row__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin: 10px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+	.tag {
+		font-size: 0.78rem;
+		padding: 2px 8px;
+		border: 1px solid var(--ink);
+		color: var(--soft);
+	}
+
+	@media (min-width: 680px) {
+		.post-row {
+			grid-template-columns: 112px 1fr;
+			gap: 0 18px;
+		}
+	}
+</style>

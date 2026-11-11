@@ -6,6 +6,8 @@ import '../styles/main.css';
 interface Props {
 	title: string;
 	description?: string;
+	/** Drop the default main padding so full-bleed banners can span the wrapper. */
+	flush?: boolean;
 }
 
 /** 'gazette' | 'workshop'. Sets data-buttons on <html>; see buttons.css (step 2). */
@@ -21,6 +23,7 @@ const fontsHref = `https://fonts.googleapis.com/css2?${FONT_FAMILIES.map((f) => 
 
 const {
 	title,
+	flush = false,
 	description = 'A software engineer with a specialty in writing explicitly maintainable, efficient code...and also a big nerd.',
 } = Astro.props;
 ---
@@ -39,7 +42,7 @@ const {
 	<body>
 		<div class="wrapper">
 			<Header />
-			<main>
+			<main class:list={{ flush }}>
 				<slot />
 			</main>
 			<Footer />
@@ -84,5 +87,8 @@ const {
 
 	main {
 		padding: 24px 22px;
+	}
+	main.flush {
+		padding: 0;
 	}
 </style>
