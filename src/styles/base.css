@@ -26,40 +26,41 @@
 	}
 
 	:root {
-		--white: hsl(50, 50%, 98%);
-		--white-soft: hsl(50, 50%, 92%);
-		--black: hsl(0, 0%, 16%);
-		--black-transparent: hsl(0, 0%, 16%, 38%);
-		--primary-hue: 205;
-		--lavender: hsl(var(--primary-hue), 60%, 55%);
-		/* --lavender: #3299e2; */
+		/* page */
+		--bg: #dccfb2;
+		--dot: rgba(90, 70, 40, 0.3);
+		--dot-size: 2px;
 
-		--color-primary-400: hsl(205, 75%, 54%);
-		--color-primary-300: hsl(196, 76%, 70%);
-		--color-primary-200: hsl(180, 100%, 93%);
+		/* content */
+		--paper: #f4ecdb;
+		--card: #f9f3e6;
+		--ink: #241f17;
+		--soft: #4a4233;
+		--rule: rgba(36, 31, 23, 0.28);
 
-		--color-theme-bg: black;
-		--color-bg: var(--white);
-		--color-card-bg: #fff;
-		--color-primary: var(--lavender);
-		--color-accent: var(--white-soft);
-		--color-text: var(--black);
-		--color-border: var(--black-transparent);
+		/* accents */
+		--pen: #2c5c4a;
+		--marker: #9b2b1c;
+		--marker-light: #e8836b;
+		--pen-fg: #f2eee2;
+		--marker-fg: #f7efe4;
 
-		--code-background: hsl(0, 0%, 95%);
-		--code-border-color-raw: 205, 84%, 20%;
-		--code-border-color: hsl(var(--code-border-color-raw));
-	}
+		/* type: change these to experiment with fonts */
+		--display: 'Newsreader', Georgia, serif;
+		--body: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+		--font-heading: var(--display);
+		--font-body: var(--body);
+		--font-ui: var(--body);
+		--font-code: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
-	html[data-theme='dark'] {
-		--color-theme-bg: var(--white);
-		--color-bg: black;
-		--color-card-bg: #333;
-		--color-primary: #c0c0e3;
-		--color-accent: var(--black);
-		--color-text: var(--white);
-		--color-border: #7a7a7a;
-
-		--code-background: color-mix(in oklch, var(--color-text), black 80%);
+		/* Temporary aliases so pages not yet restyled stay legible. Removed in step 9. */
+		--color-bg: var(--paper);
+		--color-card-bg: var(--paper);
+		--color-primary: var(--pen);
+		--color-accent: var(--card);
+		--color-text: var(--ink);
+		--color-border: var(--rule);
+		--code-background: var(--card);
+		--code-border-color: var(--ink);
 	}
 }

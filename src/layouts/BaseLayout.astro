@@ -1,15 +1,23 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/css/v5-font-face.min.css';
-import '../styles/css/fontawesome.min.css';
-import '../styles/css/solid.min.css';
-import '../styles/css/brands.min.css';
+import Footer from '../components/Footer.astro';
 import '../styles/main.css';
 
 interface Props {
 	title: string;
 	description?: string;
 }
+
+/** 'gazette' | 'workshop'. Sets data-buttons on <html>; see buttons.css (step 2). */
+const BUTTON_STYLE = 'workshop';
+
+/** Add families here (Google Fonts css2 `family=` values) to experiment with type. */
+const FONT_FAMILIES = [
+	'Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500',
+	'Archivo:wght@400;600',
+	'Barlow+Condensed:wght@600',
+];
+const fontsHref = `https://fonts.googleapis.com/css2?${FONT_FAMILIES.map((f) => `family=${f}`).join('&')}&display=swap`;
 
 const {
 	title,
@@ -18,38 +26,63 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-buttons={BUTTON_STYLE}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href={fontsHref} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="app">
+		<div class="wrapper">
 			<Header />
 			<main>
-				<div class="card">
-					<slot />
-				</div>
+				<slot />
 			</main>
+			<Footer />
 		</div>
 	</body>
 </html>
 
 <style>
-	@import url(https://themes.googleusercontent.com/fonts/css?kit=G_FepKA_uH2WOg3oFEYtvRDPdHQi3I4pWfNLLF4NR0PZIF3btElinkPz_s6G6X5xJ1da9RBYOeQvhQuXfIbZwok5vF56XcdiYptcM7nUUvwb1p286u1FhNCWJx6k_BWUR2);
-
-	main {
-		padding: 1rem;
-		max-width: 75rem;
-		margin: 0 auto;
+	.wrapper {
+		position: relative;
+		max-width: 860px;
+		width: calc(100% - 28px);
+		margin: 28px auto 70px;
+		background: var(--paper);
+		border: 4px solid var(--ink);
+		border-radius: 0;
 	}
 
-	.card {
-		background-color: var(--color-card-bg);
-		border-radius: 1rem;
-		padding-block: 2rem 4rem;
-		padding-inline: clamp(1rem, 5vw, 4rem);
+	/* red registration marks, top-left and bottom-right */
+	.wrapper::before,
+	.wrapper::after {
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border: 0 solid var(--marker);
+		pointer-events: none;
+		z-index: 1;
+	}
+	.wrapper::before {
+		top: 8px;
+		left: 8px;
+		border-top-width: 2px;
+		border-left-width: 2px;
+	}
+	.wrapper::after {
+		bottom: 8px;
+		right: 8px;
+		border-bottom-width: 2px;
+		border-right-width: 2px;
+	}
+
+	main {
+		padding: 24px 22px;
 	}
 </style>

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Pin from '../../components/Pin.astro';
 import { formatDate } from '../../utils/formatDate';
 
 const allPosts = await getCollection('blog');
@@ -28,7 +27,7 @@ const sortedPosts = allPosts.sort((a, b) => {
 			<li class="article__item animate-in" style={`animation-delay: ${250 + index * 100}ms`}>
 				{article.data.pinned && (
 					<div class="article__pin-wrapper">
-						<Pin />
+						<span>Pinned</span>
 					</div>
 				)}
 				<div class="article__date">
