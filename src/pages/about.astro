@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionBanner from '../components/SectionBanner.astro';
+import headshot from '../assets/images/hero-headshot-2026.jpg';
+---
+
+<BaseLayout
+	flush
+	title="About - Freddy Diengott"
+	description="About Freddy Diengott, a curious, design-focused, full-stack software engineer based in Brooklyn, NY."
+>
+	<SectionBanner as="h1">About</SectionBanner>
+	<div class="about">
+		<Image
+			class="about__headshot"
+			src={headshot}
+			alt="A professional headshot of a young man wearing a black button down"
+		/>
+		<div class="bio">
+			<p>
+				I'm a curious, design-focused, auto-didactic, full-stack software engineer based in Brooklyn, NY! I'm
+				currently a UI engineer at Adaptive Financial where I'm building a real-time finance platform built on
+				top of a web-socket connected, highly secure, fast, distributed system where the UI is made with
+				<span class="bold">TypeScript</span>, <span class="bold">React</span>,<span class="bold">RxJS</span>,{' '}
+				<span class="bold">Material UI</span>, TanStack's
+				<span class="bold">React Table</span>, <span class="bold">React Query</span>,
+				<span class="bold">React Hook Form</span>, and some other goodies. I'm passionate about writing loosely
+				coupled, maintainable, performant code, with an emphasis on intuitive design and accessibility.
+			</p>
+
+			<p>
+				After starting at Adaptive, I've seen myself grow as a <span class="underline italic">full</span>-stack
+				engineer, as I've spent a serious amount of time reading java code, researching design patterns,
+				learning the advantages and security concerns of cloud technologies, and discovering the ins and outs of
+				distributed systems that handle lots of data.
+			</p>
+
+			<p>
+				The past year and a half, I've discovered that I find finance and economics (especially geo-macro)
+				surprisingly utterly fascinating! I had worked in fintech for several years, but I hadn't taken the
+				domain seriously. That has since changed and I've been voraciously reading books, articles, writing blog
+				posts, and attending (and hosting!) events that are specifically financial in nature. Underlying all of
+				this, is a goal I hold close: to build a deep and accurate model of the world. One way I've decided to
+				do this is to chronicle the books I read in a blog post and write other pieces on what I've learned. I
+				hope the blog will start to fill up with articles about how financial markets work and how it affects
+				peoples around the world. I am not under the impression that anyone will read these pieces, but by
+				making them publicly accessible, I hope to motivate myself to write; to understand how I think. I've
+				never been someone who writes very much, but I think it's a great fountain from which insight into one's
+				own thinking can flow, through mulling over ideas and making them concrete.
+			</p>
+
+			<p>So feel free to reach out. And stay tuned!</p>
+		</div>
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		padding: 24px 22px;
+		display: flow-root;
+	}
+
+	.about__headshot {
+		display: block;
+		width: 100%;
+		max-width: 320px;
+		height: auto;
+		aspect-ratio: 1;
+		object-fit: cover;
+		object-position: 50% 0%;
+		border: 4px solid var(--ink);
+		border-radius: 0;
+		margin: 0 0 24px;
+	}
+
+	.bio {
+		max-width: 56ch;
+		color: var(--soft);
+	}
+	.bio p {
+		margin: 0 0 1lh;
+		line-height: 1.5;
+	}
+	.bio .bold {
+		font-weight: 700;
+	}
+	.bio .underline {
+		text-decoration: underline;
+	}
+	.bio .italic {
+		font-style: italic;
+	}
+
+	@media (min-width: 680px) {
+		.about__headshot {
+			float: right;
+			width: 240px;
+			margin: 0 0 16px 28px;
+		}
+	}
+</style>
