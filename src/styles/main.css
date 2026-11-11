@@ -3,6 +3,7 @@
 @import './reset.css';
 @import './base.css';
 @import './buttons.css';
+@import './tags.css';
 
 @layer base {
 	body,

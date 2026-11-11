@@ -7,7 +7,9 @@ const { as: Tag = 'h2' } = Astro.props;
 ---
 
 <div class="banner">
-	<Tag><slot /></Tag>
+	<Tag>
+		<slot />
+	</Tag>
 	<slot name="sub" />
 </div>
 

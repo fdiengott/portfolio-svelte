@@ -1,0 +1,64 @@
+/*
+ * Post tags, told apart by pattern rather than colour.
+ * Tweak a tag by changing its --tag-* custom properties.
+ */
+@layer base {
+	.tag {
+		--tag-border: 1.5px solid var(--rule);
+		--tag-bg: transparent;
+		--tag-bg-image: none;
+		--tag-color: var(--soft);
+		--tag-font: var(--font-ui);
+		--tag-style: normal;
+		--tag-outline: none;
+		--tag-outline-offset: -5px;
+
+		display: inline-block;
+		padding: 3px 9px;
+		font-family: var(--tag-font);
+		font-style: var(--tag-style);
+		font-size: 0.78rem;
+		line-height: 1.3;
+		color: var(--tag-color);
+		border: var(--tag-border);
+		background-color: var(--tag-bg);
+		background-image: var(--tag-bg-image);
+		outline: var(--tag-outline);
+		outline-offset: var(--tag-outline-offset);
+	}
+
+	.tag--coding {
+		--tag-border: 1.5px solid var(--ink);
+		--tag-font: var(--font-code);
+		--tag-color: var(--ink);
+	}
+
+	.tag--musings {
+		--tag-border: 1.5px dotted var(--ink);
+		--tag-font: var(--display);
+		--tag-style: italic;
+		--tag-color: var(--ink);
+	}
+
+	.tag--suggestions {
+		--tag-border: 1.5px dashed var(--ink);
+		--tag-color: var(--ink);
+	}
+
+	.tag--finance {
+		--tag-border: 1.5px solid var(--rule);
+		--tag-bg-image: repeating-linear-gradient(45deg, rgba(36, 31, 23, 0.22) 0 1px, transparent 1px 5px);
+		--tag-color: var(--ink);
+	}
+
+	.tag--recipes {
+		--tag-border: 3px double var(--ink);
+		--tag-color: var(--ink);
+	}
+
+	.tag--announcements {
+		--tag-border: 1.5px solid var(--ink);
+		--tag-bg: var(--ink);
+		--tag-color: var(--paper);
+	}
+}

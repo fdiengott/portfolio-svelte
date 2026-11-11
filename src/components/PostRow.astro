@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import PinnedMark from './PinnedMark.astro';
 import { formatDate } from '../utils/formatDate';
 
 interface Props {
@@ -12,20 +13,20 @@ const { title, date, tags, pinned } = post.data;
 
 <li class="post-row">
 	<div class="post-row__ref">
-		{pinned && <span class="post-row__pin">Pinned</span>}
+		{pinned && <PinnedMark />}
 		<time datetime={date}>{formatDate(date)}</time>
 	</div>
 	<div class="post-row__body">
-		<a class="post-row__title" href={`/blogs/${post.id}`}>{title}</a>
-		{
-			tags.length > 0 && (
-				<ul class="post-row__tags">
-					{tags.map((tag) => (
-						<li class={`tag tag--${tag}`}>{tag}</li>
-					))}
-				</ul>
-			)
-		}
+		<a class="post-row__title" href={`/blogs/${post.id}`}>
+			{title}
+		</a>
+		{tags.length > 0 && (
+			<ul class="post-row__tags">
+				{tags.map((tag) => (
+					<li class={`tag tag--${tag}`}>{tag}</li>
+				))}
+			</ul>
+		)}
 	</div>
 </li>
 
@@ -47,10 +48,6 @@ const { title, date, tags, pinned } = post.data;
 		font-size: 0.8rem;
 		letter-spacing: 0.04em;
 	}
-	.post-row__pin {
-		display: block;
-	}
-
 	.post-row__title {
 		font-family: var(--display);
 		font-weight: 500;
@@ -76,13 +73,6 @@ const { title, date, tags, pinned } = post.data;
 		padding: 0;
 		list-style: none;
 	}
-	.tag {
-		font-size: 0.78rem;
-		padding: 2px 8px;
-		border: 1px solid var(--ink);
-		color: var(--soft);
-	}
-
 	@media (min-width: 680px) {
 		.post-row {
 			grid-template-columns: 112px 1fr;

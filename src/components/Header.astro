@@ -9,26 +9,22 @@ const links = [
 ---
 
 <header>
-	{
-		isHome ? (
-			<span class="header__place">Brooklyn, New York</span>
-		) : (
-			<a class="header__place" href="/">
-				Freddy Diengott
-			</a>
-		)
-	}
+	{isHome ? (
+		<span class="header__place">Brooklyn, New York</span>
+	) : (
+		<a class="header__place" href="/">
+			Freddy Diengott
+		</a>
+	)}
 	<nav aria-label="Main">
 		<ul>
-			{
-				links.map(({ href, label }) => (
-					<li>
-						<a href={href} aria-current={pathname.startsWith(href) ? 'page' : undefined}>
-							{label}
-						</a>
-					</li>
-				))
-			}
+			{links.map(({ href, label }) => (
+				<li>
+					<a href={href} aria-current={pathname.startsWith(href) ? 'page' : undefined}>
+						{label}
+					</a>
+				</li>
+			))}
 		</ul>
 	</nav>
 </header>
@@ -79,8 +75,8 @@ const links = [
 		letter-spacing: 0.06em;
 		text-transform: none;
 		padding-bottom: 9px;
-		background: linear-gradient(rgba(233, 222, 197, 0.32), rgba(233, 222, 197, 0.32)) left bottom 1px /
-			100% 2px no-repeat;
+		background: linear-gradient(rgba(233, 222, 197, 0.32), rgba(233, 222, 197, 0.32)) left bottom 1px / 100% 2px
+			no-repeat;
 		transition:
 			color 0.18s ease,
 			background-size 0.2s ease;

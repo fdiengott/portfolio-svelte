@@ -30,21 +30,19 @@ const style = ring ? `--ring: ${ring}` : undefined;
 ---
 
 <span class:list={['slot', size === 'sm' && 'slot--sm']}>
-	{
-		href ? (
-			<a
-				class={classes}
-				style={style}
-				href={disabled ? undefined : href}
-				aria-disabled={disabled ? 'true' : undefined}
-				{...rest}
-			>
-				<slot />
-			</a>
-		) : (
-			<button class={classes} style={style} type={type} disabled={disabled} {...rest}>
-				<slot />
-			</button>
-		)
-	}
+	{href ? (
+		<a
+			class={classes}
+			style={style}
+			href={disabled ? undefined : href}
+			aria-disabled={disabled ? 'true' : undefined}
+			{...rest}
+		>
+			<slot />
+		</a>
+	) : (
+		<button class={classes} style={style} type={type} disabled={disabled} {...rest}>
+			<slot />
+		</button>
+	)}
 </span>
