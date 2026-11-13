@@ -1,0 +1,26 @@
+<footer>
+	<span>
+		© <span id="footer-year">2026</span> Freddy Diengott
+	</span>
+	<span>The House of Cooper-Diengott</span>
+</footer>
+
+<script>
+	const footerYear = document.getElementById('footer-year');
+	if (footerYear) footerYear.textContent = new Date().getFullYear().toString();
+</script>
+
+<style>
+	footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 4px 24px;
+		border-top: 4px solid var(--ink);
+		padding: 12px 22px;
+		font-size: 0.8rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--soft);
+	}
+</style>

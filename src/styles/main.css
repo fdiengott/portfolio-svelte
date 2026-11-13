@@ -2,30 +2,35 @@
 
 @import './reset.css';
 @import './base.css';
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Dancing+Script&family=Poiret+One&display=swap');
+@import './buttons.css';
+@import './tags.css';
 
 @layer base {
 	body,
 	input,
 	textarea {
-		font-family: 'Plus Jakarta Sans', sans-serif;
+		font-family: var(--font-body);
+		line-height: 1.5;
 		font-size: var(--fs-400);
-		color: var(--color-text);
+		color: var(--ink);
 	}
 
 	h1 {
+		font-family: var(--font-heading);
 		font-size: var(--fs-800);
-		font-weight: 800;
+		font-weight: 500;
 	}
 
 	h2 {
+		font-family: var(--font-heading);
 		font-size: var(--fs-600);
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	h3 {
+		font-family: var(--font-heading);
 		font-size: var(--fs-500);
-		font-weight: 600;
+		font-weight: 500;
 	}
 
 	h4 {
@@ -41,45 +46,43 @@
 		text-wrap: balance;
 	}
 
-	.app {
-		min-height: 100vh;
-		margin: 0;
-		background-attachment: fixed;
-		background-color: var(--color-bg);
-		background-size: 100vw 100vh;
+	/*
+	 * The dot pattern lives on <html> so it paints across the whole canvas. On <body> it stopped short of
+	 * the wrapper's top/bottom margins, because those margins collapse through body and sit outside its box.
+	 */
+	html {
+		background-color: var(--bg);
 		background-image:
-			radial-gradient(
-				50% 50% at 50% 50%,
-				hsl(from var(--color-primary) h s l / 75%) 0%,
-				hsl(from var(--color-bg) h s l / 0%) 90%,
-				hsl(from var(--color-bg) h s l / 0%) 100%
-			),
-			linear-gradient(
-				180deg,
-				hsl(from var(--color-bg) h s l) 0%,
-				hsl(from var(--color-bg) h s l) 4rem,
-				hsl(from var(--color-primary) h 100% 90%) 55%,
-				hsl(from var(--color-primary) h 100% 86%) 60%
-			);
+			radial-gradient(var(--dot) var(--dot-size), transparent calc(var(--dot-size) + 0.3px)),
+			radial-gradient(var(--dot) var(--dot-size), transparent calc(var(--dot-size) + 0.3px));
+		background-size:
+			30px 30px,
+			30px 30px;
+		background-position:
+			0 0,
+			15px 15px;
+		background-attachment: fixed;
 	}
 
-	html[data-theme='dark'] .app {
-		background-image:
-			radial-gradient(
-				50% 50% at 50% 50%,
-				hsl(from var(--color-primary) h s l / 0%) 0%,
-				hsl(from var(--color-primary) h s l / 0%) 100%
-			),
-			linear-gradient(
-				180deg,
-				hsl(from var(--color-primary) h 100% 0%) 0%,
-				hsl(from var(--color-primary) h 100% 5%) 4rem,
-				hsl(from var(--color-primary) h 100% 10%) 60%
-			);
+	/* Phones only show a thin strip of pattern around the wrapper, so pack the dots in a bit tighter. */
+	@media (max-width: 999px) {
+		html {
+			--dot-size: 2.5px;
+			background-size:
+				20px 20px,
+				20px 20px;
+			background-position:
+				0 0,
+				10px 10px;
+		}
+	}
+
+	body {
+		min-height: 100vh;
 	}
 
 	a {
-		color: var(--color-primary);
+		color: var(--pen);
 		text-decoration: underline;
 	}
 
@@ -91,57 +94,12 @@
 		font-size: inherit;
 		font-family: inherit;
 	}
+}
 
-	em {
-		font-family: Poiret One;
-		font-weight: 600;
-		letter-spacing: 1.5px;
-	}
-
-	/* Icons */
-	.icon {
-		position: relative;
-	}
-
-	.icon:before {
-		display: inline-block;
-		line-height: 1;
-		font-family: 'Font Awesome 5 Free';
-	}
-
-	.icon.solid:before {
-		font-weight: 900;
-	}
-
-	.icon.brands:before {
-		font-family: 'Font Awesome 5 Brands';
-	}
-
-	.icon:before {
-		line-height: inherit;
-	}
-
-	.icon > .label {
-		display: none;
-	}
-
-	@keyframes fadeIn {
-		to {
-			opacity: 1;
-		}
-	}
-	@keyframes flyDown {
-		to {
-			transform: translateY(0);
-		}
-	}
-
-	.animate-in {
-		transform: translateY(-30px);
-		opacity: 0;
-		animation-name: fadeIn, flyDown;
-		animation-duration: 600ms, 400ms;
-		animation-timing-function: ease-in, ease-in-out;
-		animation-fill-mode: forwards, forwards;
+@layer base {
+	/* visible keyboard focus everywhere */
+	:focus-visible {
+		outline: 3px dashed var(--pen);
+		outline-offset: 3px;
 	}
 }

@@ -1,0 +1,36 @@
+---
+// Single home for the "pinned" label/icon. Swap the contents to change it everywhere.
+// A bookmark ribbon hanging from the row's top edge in the left padding.
+// Needs .post-row { position: relative } in PostRow.astro to anchor it.
+---
+
+<span class="pinned-mark">
+	<span class="ribbon" aria-hidden="true"></span>
+	<span class="visually-hidden">Pinned</span>
+</span>
+
+<style>
+	.pinned-mark {
+		display: inline;
+	}
+
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	.ribbon {
+		position: absolute;
+		top: 0;
+		left: 6px;
+		width: 11px;
+		height: 30px;
+		background: var(--marker);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+	}
+</style>
