@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostRow from '../../components/PostRow.astro';
 import SectionBanner from '../../components/SectionBanner.astro';
+import Pin from '../../components/Pin.astro';
+import { formatDate } from '../../utils/formatDate';
 
 const allPosts = await getCollection('blog');
 
