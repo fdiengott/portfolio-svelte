@@ -5,11 +5,6 @@ import Button from '../components/Button.astro';
 import PostRow from '../components/PostRow.astro';
 import SectionBanner from '../components/SectionBanner.astro';
 
-const designFocusedLetters = 'design-focused'.split('').map((letter, index) => ({
-	letter,
-	delay: index * 300,
-}));
-
 const latestPosts = (await getCollection('blog')).sort((a, b) => b.data.date.localeCompare(a.data.date)).slice(0, 3);
 
 const contactLinks = [
@@ -46,46 +41,33 @@ const contactLinks = [
 
 	<div class="masthead">
 		<h1>Freddy Diengott</h1>
-		<p>Software Engineer</p>
+		<p>Where Technical Meets thinky thinky brain churn</p>
 	</div>
 
 	<dl class="meta">
 		<div>
-			<dt>Discipline</dt>
-			<dd>Full-stack, UI focus</dd>
+			<dt>Specialty</dt>
+			<dd>Finance, UI</dd>
 		</div>
 		<div>
-			<dt>Based</dt>
-			<dd>Brooklyn, NY</dd>
+			<dt>Currently</dt>
+			<dd>Catching up on Econ/Finance</dd>
 		</div>
 		<div>
-			<dt>In service</dt>
-			<dd>Since 2021</dd>
+			<dt>Self Aware</dt>
+			<dd>Since 2020</dd>
 		</div>
 	</dl>
 
 	<section class="hero">
-		<p class="hero__deck">Software engineer · Brooklyn, NY</p>
+		<p class="hero__deck">Front page &middot; Vol. 1</p>
 		<h2 class="hero__headline">
-			I'm a{' '}
-			<span class="curious">
-				curious
-				<span class="sparkle" aria-hidden="true"></span>
-				<span class="sparkle" aria-hidden="true"></span>
-				<span class="sparkle" aria-hidden="true"></span>
-			</span>
-			,
-			<span class="design-text">
-				{designFocusedLetters.map(({ letter, delay }) => (
-					<span style={`--delay: ${delay}ms`}>{letter}</span>
-				))}
-			</span>
-			, auto-didactic, full-stack
-			<em class="highlight">software engineer, ponderer</em> based in Brooklyn, NY!
+			By day a lowly fintech SWE, by night a sociable, idea explorer/futurist. A
+			<em class="highlight">developer & ponderer</em> trying to explore big and small ideas alike.
 		</h2>
 		<p class="hero__lede">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-			dolore magna aliqua.
+			This site holds some of my ruminations on the societal implications of AI, how to make pretty websites, and
+			my <a href="/blogs/book-list">book list repository</a> so I don't need to use good reads.
 		</p>
 		<div class="hero__actions">
 			<Button href="/blogs" variant="primary">
@@ -131,16 +113,18 @@ const contactLinks = [
 	/* Masthead */
 	.masthead {
 		text-align: center;
-		padding: 36px 22px 22px;
+		padding-block: 36px;
+		padding-inline: var(--spacing-400);
 		border-bottom: 4px solid var(--ink);
-	}
-	.masthead h1 {
-		margin: 0;
-		font-family: var(--display);
-		font-style: italic;
-		font-weight: 500;
-		font-size: clamp(50px, 12vw, 98px);
-		line-height: 0.92;
+
+		h1 {
+			font-family: 'Ballet', var(--display);
+			font-style: normal;
+			font-weight: 400;
+			font-size: clamp(48px, 12vw, 90px);
+			line-height: 1.2;
+			letter-spacing: 2px;
+		}
 	}
 	.masthead p {
 		margin: 12px 0 0;
@@ -201,7 +185,7 @@ const contactLinks = [
 		text-transform: uppercase;
 	}
 	.hero__headline {
-		max-width: 20ch;
+		max-width: 28ch;
 		margin: 0 0 22px;
 		font-family: var(--display);
 		font-weight: 500;
@@ -216,10 +200,12 @@ const contactLinks = [
 		background: var(--pen);
 		color: var(--pen-fg);
 		font-style: italic;
-		padding: 0 0.15em;
+		padding-block: 0.06em 0.05em;
+		padding-inline: 0.15em;
+		text-wrap: nowrap;
 	}
 	.hero__lede {
-		max-width: 48ch;
+		max-width: 68ch;
 		margin: 0 0 32px;
 		color: var(--soft);
 		font-size: 18px;
@@ -228,87 +214,6 @@ const contactLinks = [
 		display: flex;
 		flex-wrap: wrap;
 		gap: 22px 32px;
-	}
-
-	/* "curious" sparkles */
-	.curious {
-		position: relative;
-		display: inline-block;
-		transition: transform 600ms;
-	}
-	.curious:hover {
-		transform: scale(1.1);
-	}
-	.sparkle {
-		position: absolute;
-		width: 0.4em;
-		aspect-ratio: 1/1;
-		background-color: var(--marker);
-		opacity: 0.7;
-		scale: 0;
-		clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
-	}
-	.curious:hover .sparkle {
-		animation:
-			pulse 1000ms ease infinite,
-			rotate 1000ms linear infinite;
-	}
-	.sparkle:nth-of-type(1) {
-		top: 0;
-		left: 0;
-		animation-delay: 333ms;
-	}
-	.sparkle:nth-of-type(2) {
-		top: 70%;
-		left: 25%;
-		animation-delay: 666ms;
-	}
-	.sparkle:nth-of-type(3) {
-		top: 20%;
-		left: 80%;
-		animation-delay: 999ms;
-	}
-	@keyframes pulse {
-		from,
-		to {
-			scale: 0;
-		}
-		50% {
-			scale: 1;
-		}
-	}
-	@keyframes rotate {
-		from {
-			rotate: 0deg;
-		}
-		to {
-			rotate: 180deg;
-		}
-	}
-
-	/* "design-focused" letter float */
-	.design-text,
-	.design-text span {
-		display: inline-block;
-	}
-	.design-text:hover span {
-		animation: float 2s ease-in-out infinite;
-		animation-delay: var(--delay);
-	}
-	@keyframes float {
-		50% {
-			transform: translateY(0.12em);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.curious {
-			transition: none;
-		}
-		.curious:hover .sparkle,
-		.design-text:hover span {
-			animation: none;
-		}
 	}
 
 	/* Latest posts / contact */

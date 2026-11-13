@@ -1,6 +1,14 @@
 ---
 const { pathname } = Astro.url;
 const isHome = pathname === '/';
+const dateFormat: Intl.DateTimeFormatOptions = {
+	weekday: 'short',
+	month: 'short',
+	day: 'numeric',
+	year: 'numeric',
+	timeZone: 'America/New_York',
+};
+const today = new Date().toLocaleDateString('en-US', dateFormat);
 const links = [
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/blogs', label: 'Blog' },
@@ -10,7 +18,9 @@ const links = [
 
 <header>
 	{isHome ? (
-		<span class="header__place">Brooklyn, New York</span>
+		<span class="header__place">
+			Brooklyn, New York &middot; <time id="header-date">{today}</time>
+		</span>
 	) : (
 		<a class="header__place" href="/">
 			Freddy Diengott
@@ -28,6 +38,12 @@ const links = [
 		</ul>
 	</nav>
 </header>
+
+{isHome && <script is:inline define:vars={{ dateFormat }}>
+	// Static build bakes in the build date; refresh it with the visitor's current day.
+	const el = document.getElementById('header-date');
+	if (el) el.textContent = new Date().toLocaleDateString('en-US', dateFormat);
+</script>}
 
 <style>
 	header {
@@ -99,7 +115,9 @@ const links = [
 		mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='8' viewBox='0 0 24 8'%3E%3Cpath d='M0 4 Q6 0 12 4 T24 4' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E")
 			repeat-x left center / 24px 8px;
 		clip-path: inset(0 100% 0 0);
-		transition: clip-path 0.38s cubic-bezier(0.45, 0.05, 0.3, 1);
+		transition:
+			clip-path 0.38s cubic-bezier(0.45, 0.05, 0.3, 1),
+			transform 0.45s cubic-bezier(0.34, 1.4, 0.5, 1);
 	}
 
 	nav a:hover,
@@ -110,6 +128,9 @@ const links = [
 	nav a:hover::after,
 	nav a:focus-visible::after {
 		clip-path: inset(0 0 0 0);
+	}
+	nav a:active::after {
+		transform: scaleY(-1) translateY(1px);
 	}
 	nav a:focus-visible {
 		outline: 2px dashed var(--marker-light);

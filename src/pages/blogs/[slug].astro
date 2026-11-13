@@ -37,10 +37,12 @@ const publishedDate = formatDate(entry.data.date);
 				Back
 			</Button>
 		</div>
-		{isSearchable && (
-			<input class="book-search" type="search" placeholder="Search books..." id="book-search-input" />
-		)}
-		<Content />
+		<div id="content__container">
+			{isSearchable && (
+				<input class="book-search" type="search" placeholder="Search books..." id="book-search-input" />
+			)}
+			<Content />
+		</div>
 	</article>
 	<div class="scroll-top">
 		<Button size="sm" id="scroll-top-btn" aria-label="Scroll to top">
@@ -49,7 +51,7 @@ const publishedDate = formatDate(entry.data.date);
 	</div>
 </BaseLayout>
 
-{isSearchable && <script>
+<script>
 	const searchInput = document.getElementById('book-search-input');
 	if (searchInput) {
 		searchInput.addEventListener('input', (e) => {
@@ -67,9 +69,7 @@ const publishedDate = formatDate(entry.data.date);
 			});
 		});
 	}
-</script>}
 
-<script>
 	const scrollTopBtn = document.getElementById('scroll-top-btn');
 	if (scrollTopBtn) {
 		scrollTopBtn.addEventListener('click', () => {
@@ -92,6 +92,16 @@ const publishedDate = formatDate(entry.data.date);
 	.blog__back {
 		margin-block-end: 1.5rem;
 		padding-inline-end: 8px;
+	}
+
+	@media (min-width: 920px) {
+		.blog__back {
+			position: absolute;
+			top: var(--container-top-spacing);
+			left: var(--container-top-spacing);
+			margin: 0;
+			padding: 0;
+		}
 	}
 
 	.scroll-top {
@@ -121,12 +131,18 @@ const publishedDate = formatDate(entry.data.date);
 
 	#blog__container {
 		--block-spacing: 1.5rem;
+		--container-top-spacing: 24px;
 		position: relative;
-		max-width: calc(65ch + 44px);
-		padding: 24px 22px 48px;
+		padding: var(--container-top-spacing) 22px 48px;
 		font-family: var(--font-body);
 		font-size: var(--fs-350);
 		color: var(--soft);
+	}
+
+	#content__container {
+		margin-inline: auto;
+		width: 100%;
+		max-width: calc(65ch + 44px);
 	}
 
 	#blog__container :is(h1, h2, h3, h4, h5, h6) {

@@ -18,6 +18,7 @@ const FONT_FAMILIES = [
 	'Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500',
 	'Archivo:wght@400;600',
 	'Barlow+Condensed:wght@600',
+	'Ballet:opsz@16..72', // TEMP: home title experiment
 ];
 const fontsHref = `https://fonts.googleapis.com/css2?${FONT_FAMILIES.map((f) => `family=${f}`).join('&')}&display=swap`;
 
@@ -53,12 +54,17 @@ const {
 <style>
 	.wrapper {
 		position: relative;
-		max-width: 860px;
+		max-width: 980px;
 		width: calc(100% - 28px);
 		margin: 28px auto 70px;
 		background: var(--paper);
 		border: 4px solid var(--ink);
 		border-radius: 0;
+	}
+	@media (max-width: 999px) {
+		.wrapper {
+			margin-block-start: 36px; /* a little more pattern above the header on phones */
+		}
 	}
 
 	/* red registration marks, top-left and bottom-right */

@@ -34,9 +34,8 @@
 	}
 
 	.tag--musings {
-		--tag-border: 1.5px dotted var(--ink);
-		--tag-font: var(--display);
-		--tag-style: italic;
+		--tag-border: 1.5px solid var(--rule);
+		--tag-bg-image: repeating-linear-gradient(45deg, rgba(36, 31, 23, 0.22) 0 1px, transparent 1px 5px);
 		--tag-color: var(--ink);
 	}
 
@@ -46,8 +45,9 @@
 	}
 
 	.tag--finance {
-		--tag-border: 1.5px solid var(--rule);
-		--tag-bg-image: repeating-linear-gradient(45deg, rgba(36, 31, 23, 0.22) 0 1px, transparent 1px 5px);
+		--tag-border: 2px dotted var(--ink);
+		--tag-font: var(--display);
+		--tag-style: italic;
 		--tag-color: var(--ink);
 	}
 

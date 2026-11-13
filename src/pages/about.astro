@@ -3,6 +3,11 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionBanner from '../components/SectionBanner.astro';
 import headshot from '../assets/images/hero-headshot-2026.jpg';
+
+const designFocusedLetters = 'design-focused'.split('').map((letter, index) => ({
+	letter,
+	delay: index * 300,
+}));
 ---
 
 <BaseLayout
@@ -18,8 +23,21 @@ import headshot from '../assets/images/hero-headshot-2026.jpg';
 			alt="A professional headshot of a young man wearing a black button down"
 		/>
 		<div class="bio">
+			<!-- prettier-ignore -->
 			<p>
-				I'm a curious, design-focused, auto-didactic, full-stack software engineer based in Brooklyn, NY! I'm
+				I'm a
+				<span class="curious">
+					curious
+					<span class="sparkle" aria-hidden="true"></span>
+					<span class="sparkle" aria-hidden="true"></span>
+					<span class="sparkle" aria-hidden="true"></span>
+				</span>{','}
+				<span class="design-text">
+					{designFocusedLetters.map(({ letter, delay }) => (
+						<span style={`--delay: ${delay}ms`}>{letter}</span>
+					))}
+				</span>{','}
+				auto-didactic, full-stack software engineer based in Brooklyn, NY! I'm
 				currently a UI engineer at Adaptive Financial where I'm building a real-time finance platform built on
 				top of a web-socket connected, highly secure, fast, distributed system where the UI is made with
 				<span class="bold">TypeScript</span>, <span class="bold">React</span>,<span class="bold">RxJS</span>,{' '}
@@ -90,6 +108,193 @@ import headshot from '../assets/images/hero-headshot-2026.jpg';
 	}
 	.bio .italic {
 		font-style: italic;
+	}
+
+	/* "curious" sparkles */
+	.curious {
+		position: relative;
+		display: inline-block;
+		transition: transform 600ms;
+		position: relative;
+	}
+	.curious::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		filter: blur(3px);
+		background: var(--paper);
+		z-index: -1;
+		padding-inline: 8px;
+	}
+	.curious:hover {
+		transform: scale(1.3);
+	}
+	.sparkle {
+		position: absolute;
+		width: 0.4em;
+		aspect-ratio: 1/1;
+		background-color: var(--marker);
+		opacity: 0.7;
+		scale: 0;
+		clip-path: polygon(0 50%, 40% 40%, 50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%);
+	}
+	.curious:hover .sparkle {
+		animation:
+			sparkle 3000ms ease var(--delay) infinite,
+			rotate 1000ms linear var(--delay) infinite;
+	}
+	/* Each sparkle has three spots (--x1/--y1 ... --x3/--y3). It jumps to the next one while scaled to 0. */
+	.sparkle {
+		left: var(--x1);
+		top: var(--y1);
+	}
+	.sparkle:nth-of-type(1) {
+		--x1: 0;
+		--y1: 0;
+		--x2: 60%;
+		--y2: -15%;
+		--x3: 92%;
+		--y3: 60%;
+		--delay: 333ms;
+	}
+	.sparkle:nth-of-type(2) {
+		--x1: 25%;
+		--y1: 70%;
+		--x2: 4%;
+		--y2: 35%;
+		--x3: 55%;
+		--y3: 90%;
+		--delay: 666ms;
+	}
+	.sparkle:nth-of-type(3) {
+		--x1: 80%;
+		--y1: 20%;
+		--x2: 35%;
+		--y2: -5%;
+		--x3: 10%;
+		--y3: 75%;
+		--delay: 999ms;
+	}
+	@keyframes sparkle {
+		0% {
+			scale: 0;
+			left: var(--x1);
+			top: var(--y1);
+		}
+		16.6% {
+			scale: 1;
+		}
+		33.2% {
+			scale: 0;
+			left: var(--x1);
+			top: var(--y1);
+		}
+		33.4% {
+			left: var(--x2);
+			top: var(--y2);
+		}
+		50% {
+			scale: 1;
+		}
+		66.5% {
+			scale: 0;
+			left: var(--x2);
+			top: var(--y2);
+		}
+		66.7% {
+			left: var(--x3);
+			top: var(--y3);
+		}
+		83.3% {
+			scale: 1;
+		}
+		100% {
+			scale: 0;
+			left: var(--x3);
+			top: var(--y3);
+		}
+	}
+	@keyframes rotate {
+		from {
+			rotate: 0deg;
+		}
+		to {
+			rotate: 180deg;
+		}
+	}
+
+	/* "design-focused" letter float */
+	.design-text,
+	.design-text span {
+		display: inline-block;
+	}
+	.design-text span {
+		/* prettier-ignore */
+		/* One damped wave: up to a peak (1), through rest (0), a small dip below (~-0.3), then settles at 0. */
+		--hop: linear(
+			0,
+			0.3,
+			0.55,
+			0.74,
+			0.88,
+			0.96,
+			1,
+			0.99,
+			0.95,
+			0.87,
+			0.77,
+			0.65,
+			0.53,
+			0.4,
+			0.27,
+			0.15,
+			0.04,
+			-0.06,
+			-0.14,
+			-0.21,
+			-0.26,
+			-0.29,
+			-0.3,
+			-0.31,
+			-0.3,
+			-0.28,
+			-0.25,
+			-0.21,
+			-0.18,
+			-0.14,
+			-0.1,
+			-0.06,
+			-0.02,
+			0.01,
+			0.04,
+			0.06,
+			0
+		);
+	}
+	.design-text:hover span {
+		animation: hop 1000ms var(--hop) 1;
+		animation-delay: calc(var(--delay) / 10);
+	}
+	/* The curve above drives progress 0 -> 1 -> back through 0, so this single segment gives the whole hop. */
+	@keyframes hop {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(-0.22em);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.curious {
+			transition: none;
+		}
+		.curious:hover .sparkle {
+			animation: none;
+		}
+		.design-text:hover span {
+			animation: none;
+		}
 	}
 
 	@media (min-width: 680px) {
